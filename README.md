@@ -1,104 +1,288 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Gamer Supplies</h1>
 
-Welcome USER_NAME,
+[View a live version of the site here.]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+I have created this project (Milestone project 4) as part of my Full Stack Web Development course with [Code Institute](https://codeinstitute.net/).
 
-## Gitpod Reminders
+It is an E-Commerce site for a fictional company 'Gamer Supplies' which offers a variety of snacks for sale.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+___
 
-`python3 -m http.server`
+## Contents
 
-A blue button should appear to click: _Make Public_,
++ [**User Experience Design (UXD)**](<#user-experience-design>)
 
-Another blue button should appear to click: _Open Browser_.
+  + [Project Goals](<#project-goals>)
+  + [Content Requirements](<#content-requirements>)
+  + [Importance and Feasibility chart](<#importance-and-feasibility-chart>)
+  + [User Stories](<#user-stories>)
+  + [Website Structure](<#website-structure>)
+  + [Design Decisions from UXD](<#design-decisions-from-uxd>)
+    + Colour Scheme
+    + Images
+    + Typography
+  + [Wireframes](<#wireframes>)
+  + [Design Changes](<#design-changes>)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
++ [**Database Schema**](<#database-schema>)
 
-A blue button should appear to click: _Make Public_,
++ [**Features**](#features)
 
-Another blue button should appear to click: _Open Browser_.
++ [**Technologies**](#technologies)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
++ [**Testing**](#testing)
 
-To log into the Heroku toolbelt CLI:
++ [**Deployment**](#deployment)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
++ [**Credits**](#credits)
+  
+___
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Experience Design
 
-------
+### Project Goals
 
-## Release History
+The goal of this project is to create an MVP (mininum viable product) of an E-Commerce store for a fictional company called 'Gamer Supplies'. The brand motto is 'To provide quality service of Gamer Snacks seamlessly to you'. The site is aimed at gamers looking to stock up on their favourite snacks.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Content Requirements
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
++ To provide users with an E-Commerce store that is designed in an user-tailored way to make the process intuitive and seamless.
++ To demonstrate my skills as a full stack web developer using HTML, CSS, JavaScript and Python.
++ To showcase my skills using the Django framework, the modules within it and use of the MVC paradigm.
++ To combine all my previous knowledge on the course into creating an application that looks and runs efficiently.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Importance and Feasibility chart
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Opportunity/Problem | Importance | Viability/Feasibility
+:-------- |:--------:|:--------:
+A. Users able to register an account and login  | 5 | 5
+B. Users can add/edit and remove items from their crate | 5 | 5
+C. Users are notified of their actions | 5 | 4
+D. Users can re-purchase a past order | 3 | 3
+E. Users can search for snacks | 4 | 4
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### User stories
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### User goals
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
++ As a **User**, I want to easily understand the site upon loading it.
++ As a **User**, I want to be able to intuitively navigate the entire site with ease.
++ As a **User**, I want to be able to receive full site functionality on my phone and tablet.
++ As a **User**, I want to be able to see what supplies are available for purchase on the site.
++ As a **User**, I want to know the prices.
++ As a **User**, I want to be able to seamlessly sign up for an account and receive a confirmation email.
++ As a **User**, I want to be able to access the companies associated social media profiles.
++ As a **User**, I want to be able to contact the company with any relevant questions.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### Registered User goals
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
++ As a **Registered User**, I want to be able to easily login and logout of my account
++ As a **Registered User**, I want to be able to easily add and remove items from my supply crate.
++ As a **Registered User**, I want to be able to easily purchase my crate.
++ As a **Registered User**, I want to receive a purchase confirmation email.
++ As a **Registered User**, I want to be able to easily update my contact and delivery information.
++ As a **Registered User**, I want to be able to view my previous orders.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### Site Owner/Superuser goals
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
++ As a **Site Owner/Superuser**, I want to be able to add new supplies
++ As a **Site Owner/Superuser**, I want to be able to edit and delete supplies
++ As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Website Structure
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The structure of the site is very simple to provide an easy-to-use experience. The header/footer/nav links will remain in the same places across the site but will differ from mobile to other devices as the screen real estate is limited. In the header there is an account link which opens a sub menu containing different links based on whether a user is logged in or a super-user.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+| Account links shown |
+:-------------------------------:
++ Not logged in: 
+    + Login
+    + Register
 
-------
++ Logged in as regular user:
+    + Profile
+    + Logout
 
-## FAQ about the uptime script
+###  Design Decisions from UXD
 
-**Why have you added this script?**
+#### Colour Scheme
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Colour Scheme](docs/images/colourscheme.png)
 
-**How will this affect me?**
+Using a combination of [coolors.co](https://coolors.co/) and [Accessible Color Generator Tool](https://learnui.design/tools/accessible-color-generator.html) I was able to create a colour scheme that uses contrasting blues and yellows  to convey the majority of the content as it matches the colours used in the brand's logo. The colour scheme will remain consistent throughout the buttons, the overall design of the site and where information is presented back to the user based on their actions. The offwhite/offblack will be used for text and information popups.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
++ #4169e1 (Royal Blue)
++ #ffd700 (Gold Web Golden)
++ #eee6e6 (Isabaline)
++ #141414 (Eerie Black)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+I tested my colour contrasts against the AA guidelines using [this tool](https://learnui.design/tools/accessible-color-generator.html) as mentioned in my technologies section. I have included a picture below as proof:
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Accessible Colours](docs/images/AAproof.png)
 
-**So….?**
+#### Images
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+**Logo image** - This is a modified version of a cartoon crate clipart which is licensed for personal use ([source](http://clipart-library.com/clipart/22001.htm)).
 
-**Can I opt out?**
+![Logo](docs/images/logo.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### Typography
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+Throughout the site two main fonts will be used. 
 
-**Anything more?**
+Headers and titles will use [Saira Stencil One](https://fonts.google.com/specimen/Saira+Stencil+One) and associated text will use [Salsa](https://fonts.google.com/specimen/Salsa).
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+The Saira Stencil One font was chosen as it resembles stencil lettering such as is used on shipping crates. I felt it an appropriate fit for the purpose of the site as the user fills a Gamer Supply crate. Salsa was chosen as a complimentary font as Google suggested it as a popular pairing with Saira Stencil One and it provides a non obtrusive font to display information across the site.
+
+### Wireframes
+
+| Page | Mobile | Tablet |  PC  |
+| :----: |:-----: | :--: | :--: |
+| Home | [View](docs/wireframes/mobile-home.png) | [View](docs/wireframes/tablet-home.png) | [View](docs/wireframes/pc-home.png) |
+| Register | [View](docs/wireframes/mobile-register.png) | [View](docs/wireframes/tablet-register.png) | [View](docs/wireframes/pc-register.png) |
+| Login | [View](docs/wireframes/mobile-login.png) | [View](docs/wireframes/tablet-login.png) | [View](docs/wireframes/pc-login.png) |
+| Logout | [View](docs/wireframes/mobile-logout.png) | [View](docs/wireframes/tablet-logout.png) | [View](docs/wireframes/pc-logout.png) |
+| Supplies User | [View](docs/wireframes/mobile-suppliesuser.png) | [View](docs/wireframes/tablet-suppliesuser.png) | [View](docs/wireframes/pc-suppliesuser.png) |
+| Supplies Admin | [View](docs/wireframes/mobile-suppliesadmin.png) | [View](docs/wireframes/tablet-suppliesadmin.png) | [View](docs/wireframes/pc-suppliesadmin.png) |
+| Crate | [View](docs/wireframes/mobile-crate.png) | [View](docs/wireframes/tablet-crate.png) | [View](docs/wireframes/pc-crate.png) |
+| Reviews | [View](docs/wireframes/mobile-reviews.png) | [View](docs/wireframes/tablet-reviews.png) | [View](docs/wireframes/pc-reviews.png) |
+
+### Design Changes
+
+## Database Schema 
+
+SQLite3 was used in the development of this project as part of the Django framework. Upon deploying, I used Heroku PostGres to handle the database for the production version of the site. The models used to construct the site are outlined below:
+
+![Database Diagram](docs/images/dbdiagram.png)
+
+I used [dbdiagram.io](dbdiagram.io) to create this rendering of the database model and the associated relationships between data sets.
+
+**Supplies App:**
+
+Category Model
+
+| Field | Field Type | Field Options |
+| --- | --- | --- |
+| name | CharField | max_length=200 |
+
+Supply Model
+
+| Field | Field Type | Field Options |
+| --- | --- | --- |
+| name | CharField | max_length=254, null=True |
+| description | TextField | null=True, blank=True |
+| brand | CharField | max_length=254, null=True, blank=True |
+| category | ForeignKey | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
+| size | CharField | max_length=25, null=True, blank=True |
+| image | ImageField | null=True, blank=True |
+
+**Checkout App:**
+
+Order Model
+
+| Field | Field Type | Field Options |
+| --- | --- | ---|
+| order_number | CharField | max_length=32, null=False, editable=False |
+| user_profile | ForeignKey | UserProfile, on_delete=models.SET_NULL, null=True, blank=False, related_name='orders' |
+| full_name | CharField | max_length=50, null=False, blank=False |
+| email | EmailField | max_length=254, null=False, blank=False |
+| contact_number | CharField | max_length=20, null=True, blank=True |
+| address_line_1 | CharField | max_length=50, null=False, blank=False |
+| address_line_2 | CharField | max_length=50, null=False, blank=False |
+| town_or_city | CharField | max_length=50, null=False, blank=False |
+| county | CharField | max_length=50, null=False, blank=False |
+| postcode | CharField | max_length=20, null=False, blank=False |
+| country | CountryField | blank_label="Country *", null=False, blank=False |
+| date | DateTimeField | auto_now_add=True |
+| original_crate | TextField | null=False, blank=False, default='' |
+| stripe_pid | CharField | max_length=254, null=False, blank=False, default='' |
+
+Crate Items Model
+
+| Field | Field Type | Field Options |
+| --- | :--- | ---|
+| order | ForeignKey | Order, null=False, blank=False, on_delete=models.CASCADE, related_name="crateitems" |
+| supply | ForeignKey | Supply, null=False, blank=False, on_delete=models.CASCADE |
+| quantity | IntegerField | null=False, blank=False, default=0
+| crateitem_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
+
+**Reviews App:**
+
+Review Model
+
+| Field | Field Type | Field Options |
+| --- | --- | --- |
+| review | TextField | null=True, blank=True |
+| posted_by | ForeignKey | User, on_delete=models.CASCADE |
+| rating | IntegerField | default=0, validators=[MinValueValidator(0),MaxValueValidator(5)] |
+
+#### [Back to top](#contents)
 
 ---
 
-Happy coding!
+## Features
+
+### Existing Features
+
+### Features to be added
+
+#### [Back to top](#contents)
+
+---
+
+## Technologies
+
+### Languages
+
++ [HTML](https://en.wikipedia.org/wiki/HTML) - Used as the main language for structuring the website.
++ [CSS](https://en.wikipedia.org/wiki/CSS) - Used as the main language for styling the website.
++ [JavaScript](https://www.javascript.com/) - Used to import and initialize certain functions for use throughout the project.
++ [Python](https://www.python.org) - Used as the main coding language to generate the site, handle the database and user login system.
+
+### Frameworks, libraries and programs
+
+### Dependencies
+
+#### [Back to top](#contents)
+
+---
+
+## Testing
+
+I created a separate file for the testing process which can be located [here](TESTING.md).
+
+#### [Back to top](#contents)
+
+---
+
+## Deployment
+
+### Project Inception
+
+### Deployment to Heroku
+
+Before creating a Heroku app make sure your project has these two files:
++ **requirements.txt** - You can create one by using ```pip3 freeze --local > requirements.txt```
++ **Procfile** - You can create one by using ```echo web: python run.py > Procfile```
+
+### Creating a local clone
+
+#### [Back to top](#contents)
+
+---
+
+## Credits
+
+### Content
+
+This section includes areas/sections of code and properties I was unaware of. I have also included sources from where I have adapted/changed code used in the projects throughout my course as I figured it was better practice to state as such to avoid any penalizations or copyright violations.
+
+### Media
+
+#### Images
+
+### Acknowledgements
+
+#### [Back to top](#contents)
+
+---
