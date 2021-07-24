@@ -1,0 +1,25 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #eee6e6;
+    height: calc(100vh - 200px);
+    font-family: 'Saira Stencil One', cursive;
+}
+
+/* Core Styling */
+.gamerStyle {
+    background-color: #4169e1;
+    border: 3px solid #ffd700;
+}
+
+.btn {
+    color: #ffd700;
+    background-color: #4169e1;
+    border: 2px solid #ffd700;
+}
+
+.btn:hover, .btn:active, .btn:focus { color: #141414; }
+
+h1 { color: #ffd700; }

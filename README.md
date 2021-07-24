@@ -124,7 +124,7 @@ I tested my colour contrasts against the AA guidelines using [this tool](https:/
 
 **Logo image** - This is a modified version of a cartoon crate clipart which is licensed for personal use ([source](http://clipart-library.com/clipart/22001.htm)).
 
-![Logo](docs/images/logo.png)
+![Logo](docs/images/logodesign.png)
 
 #### Typography
 
