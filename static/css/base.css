@@ -11,15 +11,32 @@ body {
 /* Core Styling */
 .gamerStyle {
     background-color: #4169e1;
-    border: 3px solid #ffd700;
+    border-bottom: 10px solid #ffd700;
+    border-top: 10px solid #ffd700;
 }
 
 .btn {
-    color: #ffd700;
-    background-color: #4169e1;
-    border: 2px solid #ffd700;
+    color: #4169e1;
+    background-color: #ffd700;
+    border: 2px solid #eee6e6;
 }
 
-.btn:hover, .btn:active, .btn:focus { color: #141414; }
+h1 { color: #ffd700; font-size: 2rem; text-shadow: 2px 2px #141414; }
+p { color: #ffd700; margin-bottom: 0; }
 
-h1 { color: #ffd700; }
+/* Nav */
+.logo { height: 12vh; }
+.navbar { background-color: #4169e1; box-shadow: 0 5px 10px #141414; }
+.navbar-nav { text-align: right; padding-right: 5vw; }
+.navbar-toggler { padding: 0; font-size: 2rem; }
+.navbar-toggler:focus { outline: none; box-shadow: none; }
+.navbar-toggler i, .nav-link { color: #ffd700; }
+.navbar-brand { padding: 0; }
+.nav-link:hover, .nav-link:active, .nav-link:focus, .btn:hover, .btn:active, .btn:focus { color: #141414; }
+
+/* -------------------------------- Media Queries */
+
+/* For large screen sizes */
+@media (min-width: 992px) {
+    .nav-link { font-size: 2.5rem; }
+}
