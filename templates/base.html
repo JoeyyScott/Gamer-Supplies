@@ -72,13 +72,23 @@
         </header>
 
         {% if messages %}
-            <div class="message-container"></div>
+            <div class="container-message"></div>
         {% endif %}
 
         {% block page_header %}
         {% endblock %}
 
         {% block content %}
+        {% endblock %}
+        
+        {% block footer %}
+        <div class="space"></div>
+        <footer class="container-footer text-center p-2 fixed-bottom">
+            <span class="text-footer">Find us elsewhere</span><br>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter mx-2"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square mx-2"></i></a>
+        </footer>
         {% endblock %}
 
         {% block postloadjs %}
