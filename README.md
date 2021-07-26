@@ -170,9 +170,10 @@ Supply Model
 | Field | Field Type | Field Options |
 | --- | --- | --- |
 | name | CharField | max_length=254, null=True |
+| category | ForeignKey | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
+| price | DecimalField | max_digits=6, deciaml_places=2
 | description | TextField | null=True, blank=True |
 | brand | CharField | max_length=254, null=True, blank=True |
-| category | ForeignKey | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
 | size | CharField | max_length=25, null=True, blank=True |
 | image | ImageField | null=True, blank=True |
 
@@ -214,7 +215,7 @@ Review Model
 | --- | --- | --- |
 | review | TextField | null=True, blank=True |
 | posted_by | ForeignKey | User, on_delete=models.CASCADE |
-| rating | IntegerField | default=0, validators=[MinValueValidator(0),MaxValueValidator(5)] |
+| rating | IntegerField | default=0, validators=[MinValueValidator(1),MaxValueValidator(5)] |
 
 #### [Back to top](#contents)
 
