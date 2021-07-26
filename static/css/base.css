@@ -59,10 +59,16 @@ footer i, .text-footer { color: #ffd700; font-size: 1.6rem; }
 
 .supply-img { border: 5px solid #ffd700; }
 
-
-
+.nav-tabs { text-shadow: 2px 2px #141414; }
+.nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
+    background-color: #ffd700;
+    color: #4169e1;
+    border-bottom: 0;
+    text-shadow: 2px 2px #eee6e6; 
+}
 .container-supplies { margin-top: 18vh; }
 .container-search { background-color: #4169e1;}
+.container-categories { border-top: 0; }
 
 /* -------------------------------- Media Queries */
 

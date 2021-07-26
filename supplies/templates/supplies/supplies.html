@@ -16,6 +16,26 @@
             <h1 class="logo-font">Supplies</h1>
         </div>
     </div>
+    {% with request.get_full_path as url_name %}
+    <ul class="nav nav-tabs fw-bold justify-content-center p-0 my-2 gamerStyle container-categories">
+        <li class="nav-item">
+            <a class="rounded-0 nav-link {% if 'category' not in url_name %}active{% endif %}" href="{% url 'supplies' %}">All Supplies</a>
+        </li>
+        <li class="nav-item">
+            <a class="rounded-0 nav-link {% if 'Drinks' in url_name %}active{% endif %}" href="{% url 'supplies' %}?category=Drinks">Drinks</a>
+        </li>
+        <li class="nav-item">
+            <a class="rounded-0 nav-link {% if 'Sweet' in url_name %}active{% endif %}" href="{% url 'supplies' %}?category=Sweet">Sweet</a>
+        </li>
+        <li class="nav-item">
+            <a class="rounded-0 nav-link {% if 'Savoury' in url_name %}active{% endif %}" href="{% url 'supplies' %}?category=Savoury">Savoury</a>
+        </li>
+        <li class="nav-item">
+            <a class="rounded-0 nav-link {% if 'Healthy' in url_name %}active{% endif %}" href="{% url 'supplies' %}?category=Healthy">Healthy</a>
+        </li>
+    </ul>
+    {% endwith %}
+    <!-- Search bar -->
     <div class="row justify-content-center">
         <div class="col-10 col-md-6 col-lg-4 container-search">
             <form class="form my-2" method="GET" action="{% url 'supplies' %}">

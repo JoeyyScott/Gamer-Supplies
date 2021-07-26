@@ -1,29 +1,38 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Supply
+from .models import Supply, Category
 
 # Create your views here.
 
 
 def all_supplies(request):
-    """ A view to show all products, including sorting and search queries """
+    """ A view to show all supplies, including sorting and search queries """
 
     supplies = Supply.objects.all()
     query = None
+    categories = None
 
-    if 'q' in request.GET:
-        query = request.GET['q']
-        if not query:
-            messages.error(request, "You didn't enter a search term!")
-            return redirect(reverse('supplies'))
+    if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            supplies = supplies.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
-        queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(brand__icontains=query)
-        supplies = supplies.filter(queries)
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You didn't enter a search term!")
+                return redirect(reverse('supplies'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(brand__icontains=query)
+            supplies = supplies.filter(queries)
 
     context = {
         'supplies': supplies,
         'search_term': query,
+        'current_categories': categories,
+
     }
 
     return render(request, 'supplies/supplies.html', context)
