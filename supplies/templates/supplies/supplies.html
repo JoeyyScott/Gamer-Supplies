@@ -10,11 +10,58 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {{ supplies }}
+<div class="row">
+    <div class="col text-center mt-3">
+        <h1 class="logo-font">Supplies</h1>
+    </div>
+</div>
+<div class="row justify-content-center col-10 offset-1">
+    {% for supply in supplies %}
+        <div class="col-md-6 col-lg-4 my-3 p-1 gamerStyle">
+            <!-- Supply Cards -->
+            <div class="card h-100 text-center p-2">
+                <!-- Supply Image -->
+                <div class="col-6 m-auto">
+                    {% if supply.image %}
+                    <img src="{{ supply.image.url }}" class="card-img-top img-fluid supply-img" alt="{{ supply.name }}">
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}no-image.png" alt="{{ supply.name }}" class="card-img-top img-fluid">
+                    {% endif %}
+                </div>
+                <!-- Supply Info -->
+                <div class="card-title">{{ supply.name }}</div>
+                <p class="card-text text-desc overflow-auto">{{ supply.description }}</p>
+                <p class="card-text">Size: {{ supply.size }}</p>
+                <p class="card-text text-price">£{{ supply.price }}</p>
+                <!-- Buttons -->
+                {% if request.user.is_superuser %}
+                    <!-- Admin buttons -->
+                    <div>
+                        <a class="btn solid small mx-1" href=""><i class="fas fa-edit p-1"></i></a>
+                        <a class="btn solid small mx-1" href=""><i class="fas fa-trash p-1"></i></a>
+                    </div>
+                {% elif request.user.is_authenticated %}
+                    <!-- Add to Crate Button -->
+                    <form class="form" action="" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-lg"><i class="fas fa-box-open"></i> Add to Crate</button>
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.get_full_path }}">
+                        </div>
+                    </form>
+                {% else %}
+                    <!-- Login/Sign Up Buttons -->
+                    <div class="row">
+                        <div class="col">
+                            <a class="btn btn-sm m-2" href="">Login</a>
+                            <a class="btn btn-sm m-2" href="">Sign Up</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
-    </div>
+    {% endfor %}
+</div>
 {% endblock %}

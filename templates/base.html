@@ -4,9 +4,9 @@
 <html lang="en">
     <head>
         {% block meta %}
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% endblock %}
 
         {% block extra_meta %}
@@ -40,15 +40,27 @@
     <body>
         <header>
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg justify-content-between">
+            <nav class="navbar navbar-expand-lg justify-content-between fixed-top">
                 <div class="container-fluid">
                     <!-- Brand -->
                     <a class="navbar-brand pb-1" href="{% url 'home' %}">
-                        <img src="{{ MEDIA_URL }} media/logo.png" class="logo pb-1" %} alt="Gamer Supplies Logo">
+                        <img src={% static "images/logo.png" %} class="logo pb-1" alt="Gamer Supplies Logo">
                     </a>
+                        <a class="{% if grand_total %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0 text-bag">
+                                    {% if grand_total %}
+                                        £{{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        £0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
                     <!-- Mobile Toggle -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-box-open fa-lg mt-2"></i><p>Menu</p>
+                        <i class="fas fa-box-open fa-md"></i><div class="text-menu">Menu</div>
                     </button>
                     <!-- Navbar -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbar">

@@ -4,9 +4,12 @@ html {
 
 body {
     background-color: #eee6e6;
-    height: calc(100vh - 200px);
+    height: 100vh;
+    margin-top: 18vh;
     font-family: 'Saira Stencil One', cursive;
 }
+
+html, body { max-width: 100%; overflow-x: hidden; }
 
 /* Core Styling */
 .gamerStyle {
@@ -22,15 +25,16 @@ body {
 }
 
 h1 { color: #ffd700; font-size: 2rem; text-shadow: 2px 2px #141414; }
-p { color: #ffd700; margin-bottom: 0; }
+p { color: #eee6e6; margin-bottom: 0; }
 
 /* Nav */
 .logo { height: 12vh; }
+.text-menu, .text-bag { color: #ffd700; }
 .navbar { background-color: #4169e1; box-shadow: 0 5px 10px #141414; }
 .navbar-nav { text-align: right; padding-right: 5vw; }
-.navbar-toggler { padding: 0; font-size: 2rem; }
+/* .navbar-toggler { padding: 0; font-size: 1.8rem; } */
 .navbar-toggler:focus { outline: none; box-shadow: none; }
-.navbar-toggler i, .nav-link { color: #ffd700; }
+.navbar-toggler i, .nav-link, .text-bag { color: #ffd700; }
 .navbar-brand { padding: 0; }
 .nav-link:hover, .nav-link:active, .nav-link:focus, .btn:hover, .btn:active, .btn:focus { color: #141414; }
 
@@ -39,6 +43,10 @@ p { color: #ffd700; margin-bottom: 0; }
 footer i, .text-footer { color: #ffd700; font-size: 1.6rem; }
 .space { height: 15vh; }
 
+.supply-img {
+    border-top: 2px solid #eee6e6;
+}
+
 /* -------------------------------- Media Queries */
 
 /* For large screen sizes */
@@ -46,3 +54,24 @@ footer i, .text-footer { color: #ffd700; font-size: 1.6rem; }
     .nav-link { font-size: 2.5rem; }
     footeri.fab { display: inline; }
 }
+
+.card {
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+}
+
+.card-title, .text-price { color: #ffd700; text-shadow: 2px 2px #141414; font-size: 1.5rem; }
+.line-break { color: #4169e1; }
+.card img {
+    width: 100%;
+    height: 20vh;
+    object-fit:cover;
+    box-shadow: 2px 2px #141414;
+}
+
+.supply-img { border: 5px solid #ffd700; }
+
