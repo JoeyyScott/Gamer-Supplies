@@ -1,0 +1,30 @@
+[
+    {
+        "model":"supplies.category",
+        "pk":1,
+        "fields":{
+            "name":"Drinks"
+        }
+    },
+    {
+        "model":"supplies.category",
+        "pk":2,
+        "fields":{
+            "name":"Sweet"
+        }
+    },
+    {
+        "model":"supplies.category",
+        "pk":3,
+        "fields":{
+            "name":"Savoury"
+        }
+    },
+    {
+        "model":"supplies.category",
+        "pk":4,
+        "fields":{
+            "name":"Healthy"
+        }
+    }
+]

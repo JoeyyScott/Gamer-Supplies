@@ -1,0 +1,626 @@
+[
+    {
+        "model":"supplies.supply",
+        "pk":1,
+        "fields":{
+            "name":"Banana Yazoo",
+            "category":1,
+            "price":1.00,
+            "description":"A deliciously smooth banana milk drink.",
+            "brand":"Yazoo",
+            "size":"1L",
+            "image":"yazoobanana.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":2,
+        "fields":{
+            "name":"Strawberry Yazoo",
+            "category":1,
+            "price":1.00,
+            "description":"A deliciously smooth strawberry milk drink.",
+            "brand":"Yazoo",
+            "size":"1L",
+            "image":"yazoostrawberry.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":3,
+        "fields":{
+            "name":"Chocolate Orange Yazoo",
+            "category":1,
+            "price":1.00,
+            "description":"A deliciously smooth chocolate orange milk drink.",
+            "brand":"Yazoo",
+            "size":"1L",
+            "image":"yazoochocorange.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":4,
+        "fields":{
+            "name":"Diet Coke",
+            "category":1,
+            "price":1.50,
+            "description":"Fizz up your day with no sugar or calories and the crisp refreshing taste of Diet Coke!",
+            "brand":"Coca Cola",
+            "size":"1.25L",
+            "image":"dietcoke.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":5,
+        "fields":{
+            "name":"Fanta Fruit Twist",
+            "category":1,
+            "price":2.00,
+            "description":"Kick back with a glass of Fanta Fruit Twist and enjoy a fruity filled blast of flavours.",
+            "brand":"Coca Cola",
+            "size":"2L",
+            "image":"fantafruittwisst.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":6,
+        "fields":{
+            "name":"Dr Pepper",
+            "category":1,
+            "price":2.00,
+            "description":"Dr Pepper has a taste so misunderstood that it's confusingly good. You won't regret trying it!",
+            "brand":"Coca Cola",
+            "size":"2L",
+            "image":"drpepper.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":7,
+        "fields":{
+            "name":"Touch Of Fruit Strawberry",
+            "category":1,
+            "price":1,
+            "description":"Strawberry flavoured still natural mineral water, filled with refreshing goodness.",
+            "brand":"Volvic",
+            "size":"1.5L",
+            "image":"volvicstrawberry.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":8,
+        "fields":{
+            "name":"Touch Of Fruit Mango",
+            "category":1,
+            "price":1,
+            "description":"Mango flavoured still natural mineral water, filled with refreshing goodness.",
+            "brand":"Volvic",
+            "size":"1.5L",
+            "image":"volvicmango.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":9,
+        "fields":{
+            "name":"Sugar Free Watermelon Water",
+            "category":1,
+            "price":1,
+            "description":"Sugar free watermelon flavoured still natural mineral water, filled with refreshing goodness.",
+            "brand":"Volvic",
+            "size":"1.5L",
+            "image":"volvicwatermelon.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":10,
+        "fields":{
+            "name":"Tropicana Pineapple Juice",
+            "category":1,
+            "price":1.75,
+            "description":"Delicious pure pineapple juice made only with pressed fruit juice and purees.",
+            "brand":"Tropicana",
+            "size":"850ml",
+            "image":"tropicanapineapple.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":11,
+        "fields":{
+            "name":"Tropicana Apple Juice",
+            "category":1,
+            "price":1.75,
+            "description":"Delicious pure apple juice made only with pressed fruit juice and purees.",
+            "brand":"Tropicana",
+            "size":"950ml",
+            "image":"tropicanaapple.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":12,
+        "fields":{
+            "name":"Tropicana Tropical Juice",
+            "category":1,
+            "price":1.75,
+            "description":"Delicious pure tropical juice made only with pressed fruit juice and purees.",
+            "brand":"Tropicana",
+            "size":"850ml",
+            "image":"tropicanatropical.png"
+        }
+    },    
+    {
+        "model":"supplies.supply",
+        "pk":13,
+        "fields":{
+            "name":"Wispa 4 Pack",
+            "category":2,
+            "price":0.85,
+            "description":"A chocolate bar filled with small bubbles that pack a delicious and intensely chocolatey taste.",
+            "brand":"Cadbury",
+            "size":"120g",
+            "image":"wispa4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":14,
+        "fields":{
+            "name":"Dairy Milk Caramel 4 Pack",
+            "category":2,
+            "price":0.90,
+            "description":"Deliciously smooth milk chocolate with a soft caramel centre.",
+            "brand":"Cadbury",
+            "size":"148g",
+            "image":"dairymilkcaramel4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":15,
+        "fields":{
+            "name":"Snickers 4 Pack",
+            "category":2,
+            "price":0.90,
+            "description":"Peanut butter nougar topped with a layer of roasted peanuts in caramel.",
+            "brand":"Mars, Inc.",
+            "size":"166.8g",
+            "image":"snickers4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":16,
+        "fields":{
+            "name":"Haribo Tangfastics",
+            "category":2,
+            "price":0.80,
+            "description":"Fizzy sweets that provide a perfect mix of sweet and sour with a tangy taste sensation.",
+            "brand":"Haribo",
+            "size":"175g",
+            "image":"tangfastics.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":17,
+        "fields":{
+            "name":"Haribo Giant Strawbs",
+            "category":2,
+            "price":0.80,
+            "description":"Fizzy sweets that provide a perfect mix of sweet and sour with a tangy taste sensation.",
+            "brand":"Haribo",
+            "size":"175g",
+            "image":"giantstrawbs.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":18,
+        "fields":{
+            "name":"Squashies Drumsticks",
+            "category":2,
+            "price":1.00,
+            "description":"Notoriously soft Raspberry and milk flavoured gum sweets, based on the classic Drumstick lolly.",
+            "brand":"Swizzels Matlow",
+            "size":"175g",
+            "image":"squashiesdrumsticks.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":19,
+        "fields":{
+            "name":"Maryland Minis 6 Pack",
+            "category":2,
+            "price":1.00,
+            "description":"Mini version of the classic flavour cookies containing chocolate chips.",
+            "brand":"Burton's Biscuit Company",
+            "size":"118.8g",
+            "image":"marylandsregular.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":20,
+        "fields":{
+            "name":"Maryland Minis Double Chocolate 6 Pack",
+            "category":2,
+            "price":1.00,
+            "description":"Mini version of the classic chocolate flavour cookies containing chocolate chips.",
+            "brand":"Burton's Biscuit Company",
+            "size":"118.8g",
+            "image":"marylandsregular.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":21,
+        "fields":{
+            "name":"Maryland Minis Double Chocolate 6 Pack",
+            "category":2,
+            "price":1.00,
+            "description":"Mini finger biscuits coated with super soft milk chocolate.",
+            "brand":"Cadbury",
+            "size":"118.8g",
+            "image":"minifingers4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":22,
+        "fields":{
+            "name":"Caramel Wafer 8 Pack",
+            "category":2,
+            "price":1.20,
+            "description":"A wonderful mix of caramel and wafer layers topped with milk chocolate.",
+            "brand":"Tunnock's",
+            "size":"240g",
+            "image":"caramelwafer8pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":23,
+        "fields":{
+            "name":"Kellogg's Caramel Rice Krispie Squares Caramel 4 Pack",
+            "category":2,
+            "price":1.80,
+            "description":"Crispy grains of toasted rice cereal mixed with caramel and chewy melted marshmallow.",
+            "brand":"Kellogg's",
+            "size":"144g",
+            "image":"caramelricekrispiesquares4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":24,
+        "fields":{
+            "name":"McVities Iced Gems 6 Pack",
+            "category":2,
+            "price":0.90,
+            "description":"Tiny round biscuits with a swirl of raspberry, blackcurrant or lemon flavoured icing on top.",
+            "brand":"McVitie's",
+            "size":"138g",
+            "image":"mcvitiesicedgems6pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":25,
+        "fields":{
+            "name":"Mini Cheddars Red Leicester 6 Pack",
+            "category":3,
+            "price":1.50,
+            "description":"Real Red Leicester cheese stirred into a scrumptious cheese snack biscuit.",
+            "brand":"Jacob's",
+            "size":"150g",
+            "image":"redleicesterminicheddars6pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":26,
+        "fields":{
+            "name":"Bacon Frazzles 8 Pack",
+            "category":3,
+            "price":0.70,
+            "description":"Crunchy and crispy bacon flavour bites. Delicious as they have always been!",
+            "brand":"Smith's",
+            "size":"144g",
+            "image":"frazzles8pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":27,
+        "fields":{
+            "name":"Wotsits 6 Pack",
+            "category":3,
+            "price":1.20,
+            "description":"Seriously cheesy baked corn snacks made with real cheese and a crunchy, melty texture.",
+            "brand":"Walkers",
+            "size":"99g",
+            "image":"wotsits6pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":28,
+        "fields":{
+            "name":"Ritz Breaks 6 Pack",
+            "category":3,
+            "price":1.50,
+            "description":"Melt in the mouth crackers in bitesize form for a handy snack.",
+            "brand":"Nabisco",
+            "size":"190g",
+            "image":"ritzbreaks6pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":29,
+        "fields":{
+            "name":"Peperami 5 Pack",
+            "category":3,
+            "price":2.00,
+            "description":"The original Peperami; salami sausage made with smoked pork.",
+            "brand":"Jack Link's",
+            "size":"112.5g",
+            "image":"peperami5pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":30,
+        "fields":{
+            "name":"Butterkist Microwave Salted Popcorn",
+            "category":3,
+            "price":1.80,
+            "description":"The iconic Butterkist taste in a microwaveable form, the perfect snack.",
+            "brand":"KP Snacks",
+            "size":"180g",
+            "image":"butterkistpopcorn.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":31,
+        "fields":{
+            "name":"Hearty Sausage Roll 4 pack",
+            "category":3,
+            "price":1.30,
+            "description":"Hearty pork sausage meat wrapped in puff pastry.",
+            "brand":"Wall's",
+            "size":"220g",
+            "image":"wallssausagerolls4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":32,
+        "fields":{
+            "name":"Snack Melton Mowbray Pork Pies 6 pack",
+            "category":3,
+            "price":2.00,
+            "description":"Uncured pork, beautifully seasoned and encased in a pastry case.",
+            "brand":"Tesco's",
+            "size":"450g",
+            "image":"tescosporkpies6pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":33,
+        "fields":{
+            "name":"35 Mini Scotch Eggs",
+            "category":3,
+            "price":1.60,
+            "description":"Box of pork sausage meatballs filled with egg and mayonnaise, coated in breadcrumbs.",
+            "brand":"Tesco's",
+            "size":"420g",
+            "image":"tescosscotcheggs.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":34,
+        "fields":{
+            "name":"Pot Noodle King Sticky Rib",
+            "category":3,
+            "price":0.60,
+            "description":"Sticky rib flavour instant Noodles with vegetables and a little sachet of Peking sauce.",
+            "brand":"Unilever's",
+            "size":"114g",
+            "image":"potnoodlesr.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":35,
+        "fields":{
+            "name":"Pot Noodle King Bombay Bad Boy",
+            "category":3,
+            "price":0.60,
+            "description":"Hot curry flavour instant Noodles with vegetables and a little sachet of hot fire chili sauce",
+            "brand":"Unilever's",
+            "size":"114g",
+            "image":"potnoodlebbb.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":36,
+        "fields":{
+            "name":"Pot Noodle King Chicken & Mushroom",
+            "category":3,
+            "price":0.60,
+            "description":"Chicken & mushroom flavor instant Noodles with vegetables and a little sachet of soy sauce",
+            "brand":"Unilever's",
+            "size":"114g",
+            "image":"potnoodlecm.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":37,
+        "fields":{
+            "name":"Fruit Bowl Peeler Strawberry",
+            "category":4,
+            "price":1.85,
+            "description":"1 of your 5 a day in this delicious strawberry snack.",
+            "brand":"Pioneer Foods",
+            "size":"64g",
+            "image":"fruitbowlsb4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":38,
+        "fields":{
+            "name":"Fruit Bowl Peeler Blackcurrant",
+            "category":4,
+            "price":1.85,
+            "description":"1 of your 5 a day in this delicious blackcurrant snack.",
+            "brand":"Pioneer Foods",
+            "size":"64g",
+            "image":"fruitbowlbc4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":39,
+        "fields":{
+            "name":"Fruit Bowl Peeler Raspberry",
+            "category":4,
+            "price":1.85,
+            "description":"1 of your 5 a day in this delicious raspberry snack.",
+            "brand":"Pioneer Foods",
+            "size":"64g",
+            "image":"fruitbowlrb4pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":40,
+        "fields":{
+            "name":"Winders Strawberry",
+            "category":4,
+            "price":1.40,
+            "description":"A colourful strawberry fruit snack roll with a fun cartoon on the wrapper.",
+            "brand":"Kellogg's",
+            "size":"85g",
+            "image":"windersb5pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":41,
+        "fields":{
+            "name":"Winders Double Apple & Strawberry",
+            "category":4,
+            "price":1.40,
+            "description":"A colourful apple & strawberry fruit snack roll with a fun cartoon on the wrapper.",
+            "brand":"Kellogg's",
+            "size":"85g",
+            "image":"winderas5pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":42,
+        "fields":{
+            "name":"Winders Double Strawberry & Blackcurrant",
+            "category":4,
+            "price":1.40,
+            "description":"A colourful strawberry & blackcurrant fruit snack roll with a fun cartoon on the wrapper.",
+            "brand":"Kellogg's",
+            "size":"102g",
+            "image":"windersbc6pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":43,
+        "fields":{
+            "name":"Chewy Banana",
+            "category":4,
+            "price":2.50,
+            "description":"1 of your 5 a day in these dried banana slices.",
+            "brand":"Tesco's",
+            "size":"300g",
+            "image":"tescoschewybanana.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":44,
+        "fields":{
+            "name":"Apple Slices",
+            "category":4,
+            "price":1.80,
+            "description":"1 of your 5 a day in these dried apple slices.",
+            "brand":"Tesco's",
+            "size":"300g",
+            "image":"tescoappleslices.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":45,
+        "fields":{
+            "name":"Peanuts & Raisins",
+            "category":4,
+            "price":1.10,
+            "description":"Assortment of peanuts and raisins to provide a healthy snack.",
+            "brand":"Tesco's",
+            "size":"300g",
+            "image":"tescospeanutsandraisins.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":46,
+        "fields":{
+            "name":"Goahead Apple & Sultana 5 Pack",
+            "category":4,
+            "price":0.90,
+            "description":"Biscuit slices containing apple & sultana filling with a crispy texture.",
+            "brand":"Tesco's",
+            "size":"215g",
+            "image":"goaheadas5pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":47,
+        "fields":{
+            "name":"Goahead Forest Fruit 5 Pack",
+            "category":4,
+            "price":0.90,
+            "description":"Biscuit slices containing forest fruit filling with a crispy texture.",
+            "brand":"Tesco's",
+            "size":"215g",
+            "image":"goaheadff5pack.png"
+        }
+    },
+    {
+        "model":"supplies.supply",
+        "pk":48,
+        "fields":{
+            "name":"Goahead Raspberry 5 Pack",
+            "category":4,
+            "price":0.90,
+            "description":"Biscuit slices containing raspberry filling with a crispy texture.",
+            "brand":"Tesco's",
+            "size":"218g",
+            "image":"goaheadrb5pack.png"
+        }
+    }
+]

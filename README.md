@@ -163,7 +163,7 @@ Category Model
 
 | Field | Field Type | Field Options |
 | --- | --- | --- |
-| name | CharField | max_length=200 |
+| name | CharField | max_length=254 |
 
 Supply Model
 
