@@ -16,7 +16,7 @@
     <div class="row gamerStyle">
         <div class="col py-2">
             {% if crate_items %}
-                <div class="table-responsive rounded m-auto"></div>
+                <div class="table-responsive rounded m-auto">{{ crate_items }}</div>
             {% else %}
                 <p class="highlight">Your crate is empty.</p>
                 <a href="{% url 'supplies' %}" class="btn rounded-0">
