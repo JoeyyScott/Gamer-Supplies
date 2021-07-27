@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crate_tools %}
 
 {% block page_header %}
 {% endblock %}
@@ -64,7 +65,7 @@
                                 <a class="btn link-update mt-1"><small>Update</small></a>
                                 <a class="btn link-delete mt-1" id="remove_{{ item.item_id }}"><small>Delete</small></a>
                             </td>
-                            <td class="py-4"><p class="my-0">£{{ item.supply.price }}</p></td>
+                            <td class="py-4"><p class="my-0">£{{ item.supply.price | subtotal:item.quantity }}</p></td>
                         </tr>
                     {% endfor %}
                     <tr><td colspan="5"><h4 class="highlight text-right crate-info"><strong>Crate Total:</strong> £{{ total|floatformat:2 }}</h4></td></tr>
