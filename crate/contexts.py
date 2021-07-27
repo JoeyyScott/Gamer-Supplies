@@ -11,7 +11,7 @@ def crate_contents(request):
 
     for item_id, quantity in crate.items():
         supply = get_object_or_404(Supply, pk=item_id)
-        total += quantity * supply_count
+        total += quantity * supply.price
         supply_count += quantity
         crate_items.append({
             'item_id': item_id,

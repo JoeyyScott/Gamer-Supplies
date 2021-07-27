@@ -102,16 +102,21 @@
                                     <p class="highlight">Quantity:</p>
                                     <div class="form-group w-50 mx-auto mb-1">
                                         <div class="input-group">
-                                            <input class="form-control" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ supply.id }}" id="id_qty_{{ supply.id }}">
+                                            <div class="input-group-prepend">
+                                                <button class="qty-decrement btn rounded-0" data-item_id="{{ supply.id }}" id="qty-decrement_{{ supply.id }}">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </div>
+                                            <input class="form-control qty-input" type="number" name="quantity" value="1"min="1" max="99" data-item_id="{{ supply.id }}" id="id_qty_{{ supply.id }}">
+                                            <div class="input-group-append">
+                                                <button class="qty-increment btn rounded-0" data-item_id="{{ supply.id }}" id="qty-increment_{{ supply.id }}">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-    
-                                <div class="col-12">
-                                    <div class="col">
-                                        <button type="submit" class="btn btn-lg p-1"><i class="fas fa-box-open"></i> Add to Crate</button>
-                                    </div>
-                                </div>
+                                <div class="col-12"><button type="submit" class="btn btn-lg p-1"><i class="fas fa-box-open"></i> Add to Crate</button></div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         </form>
@@ -141,6 +146,7 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    {% include 'supplies/includes/quantity_input.html' %}
     <script type="text/javascript">
 		$('.link-btt').click(function(e) {
 			window.scrollTo(0,0)
