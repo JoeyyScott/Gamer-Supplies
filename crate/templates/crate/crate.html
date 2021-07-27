@@ -62,7 +62,7 @@
                                     </div>
                                 </form>
                                 <a class="btn link-update mt-1"><small>Update</small></a>
-                                <a class="btn link-delete mt-1" id="delete_{{ item.item_id }}" data-size="{{ item.size }}"><small>Delete</small></a>
+                                <a class="btn link-delete mt-1" id="remove_{{ item.item_id }}"><small>Delete</small></a>
                             </td>
                             <td class="py-4"><p class="my-0">£{{ item.supply.price }}</p></td>
                         </tr>
@@ -103,5 +103,12 @@
     <script type="text/javascript">
         // Click event for updating quantity
         $('.link-update').click(function(e) { var form = $(this).prev('.form-update'); form.submit(); })
+        // Remove item and reload on click
+        $('.link-delete').click(function(e) { 
+            var csrfToken = "{{ csrf_token }}"; 
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var url = `/crate/remove/${itemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken};
+            $.post(url, data).done(function() { location.reload(); }); })
     </script>
 {% endblock %}

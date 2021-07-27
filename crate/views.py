@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.contrib import messages
+
+from supplies.models import Supply
 
 # Create your views here.
 
@@ -34,7 +37,25 @@ def modify_crate(request, item_id):
     if quantity > 0:
         crate[item_id] = quantity
     else:
-        crate.pop[item_id]
+        crate.pop(item_id)
 
     request.session['crate'] = crate
     return redirect(reverse('view_crate'))
+
+
+def remove_from_crate(request, item_id):
+    """Remove the item from the shopping crate"""
+
+    try:
+        crate = get_object_or_404(Supply, pk=item_id)
+        crate = request.session.get('crate', {})
+
+        if item_id in crate:
+            crate.pop(item_id)
+            messages.success(request, f'Removed {Supply.name} from your crate')
+
+        request.session['crate'] = crate
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
