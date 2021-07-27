@@ -51,7 +51,7 @@
                     <a class="navbar-brand pb-1" href="{% url 'home' %}">
                         <img src={% static "images/logo.png" %} class="logo pb-1" alt="Gamer Supplies Logo">
                     </a>
-                        <a class="{% if grand_total %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link" href="">
+                        <a class="{% if grand_total %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link" href="{% url 'view_crate' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0 text-bag">
@@ -101,10 +101,10 @@
         {% block footer %}
         <div class="space"></div>
         <footer class="container-footer text-center p-2 fixed-bottom">
-            <span class="text-footer">Find us elsewhere</span><br>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter mx-2"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square mx-2"></i></a>
+            <span class="text-footer highlight">Find us elsewhere</span><br>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter mx-2 highlight"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram mx-2 highlight"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square mx-2 highlight"></i></a>
         </footer>
         {% endblock %}
 

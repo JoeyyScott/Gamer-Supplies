@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container container-crate text-center mb-2">
+    <div class="row">
+        <div class="col">
+            <h1 class="">Your crate</h1>
+        </div>
+    </div>
+
+    <div class="row gamerStyle">
+        <div class="col py-2">
+            {% if crate_items %}
+                <div class="table-responsive rounded m-auto"></div>
+            {% else %}
+                <p class="highlight">Your crate is empty.</p>
+                <a href="{% url 'supplies' %}" class="btn rounded-0">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Browse snacks</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

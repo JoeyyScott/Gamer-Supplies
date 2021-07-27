@@ -26,6 +26,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 }
 
 h1 { color: #ffd700; font-size: 2rem; text-shadow: 2px 2px #141414; }
+
 p { color: #eee6e6; margin-bottom: 0; }
 a { text-decoration: none; color: #ffd700; }
 
@@ -42,7 +43,7 @@ a { text-decoration: none; color: #ffd700; }
 
 /* Footer */
 .container-footer { background-color: #4169e1; box-shadow: 0 -5px 10px #141414; }
-footer i, .text-footer { color: #ffd700; font-size: 1.6rem; }
+footer i, .text-footer { font-size: 1.6rem; }
 .space { height: 15vh; }
 
 .supply-img {
@@ -75,7 +76,7 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 .container-home { margin-top: 25vh; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
-.container-supplies { margin-top: 18vh; }
+.container-supplies, .container-crate { margin-top: 18vh; }
 .container-search { background-color: #4169e1;}
 .container-categories { border-top: 0; }
 
@@ -91,20 +92,6 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     cursor: pointer;
     border: 2px solid #ffd700;
 }
-
-.btt-button {
-    position: fixed;
-    bottom: 18vh;
-    right: 10px;
-}
-
-.btt-link{
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    border: 2px solid #ffd700;
-}
-
 
 /* -------------------------------- Media Queries */
 
