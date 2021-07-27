@@ -27,6 +27,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 h1 { color: #ffd700; font-size: 2rem; text-shadow: 2px 2px #141414; }
 p { color: #eee6e6; margin-bottom: 0; }
+a { text-decoration: none; color: #ffd700; }
 
 /* Nav */
 .logo { height: 12vh; }

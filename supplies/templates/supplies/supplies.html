@@ -43,6 +43,10 @@
                 </ul>
             </div>
         </li>
+        <!-- Current sorting -->
+        {% if current_sorting != "None None" %}
+            <p class="highlight">Sorting by: {{ current_sorting|title }}</p>
+        {% endif %}
     </ul>
     {% endwith %}
     <!-- Search bar -->
@@ -58,6 +62,17 @@
                 </div>
             </form>
         </div>
+        <!-- Search Results -->
+        {% if search_term or current_categories == 'None_None' %}
+        <div class="card h-100 p-4 text-center">
+            <p class="m-auto highlight gamerStyle">
+                Your search returned {{ supplies|length }} supplies for
+                <span class="fw-bold">"{{ search_term }}."</span>
+                <span class="small highlight"><br>
+                <a href="{% url 'supplies' %}">Clear Search</a></span>
+            </p>
+        </div>
+        {% endif %}
     </div>
     <div class="row justify-content-center col-10 offset-1">
         {% for supply in supplies %}

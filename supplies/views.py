@@ -49,7 +49,7 @@ def all_supplies(request):
         'supplies': supplies,
         'search_term': query,
         'current_categories': categories,
-        'current_sorting': current_sorting,
+        'current_sorting': current_sorting.replace('_', ' '),
     }
 
     return render(request, 'supplies/supplies.html', context)
