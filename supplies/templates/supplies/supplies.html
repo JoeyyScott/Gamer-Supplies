@@ -19,7 +19,7 @@
     {% with request.get_full_path as url_name %}
     <ul class="nav nav-tabs fw-bold justify-content-center p-0 my-2 gamerStyle container-categories">
         <li class="nav-item">
-            <a class="rounded-0 nav-link {% if 'category' not in url_name %}active{% endif %}" href="{% url 'supplies' %}">All Supplies</a>
+            <a class="rounded-0 nav-link {% if 'category' not in url_name %}{% if 'sort' not in url_name %}active{% endif %}{% endif %}" href="{% url 'supplies' %}">All Supplies</a>
         </li>
         <li class="nav-item">
             <a class="rounded-0 nav-link {% if 'Drinks' in url_name %}active{% endif %}" href="{% url 'supplies' %}?category=Drinks">Drinks</a>
@@ -32,6 +32,16 @@
         </li>
         <li class="nav-item">
             <a class="rounded-0 nav-link {% if 'Healthy' in url_name %}active{% endif %}" href="{% url 'supplies' %}?category=Healthy">Healthy</a>
+        </li>
+        <li class="nav-item">
+            <a class="rounded-0 fw-bold nav-link sort-link {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Sort</a>
+            <div class="collapse" id="collapseExample">
+                <ul>
+                    <li><a class="nav-link" href="{% url 'supplies' %}?sort=price&direction=asc">Price</a></li>
+                    <li><a class="nav-link" href="{% url 'supplies' %}?sort=category&direction=asc">Category</a></li>
+                    <li><a class="nav-link" href="{% url 'supplies' %}?sort=brand&direction=asc">Brand</a></li>
+                </ul>
+            </div>
         </li>
     </ul>
     {% endwith %}
