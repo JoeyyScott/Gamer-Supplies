@@ -101,6 +101,10 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     text-shadow: 2px 2px #141414;
 }
 
+.table-crate .btn {
+    text-shadow: none;
+}
+
 .img-crate { width: 80%; }
 
 /* -------------------------------- Media Queries */

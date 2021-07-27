@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
 
@@ -23,3 +23,18 @@ def add_to_crate(request, item_id):
 
     request.session['crate'] = crate
     return redirect(redirect_url)
+
+
+def modify_crate(request, item_id):
+    """ Add a quantity of the specified supply to the shopping crate """
+
+    quantity = int(request.POST.get('quantity'))
+    crate = request.session.get('crate', {})
+
+    if quantity > 0:
+        crate[item_id] = quantity
+    else:
+        crate.pop[item_id]
+
+    request.session['crate'] = crate
+    return redirect(reverse('view_crate'))
