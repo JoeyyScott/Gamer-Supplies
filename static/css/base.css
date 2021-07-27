@@ -17,7 +17,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
     border-top: 10px solid #ffd700;
 }
 
-.highlight { color: #ffd700; text-shadow: 2px 2px #141414;}
+.highlight { color: #ffd700; text-shadow: 2px 2px #141414; }
 
 .btn {
     color: #4169e1;
@@ -79,6 +79,8 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 .container-supplies, .container-crate { margin-top: 18vh; }
 .container-search { background-color: #4169e1;}
 .container-categories { border-top: 0; }
+.crate-info { text-align: right; }
+.btn-crate { text-shadow: none; }
 
 .btn-btt {
     position: fixed;
@@ -92,6 +94,14 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     cursor: pointer;
     border: 2px solid #ffd700;
 }
+
+.table-crate {
+    font-family: 'Salsa', cursive;
+    color: #eee6e6;
+    text-shadow: 2px 2px #141414;
+}
+
+.img-crate { width: 80%; }
 
 /* -------------------------------- Media Queries */
 
