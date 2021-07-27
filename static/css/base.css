@@ -4,8 +4,8 @@ html {
 
 body {
     background-color: #eee6e6;
-    height: 100vh;
-    font-family: 'Saira Stencil One', cursive;
+    /* height: 100vh; */
+    font-family: 'Saira Stencil One', cursive !important;
 }
 
 html, body { max-width: 100%; overflow-x: hidden; }
@@ -73,10 +73,38 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 .sort-link:hover, .sort-link:focus { color: #ffd700; border: none; }
 
+.container-home { margin-top: 25vh; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-supplies { margin-top: 18vh; }
 .container-search { background-color: #4169e1;}
 .container-categories { border-top: 0; }
+
+.btn-btt {
+    position: fixed;
+    bottom: 18vh;
+    right: 10px;
+}
+
+.icon-btt {
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 2px solid #ffd700;
+}
+
+.btt-button {
+    position: fixed;
+    bottom: 18vh;
+    right: 10px;
+}
+
+.btt-link{
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 2px solid #ffd700;
+}
+
 
 /* -------------------------------- Media Queries */
 
