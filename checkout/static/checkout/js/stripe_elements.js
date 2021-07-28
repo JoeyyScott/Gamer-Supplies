@@ -15,5 +15,11 @@ var style = {
     }
 };
 
-var card = elements.create('card', {style: style});
-card.mount('#card-element');
+var cardInput = elements.create('card', {style: style});
+cardInput.mount('#card-element');
+
+// Event listener to check for errors on the card field and display them if so
+cardInput.addEventListener('change', function (event) { var errorDiv = document.getElementById('error-payment');
+    if (event.error) { var html = `<i class="fas fa-exclamation-triangle highlight"></i> <span class="altFont">${event.error.message}</span>`; $(errorDiv).html(html); }
+    else { errorDiv.textContent = ''; }
+});

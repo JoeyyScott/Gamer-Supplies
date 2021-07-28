@@ -9,3 +9,5 @@
   box-shadow: 0 1px 3px 0 #141414;
   font-family: 'Salsa', cursive;
 }
+
+#error-payment { color: #eee6e6; }
