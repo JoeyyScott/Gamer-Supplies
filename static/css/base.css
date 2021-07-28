@@ -97,6 +97,8 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     overflow: visible;
 }
 
+.fa-thumbs-down { transform: scaleX(-1); }
+
 .toast-capper {
     height: 2px;
 }
