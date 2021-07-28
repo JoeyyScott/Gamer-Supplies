@@ -168,6 +168,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY_GS = os.getenv('STRIPE_PUBLIC_KEY_GS', '')
+STRIPE_SECRET_KEY_GS = os.getenv('STRIPE_SECRET_KEY_GS', '')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
