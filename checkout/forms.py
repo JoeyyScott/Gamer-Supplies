@@ -9,8 +9,7 @@ class OrderForm(forms.ModelForm):
             'full_name', 'email', 'contact_number',
             'address_line_1', 'address_line_2',
             'town_or_city', 'county',
-            'postcode', 'country',
-            )
+            'postcode',)
 
     def __init__(self, *args, **kwargs):
         # Set autofocus on first name field and add placeholders
