@@ -99,6 +99,16 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 .fa-thumbs-down { transform: scaleX(-1); }
 
+.toast-checkout {
+    float: right;
+}
+
+.crate-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .toast-capper {
     height: 2px;
 }

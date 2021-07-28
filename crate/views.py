@@ -22,10 +22,10 @@ def add_to_crate(request, item_id):
 
     if item_id in list(crate.keys()):
         crate[item_id] += quantity
-        messages.success(request, f'Updated quantity of {supply.name} to {crate[item_id]}')
+        messages.success(request, f'Updated quantity of {supply.name} to {crate[item_id]}.')
     else:
         crate[item_id] = quantity
-        messages.success(request, f'You\'ve added {supply.name} to your crate!')
+        messages.success(request, f'Added {supply.name} to your crate.')
 
     request.session['crate'] = crate
     return redirect(redirect_url)
@@ -34,13 +34,16 @@ def add_to_crate(request, item_id):
 def modify_crate(request, item_id):
     """ Add a quantity of the specified supply to the shopping crate """
 
+    supply = get_object_or_404(Supply, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     crate = request.session.get('crate', {})
 
     if quantity > 0:
         crate[item_id] = quantity
+        messages.success(request, f'Updated quantity of {supply.name} to {crate[item_id]}.')
     else:
         crate.pop(item_id)
+        messages.success(request, f'Removed {supply.name} from your crate.')
 
     request.session['crate'] = crate
     return redirect(reverse('view_crate'))
@@ -61,4 +64,5 @@ def remove_from_crate(request, item_id):
         return HttpResponse(status=200)
 
     except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
