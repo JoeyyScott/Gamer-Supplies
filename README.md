@@ -185,16 +185,17 @@ Order Model
 | --- | --- | ---|
 | order_number | CharField | max_length=32, null=False, editable=False |
 | user_profile | ForeignKey | UserProfile, on_delete=models.SET_NULL, null=True, blank=False, related_name='orders' |
-| full_name | CharField | max_length=50, null=False, blank=False |
+| full_name | CharField | max_length=80, null=False, blank=False |
 | email | EmailField | max_length=254, null=False, blank=False |
 | contact_number | CharField | max_length=20, null=True, blank=True |
 | address_line_1 | CharField | max_length=50, null=False, blank=False |
 | address_line_2 | CharField | max_length=50, null=False, blank=False |
 | town_or_city | CharField | max_length=50, null=False, blank=False |
-| county | CharField | max_length=50, null=False, blank=False |
-| postcode | CharField | max_length=20, null=False, blank=False |
+| county | CharField | max_length=50, null=True, blank=True |
+| postcode | CharField | max_length=20, null=True, blank=True |
 | country | CountryField | blank_label="Country *", null=False, blank=False |
 | date | DateTimeField | auto_now_add=True |
+| order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0 |
 | original_crate | TextField | null=False, blank=False, default='' |
 | stripe_pid | CharField | max_length=254, null=False, blank=False, default='' |
 
