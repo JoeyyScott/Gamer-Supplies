@@ -142,6 +142,13 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 .img-crate { width: 80%; }
 
+
+.deliv-checkbox:checked, .deliv-checkbox:active, .deliv-checkbox::before {
+    background-color: #4169e1;
+    border: 1px solid #ffd700;
+}
+
+
 /* -------------------------------- Media Queries */
 
 /* For large screen sizes */
