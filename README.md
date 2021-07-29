@@ -279,6 +279,9 @@ Before creating a Heroku app make sure your project has these two files:
 
 This section includes areas/sections of code and properties I was unaware of. I have also included sources from where I have adapted/changed code used in the projects throughout my course as I figured it was better practice to state as such to avoid any penalizations or copyright violations.
 
+**Sending HTML through django messages and templates** - I wanted to customize my Django messages and tried various solutions from searching myself.
+    + The one that worked for me was [this post](https://stackoverflow.com/questions/58415186/how-to-make-a-new-line-in-django-messages-error) which uses "mark safe" from Django's built in utilities.
+
 ### Media
 
 #### Images
