@@ -6,6 +6,7 @@ body {
     background-color: #eee6e6;
     /* height: 100vh; */
     font-family: 'Saira Stencil One', cursive !important;
+    word-wrap: break-word;
 }
 
 html, body { max-width: 100%; overflow-x: hidden; }
