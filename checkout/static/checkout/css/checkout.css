@@ -11,3 +11,12 @@
 }
 
 #error-element { color: #eee6e6; }
+
+#loading-overlay { 
+    display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%;     
+    background: #4169e1; border-top: 10px solid #ffd700; border-bottom: 10px solid #ffd700;
+}
+
+.loading-msg { align-items: center; height: 100%; }
+
+.loading-msg i { color: #ffd700; }

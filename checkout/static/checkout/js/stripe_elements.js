@@ -31,12 +31,14 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     cardInput.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
+    $('#form-payment').fadeToggle(100);
+    $('#loading-overlay').fadeToggle(100);
     stripe.confirmCardPayment(clientSecret, { payment_method: { card: cardInput, }
     }).then(function(result) {
         if (result.error) {
             var errorElement = document.getElementById('error-element');
-            var html = `<i class="fas fa-exclamation-triangle highlight"></i> <span class="altFont">${event.error.message}</span>`; $(errorElement).html(html);
-            cardInput.update({ 'disabled': false}); $('#submit-button').attr('disabled', false);
+            var html = `<i class="fas fa-exclamation-triangle highlight"></i> <span class="altFont">${result.error.message}</span>`; $(errorElement).html(html);
+            $('#form-payment').fadeToggle(100); $('#loading-overlay').fadeToggle(100); cardInput.update({ 'disabled': false}); $('#submit-button').attr('disabled', false); 
         } 
         else { if (result.paymentIntent.status === 'succeeded') { form.submit(); } }
     });
