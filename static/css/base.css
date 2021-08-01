@@ -22,11 +22,12 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 .allauth-form-inner-content form label, .allauth-form-inner-content form a, .allauth-form-inner-content p a, .highlight { color: #ffd700; text-shadow: 2px 2px #141414; }
 
-.allauth-form-inner-content button, .btn {
-    color: #4169e1;
-    background-color: #ffd700;
-    border: 2px solid #eee6e6;
+/* Potentially replace input to button */
+.allauth-form-inner-content button, .btn, .allauth-form-inner-content form input[type=submit] {
+    color: #4169e1; border: 2px solid #eee6e6;
+    background-color: #ffd700 !important; font-family: 'Saira Stencil One', cursive !important;
 }
+
 h1 { font-size: 2rem; }
 h1, h2 { color: #ffd700; text-shadow: 2px 2px #141414; }
 
@@ -169,6 +170,8 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     box-shadow: 0 1px 3px 0 #141414;
     font-family: 'Salsa', cursive;
 }
+
+/* .allauth-form-inner-content form input[type=submit] { color: #ffd700; } */
 
 .allauth-form-inner-content form .form-group #div_id_remember {
     width: max-content;
