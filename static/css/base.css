@@ -79,7 +79,7 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 .container-home { margin-top: 25vh; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
-.container-supplies, .container-crate { margin-top: 18vh; }
+.container-supplies, .container-crate, .container-profile { margin-top: 18vh; }
 .container-search { background-color: #4169e1;}
 .container-categories { border-top: 0; }
 /* .container-messages { position: fixed; z-index: 99999;} */
