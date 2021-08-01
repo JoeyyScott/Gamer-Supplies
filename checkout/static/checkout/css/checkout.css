@@ -20,3 +20,7 @@
 .loading-msg { align-items: center; height: 100%; }
 
 .loading-msg i { color: #ffd700; }
+
+select, select option, .form-control { color: #141414; }
+
+select:invalid, select option[value=""] { color: #6c757d }
