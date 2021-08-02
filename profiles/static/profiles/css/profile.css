@@ -14,3 +14,8 @@
 #id_default_country option:first-child {
     color: #6c757d;
 }
+
+.order-history {
+    max-height: 400px;
+    overflow-y: auto;
+}
