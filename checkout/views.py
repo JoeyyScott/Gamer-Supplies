@@ -14,6 +14,7 @@ from crate.contexts import crate_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -92,7 +93,25 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        # If the user is logged in, pull details from profile
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.default_full_name,
+                    'email': profile.user.email,
+                    'contact_number': profile.default_contact_number,
+                    'address_line_1': profile.default_address_line_1,
+                    'address_line_2': profile.default_address_line_2,
+                    'town_or_city': profile.default_town_or_city,
+                    'county': profile.default_county,
+                    'postcode': profile.default_postcode,
+                    'country': profile.default_country,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key_gs:
         messages.warning(request, 'Oh no! Stripe public key missing! \
