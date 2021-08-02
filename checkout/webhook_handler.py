@@ -1,9 +1,11 @@
 from django.http import HttpResponse
 from .models import Order, CrateItems
 from supplies.models import Supply
+from profiles.models import UserProfile
 
 import json
 import time
+
 
 class Stripe_Controller:
     """Functions for stripe webhooks"""
@@ -35,6 +37,21 @@ class Stripe_Controller:
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
+
+        # If save_info is checked update user's profile information
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_contact_number = shipping_details.phone
+                profile.default_address_line_1 = shipping_details.address.line1
+                profile.default_address_line_2 = shipping_details.address.line2
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_county = shipping_details.address.state
+                profile.default_postcode = shipping_details.address.postal_code
+                profile.default_country = shipping_details.address.country
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -68,6 +85,7 @@ class Stripe_Controller:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     contact_number=shipping_details.phone,
                     address_line_1=shipping_details.address.line1,
