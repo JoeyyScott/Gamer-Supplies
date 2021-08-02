@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container container-supply-manage gamerStyle">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="my-2 text-center">Add a Supply</h1>
+                <hr class="w-100 m-auto highlight mb-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form method="POST" action="{% url 'supply_add' %}" class="form form-supply-manage" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="row">
+                        <div class="text-start col-6">                    
+                            <button class="btn rounded-0 mb-2">
+                                <i class="far fa-plus-square"></i> <span class="font-weight-bold">Add Supply</span>
+                            </button>
+                        </div>
+                        <div class="text-end col-6">
+                            <button  class="btn rounded-0 mb-2" href="{% url 'supplies' %}">
+                                <i class="fas fa-window-close"></i> <span class="font-weight-bold">Cancel</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
