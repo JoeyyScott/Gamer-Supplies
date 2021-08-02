@@ -6,7 +6,7 @@
     </div>
     <div class="toast-body gamerStyle">
         <p class="altFont">{{ message }}</p>
-        {% if total %}
+        {% if total and not on_profile_page %}
         <p class="highlight py-1">Your crate ({{ supply_count }} supplies)</p>
         <div class="crate-wrapper">
             {% for item in crate_items %}
