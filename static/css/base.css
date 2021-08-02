@@ -151,6 +151,12 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     border: 1px solid #ffd700;
 }
 
+.form-input, .form-input:focus {
+    box-sizing: border-box; font-family: 'Salsa', cursive;
+    height: 40px;  padding: 10px 12px; margin-bottom: 10px; border-radius: 0px;
+    background-color: #eee6e6; box-shadow: 0 1px 3px 0 #141414;
+}
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content p { margin: 1rem; font-family: 'Salsa', cursive; }
