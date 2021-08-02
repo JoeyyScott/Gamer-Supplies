@@ -12,7 +12,7 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = (CrateItemsAdminInline,)
     readonly_fields = ('order_number', 'date', 'order_total', 'original_crate', 'stripe_pid',)
 
-    fields = ('date', 'order_number', 'full_name', 'email',
+    fields = ('date', 'order_number', 'user_profile', 'full_name', 'email',
               'contact_number', 'address_line_1', 'address_line_2',
               'town_or_city', 'county', 'postcode', 'country', 'order_total', 'original_crate', 'stripe_pid',)
 

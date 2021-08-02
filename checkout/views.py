@@ -7,6 +7,8 @@ from django.utils.safestring import mark_safe
 from .forms import OrderForm
 from .models import Order, CrateItems
 from supplies.models import Supply
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
 from crate.contexts import crate_contents
 
 import stripe
@@ -117,6 +119,29 @@ def checkout_success(request, order_number):
                             email to <span class="highlight">{order.email}</span>.<br> \
                             Your order number is: \
                             <span class="highlight">{order_number}</span>.'))
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_full_name': order.full_name,
+                'default_email': order.email,
+                'default_contact_number': order.contact_number,
+                'default_address_line_1': order.address_line_1,
+                'default_address_line_2': order.address_line_2,
+                'default_town_or_city': order.town_or_city,
+                'default_county': order.county,
+                'default_postcode': order.postcode,
+                'default_country': order.country,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()    
 
     if 'crate' in request.session:
         del request.session['crate']
