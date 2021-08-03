@@ -65,6 +65,8 @@ footer i, .text-footer { font-size: 1.6rem; }
 }
 
 .supply-img { border: 5px solid #ffd700; }
+.manage-img { width: 100%; height: 20vh; object-fit: cover; }
+
 
 .nav-tabs { color: #ffd700; text-shadow: 2px 2px #141414; }
 .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
@@ -121,6 +123,14 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 .crate-info { text-align: right; }
 .btn-crate { text-shadow: none; }
+
+.btn-img { position: relative; overflow: hidden; }
+
+.btn-img input[type="file"] {
+    position: absolute; top: 0; right: 0;
+    min-width: 100%; min-height: 100%;
+    opacity: 0; cursor: pointer;
+}
 
 .btn-btt {
     position: fixed;

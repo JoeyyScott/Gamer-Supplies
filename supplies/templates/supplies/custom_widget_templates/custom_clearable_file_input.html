@@ -1,0 +1,27 @@
+
+
+
+<div class="row">
+    <p class="highlight mb-1">{{ widget.initial_text }}:</p>
+    {% if not widget.is_initial %}
+        <p class="altFont mb-1">No image</p>
+    {% endif %}
+    {% if widget.is_initial %}
+    <div class="col-6">
+        <a href="{{ widget.value.url }}">
+            <img class="rounded mt-2 manage-img" src="{{ widget.value.url }}">
+        </a>
+        {% if not widget.required %}
+            <div class="mt-2">
+                <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
+                <label class="altFont text-danger" for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
+            </div>
+        {% endif %}<br>
+        {{ widget.input_text }}
+    </div>
+    {% endif %}
+    <div class="col-6 mb-2{% if widget.is_initial %} mt-5{% endif %}">
+        <a class="btn btn-img rounded-0">Select Image <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}></a>
+        <strong><p class="altFont" id="filename"></p></strong>
+    </div>
+</div>
