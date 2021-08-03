@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container container-crate text-center mb-2">
+<div class="container container-crate mb-2">
     <div class="row">
         <div class="col">
             <h1 class="">Your crate</h1>
@@ -16,79 +16,93 @@
 
     <div class="row">
         <div class="col-10 offset-1 gamerStyle py-2">
+            <h4 class="highlight text-center crate-info"><strong>Crate Total:</strong> £{{ total|floatformat:2 }}</h4>
+            <div class="col-12">                    
+                <a href="{% url 'supplies' %}" class="btn w-100 rounded-0 mb-2">
+                    <i class="fas fa-hand-point-left"></i> <span class="text-uppercase my-2">Browse more snacks</span>
+                </a>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'checkout' %}" class="btn w-100 rounded-0 mb-2">
+                    <i class="fas fa-lock"></i> <span class="text-uppercase">Secure Checkout</span>
+                </a>
+            </div>
             {% if crate_items %}
-            <div class="table-responsive rounded-0 table-crate altFont">
-                <table class="table table-sm table-borderless">
-                    <thead class="highlight">
-                        <tr>
-                            <th scope="col">Supply Info</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
-                    {% for item in crate_items %}
-                        <tr>
-                            <td class="p-3 w-25">
-                                {% if item.supply.image %}
-                                <img src="{{ item.supply.image.url }}" alt="{{ item.supply.name }}"" class="img-fluid rounded img-crate">
-                            {% else %}
-                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ item.supply.name }}" class="img-fluid rounded img-crate">
-                            {% endif %}
-                                <p class="my-0"><strong>{{ item.supply.name }}</strong></p>
-                            </td>
-                            <td class="py-4"><p class="my-0">£{{ item.supply.price }}</p></td>
-                            <td class="py-3 w-25">
-                                <form class="form form-update" method="POST" action="{% url 'modify_crate' item.item_id %}">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button class="qty-decrement btn btn-sm btn-black rounded-0" 
-                                                    data-item_id="{{ item.item_id }}" id="qty-decrement_{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-minus fa-sm"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <input class="form-control form-control-sm qty-input" type="number"
-                                                name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                data-item_id="{{ item.item_id }}"
-                                                id="id_qty_{{ item.item_id }}">
-                                            <div class="input-group-append">
-                                                <button class="qty-increment btn btn-sm btn-black rounded-0"
-                                                    data-item_id="{{ item.item_id }}" id="qty-increment_{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-plus fa-sm"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
+                <div class="col-12">
+                    <h2>Supplies in crate: <span class="altFont">{{ supply_count }}</span></h2>
+                </div>
+                {% for item in crate_items %}
+                <div class="row">
+
+                    <div class="col-4">
+                        <p class="my-0 altFont">Supply</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="my-0 altFont">Price</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="my-0 altFont">Subtotal</p>
+                    </div>
+                </div>
+                <div class="row altFont my-2">
+                    <div class="col-4">
+                        {% if item.supply.image %}
+                        <img src="{{ item.supply.image.url }}" class="img-fluid rounded" alt="{{ item.supply.name }}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded" alt="{{ item.supply.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="col-4">
+                        <p class="d-inline align-middle">{{ item.supply.price }}</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="d-inline align-middle">£{{ item.supply.price | subtotal:item.quantity }}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="d-inline align-middle2">{{ item.supply.name }}</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="py-3 w-100 mx-auto">
+                            <form class="form form-update" method="POST" action="{% url 'modify_crate' item.item_id %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend  h-100">
+                                            <button class="qty-decrement btn btn-sm btn-black rounded-0" 
+                                                data-item_id="{{ item.item_id }}" id="qty-decrement_{{ item.item_id }}">
+                                                <span>
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control form-control-sm qty-input" type="number"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                            data-item_id="{{ item.item_id }}"
+                                            id="id_qty_{{ item.item_id }}">
+                                        <div class="input-group-append  h-100">
+                                            <button class="qty-increment btn btn-sm btn-black rounded-0"
+                                                data-item_id="{{ item.item_id }}" id="qty-increment_{{ item.item_id }}">
+                                                <span>
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </span>
+                                            </button>
                                         </div>
                                     </div>
-                                </form>
-                                <a class="btn link-update mt-1"><small>Update</small></a>
-                                <a class="btn link-delete mt-1" id="remove_{{ item.item_id }}"><small>Delete</small></a>
-                            </td>
-                            <td class="py-4"><p class="my-0">£{{ item.supply.price | subtotal:item.quantity }}</p></td>
-                        </tr>
-                    {% endfor %}
-                    <tr><td colspan="5"><h4 class="highlight text-right crate-info"><strong>Crate Total:</strong> £{{ total|floatformat:2 }}</h4></td></tr>
-                    <tr>
-                        <td colspan="5" class="crate-info">
-                            <a href="{% url 'supplies' %}" class="btn btn-crate rounded-0 btn-lg w-75">
-                                <i class="fas fa-hand-point-left"></i><span class="text-uppercase my-2">Browse more snacks</span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" class="crate-info">
-                            <a href="{% url 'checkout' %}" class="btn btn-crate rounded-0 btn-lg w-75">
-                                <i class="fas fa-lock"></i><span class="text-uppercase">Secure Checkout</span>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+                                </div>
+                            </form>
+                            <!-- <span class="row mt-1"> -->
+                                <!-- <span class="text-start col-7">                     -->
+                                    <a class="btn link-update mt-1"><small>Update</small></a>
+                                <!-- </span> -->
+                                <!-- <span class="text-end col-5"> -->
+                                    <a class="btn link-delete mt-1" id="remove_{{ item.item_id }}"><small>Delete</small></a>
+                                <!-- </span> -->
+                            <!-- </span> -->
+                        </div>
+                    </div>
+                </div>
+                <hr class="w-100 m-auto highlight mb-1">
+                {% endfor %}
             {% else %}
                 <p class="highlight">Your crate is empty.</p>
                 <a href="{% url 'supplies' %}" class="btn rounded-0">
@@ -96,8 +110,9 @@
                         <i class="fas fa-chevron-left"></i>
                     </span>
                     <span class="text-uppercase">Browse snacks</span>
-                </a>
+                </a> 
             {% endif %}
+            </div>
         </div>
     </div>
 </div>
