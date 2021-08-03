@@ -17,14 +17,14 @@
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="row">
-                        <div class="text-start col-6">                    
-                            <button class="btn rounded-0 mb-2">
-                                <i class="far fa-plus-square"></i> <span class="font-weight-bold">Add Supply</span>
+                        <div class="text-start col-7">                    
+                            <button class="btn rounded-0 mb-2" type="submit">
+                                <i class="far fa-plus-square fa-lg"></i> <span class="font-weight-bold">Add Supply</span>
                             </button>
                         </div>
-                        <div class="text-end col-6">
-                            <button  class="btn rounded-0 mb-2" href="{% url 'supplies' %}">
-                                <i class="fas fa-window-close"></i> <span class="font-weight-bold">Cancel</span>
+                        <div class="text-end col-5">
+                            <button class="btn rounded-0 mb-2" href="{% url 'supplies' %}">
+                                <i class="fas fa-window-close fa-lg"></i> <span class="font-weight-bold">Cancel</span>
                             </button>
                         </div>
                     </div>

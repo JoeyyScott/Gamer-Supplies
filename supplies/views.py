@@ -59,10 +59,21 @@ def all_supplies(request):
 
 def supply_add(request):
     """ Add a supply to the store """
-    form = FormSupply()
+    if request.method == 'POST':
+        form = FormSupply(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added supply!')
+            return redirect(reverse('supply_add'))
+        else:
+            messages.error(request, 'Unable to add supply, please check your form information is correct.')
+    else:
+        form = FormSupply()
+
     template = 'supplies/supply_add.html'
     context = {
         'form': form,
+        'on_manage_page': True
     }
 
     return render(request, template, context)

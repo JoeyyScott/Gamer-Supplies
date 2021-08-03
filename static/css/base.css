@@ -158,8 +158,11 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     background-color: #eee6e6; box-shadow: 0 1px 3px 0 #141414;
 }
 
-/* Allauth form formatting */
+/* add supply */
+.invalid-feedback { width: 80%; margin: 1rem auto; }
+.invalid-feedback strong { color: #eee6e6; font-weight: normal; word-wrap: break-word; }
 
+/* Allauth form formatting */
 .allauth-form-inner-content p { margin: 1rem; font-family: 'Salsa', cursive; }
 .allauth-form-inner-content .form-control { color: #4169e1; }
 .allauth-form-inner-content input::placeholder { color: #6c757d; }
