@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Supply, Category
 from .forms import FormSupply
@@ -57,8 +58,13 @@ def all_supplies(request):
     return render(request, 'supplies/supplies.html', context)
 
 
+@login_required
 def supply_add(request):
     """ Add a supply """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins are allowed to add supplies.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = FormSupply(request.POST, request.FILES)
         if form.is_valid():
@@ -79,8 +85,13 @@ def supply_add(request):
     return render(request, template, context)
 
 
+@login_required
 def supply_edit(request, supply_id):
     """ Edit a supply """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins are allowed to add supplies.')
+        return redirect(reverse('home'))
+
     supply = get_object_or_404(Supply, pk=supply_id)
     if request.method == 'POST':
         form = FormSupply(request.POST, request.FILES, instance=supply)
@@ -104,8 +115,13 @@ def supply_edit(request, supply_id):
     return render(request, template, context)
 
 
+@login_required
 def supply_delete(request, supply_id):
     """ Delete a supply """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins are allowed to add supplies.')
+        return redirect(reverse('home'))
+
     supply = get_object_or_404(Supply, pk=supply_id)
     supply.delete()
     messages.success(request, 'Supply deleted successfully!')
