@@ -214,8 +214,8 @@ Review Model
 
 | Field | Field Type | Field Options |
 | --- | --- | --- |
-| review | TextField | null=True, blank=True |
-| posted_by | ForeignKey | User, on_delete=models.CASCADE |
+| review | TextField | null=True, blank=False |
+| added_by | ForeignKey | User, on_delete=models.CASCADE |
 | rating | IntegerField | default=0, validators=[MinValueValidator(1),MaxValueValidator(5)] |
 
 #### [Back to top](#contents)
