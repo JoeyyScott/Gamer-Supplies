@@ -64,7 +64,7 @@ def supply_add(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Supply added successfully!')
-            return redirect(reverse('supply_add'))
+            return redirect(reverse('supplies'))
         else:
             messages.error(request, 'Unable to add supply, please check your form information is correct.')
     else:
@@ -102,3 +102,11 @@ def supply_edit(request, supply_id):
     }
 
     return render(request, template, context)
+
+
+def supply_delete(request, supply_id):
+    """ Delete a supply """
+    supply = get_object_or_404(Supply, pk=supply_id)
+    supply.delete()
+    messages.success(request, 'Supply deleted successfully!')
+    return redirect(reverse('supplies'))
