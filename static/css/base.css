@@ -176,10 +176,6 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 .allauth-form-inner-content input::placeholder { color: #6c757d; }
 .allauth-form-inner-content label:not([for='id_remember']) { display: none; }
 .allauth-form-inner-content form label, .allauth-form-inner-content a { color: #ffd700; text-shadow: 2px 2px #141414; }
-
-.allauth-form-inner-content .invalid-feedback { width: 80%; margin: 1rem auto; }
-.allauth-form-inner-content .invalid-feedback strong { color: #eee6e6; font-weight: normal; word-wrap: break-word; }
-
 .allauth-form-inner-content form .form-group #div_id_remember { width: max-content; margin: auto; }
 .allauth-form-inner-content input:not(#id_remember) {
     border-radius: 0; box-shadow: 0 1px 3px 0 #141414;
