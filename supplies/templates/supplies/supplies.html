@@ -82,9 +82,9 @@
                         <!-- Supply Image -->
                         <div class="col-6 m-auto">
                             {% if supply.image %}
-                            <img src="{{ supply.image.url }}" class="card-img-top img-fluid supply-img" alt="{{ supply.name }}">
+                            <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img" alt="{{ supply.name }}">
                             {% else %}
-                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ supply.name }}" class="card-img-top img-fluid">
+                            <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img" alt="{{ supply.name }}">
                             {% endif %}
                         </div>
                         <!-- Supply Info -->

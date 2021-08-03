@@ -30,7 +30,11 @@
                     {% for item in crate_items %}
                         <tr>
                             <td class="p-3 w-25">
-                                <img class="img-fluid rounded img-crate" src="{{ item.supply.image.url }}">
+                                {% if item.supply.image %}
+                                <img src="{{ item.supply.image.url }}" alt="{{ item.supply.name }}"" class="img-fluid rounded img-crate">
+                            {% else %}
+                                <img src="{{ MEDIA_URL }}noimage.png" alt="{{ item.supply.name }}" class="img-fluid rounded img-crate">
+                            {% endif %}
                                 <p class="my-0"><strong>{{ item.supply.name }}</strong></p>
                             </td>
                             <td class="py-4"><p class="my-0">£{{ item.supply.price }}</p></td>

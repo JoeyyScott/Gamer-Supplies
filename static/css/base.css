@@ -146,6 +146,14 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 .img-crate { width: 80%; }
 
+.checkout-crate-header { 
+    font-size: .8rem;
+}
+
+.checkout-crate-field {
+    font-size: 0.75rem;
+}
+
 
 .deliv-checkbox:checked, .deliv-checkbox:active, .deliv-checkbox::before {
     background-color: #4169e1;

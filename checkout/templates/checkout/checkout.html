@@ -23,32 +23,32 @@
             <p class="highlight text-center mb-1">Crate Summary ({{ supply_count }} supplies)</p>
             <div class="row">
                 <div class="col-4 offset-2">
-                    <p class="my-0 small">Supply</p>
+                    <p class="my-0 checkout-crate-header">Supply</p>
                 </div>
                 <div class="col-3">
-                    <p class="my-0 small">Quantity</p>
+                    <p class="my-0 checkout-crate-header text-center">Quantity</p>
                 </div>
                 <div class="col-3">
-                    <p class="my-0 small">Subtotal</p>
+                    <p class="my-0 checkout-crate-header text-end">Subtotal</p>
                 </div>
             </div>
             {% for item in crate_items %}
                 <div class="row altFont">
                     <div class="col-2 my-1">
                         {% if item.supply.image %}
-                            <img class="w-100" src="{{ item.supply.image.url }}" alt="{{ supply.name }}">
+                        <img src="{{ item.supply.image.url }}" class="img-fluid rounded" alt="{{ supply.name }}">
                         {% else %}
-                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ supply.name }}">
+                        <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded" alt="{{ supply.name }}">
                         {% endif %}
                     </div>
                     <div class="col-4">
-                        <p class="my-0">{{ item.supply.name }}</p>
+                        <p class="mt-2 checkout-crate-field">{{ item.supply.name }}</p>
                     </div>
                     <div class="col-3 text-center">
-                        <p class="my-0 small">{{ item.quantity }}</p>
+                        <p class="mt-2 checkout-crate-field">{{ item.quantity }}</p>
                     </div>
-                    <div class="col-2 text-right">
-                        <p class="small">£{{ item.supply.price | subtotal:item.quantity }}</p>
+                    <div class="col-3 text-end">
+                        <p class="mt-2 px-2 checkout-crate-field">£{{ item.supply.price | subtotal:item.quantity }}</p>
                     </div>
                 </div>
                 <hr class="w-100 m-auto highlight mb-1">
