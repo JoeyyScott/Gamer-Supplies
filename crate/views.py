@@ -1,17 +1,22 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from supplies.models import Supply
+from .models import Coupon
 
 # Create your views here.
 
 
+@login_required
 def view_crate(request):
     """ Crate page view """
 
     return render(request, 'crate/crate.html')
 
 
+@login_required
 def add_to_crate(request, item_id):
     """ Add a quantity of the specified supply to the shopping crate """
 
@@ -31,6 +36,7 @@ def add_to_crate(request, item_id):
     return redirect(redirect_url)
 
 
+@login_required
 def modify_crate(request, item_id):
     """ Add a quantity of the specified supply to the shopping crate """
 
@@ -49,6 +55,7 @@ def modify_crate(request, item_id):
     return redirect(reverse('view_crate'))
 
 
+@login_required
 def remove_from_crate(request, item_id):
     """Remove the item from the shopping crate"""
 
@@ -66,3 +73,18 @@ def remove_from_crate(request, item_id):
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
+
+
+@require_http_methods(["GET", "POST"])
+def coupon_apply(request):
+    code = request.POST.get('coupon-code')
+    try:
+        coupon = Coupon.objects.get(code=code)
+        request.session['coupon_id'] = coupon.id
+        messages.success(request, f'Coupon code: { code } applied')
+    except Coupon.DoesNotExist:
+        request.session['coupon_id'] = None
+        messages.warning(request, f'Coupon code: { code } not accepted')
+        return redirect('view_crate')
+    else:
+        return redirect('view_crate')
