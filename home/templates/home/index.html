@@ -7,19 +7,35 @@
 {% block content %}
     <div class="container container-home h-100">
         <div class="row h-100 d-flex justify-content-center">
-            <div class="col-12 col-md-8 my-auto pt-4 text-center gamerStyle">
-                <h1>The latest snacks have arrived..</h1>
-                <div class="my-5">
+            <div class="col-12 col-md-8 my-auto pt-2 text-center gamerStyle">
+                <h1>Snacks so good you'll keep coming back..</h1>
+                <div class="my-2">
                     <a href="{% url 'supplies' %}" class="btn btn-lg text-uppercase">Snack Now</a>
                 </div>
-            </div>
-            <div class="col-12 col-md-8 my-auto text-center gamerStyle">
+                <h2 class="highlight mt-4">Why believe us?</h2>
+                <p class="altFont my-0">Read some of our reviews below</p>
+                <div id="review-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for review in reviews %}
+                        <div class="carousel-item h-100 p-4 active">
+                            <p class="altFont">{{ review.rating }}</p>
+                            <p class="altFont">{{ review.review }}</p>
+                            <p class="altFont">Added By: {{ review.added_by|title }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev my-auto" type="button" data-bs-target="#review-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next my-auto" type="button" data-bs-target="#review-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                {% if request.user.is_authenticated %}
                 <a href="{% url 'review_add' %}" class="btn my-2">Add Review</a>
-                {% for review in reviews %}
-                    <p class="">{{ review.rating }}</p>
-                    <p class="">{{ review.review }}</p>
-                    <p class="">Added By: {{ review.added_by }}</p>
-                {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 .altFont { font-family: 'Salsa', cursive; }
 
-h1 { font-size: 2rem; }
+h1 { font-size: 1.5rem; }
 h1, h2 { color: #ffd700; text-shadow: 2px 2px #141414; }
 
 p { color: #eee6e6; margin-bottom: 0; }
@@ -83,7 +83,7 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 
 .container-allauth { margin-top: 18vh; }
-.container-home { margin-top: 25vh; }
+.container-home { margin-top: 18vh; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-supplies, .container-crate, .container-profile, .container-supply-manage, .container-reviews { margin-top: 18vh; }
 .container-search { background-color: #4169e1;}
@@ -211,6 +211,11 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.carousel {
+    display: flex; flex-direction: column;
+    height: 30vh; justify-content: center;
 }
 
 /* -------------------------------- Media Queries */
