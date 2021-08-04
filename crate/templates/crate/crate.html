@@ -16,14 +16,23 @@
 
     <div class="row">
         <div class="col-10 offset-1 gamerStyle py-2">
-            <h4 class="highlight text-center crate-info"><strong>Crate Total:</strong> £{{ total|floatformat:2 }}</h4>
-            <div class="col-12">
-                Apply coupon
-                <form action="{% url 'coupon_apply' %}" method='POST'>
+            <h4 class="text-center crate-info">
+                <!-- Template logic to detect which total to display-->
+                <span class="highlight">Crate Total:</span> <span class="altFont crate-total">£{% if total_with_coupon %}{{ total_with_coupon|floatformat:2 }}{% else %}total|floatformat:2{% endif %}</span>
+            </h4>
+            <div class="col-12 text-center">
+                <h4 class="highlight">Apply coupon</h4>
+                <form action="{% url 'coupon_apply' %}" method='POST' class="mb-2">
                     {% csrf_token %}
-                    <input type="text" name="coupon-code">
-                    <button type='submit' class='btn'>Apply</button>
+                    <input type="text" name="coupon-code" class="w-50">
+                    <button type='submit' class='btn btn-sm'>Apply</button>
                 </form>
+                {% if coupon %}
+                    <div class="altFont">
+                        <p>Current code: {{ coupon }}</p>
+                        <p>Current discount: {{ coupon_amount }}%</p>
+                    </div>
+                {% endif %}
             </div>
             <div class="col-12">                    
                 <a href="{% url 'supplies' %}" class="btn w-100 rounded-0 mb-2">
