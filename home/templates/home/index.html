@@ -13,6 +13,14 @@
                     <a href="{% url 'supplies' %}" class="btn btn-lg text-uppercase">Snack Now</a>
                 </div>
             </div>
+            <div class="col-12 col-md-8 my-auto text-center gamerStyle">
+                <a href="{% url 'review_add' %}" class="btn my-2">Add Review</a>
+                {% for review in reviews %}
+                    <p class="">{{ review.rating }}</p>
+                    <p class="">{{ review.review }}</p>
+                    <p class="">Added By: {{ review.added_by }}</p>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

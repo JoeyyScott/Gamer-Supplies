@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}| Add Review{% endblock %}
+
+{% block content %}
+<div class="container container-reviews">
+    <div class="row">
+        <div class="col-12 gamerStyle">
+            <h1 class="text-center">Our reviews</h1>
+            {% if request.user.is_authenticated %}
+                <p class="altFont text-center">We value all your feedback and want to know how satisfied you were!</p>
+                <form class="form" action="{% url 'review_add' %}" method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <h3 class="highlight text-center">Let us know below</h3>
+                    </fieldset>
+                    <div class="row">
+                        <div class="text-start col-7">                    
+                            <button class="btn rounded-0 mb-2" type="submit">
+                                <i class="far fa-plus-square fa-lg"></i> <span class="font-weight-bold">Add review</span>
+                            </button>
+                        </div>
+                        <div class="text-end col-5">
+                            <a class="btn rounded-0 mb-2" href="{% url 'home' %}">
+                                <i class="fas fa-window-close fa-lg"></i> <span class="font-weight-bold">Cancel</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+        {% else %}
+            <p>You must be logged in to leave a review. Click <a href="{% url 'account_signup' %}">here</a> to login!</p>
+        {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
