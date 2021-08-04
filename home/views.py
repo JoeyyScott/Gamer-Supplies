@@ -1,15 +1,42 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
+from .models import Review
+from .forms import FormReview
 # Create your views here.
 
 
 def index(request):
-    """ Index page view """
+    """ Index page view with reviews """
+    reviews = Review.objects.all()
 
-    return render(request, 'home/index.html')
+    context = {
+        'reviews': reviews,
+    }
+
+    return render(request, 'home/index.html', context)
 
 
 def review_add(request):
-    """ Added review page view """
+    # Add review to site
+    if request.method == 'POST':
+        review_form = FormReview(request.POST)
 
-    return render(request, 'home/review_add.html')
+        # Check if the review form is valid
+        if review_form.is_valid():
+            form_data = review_form.save(commit=False)
+            form_data.added_by = request.user
+            form_data.save()
+            messages.success(request, 'Review posted successfully')
+            return redirect('home')
+        else:
+            messages.error(request, 'Failed to post review')
+            return redirect('review_add')
+    else:
+        review_form = FormReview()
+
+    template = 'home/review_add.html'
+    context = {
+        'review_form': review_form,
+    }
+    return render(request, template, context)

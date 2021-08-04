@@ -13,9 +13,14 @@
                 <form class="form" action="{% url 'review_add' %}" method="POST">
                     {% csrf_token %}
                     <fieldset>
-                        <h3 class="highlight text-center">Let us know below</h3>
+                        <h2 class="highlight text-center">Add a review</h2>
+                        <div class="col-10 mx-auto">
+                            {{ review_form.review | as_crispy_field }}
+                            {{ review_form.rating | as_crispy_field }}
+                            {{ review_form.added_by }}
+                        </div>
                     </fieldset>
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="text-start col-7">                    
                             <button class="btn rounded-0 mb-2" type="submit">
                                 <i class="far fa-plus-square fa-lg"></i> <span class="font-weight-bold">Add review</span>

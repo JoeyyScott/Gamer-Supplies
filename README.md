@@ -282,6 +282,8 @@ This section includes areas/sections of code and properties I was unaware of. I 
 **Sending HTML through django messages and templates** - I wanted to customize my Django messages and tried various solutions from searching myself.
     + The one that worked for me was [this post](https://stackoverflow.com/questions/58415186/how-to-make-a-new-line-in-django-messages-error) which uses "mark safe" from Django's built in utilities.
 
+**TypedChoiceField** - I was looking around for how to display my reviews ratings and after looking on [here](https://docs.djangoproject.com/en/3.2/ref/forms/fields/) I decided to use either TypedChoiceField or ChoiceField and when looking for how to set it up I found [this post](https://stackoverflow.com/questions/3673833/typedchoicefield-or-choicefield-in-django) which provided a basic structure which I adapted for my reviews ```forms.py``` file.
+
 ### Media
 
 #### Images
