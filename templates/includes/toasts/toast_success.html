@@ -19,17 +19,17 @@
                     {% endif %}
                     </div>
                     <div class="col-9 p-0 table-crate">
-                        <p class="my-0 highlight">{{ item.supply.name }}</p>
-                        <p class="my-0 small"><span class="highlight">Qty:</span> {{ item.quantity }} <span class="highlight">Subtotal:</span> £{{ item.supply.price | subtotal:item.quantity }}</p>
+                        <p class="my-0 altFont">{{ item.supply.name }}</p>
+                        <p class="my-0 small"><span class="highlight">Qty:</span> <span class="altFont">{{ item.quantity }}</span> <span class="highlight">Subtotal:</span> <span class="altFont">£{{ item.supply.price | subtotal:item.quantity }}</span></p>
                     </div>
                 </div>
             {% endfor %}
         </div>
         <div class="row">
             <div class="col">
-                <p class="toast-checkout mt-1"><span class="highlight">Total:</span> £{{ total|floatformat:2 }}</p>
+                <p class="toast-checkout mt-1"><span class="highlight">Total:</span> <span class="altFont">£{{ total|floatformat:2 }}</span></p>
                 <a href="{% url 'view_crate' %}" class="btn toast-checkout rounded-0">
-                    <i class="fas fa-lock"></i> <span class="text-uppercase">Go To Secure Checkout</span>
+                    <i class="fas fa-lock"></i> <span class="text-uppercase">Checkout Summary</span>
                 </a>
             </div>
         </div>
