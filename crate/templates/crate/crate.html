@@ -18,7 +18,7 @@
         <div class="col-10 offset-1 gamerStyle py-2">
             <h4 class="text-center crate-info">
                 <!-- Template logic to detect which total to display-->
-                <span class="highlight">Crate Total:</span> <span class="altFont crate-total">£{% if total_with_coupon %}{{ total_with_coupon|floatformat:2 }}{% else %}total|floatformat:2{% endif %}</span>
+                <span class="highlight">Crate Total:</span> <span class="altFont crate-total">£{{ total|floatformat:2 }}</span>
             </h4>
             <div class="col-12 text-center">
                 <h4 class="highlight">Apply coupon</h4>
@@ -27,10 +27,10 @@
                     <input type="text" name="coupon-code" class="w-50">
                     <button type='submit' class='btn btn-sm'>Apply</button>
                 </form>
-                {% if coupon %}
-                    <div class="altFont">
+                {% if not coupon == None %}
+                    <div class="altFont mb-2">
                         <p>Current code: {{ coupon }}</p>
-                        <p>Current discount: {{ coupon_amount }}%</p>
+                        <p>Savings: £{{ savings|floatformat:2 }} - {{ coupon_amount }}% off!</p>
                     </div>
                 {% endif %}
             </div>
