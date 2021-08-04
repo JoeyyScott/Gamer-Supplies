@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import Review
 from .forms import FormReview
@@ -17,6 +18,7 @@ def index(request):
     return render(request, 'home/index.html', context)
 
 
+@login_required
 def review_add(request):
     # Add review to site
     if request.method == 'POST':
@@ -40,3 +42,13 @@ def review_add(request):
         'review_form': review_form,
     }
     return render(request, template, context)
+
+
+def reviews_manage(request):
+    reviews = Review.objects.all()
+
+    context = {
+        'reviews': reviews,
+    }
+
+    return render(request, 'home/reviews_manage.html', context)

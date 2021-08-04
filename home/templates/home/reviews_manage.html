@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %} | Manage Reviews{% endblock %}
+
+{% block content %}
+<div class="container container-reviews">
+    <div class="row">
+        <div class="col-10 mx-auto gamerStyle">
+            <h1 class="text-center mt-2">Manage site reviews</h1>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    {% for review in reviews %}
+                    <div class="">
+                        <p><span class="highlight mb-2 me-1">Rating:</span> <span class="altFont">{{ review.review }}</span></p>
+                        <p><span class="highlight mb-2 me-1">Review:</span> <span class="altFont">{{ review.rating }}</span></p>
+                        <p><span class="highlight mb-2 me-1">Added by:</span> <span class="altFont">{{ review.added_by|title }}</span></p>
+                        <a class="btn my-2" href=""><i class="fas fa-trash"></i> Delete</a>
+                    </div>
+                    <hr class="w-100 m-auto highlight mb-1">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
