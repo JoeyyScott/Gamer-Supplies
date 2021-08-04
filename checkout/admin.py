@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Order, CrateItems
+from .models import Coupon
 
 
 class CrateItemsAdminInline(admin.TabularInline):
@@ -21,3 +22,11 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Order, OrderAdmin)
+
+
+class CouponAdmin(admin.ModelAdmin):
+
+    list_display = ['code', 'amount']
+
+
+admin.site.register(Coupon, CouponAdmin)
