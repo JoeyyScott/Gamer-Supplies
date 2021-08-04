@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class="container container-home h-100">
-        <div class="row h-100 d-flex justify-content-center">
+        <div class="row h-100 d-flex justify-content-center {% if reviews|length < 1 %}space-home{% endif %}">
             <div class="col-12 col-md-8 my-auto pt-2 text-center gamerStyle">
                 <h1>Snacks so good you'll keep coming back..</h1>
                 <div class="my-2">
@@ -16,13 +16,13 @@
                     <h2 class="highlight mt-4">Why believe us?</h2>
                     <p class="altFont my-0">Read some of our reviews below</p>
                     <!-- Credit for adapted Bootstrap 5 carousel: https://getbootstrap.com/docs/5.0/components/carousel/ -->
-                    <div id="review-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div id="review-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-inner">
                             {% for review in reviews %}
-                            <div class="carousel-item h-100 p-4 active">
+                            <div class="carousel-item h-100 p-4 {% if forloop.counter == 1 %}active{% endif %}">
                                 <p class="altFont">{{ review.rating }}</p>
                                 <p class="altFont">{{ review.review }}</p>
-                                <p class="altFont">Added By: {{ review.added_by|title }}</p>
+                                <p class="altFont"><span class="highlight">Added By:</span> {{ review.added_by|title }}</p>
                             </div>
                             {% endfor %}
                         </div>
@@ -35,16 +35,19 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    {% if request.user.is_authenticated %}
-                    <div class="col-12">
-                        <a href="{% url 'review_add' %}" class="btn my-2">Add Review</a>
+                    <div class="row">
+
+                        {% if request.user.is_authenticated %}
+                        <div class="col-{% if request.user.is_superuser %}6 text-start{% else %}12{% endif %}">
+                            <a href="{% url 'review_add' %}" class="btn btn-sm my-2">Add Review</a>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        {% if request.user.is_superuser %}
+                        <div class="col-6 text-end">
+                            <a href="{% url 'reviews_manage' %}" class="btn btn-sm my-2">Manage reviews</a>
+                        </div>
                     </div>
-                    {% endif %}
-                {% endif %}
-                {% if request.user.is_superuser %}
-                <div class="col-12">
-                    <a href="{% url 'reviews_manage' %}" class="btn my-2">Manage Reviews</a>
-                </div>
                 {% endif %}
             </div>
         </div>

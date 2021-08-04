@@ -50,6 +50,8 @@ a { text-decoration: none; color: #ffd700; }
 .container-footer { background-color: #4169e1; box-shadow: 0 -5px 10px #141414; }
 footer i, .text-footer { font-size: 1.6rem; }
 .space { height: 15vh; }
+.space-home { margin-top: 10rem; }
+
 
 .supply-img {
     border-top: 2px solid #eee6e6;
@@ -217,6 +219,8 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     display: flex; flex-direction: column;
     height: 30vh; justify-content: center;
 }
+
+.carousel-inner { overflow: scroll; }
 
 /* -------------------------------- Media Queries */
 
