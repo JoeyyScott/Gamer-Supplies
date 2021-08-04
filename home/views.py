@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -29,10 +29,10 @@ def review_add(request):
             form_data = review_form.save(commit=False)
             form_data.added_by = request.user
             form_data.save()
-            messages.success(request, 'Review posted successfully')
+            messages.success(request, 'Review posted successfully!')
             return redirect('home')
         else:
-            messages.error(request, 'Failed to post review')
+            messages.error(request, 'Unable to add review, please check your form information is correct.')
             return redirect('review_add')
     else:
         review_form = FormReview()
@@ -52,3 +52,15 @@ def reviews_manage(request):
     }
 
     return render(request, 'home/reviews_manage.html', context)
+
+
+@login_required
+def review_delete(request, review_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Only admins have permission to delete reviews.')
+        return redirect(reverse('home'))
+
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review deleted successfully!')
+    return redirect(reverse('reviews_manage'))

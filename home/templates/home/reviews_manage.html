@@ -10,15 +10,22 @@
             <h1 class="text-center mt-2">Manage site reviews</h1>
             <div class="row justify-content-center">
                 <div class="col-12">
-                    {% for review in reviews %}
-                    <div class="">
-                        <p><span class="highlight mb-2 me-1">Rating:</span> <span class="altFont">{{ review.review }}</span></p>
-                        <p><span class="highlight mb-2 me-1">Review:</span> <span class="altFont">{{ review.rating }}</span></p>
-                        <p><span class="highlight mb-2 me-1">Added by:</span> <span class="altFont">{{ review.added_by|title }}</span></p>
-                        <a class="btn my-2" href=""><i class="fas fa-trash"></i> Delete</a>
-                    </div>
-                    <hr class="w-100 m-auto highlight mb-1">
-                    {% endfor %}
+                    {% if reviews %}
+                        {% for review in reviews %}
+                        <div class="">
+                            <p><span class="highlight mb-2 me-1">Rating:</span> <span class="altFont">{{ review.review }}</span></p>
+                            <p><span class="highlight mb-2 me-1">Review:</span> <span class="altFont">{{ review.rating }}</span></p>
+                            <p><span class="highlight mb-2 me-1">Added by:</span> <span class="altFont">{{ review.added_by|title }}</span></p>
+                            <a class="btn my-2" href="{% url 'review_delete' review.id %}"><i class="fas fa-trash"></i> Delete</a>
+                        </div>
+                        <hr class="w-100 m-auto highlight mb-1">
+                        {% endfor %}
+                    {% else %}
+                        <p class="altFont text-center">There are no reviews at the moment. Why not add one below?</p>
+                        <div class="col-6 mx-auto">
+                            <a href="{% url 'review_add' %}" class="btn my-2">Add Review</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
