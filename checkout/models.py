@@ -2,7 +2,6 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
-from django.core.validators import MinValueValidator, MaxValueValidator
 
 from django_countries.fields import CountryField
 
@@ -66,11 +65,3 @@ class CrateItems(models.Model):
 
     def __str__(self):
         return f'{self.supply.name} on order {self.order.order_number}'
-
-
-class Coupon(models.Model):
-    code = models.CharField(max_length=20, unique=True)
-    amount = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
-
-    def __str__(self):
-        return self.code
