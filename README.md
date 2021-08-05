@@ -472,6 +472,11 @@ This section includes areas/sections of code and properties I was unaware of. I 
 
 **TypedChoiceField** - I was looking around for how to display my reviews ratings and after looking on [here](https://docs.djangoproject.com/en/3.2/ref/forms/fields/) I decided to use either TypedChoiceField or ChoiceField and when looking for how to set it up I found [this post](https://stackoverflow.com/questions/3673833/typedchoicefield-or-choicefield-in-django) which provided a basic structure which I adapted for my reviews ```forms.py``` file.
 
+**Inner carousel for loop** - When developing this project I encountered a bug in my Bootstrap carousel (detais in [TESTING.md](TESTING.md))
++ I found [this post](https://stackoverflow.com/questions/35836879/how-to-use-for-loop-with-bootstrap-carousel) which solved my issue using the following code:
+    + ```{% if forloop.counter == 1 %}active{% endif %}```
+
+
 ### Media
 
 #### Images
