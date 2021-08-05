@@ -67,16 +67,16 @@ E. Users can search for snacks | 4 | 4
 
 + As a **User**, I want to easily understand the site upon loading it.
 + As a **User**, I want to be able to intuitively navigate the entire site with ease.
-+ As a **User**, I want to be able to receive full site functionality on my phone and tablet.
++ As a **User**, I want to be able to receive full site functionality on my mobile and tablet.
 + As a **User**, I want to be able to see what supplies are available for purchase on the site.
 + As a **User**, I want to know the prices.
 + As a **User**, I want to be able to seamlessly sign up for an account and receive a confirmation email.
-+ As a **User**, I want to be able to access the companies associated social media profiles.
++ As a **User**, I want to be able to access the company's associated social media profiles.
 + As a **User**, I want to be able to contact the company with any relevant questions.
 
 #### Registered User goals
 
-+ As a **Registered User**, I want to be able to easily login and logout of my account
++ As a **Registered User**, I want to be able to easily login and logout of my account.
 + As a **Registered User**, I want to be able to easily add and remove items from my supply crate.
 + As a **Registered User**, I want to be able to easily purchase my crate.
 + As a **Registered User**, I want to receive a purchase confirmation email.
@@ -85,13 +85,14 @@ E. Users can search for snacks | 4 | 4
 
 #### Site Owner/Superuser goals
 
-+ As a **Site Owner/Superuser**, I want to be able to add new supplies
-+ As a **Site Owner/Superuser**, I want to be able to edit and delete supplies
++ As a **Site Owner/Superuser**, I want to be able to add new supplies.
++ As a **Site Owner/Superuser**, I want to be able to edit and delete supplies.
++ As a **Site Owner/Superuser**, I want to be able to delete reviews.
 + As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
 
 ### Website Structure
 
-The structure of the site is very simple to provide an easy-to-use experience. The header/footer/nav links will remain in the same places across the site but will differ from mobile to other devices as the screen real estate is limited. In the header will always contain a link to the supplies page and different links based on whether a user is logged in or a super-user.
+The structure of the site is very simple to provide an easy-to-use experience. The header/footer/nav links will remain in the same places across the site but will differ from mobile to other devices as the screen real estate is limited. The header will always contain a link to the supplies page and different links based on whether a user is logged in or a super-user.
 
 | Other links shown |
 |:-----------------:|
@@ -113,7 +114,7 @@ The structure of the site is very simple to provide an easy-to-use experience. T
 
 ![Colour Scheme](docs/images/colourscheme.png)
 
-Using a combination of [coolors.co](https://coolors.co/) and [Accessible Color Generator Tool](https://learnui.design/tools/accessible-color-generator.html) I was able to create a colour scheme that uses contrasting blues and yellows  to convey the majority of the content as it matches the colours used in the brand's logo. The colour scheme will remain consistent throughout the buttons, the overall design of the site and where information is presented back to the user based on their actions. The offwhite/offblack will be used for text and information popups.
+Using a combination of [coolors.co](https://coolors.co/) and [Accessible Color Generator Tool](https://learnui.design/tools/accessible-color-generator.html) I was able to create a colour scheme that uses contrasting blues and yellows  to convey the majority of the content as it matches the colours used in the brand's logo. The colour scheme will remain consistent throughout the buttons, the overall design of the site and where information is presented back to the user based on their actions. The off-white/off-black will be used for text and information popups.
 
 - ![#4169e1](https://via.placeholder.com/15/4169e1/000000?text=+) `#4169e1`: Royal Blue
 - ![#ffd700](https://via.placeholder.com/15/ffd700/000000?text=+) `#ffd700`: Gold Web Golden
@@ -151,12 +152,16 @@ The Saira Stencil One font was chosen as it resembles stencil lettering such as 
 | Crate | [View](docs/wireframes/mobile-crate.png) | [View](docs/wireframes/tablet-crate.png) | [View](docs/wireframes/pc-crate.png) |
 | Reviews | [View](docs/wireframes/mobile-reviews.png) | [View](docs/wireframes/tablet-reviews.png) | [View](docs/wireframes/pc-reviews.png) |
 
-
 ### Design Changes
 
 **Coupon missing from wireframes**
-+ I've added a coupon feature which is not reflected in the wireframes as this was added into the project later.
-    + The reason being I was unsure what to include for my second custom model to satisfy the project requirement. I'm aiming for a distinction and as such have included a disclaimer here.
++ I have added a coupon feature on ```supplies.html``` which is not reflected in the wireframes as this was added into the project later.
+    + The reason being I was unsure what to include for my second custom model to satisfy the project requirement. I am aiming for a distinction and as such have included a disclaimer here.
+
+**Sort missing from wireframes**
++ I have added a sort feature on ```supplies.html``` which is not reflected in the wireframes as this was added into the project later.
+    + It appears below the category links and expands to a dropdown sorting by Price, Name, Category and Brand (with options for ascending/descending).
+
 
 **Reviews page without a wireframe**
 + When creating the wireframes I was unsure where I wanted to include reviews that had been posted.
@@ -169,7 +174,7 @@ SQLite3 was used in the development of this project as part of the Django framew
 
 ![Database Diagram](docs/images/dbdiagram.png)
 
-I used [dbdiagram.io](dbdiagram.io) to create this rendering of the database model and the associated relationships between data sets.
+I used [dbdiagram.io](https://dbdiagram.io) to create this rendering of the database model and the associated relationships between data sets.
 
 **Supplies App:**
 
@@ -249,7 +254,6 @@ Review Model
 
 ## Included in the **header** is:
 
-
 + **Intuitive navigation**: The navigation bar is located in the same place throughout the site, is easy to use and collapses into a toggle button in mobile view which expands its content.
     + **Brand Icon and Name**: Provides a link to the homepage to allow the user to view it at any point.
     + **Nav Links**: Provides a way for the user to view the other pages on the site.
@@ -265,11 +269,11 @@ Review Model
 
 **Website intro**:
 + Intro section loads at the top of the page.
-    + Contains a tagline with a button to view the snacks on the store.
+    + Contains a tagline with a button to view the snacks in the store.
     + Contains an incentive to create an account as non logged in users do not have access to a crate.
 
 **Reviews**:
-+ I used an adapted Bootstrap 5 carousel to display reviews posted to the data store
++ I used an adapted Bootstrap 5 carousel to display reviews posted to the data store.
     + Carousel will not autoplay and displays reviews using a for loop.
     + If the user is logged in they will see an add review button.
     + If the user is logged in as an Admin they will have a manage reviews button below the add review button.
@@ -294,7 +298,7 @@ Review Model
 ## Included in both **crate.html** and **checkout.html** is:
 
 **Quantity adjust buttons**:
-+ These buttons are validated using an external file ```quantity_input.html``` in the includes folder within supplies which allows them to be used across the site.
++ These buttons are validated using an external file ```quantity_input.html``` in the ```includes``` folder within supplies which allows them to be used across the site.
     + Buttons are set to the correct state on page load and when the input is changed.
     + Buttons are disabled outside of the range 1-99.
     + Buttons adjust the amount of the supply in:
@@ -308,8 +312,8 @@ Review Model
 + A price summary of their crate that updates when a valid coupon is entered.
     + Apply coupon form input where users can enter a 10 character max string.
         + This will then be checked against coupons in the data store when the apply coupon button is clicked and provide the correct result.
-            + If the coupon exists, a section containing info of the current coupon and the savings/discount it provides to the user.
-            + If the coupon doesn't exist, the user is returned to the crate without any changes.
+            + If the coupon exists, a section containing information of the current coupon and the savings/discount it provides to the user.
+            + If the coupon does not exist, the user is returned to the crate without any changes.
 
 **Navigation buttons**:
 + There are two buttons which provide relevant links to the user at the top of the page below the coupon field. These links point to:
@@ -317,10 +321,10 @@ Review Model
     + Secure checkout - ```checkout.html```
 
 **Crate contents**:
-+ Logged in users will see a summary of their crate, if it is empty they will see a button to the supplies page.
++ Logged in users will see a summary of their crate; if it is empty they will see a button to the supplies page.
     + Included in the crate summary is the amount of supplies in the crate and a list of each item within the crate.
     + On each item within the crate they will see:
-        + A summary of the item with an image, name, individual price and a subtotal based off of the item quantity.
+        + A summary of the item with an image, name, individual price and a subtotal based on the item quantity.
         + Update/delete and quantity adjust buttons.
         + If the quantity is set to 0 the item is removed from the crate.
 
@@ -330,7 +334,7 @@ Review Model
 + If the crate is empty they will be redirected to ```supplies.html``` with a message displaying that their crate is empty.
 + Included in the checkout summary is the amount of supplies in the crate and a list of each item within the crate.
 + On each item within the crate they will see:
-    + A summary of the item with an image, name, individual price and a subtotal based off of the item quantity.
+    + A summary of the item with an image, name, individual price and a subtotal based on the item quantity.
 + The order total is displayed after the list.
 
 **Delivery Information**:
@@ -344,7 +348,7 @@ Review Model
 **Form buttons**:
 + There are two buttons which submit the form and provide a relevant link to the user below payment information. These buttons function as follows:
     + Adjust Crate - ```crate.html```
-    + Secure checkout - Submits the form and verifies it through stripe:
+    + Secure checkout - Submits the form and verifies it through Stripe:
         + If successful the user will be redirected to ```checkout_success.html```
             + This page is very similar to the checkout summary page except that there will be an order number and only a singular button is present.
             + If the user is coming from their profile they will see
@@ -360,12 +364,12 @@ Review Model
 + A button which allows the user to update their delivery information which will be preloaded on both the checkout and profile pages thereafter.
 
 **Order history**:
-+ A render list from orders linked to the users profile in the data store which contains a summary of each order. Included in this summary is:
++ A rendered list from orders linked to the users profile in the data store which contains a summary of each order. Included in this summary is:
     + Order Number and Date - Auto generated when the order is completed.
-    + Order Items - Contains supply name and quantity pertaining to each item on the order
+    + Order Items - Contains supply name and quantity pertaining to each item on the order.
     + Order Total - Contains the total price of the order.
 
-## These features are included throughout the site and thus don't fall into a specific page
+## These features are included throughout the site and thus do not fall into a specific page
 
 **Bootstrap Toasts**:
 + Bootstrap toasts are prebuilt notifications that are customized to suit the theme of the site, the action that has occured and display relevant messages based on this.
@@ -376,21 +380,20 @@ Review Model
 
 
 **Account system**:
-+ I used [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) to create my account system within the project as it provided with prebuilt templates I could style as desired.
++ I used [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) to create my account system within the project as it provided prebuilt templates I could style as desired.
     + Users can register with email confirmation, login and logout.
 
 **CRUD Functionality for admins**:
-+ Admins are able to create, read, update and delete records in the database for the project. Included in this is:
-    + Supplies - ```supply_add.html``` and ```supply_edit.html``` with the delete view being called when the button is pressed.
-    + Reviews - ```review_add.html``` and ```review_manage.html``` with the delete view being called when the button is pressed.
++ Admins are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
+    + Supplies - ```supply_add.html```, ```supplies.html``` and ```supply_edit.html``` with the delete functionality activating when the associated button is pressed.
+    + Reviews - ```review_add.html```, ```index.html``` and ```review_manage.html``` with the delete functionality activating when the associated button is pressed.
         + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
-
 
 ### Features to be added
 
 **Subscription**:
 + I would like the user to be able to order the same crate at a user defined interval (within reason) which would allow for more user options and incentives.
-    + Example: If a user orders the same crate 10 times they get a 75% discount on their next crate of those items.
+    + Example: If a user orders the same crate 10 times over a certain value they get a 50% discount on their next crate of those items.
 + This would also allow users to receive their favourite snacks whenever they wanted with only having to checkout once.
 
 #### [Back to top](#contents)
@@ -406,7 +409,7 @@ Review Model
 + [Python](https://www.python.org) - Used as the main coding language to generate the site, handle the database and user login system.
 
 ### Frameworks, libraries and programs
-+ [AWS Amazon S3](https://aws.amazon.com/s3/) - Amazon Simple Storage Service (Amazon S3) was used to store media and static files used throughout the project
++ [AWS Amazon S3](https://aws.amazon.com/s3/) - Amazon Simple Storage Service (Amazon S3) was used to store media and static files used throughout the project.
 + [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - A CSS framework that allows for responsive design, prebuilt styling classes and other utlities/components to be applied throughout the entire site.
 + [Django](https://www.djangoproject.com/) - The project was built using Django's web framework.
 + [FavIcon](https://favicon.io/) - I used this tool to convert an image I made into icon form and provide the code (stated in HTML comments) to link this icon to base.html.
@@ -422,15 +425,15 @@ Review Model
 ### Docs
 + [Accessible Color Generator](https://learnui.design/tools/accessible-color-generator.html) - I used this tool in conjunction with coolors.co to provide a better colour contrast for accessibility.
 + [Am I Responsive?](http://ami.responsivedesign.is/) - I used this tool to easily display the responsiveness of my site for my README.md introduction.
-+ [coolors.co](https://coolors.co) - I used this tool to generate a colour scheme based on the Gamersaurus logo.
++ [coolors.co](https://coolors.co) - I used this tool to generate a colour scheme based on the Gamer Supplies logo.
 + [GIMP](https://www.gimp.org) - I used this program to design the logo/favicon image and wireframes.
 + [Placeholder](https://placeholder.com) was used to generate colour boxes to display in the colour scheme section of my README.md file.
 
 ### Dependencies
-+ [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)  - Prebuilt Django applications that handle registration, user authentication, account management as well as support for 3rd party accounts.
++ [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)  - Prebuilt Django applications that handle registration, user authentication, account management as well as support for third party accounts.
 + [Django Countries](https://pypi.org/project/django-countries/) - Provides country choices for use with forms and a prebuilt country field for models.
-+ [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Django tool to program reusable layouts out of components used within forms and customize them to suit your needs.
-+ [Pillow](https://pillow.readthedocs.io/en/stable/) - Imaging library for python.
++ [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Django tool to program customizable reusable layouts out of components used within forms.
++ [Pillow](https://pillow.readthedocs.io/en/stable/) - Imaging library for Python.
 + [Stripe](https://stripe.com/docs) - Stripe’s API library for Python.
 
 #### [Back to top](#contents)
@@ -467,12 +470,13 @@ Before creating a Heroku app make sure your project has these two files:
 
 This section includes areas/sections of code and properties I was unaware of. I have also included sources from where I have adapted/changed code used in the projects throughout my course as I figured it was better practice to state as such to avoid any penalizations or copyright violations.
 
-**Sending HTML through django messages and templates** - I wanted to customize my Django messages and tried various solutions from searching myself.
+**Sending HTML through django messages and templates**:
++ I wanted to customize my Django messages and tried various solutions from searching myself.
     + The one that worked for me was [this post](https://stackoverflow.com/questions/58415186/how-to-make-a-new-line-in-django-messages-error) which uses "mark safe" from Django's built in utilities.
 
-**TypedChoiceField** - I was looking around for how to display my reviews ratings and after looking on [here](https://docs.djangoproject.com/en/3.2/ref/forms/fields/) I decided to use either TypedChoiceField or ChoiceField and when looking for how to set it up I found [this post](https://stackoverflow.com/questions/3673833/typedchoicefield-or-choicefield-in-django) which provided a basic structure which I adapted for my reviews ```forms.py``` file.
+**TypedChoiceField** - I was looking around for how to display the ratings on my reviews and after looking on [here](https://docs.djangoproject.com/en/3.2/ref/forms/fields/) I decided to use either TypedChoiceField or ChoiceField and when looking for how to set it up I found [this post](https://stackoverflow.com/questions/3673833/typedchoicefield-or-choicefield-in-django) which provided a basic structure which I adapted for my reviews ```forms.py``` file.
 
-**Inner carousel for loop** - When developing this project I encountered a bug in my Bootstrap carousel (detais in [TESTING.md](TESTING.md))
+**Inner carousel for loop** - When developing this project I encountered a bug in my Bootstrap carousel (details in [TESTING.md](TESTING.md))
 + I found [this post](https://stackoverflow.com/questions/35836879/how-to-use-for-loop-with-bootstrap-carousel) which solved my issue using the following code:
     + ```{% if forloop.counter == 1 %}active{% endif %}```
 
