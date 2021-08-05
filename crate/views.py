@@ -78,6 +78,7 @@ def remove_from_crate(request, item_id):
         return HttpResponse(status=500)
 
 
+@login_required
 @require_http_methods(["GET", "POST"])
 def coupon_apply(request):
     code = request.POST.get('coupon-code')
