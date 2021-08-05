@@ -8,7 +8,7 @@ It is an E-Commerce site for a fictional company 'Gamer Supplies' which offers a
 
 ___
 
-## Contents
+##  Contents
 
 + [**User Experience Design (UXD)**](<#user-experience-design>)
 
@@ -122,7 +122,7 @@ Using a combination of [coolors.co](https://coolors.co/) and [Accessible Color G
 
 I tested my colour contrasts against the AA guidelines using [this tool](https://learnui.design/tools/accessible-color-generator.html) as mentioned in my technologies section. I have included a picture below as proof:
 
-![Accessible Colours](docs/images/aa proof.png)
+![Accessible Colours](docs/images/aaproof.png)
 
 #### Images
 
@@ -155,7 +155,7 @@ The Saira Stencil One font was chosen as it resembles stencil lettering such as 
 ### Design Changes
 
 **Coupon missing from wireframes**
-+ I've added a coupon feature which isn't reflected in the wireframes as this was added into the project later.
++ I've added a coupon feature which is not reflected in the wireframes as this was added into the project later.
     + The reason being I was unsure what to include for my second custom model to satisfy the project requirement. I'm aiming for a distinction and as such have included a disclaimer here.
 
 **Reviews page without a wireframe**
@@ -247,7 +247,8 @@ Review Model
 
 ### Existing Features
 
-Included in the **header** is: 
+## Included in the **header** is:
+
 
 + **Intuitive navigation**: The navigation bar is located in the same place throughout the site, is easy to use and collapses into a toggle button in mobile view which expands its content.
     + **Brand Icon and Name**: Provides a link to the homepage to allow the user to view it at any point.
@@ -256,11 +257,11 @@ Included in the **header** is:
         + If the user is logged in they will see Supplies, My Profile, My Crate and Logout.
         + If the user is logged in as a superuser they will see an additional 2 links below Supplies which are: Add Supply and Manage Reviews.
 
-Included in the **footer** is:
+## Included in the **footer** is:
 
 + **Social media links**: These will take you to the various social media connnections for the company. (Currently the links will point to the homepage for the associated social media site as the brand's socials do not exist at this point in time).
 
-Included in **index.html** is:
+## Included in **index.html** is:
 
 **Website intro**:
 + Intro section loads at the top of the page.
@@ -273,7 +274,7 @@ Included in **index.html** is:
     + If the user is logged in they will see an add review button.
     + If the user is logged in as an Admin they will have a manage reviews button below the add review button.
 
-Included in **supplies.html** is:
+## Included in **supplies.html** is:
 
 **Supplies**
 + A rendered list of cards which contain all the relevant information about the supply from the data store.
@@ -290,7 +291,7 @@ Included in **supplies.html** is:
 + A search box which allows users to search which can match the supply name, description and brand.
 
 
-Included in both **crate.html** and **checkout.html** is:
+## Included in both **crate.html** and **checkout.html** is:
 
 **Quantity adjust buttons**:
 + These buttons are validated using an external file ```quantity_input.html``` in the includes folder within supplies which allows them to be used across the site.
@@ -301,7 +302,7 @@ Included in both **crate.html** and **checkout.html** is:
         + ```crate.html``` before clicking the update button.
 
 
-Included in **crate.html** is:
+## Included in **crate.html** is:
 
 **Crate total with Coupon field**:
 + A price summary of their crate that updates when a valid coupon is entered.
@@ -323,7 +324,7 @@ Included in **crate.html** is:
         + Update/delete and quantity adjust buttons.
         + If the quantity is set to 0 the item is removed from the crate.
 
-Included in **checkout.html** is:
+## Included in **checkout.html** is:
 
 **Checkout summary and contents**:
 + If the crate is empty they will be redirected to ```supplies.html``` with a message displaying that their crate is empty.
@@ -351,7 +352,7 @@ Included in **checkout.html** is:
                 + Got room for more? - ```supplies.html```
         + If unsuccessful the user will be redirected to ```checkout.html``` with an error message displayed, their crate and information intact.
 
-Included in **profile.html** is:
+## Included in **profile.html** is:
 
 **Delivery Information**:
 + A form which allows the user to fill out the relevant fields:
@@ -364,7 +365,7 @@ Included in **profile.html** is:
     + Order Items - Contains supply name and quantity pertaining to each item on the order
     + Order Total - Contains the total price of the order.
 
-These features are included throughout the site and thus don't fall into a specific page
+## These features are included throughout the site and thus don't fall into a specific page
 
 **Bootstrap Toasts**:
 + Bootstrap toasts are prebuilt notifications that are customized to suit the theme of the site, the action that has occured and display relevant messages based on this.
@@ -399,16 +400,38 @@ These features are included throughout the site and thus don't fall into a speci
 ## Technologies
 
 ### Languages
-
 + [HTML](https://en.wikipedia.org/wiki/HTML) - Used as the main language for structuring the website.
 + [CSS](https://en.wikipedia.org/wiki/CSS) - Used as the main language for styling the website.
 + [JavaScript](https://www.javascript.com/) - Used to import and initialize certain functions for use throughout the project.
 + [Python](https://www.python.org) - Used as the main coding language to generate the site, handle the database and user login system.
 
 ### Frameworks, libraries and programs
++ [AWS Amazon S3](https://aws.amazon.com/s3/) - Amazon Simple Storage Service (Amazon S3) was used to store media and static files used throughout the project
++ [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - A CSS framework that allows for responsive design, prebuilt styling classes and other utlities/components to be applied throughout the entire site.
++ [Django](https://www.djangoproject.com/) - The project was built using Django's web framework.
++ [FavIcon](https://favicon.io/) - I used this tool to convert an image I made into icon form and provide the code (stated in HTML comments) to link this icon to base.html.
++ [Font Awesome](https://fontawesome.com/) - I used the Font Awesome icon library to provide icons throughout the site, mainly used for buttons. 
++ [Google Fonts](https://fonts.google.com/) - I used two fonts from the Google fonts library - "Saira Stencil One" and "Salsa".
++ [Git](https://git-scm.com) - Git is an open source version control system where you can commit and push changes to the associated Github repository.
++ [GitHub](https://github.com/) - GitHub was used to store the project code pushed from GitPod using Git.
++ [GitPod](https://gitpod.io) - GitPod was the online IDE (Integrated Development Engine) I used to develop this site.
++ [Heroku](https://dashboard.heroku.com/) - A cloud platform that was used to deploy and run the code pushed to the associated GitHub repository.
++ [jQuery](https://jquery.com/) - I used the jQuery library to provide access to a multitude of functions/methods throughout the site.
++ [Stripe](https://stripe.com/docs) - Stripe was used to integrate an online payment authentication and processing system.
+
+### Docs
++ [Accessible Color Generator](https://learnui.design/tools/accessible-color-generator.html) - I used this tool in conjunction with coolors.co to provide a better colour contrast for accessibility.
++ [Am I Responsive?](http://ami.responsivedesign.is/) - I used this tool to easily display the responsiveness of my site for my README.md introduction.
++ [coolors.co](https://coolors.co) - I used this tool to generate a colour scheme based on the Gamersaurus logo.
++ [GIMP](https://www.gimp.org) - I used this program to design the logo/favicon image and wireframes.
 + [Placeholder](https://placeholder.com) was used to generate colour boxes to display in the colour scheme section of my README.md file.
 
 ### Dependencies
++ [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)  - Prebuilt Django applications that handle registration, user authentication, account management as well as support for 3rd party accounts.
++ [Django Countries](https://pypi.org/project/django-countries/) - Provides country choices for use with forms and a prebuilt country field for models.
++ [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Django tool to program reusable layouts out of components used within forms and customize them to suit your needs.
++ [Pillow](https://pillow.readthedocs.io/en/stable/) - Imaging library for python.
++ [Stripe](https://stripe.com/docs) - Stripe’s API library for Python.
 
 #### [Back to top](#contents)
 

@@ -21,7 +21,7 @@
                         <div class="carousel-inner">
                             {% for review in reviews %}
                             <div class="carousel-item h-100 p-4 {% if forloop.counter == 1 %}active{% endif %}">
-                                <p class="altFont">{{ review.rating }}</p>
+                                <p class="altFont">{{ review.rating }}/5</p>
                                 <p class="altFont">{{ review.review }}</p>
                                 <p class="altFont"><span class="highlight">Added By:</span> {{ review.added_by|title }}</p>
                             </div>
