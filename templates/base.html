@@ -74,6 +74,7 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a class="nav-link" href="{% url 'supply_add' %}">Add Supply</a>
+                                    <a class="nav-link" href="{% url 'reviews_manage' %}">Manage Reviews</a>
                                 {% endif %}
                                 <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
                                 <a class="nav-link" href="{% url 'view_crate' %}">My Crate</a>
