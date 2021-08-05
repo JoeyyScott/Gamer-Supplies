@@ -52,6 +52,8 @@
                     <a class="navbar-brand pb-1" href="{% url 'home' %}">
                         <img src={% static "images/logo.png" %} class="logo pb-1" alt="Gamer Supplies Logo">
                     </a>
+                    <!-- View Crate -->
+                    {% if request.user.is_authenticated %}
                         <a class="{% if grand_total %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link" href="{% url 'view_crate' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -64,6 +66,7 @@
                                 </p>
                             </div>
                         </a>
+                    {% endif %}
                     <!-- Mobile Toggle -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-box-open fa-md"></i><div class="text-menu">Menu</div>

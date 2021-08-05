@@ -17,6 +17,8 @@ def all_supplies(request):
     categories = None
     sort = None
     direction = None
+    manage_crate = request.session['manage_crate']
+    request.session['manage_crate'] = False
 
     if request.GET:
         if 'sort' in request.GET:
@@ -53,6 +55,7 @@ def all_supplies(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting.replace('_', ' '),
+        'manage_crate': manage_crate,
     }
 
     return render(request, 'supplies/supplies.html', context)
@@ -69,6 +72,7 @@ def supply_add(request):
         form = FormSupply(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            request.session['manage_crate'] = False
             messages.success(request, 'Supply added successfully!')
             return redirect(reverse('supplies'))
         else:
@@ -79,7 +83,6 @@ def supply_add(request):
     template = 'supplies/supply_add.html'
     context = {
         'form': form,
-        'on_manage_page': True
     }
 
     return render(request, template, context)
@@ -97,6 +100,7 @@ def supply_edit(request, supply_id):
         form = FormSupply(request.POST, request.FILES, instance=supply)
         if form.is_valid():
             form.save()
+            
             messages.success(request, f'{supply.name} updated successfully!')
             return redirect('supplies')
         else:
@@ -109,7 +113,6 @@ def supply_edit(request, supply_id):
     context = {
         'form': form,
         'supply': supply,
-        'on_manage_page': True
     }
 
     return render(request, template, context)
