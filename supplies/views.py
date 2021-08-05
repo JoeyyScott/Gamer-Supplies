@@ -17,7 +17,9 @@ def all_supplies(request):
     categories = None
     sort = None
     direction = None
-    manage_crate = request.session['manage_crate']
+    manage_crate = None
+
+    manage_crate = request.session.get('manage_crate', manage_crate)
     request.session['manage_crate'] = False
 
     if request.GET:
