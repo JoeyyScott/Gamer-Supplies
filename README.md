@@ -94,7 +94,7 @@ E. Users can search for snacks | 4 | 4
 The structure of the site is very simple to provide an easy-to-use experience. The header/footer/nav links will remain in the same places across the site but will differ from mobile to other devices as the screen real estate is limited. In the header will always contain a link to the supplies page and different links based on whether a user is logged in or a super-user.
 
 | Other links shown |
-:-------------------------------:
+|:-----------------:|
 + Not logged in: 
     + Register
     + Login
