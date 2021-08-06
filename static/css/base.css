@@ -215,7 +215,9 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     height: 30vh; justify-content: center;
 }
 
-.carousel-inner { overflow: scroll; }
+  /* Hide scrollbar for IE, Edge and Firefox */
+.carousel-inner { overflow: scroll; -ms-overflow-style: none; scrollbar-width: none; }
+.carousel-inner::-webkit-scrollbar { display: none; }
 
 /* -------------------------------- Media Queries */
 

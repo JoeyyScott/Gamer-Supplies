@@ -474,11 +474,35 @@ This section includes areas/sections of code and properties I was unaware of. I 
 + I wanted to customize my Django messages and tried various solutions from searching myself.
     + The one that worked for me was [this post](https://stackoverflow.com/questions/58415186/how-to-make-a-new-line-in-django-messages-error) which uses "mark safe" from Django's built in utilities.
 
-**TypedChoiceField** - I was looking around for how to display the ratings on my reviews and after looking on [here](https://docs.djangoproject.com/en/3.2/ref/forms/fields/) I decided to use either TypedChoiceField or ChoiceField and when looking for how to set it up I found [this post](https://stackoverflow.com/questions/3673833/typedchoicefield-or-choicefield-in-django) which provided a basic structure which I adapted for my reviews ```forms.py``` file.
+**TypedChoiceField**:
++ I was looking around for how to display the ratings on my reviews and after looking on [here](https://docs.djangoproject.com/en/3.2/ref/forms/fields/) I decided to use either TypedChoiceField or ChoiceField and when looking for how to set it up I found [this post](https://stackoverflow.com/questions/3673833/typedchoicefield-or-choicefield-in-django) which provided a basic structure which I adapted for my reviews ```forms.py``` file.
 
-**Inner carousel for loop** - When developing this project I encountered a bug in my Bootstrap carousel (details in [TESTING.md](TESTING.md))
+**Inner carousel for loop**:
++ When developing this project I encountered a bug in my Bootstrap carousel (details in [TESTING.md](TESTING.md))
 + I found [this post](https://stackoverflow.com/questions/35836879/how-to-use-for-loop-with-bootstrap-carousel) which solved my issue using the following code:
     + ```{% if forloop.counter == 1 %}active{% endif %}```
+
+**Inner carousel scrollbar**:
++ I wanted my review carousel to be a fixed height and set ```overflow: scroll``` on the element.
+    + This caused a scrollbar to appear and after searching around I found [this post](https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp) which provided me with the CSS rules to hide the scrollbar but keep the functionality.
+    + Hiding scrollbar for:
+        + Chrome, Safari and Opera
+        
+            ```.example::-webkit-scrollbar {```
+            
+            ```display: none;```
+            
+            ```}```
+
+        + IE, Edge and Firefox
+        
+            ```.example {```
+            
+            ```-ms-overflow-style: none;``` IE and Edge
+            
+            ```scrollbar-width: none;``` Firefox
+            
+            ```}```
 
 
 ### Media
