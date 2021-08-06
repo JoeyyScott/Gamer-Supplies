@@ -62,6 +62,7 @@ def checkout(request):
             if coupon is not None:
                 code = Coupon.objects.get(pk=coupon)
                 order.coupon = code
+                request.session['coupon_id'] = None
             else:
                 print('no coupon')
             pid = request.POST.get('client_secret').split('_secret')[0]
