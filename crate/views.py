@@ -64,7 +64,6 @@ def remove_from_crate(request, item_id):
     try:
         supply = get_object_or_404(Supply, pk=item_id)
         crate = request.session.get('crate', {})
-        request.session['manage_crate'] = True
 
         if item_id in crate:
             crate.pop(item_id)
