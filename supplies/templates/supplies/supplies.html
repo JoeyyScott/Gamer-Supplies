@@ -11,6 +11,20 @@
             </div>
         </div>
         {% with request.get_full_path as url_name %}
+        <!-- Search bar -->
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-6 col-lg-4 container-search">
+                <form class="form my-2" method="GET" action="{% url 'supplies' %}">
+                    <div class="input-group">
+                        <input class="form-control text-left altFont" type="text" name="q" placeholder="Find a Supply"
+                            aria-label="Search Button" aria-describedby="search-button">
+                        <button class="btn" type="submit" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="gamerStyle container-categories my-2">
             <ul class="nav nav-tabs justify-content-center p-0 gamerStyle">
                 <li class="nav-item">
@@ -34,11 +48,10 @@
             <p class="altFont text-center ms-3 mb-1">Sorting by: {{ current_sorting|title }}</p>
             <hr class="w-100 m-auto highlight mb-1">
             {% endif %}
-            <a class="highlight rounded-0 text-center nav-link title-sort {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Sort</a>
+            <a id="sort-trigger" class="highlight rounded-0 text-center nav-link title-sort {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Sort</a>
             <div class="collapse" id="collapseExample">
                 <ul>
                     <div class="row">
-                        
                         <div class="col-6 pb-1">
                             <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=price&direction=asc">Price (low to high)</a></li>
                             <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=price&direction=desc">Price (high to low)</a></li>
@@ -46,7 +59,6 @@
                             <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=name&direction=desc">Name (Z-A)</a></li>
                         </div>
                         <div class="col-6 pb-1">
-                            
                             <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=category&direction=asc">Category (A-Z)</a></li>
                             <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=category&direction=desc">Category (Z-A)</a></li>
                             <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=asc">Brand (A-Z)</a></li>
@@ -57,31 +69,17 @@
             </div>
         </div>
         {% endwith %}
-        <!-- Search bar -->
-        <div class="row justify-content-center">
-            <div class="col-10 col-md-6 col-lg-4 container-search">
-                <form class="form my-2" method="GET" action="{% url 'supplies' %}">
-                    <div class="input-group">
-                        <input class="form-control text-left altFont" type="text" name="q" placeholder="Find a Supply"
-                            aria-label="Search Button" aria-describedby="search-button">
-                        <button class="btn" type="submit" id="search-button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- Search Results -->
-            {% if search_term or current_categories == 'None_None' %}
-            <div class="card h-100 p-4 text-center">
-                <p class="m-auto altFont gamerStyle">
-                    Your search returned {{ supplies|length }} supplies for
-                    "<span class="highlight">{{ search_term }}</span>".
-                    <span class="small highlight2 altFont"><br>
-                    <a href="{% url 'supplies' %}">Clear Search</a></span>
-                </p>
-            </div>
-            {% endif %}
+        <!-- Search Results -->
+        {% if search_term or current_categories == 'None_None' %}
+        <div class="card h-100 p-4 text-center">
+            <p class="m-auto altFont gamerStyle">
+                Your search returned {{ supplies|length }} supplies for
+                "<span class="highlight">{{ search_term }}</span>".
+                <span class="small highlight2 altFont"><br>
+                <a href="{% url 'supplies' %}">Clear Search</a></span>
+            </p>
         </div>
+        {% endif %}
         <div class="row justify-content-center col-10 offset-1">
             {% for supply in supplies %}
                 <div class="col-md-6 col-lg-4 my-3 p-1 gamerStyle">
@@ -149,9 +147,14 @@
             {% endfor %}
         </div>
     </div>
-    <div class="btn-btt">
-        <a class="link-btt d-flex h-100">
-            <i class="fas fa-arrow-circle-up icon-btt gamerStyle highlight mx-auto my-auto p-1"></i>
+    <div id="buttons" class="container-buttons">
+        {% if request.user.is_superuser %}
+            <a class="pb-1" href="{% url 'supply_add' %}">
+                <img src={% static "images/add-supply.png" %} class="img-supply-add pb-1" alt="Add Supply">
+            </a>
+        {% endif %}
+        <a class="link-btt d-flex h-100 mt-2">
+            <img src={% static "images/back-to-top.png" %} class="img-supply-add pb-1" alt="Add Supply">
         </a>	
     </div>
 {% endblock %}
@@ -160,6 +163,21 @@
     {{ block.super }}
     {% include 'supplies/includes/quantity_input.html' %}
     <script type="text/javascript">
+        // Hides the add supply/back to top buttons when the sort is expanded
+        $('#sort-trigger').click(function(e) {
+            var buttons = document.getElementById('buttons')
+            if (buttons.classList.contains('hidden') == false) { buttons.classList.add('hidden'); sortExpanded = true; }
+            else { buttons.classList.remove('hidden'); sortExpanded = false; }
+        })
+        var page = document.documentElement
+        document.addEventListener("scroll", scrollDistance)
+        function scrollDistance() {
+            console.log(sortExpanded)
+            if (sortExpanded = true) {
+                if(page.scrollTop > 290) { buttons.classList.remove('hidden') }
+                else { console.log(sortExpanded); buttons.classList.add('hidden') }
+            }
+        }
 		$('.link-btt').click(function(e) {
 			window.scrollTo(0,0)
 		})
