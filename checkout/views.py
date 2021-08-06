@@ -8,6 +8,7 @@ from django.utils.safestring import mark_safe
 from .forms import OrderForm
 from .models import Order, CrateItems
 from supplies.models import Supply
+from crate.models import Coupon
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from crate.contexts import crate_contents
@@ -57,6 +58,12 @@ def checkout(request):
 
         if order_form.is_valid():
             order = order_form.save(commit=False)
+            coupon = request.session.get('coupon_id')
+            if coupon is not None:
+                code = Coupon.objects.get(pk=coupon)
+                order.coupon = code
+            else:
+                print('no coupon')
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_crate = json.dumps(crate)

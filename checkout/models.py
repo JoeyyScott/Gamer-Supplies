@@ -2,11 +2,13 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
+from decimal import Decimal
 
 from django_countries.fields import CountryField
 
 from supplies.models import Supply
 from profiles.models import UserProfile
+from crate.models import Coupon
 
 
 class Order(models.Model):
@@ -22,6 +24,7 @@ class Order(models.Model):
     postcode = models.CharField(max_length=20, null=True, blank=True)
     country = CountryField(blank_label='Country *', null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
+    coupon = models.ForeignKey(Coupon, on_delete=models.SET_NULL, null=True, blank=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_crate = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
@@ -33,6 +36,11 @@ class Order(models.Model):
     def update_total(self):
         # Update total each time a crate item is added
         self.order_total = self.crateitems.aggregate(Sum('crateitem_total'))['crateitem_total__sum'] or 0
+
+        if self.coupon is not None:
+            savings = self.crateitems.aggregate(Sum('crateitem_total'))['crateitem_total__sum']*(self.coupon.amount/Decimal('100'))
+            self.order_total = self.order_total - savings
+
         self.save()
 
     def save(self, *args, **kwargs):
