@@ -505,6 +505,18 @@ This section includes areas/sections of code and properties I was unaware of. I 
             ```}```
 
 
+**Redirecting after adding to crate**:
++ Originally I had this feature using:
+
+    ```request.POST.get('redirect_url')```
+
+    but when using the site in development I noticed when adding items to your crate it would clear your previous search/category filter/sorting whereas I wanted to return users to the page before pressing the button.
+    + After searching around I found [this post](https://stackoverflow.com/questions/44151339/python-django-how-to-get-the-page-url-before-navigating-to-a-new-view) which utilized the following code:
+    
+        ```request.META.get('HTTP_REFERER')```
+     
+    + I set ```redirect_url``` to this value and the view functioned as intended.
+
 ### Media
 
 #### Images

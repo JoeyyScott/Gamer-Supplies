@@ -22,7 +22,8 @@ def add_to_crate(request, item_id):
 
     supply = get_object_or_404(Supply, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
+    # Credit for adapted redirect url - see README.md for details
+    redirect_url = request.META.get('HTTP_REFERER')
     crate = request.session.get('crate', {})
 
     if item_id in list(crate.keys()):

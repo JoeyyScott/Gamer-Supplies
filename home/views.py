@@ -45,6 +45,10 @@ def review_add(request):
 
 
 def reviews_manage(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins are allowed to manage reviews.')
+        return redirect(reverse('home'))
+
     reviews = Review.objects.all()
 
     context = {

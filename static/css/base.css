@@ -185,7 +185,7 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 /* Allauth form formatting */
 .allauth-form-inner-content p { margin: 1rem; font-family: 'Salsa', cursive; }
 .allauth-form-inner-content .form-control { color: #4169e1; }
-.allauth-form-inner-content input::placeholder { color: #6c757d; }
+.allauth-form-inner-content input::placeholder { color: #6c757d; font-family: 'Salsa', cursive; }
 .allauth-form-inner-content label:not([for='id_remember']) { display: none; }
 .allauth-form-inner-content form label, .allauth-form-inner-content a { color: #ffd700; text-shadow: 2px 2px #141414; }
 .allauth-form-inner-content form .form-group #div_id_remember { width: max-content; margin: auto; }
