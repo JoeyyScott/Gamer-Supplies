@@ -115,7 +115,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-WSGI_APPLICATION = 'gamer-supplies.wsgi.application'
+WSGI_APPLICATION = 'gamer_supplies.wsgi.application'
 
 
 # Database
