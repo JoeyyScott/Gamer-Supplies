@@ -36,8 +36,8 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
+                {% endif %}
                     <div class="row">
-
                         {% if request.user.is_authenticated %}
                         <div class="col-{% if request.user.is_superuser %}6 text-start{% else %}12{% endif %}">
                             <a href="{% url 'review_add' %}" class="btn btn-sm my-2">Add Review</a>
@@ -49,7 +49,6 @@
                             <a href="{% url 'reviews_manage' %}" class="btn btn-sm my-2">Manage <span class="d-none d-sm-inline">Reviews</span></a>
                         </div>
                     </div>
-                {% endif %}
             </div>
         </div>
     </div>
