@@ -48,21 +48,21 @@
             <p class="altFont text-center ms-3 mb-1">Sorting by: {{ current_sorting|title }}</p>
             <hr class="w-100 m-auto highlight mb-1">
             {% endif %}
-            <a id="sort-trigger" class="highlight rounded-0 text-center nav-link title-sort {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Sort</a>
+            <a id="sort-trigger" class="highlight rounded-0 text-center nav-link pt-1 title-sort {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Sort</a>
             <div class="collapse" id="collapseExample">
                 <ul>
-                    <div class="row">
+                    <div class="row pt-0">
                         <div class="col-6 pb-1">
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=price&direction=asc">Price (low to high)</a></li>
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=price&direction=desc">Price (high to low)</a></li>
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=name&direction=asc">Name (A-Z)</a></li>
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=name&direction=desc">Name (Z-A)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=price&direction=asc">Price (low to high)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=price&direction=desc">Price (high to low)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=name&direction=asc">Name (A-Z)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=name&direction=desc">Name (Z-A)</a></li>
                         </div>
                         <div class="col-6 pb-1">
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=category&direction=asc">Category (A-Z)</a></li>
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=category&direction=desc">Category (Z-A)</a></li>
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=asc">Brand (A-Z)</a></li>
-                            <li><a class="nav-link link-sort altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=desc">Brand (Z-A)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=category&direction=asc">Category (A-Z)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=category&direction=desc">Category (Z-A)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=asc">Brand (A-Z)</a></li>
+                            <li><a class="nav-link link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=desc">Brand (Z-A)</a></li>
                         </div>
                     </div>
                 </ul>
@@ -82,7 +82,7 @@
         {% endif %}
         <div class="row justify-content-center col-10 offset-1">
             {% for supply in supplies %}
-                <div class="col-md-6 col-lg-4 my-3 p-1 gamerStyle">
+                <div class="col-md-6 col-lg-4 mb-3 p-1 gamerStyle">
                     <!-- Supply Cards -->
                     <div class="card h-100 text-center p-2">
                         <!-- Supply Image -->
@@ -147,15 +147,20 @@
             {% endfor %}
         </div>
     </div>
-    <div id="buttons" class="container-buttons">
+    <div class="container-buttons row">
+        <div id="trigger-btt" class="hidden col-12 text-end">
+            <a class=" link-btt h-100 mt-2">
+                <img src={% static "images/back-to-top.png" %} class="img-supply-add pb-1" alt="Back to Top">
+            </a>	
+        </div>
+        <br>
         {% if request.user.is_superuser %}
-            <a class="pb-1" href="{% url 'supply_add' %}">
-                <img src={% static "images/add-supply.png" %} class="img-supply-add pb-1" alt="Add Supply">
-            </a>
+            <div class="col-12 text-end">
+                <a class="pb-1" href="{% url 'supply_add' %}">
+                    <img src={% static "images/add-supply.png" %} class="img-supply-add pb-1" alt="Add Supply">
+                </a>
+            </div>
         {% endif %}
-        <a class="link-btt d-flex h-100 mt-2">
-            <img src={% static "images/back-to-top.png" %} class="img-supply-add pb-1" alt="Add Supply">
-        </a>	
     </div>
 {% endblock %}
 
@@ -163,22 +168,14 @@
     {{ block.super }}
     {% include 'supplies/includes/quantity_input.html' %}
     <script type="text/javascript">
-        // Hides the add supply/back to top buttons when the sort is expanded
-        $('#sort-trigger').click(function(e) {
-            var buttons = document.getElementById('buttons')
-            if (buttons.classList.contains('hidden') == false) { buttons.classList.add('hidden'); sortExpanded = true; }
-            else { buttons.classList.remove('hidden'); sortExpanded = false; }
-        })
         var page = document.documentElement
         document.addEventListener("scroll", scrollDistance)
         function scrollDistance() {
-            console.log(sortExpanded)
-            if (sortExpanded = true) {
-                if(page.scrollTop > 290) { buttons.classList.remove('hidden') }
-                else { console.log(sortExpanded); buttons.classList.add('hidden') }
-            }
+            var btt = document.getElementById('trigger-btt')
+            if (page.scrollTop > 290) { btt.classList.remove('hidden'); }
+            else { btt.classList.add('hidden'); }
         }
-		$('.link-btt').click(function(e) {
+		$('#trigger-btt').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
