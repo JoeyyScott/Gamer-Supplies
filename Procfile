@@ -1,1 +1,1 @@
-web: gunicorn gamer-supplies.wsgi:application
+web: gunicorn gamer_supplies.wsgi:application
