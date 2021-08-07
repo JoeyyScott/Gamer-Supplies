@@ -1,0 +1,1 @@
+web: gunicorn gamer-supplies.wsgi:application

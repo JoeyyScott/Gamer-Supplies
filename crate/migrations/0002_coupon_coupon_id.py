@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='coupon',
             name='coupon_id',
-            field=models.CharField(blank=True, default=uuid.uuid4, max_length=20, unique=True),
+            field=models.CharField(blank=True, default=uuid.uuid4, max_length=254, unique=True),
         ),
     ]
