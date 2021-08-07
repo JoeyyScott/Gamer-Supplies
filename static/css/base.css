@@ -25,7 +25,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .altFont { font-family: 'Salsa', cursive; }
 
 h1 { font-size: 1.5rem; }
-h1, h2 { color: #ffd700; text-shadow: 2px 2px #141414; }
+h1, h2 { color: #ffd700; text-shadow: 3px 3px #141414; }
 
 p { color: #eee6e6; margin-bottom: 0; }
 a { text-decoration: none; color: #ffd700; }
@@ -67,9 +67,6 @@ footer i, .text-footer { font-size: 1.6rem; }
 .space-home { margin-top: 10rem; }
 
 .img-supply-add { height: 12vh; }
-.supply-img {
-    border-top: 2px solid #eee6e6;
-}
 
 .card-title, .text-price { font-size: 1.5rem; }
 .line-break { color: #4169e1; }
@@ -154,7 +151,6 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     text-shadow: none;
 }
 
-.img-crate { width: 50%; }
 
 .checkout-crate-header { 
     font-size: .8rem;
@@ -223,17 +219,22 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 
 /* -------------------------------- Media Queries */
 
-/* For large screen sizes */
+/* For medium screens */
+@media screen and (min-width: 768px) and (min-height: 1024px) {
+    .container-content { margin-top: 13vh; }
+    .header-links { font-size: 1.75rem; }
+    a.nav-link { font-size: 1.5rem; }
+    .logo { height: 7vh; }
+    .img-supply { width: 25%; }
+    .text-order { font-size: 1rem; }
+}
+/* For large screens */
 @media (min-width: 992px) {
     .nav-link { font-size: 2.5rem; }
     footeri.fab { display: inline; }
-}
-
-.card {
-    background: var(--white);
-    border: 2px solid var(--black);
-    border-radius: 0;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    position: relative;
-    width: 100%;
+    h1 { font-size: 3rem;}
+    .nav-link { font-size: 1.5rem; }
+    .container-content { margin-top: 13vh; }
+    .text-order { font-size: 1rem; }
+    .space { height: 10vh; }
 }

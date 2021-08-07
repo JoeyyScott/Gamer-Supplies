@@ -6,7 +6,7 @@
 {% block content %}
     <div class="container container-content h-100">
         <div class="row h-100 d-flex justify-content-center {% if reviews|length < 1 %}space-home{% endif %}">
-            <div class="col-12 col-md-8 my-auto pt-2 text-center gamerStyle">
+            <div class="col-10 col-md-8 my-auto pt-2 text-center gamerStyle">
                 <h1>Snacks so good you'll keep coming back..</h1>
                 <p class="altFont my-0">Create an account to start adding snacks!</p>
                 <div class="my-2">
@@ -46,7 +46,7 @@
                         {% endif %}
                         {% if request.user.is_superuser %}
                         <div class="col-6 text-end">
-                            <a href="{% url 'reviews_manage' %}" class="btn btn-sm my-2">Manage reviews</a>
+                            <a href="{% url 'reviews_manage' %}" class="btn btn-sm my-2">Manage <span class="d-none d-sm-inline">Reviews</span></a>
                         </div>
                     </div>
                 {% endif %}

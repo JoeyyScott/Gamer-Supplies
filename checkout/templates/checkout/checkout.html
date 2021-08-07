@@ -14,15 +14,15 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container container-content gamerStyle">
+<div class="container container-content gamerStyle col-md-10">
     <div class="row">
         <div class="col">
-            <h1 class="">Checkout Summary</h1>
+            <h1 class="text-center">Checkout Summary</h1>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12 col-lg-6 order-lg-last mb-2">
+        <div class="col-12 col-md-8 offset-md-2 col-lg-6 order-lg-last mb-2">
             <p class="highlight text-center mb-1">Crate Summary ({{ supply_count }} supplies)</p>
             <div class="row">
                 <div class="col-4 offset-2">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-6 py-1">
+        <div class="col-12 col-md-8 offset-md-2 col-lg-6 py-1">
             <p class="text-center">Please fill out the form with appropriate details to ensure we can process your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="form-payment">
                 {% csrf_token %}
