@@ -11,8 +11,7 @@ from django.db.models.functions import Lower
 
 def all_supplies(request):
     """ A view to show all supplies, including sorting and search queries """
-
-    supplies = Supply.objects.all()
+    supplies = Supply.objects.all().order_by('id')
     query = None
     categories = None
     sort = None
