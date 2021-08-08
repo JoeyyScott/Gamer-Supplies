@@ -26,9 +26,9 @@
             </div>
         </div>
         <div class="gamerStyle container-categories my-2">
-            <ul class="nav nav-tabs justify-content-center p-0 gamerStyle">
+            <ul class="nav nav-tabs highlight justify-content-center p-0 gamerStyle">
                 <li class="nav-item">
-                    <a class="rounded-0 nav-link {% if 'category' not in url_name %}{% if 'sort' not in url_name %}active{% endif %}{% endif %}" href="{% url 'supplies' %}">All Supplies</a>
+                    <a class="rounded-0 nav-link {% if 'sort' not in url_name %}{% if 'category' not in url_name %}active{% endif %}{% endif %}" href="{% url 'supplies' %}">All Supplies</a>
                 </li>
                 <li class="nav-item">
                     <a class="rounded-0 nav-link {% if 'Drinks' in url_name %}active{% endif %}" href="{% url 'supplies' %}?category=Drinks">Drinks</a>
@@ -151,15 +151,15 @@
     </div>
     <div class="container-buttons row">
         <div id="trigger-btt" class="hidden col-12 text-end">
-            <a class=" link-btt h-100 mt-2">
-                <img src={% static "images/back-to-top.png" %} class="img-supply-add pb-1" alt="Back to Top">
+            <a class="btn-btt h-100 mt-2">
+                <img src={% static "images/back-to-top.png" %} class="img-btn-supplies" alt="Back to Top">
             </a>	
         </div>
         <br>
         {% if request.user.is_superuser %}
             <div class="col-12 text-end">
                 <a class="pb-1" href="{% url 'supply_add' %}">
-                    <img src={% static "images/add-supply.png" %} class="img-supply-add pb-1" alt="Add Supply">
+                    <img src={% static "images/add-supply.png" %} class="img-btn-supplies mt-3" alt="Add Supply">
                 </a>
             </div>
         {% endif %}
