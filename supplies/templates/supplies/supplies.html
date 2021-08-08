@@ -4,9 +4,9 @@
 {% block extra_title %}Supplies | {% endblock %}
 
 {% block content %}
-    <div class="container-content">
+    <div class="container container-content">
         <div class="row">
-            <div class="col text-center mt-3">
+            <div class="col text-center">
                 <h1>Supplies</h1>
             </div>
         </div>
@@ -86,7 +86,7 @@
                     <!-- Supply Cards -->
                     <div class="card h-100 text-center p-2 gamerStyle me-md-2 me-lg-5">
                         <!-- Supply Image -->
-                        <div class="col-6 m-auto">
+                        <div class="col-66 m-autos w-50 mx-auto">
                             {% if supply.image %}
                             <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img" alt="{{ supply.name }}">
                             {% else %}
@@ -94,14 +94,15 @@
                             {% endif %}
                         </div>
                         <!-- Supply Info -->
-                        <div class="card-title highlight">{{ supply.name }}</div>
-                        <p class="card-text text-desc overflow-auto">{{ supply.description }}</p>
-                        <p class="card-text"> <span class="highlight">Size:</span> {{ supply.size }}</p>
-                        <p class="card-text"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
-                        <p class="card-text text-price highlight">Price: £{{ supply.price }}</p>
-                        <!-- Buttons -->
-                        <!-- Add to Crate Button -->
-                        {% if request.user.is_authenticated %}
+                        <div class="card-title w-100 highlight">{{ supply.name }}</div>
+                        <p class="card-text text-desc overflow-scroll">{{ supply.description }}</p>
+                        <div class="card-buttons">
+                            <p class="card-text"> <span class="highlight">Size:</span> {{ supply.size }}</p>
+                            <p class="card-text"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
+                            <p class="card-text text-price highlight">Price: £{{ supply.price }}</p>
+                            <!-- Buttons -->
+                            <!-- Add to Crate Button -->
+                            {% if request.user.is_authenticated %}
                             <form class="form" action="{% url 'add_to_crate' supply.id %}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-row">
@@ -127,21 +128,22 @@
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
                             </form>
-                        {% if request.user.is_superuser %}
+                            {% if request.user.is_superuser %}
                             <!-- Admin buttons -->
                             <div>
                                 <a class="btn solid small mx-1 my-1" href="{% url 'supply_edit' supply.id %}"><i class="fas fa-edit p-1"></i></a>
                                 <a class="btn solid small mx-1 my-1" href="{% url 'supply_delete' supply.id %}"><i class="fas fa-trash p-1"></i></a>
                             </div>
-                        {% endif %}
-                        {% else %}
+                            {% endif %}
+                            {% else %}
                             <!-- Login/Sign Up Buttons -->
                             <div class="row">
                                 <div class="col">
                                     <p class="my-0 small altFont"><a class="highlight" href="{% url 'account_signup' %}">Register</a> or <a class="highlight" href="{% url 'account_login' %}">Login</a> to add your crate</p>          
                                 </div>
                             </div>
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             {% endfor %}
@@ -168,13 +170,12 @@
     {{ block.super }}
     {% include 'supplies/includes/quantity_input.html' %}
     <script type="text/javascript">
+        // Credit for adapted scroll to top button - see README.md for details
         var page = document.documentElement
-        document.addEventListener("scroll", scrollDistance)
-        function scrollDistance() {
+        document.addEventListener("scroll", function () { 
             var btt = document.getElementById('trigger-btt')
-            if (page.scrollTop > 290) { btt.classList.remove('hidden'); }
-            else { btt.classList.add('hidden'); }
-        }
+            if (page.scrollTop > 290) { btt.classList.remove('hidden'); } else { btt.classList.add('hidden'); }
+        })
 		$('#trigger-btt').click(function(e) {
 			window.scrollTo(0,0)
 		})

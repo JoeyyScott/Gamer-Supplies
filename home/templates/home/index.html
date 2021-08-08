@@ -8,7 +8,7 @@
         <div class="row h-100 d-flex justify-content-center {% if reviews|length < 1 %}space-home{% endif %}">
             <div class="col-10 col-md-8 my-auto pt-2 text-center gamerStyle">
                 <h1>Snacks so good you'll keep coming back..</h1>
-                <p class="altFont my-0">Create an account to start adding snacks!</p>
+                <p class="altFont tagline-home my-0">Create an account to start adding snacks!</p>
                 <div class="my-2">
                     <a href="{% url 'supplies' %}" class="btn btn-lg text-uppercase">Snack Now</a>
                 </div>
@@ -36,19 +36,19 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <div class="row">
-                        {% if request.user.is_authenticated %}
-                            <div class="col-{% if request.user.is_superuser %}6 text-start{% else %}12{% endif %}">
-                                <a href="{% url 'review_add' %}" class="btn btn-sm my-2">Add Review</a>
-                            </div>
-                        {% endif %}
-                        {% if request.user.is_superuser %}
-                        <div class="col-6 text-end">
-                            <a href="{% url 'reviews_manage' %}" class="btn btn-sm my-2">Manage <span class="d-none d-sm-inline">Reviews</span></a>
-                        </div>
-                        {% endif %}
-                    </div>
                 {% endif %}
+                <div class="row">
+                    {% if request.user.is_authenticated %}
+                        <div class="col-{% if request.user.is_superuser %}6 text-start{% else %}12{% endif %}">
+                            <a href="{% url 'review_add' %}" class="btn btn-sm my-2">Add Review</a>
+                        </div>
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                    <div class="col-6 text-end">
+                        <a href="{% url 'reviews_manage' %}" class="btn btn-sm my-2">Manage <span class="d-none d-sm-inline">Reviews</span></a>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

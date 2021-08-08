@@ -412,6 +412,7 @@ Review Model
 + [AWS Amazon S3](https://aws.amazon.com/s3/) - Amazon Simple Storage Service (Amazon S3) was used to store media and static files used throughout the project.
 + [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - A CSS framework that allows for responsive design, prebuilt styling classes and other utlities/components to be applied throughout the entire site.
 + [Django](https://www.djangoproject.com/) - The project was built using Django's web framework.
++ [Djecrety](https://djecrety.ir/) - I used this tool to generate a secret key for Django.
 + [FavIcon](https://favicon.io/) - I used this tool to convert an image I made into icon form and provide the code (stated in HTML comments) to link this icon to base.html.
 + [Font Awesome](https://fontawesome.com/) - I used the Font Awesome icon library to provide icons throughout the site, mainly used for buttons. 
 + [Google Fonts](https://fonts.google.com/) - I used two fonts from the Google fonts library - "Saira Stencil One" and "Salsa".
@@ -430,10 +431,15 @@ Review Model
 + [Placeholder](https://placeholder.com) was used to generate colour boxes to display in the colour scheme section of my README.md file.
 
 ### Dependencies
++ [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - Create, configure, and manage AWS services, such as Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3) using the AWS SDK for Python (Boto3).
 + [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)  - Prebuilt Django applications that handle registration, user authentication, account management as well as support for third party accounts.
 + [Django Countries](https://pypi.org/project/django-countries/) - Provides country choices for use with forms and a prebuilt country field for models.
 + [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Django tool to program customizable reusable layouts out of components used within forms.
++ [django-storages](https://django-storages.readthedocs.io/en/latest/) - A collection of Django custom storage backends. 
++ [dj_database_url](https://pypi.org/project/dj-database-url/) - Django utility allows you to configure your Django application to simply utilize the 12factor inspired ```DATABASE_URL``` environment variable.
++ [gunicorn](https://pypi.org/project/gunicorn/) - Python WSGI HTTP Server for UNIX.
 + [Pillow](https://pillow.readthedocs.io/en/stable/) - Imaging library for Python.
++ [psycopg2-binary](https://pypi.org/project/psycopg2-binary/) - PostgreSQL database adapter for Python.
 + [Stripe](https://stripe.com/docs) - Stripe’s API library for Python.
 
 #### [Back to top](#contents)
@@ -504,7 +510,6 @@ This section includes areas/sections of code and properties I was unaware of. I 
             
             ```}```
 
-
 **Redirecting after adding to crate**:
 + Originally I had this feature using:
 
@@ -516,6 +521,40 @@ This section includes areas/sections of code and properties I was unaware of. I 
         ```request.META.get('HTTP_REFERER')```
      
     + I set ```redirect_url``` to this value and the view functioned as intended.
+
+**Scroll to top button**:
++ In searching how to find out detect if a user was scrolling and returning the amount I found [this post](https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/) which utilized the following code.
+
+    ```javascript
+    var rootElement = document.documentElement
+
+    function handleScroll() {
+        // Do something on scroll
+        var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+        if ((rootElement.scrollTop / scrollTotal ) > 0.80 ) {
+            // Show button
+            scrollToTopBtn.classList.add("showBtn")
+        } else {
+            // Hide button
+            scrollToTopBtn.classList.remove("showBtn")
+        }
+    }
+
+    document.addEventListener("scroll", handleScroll)
+    ```
++ I was able to utilize, ```document.documentElement```, ```scrollTop``` and the event listener and created a script to detect if the user had scrolled past a point (found using console logs) to take the relevant action with the back to top button.
+
+    ```javascript
+    document.addEventListener("scroll", function () { 
+        var btt = document.getElementById('trigger-btt')
+        if (page.scrollTop > 290) { btt.classList.remove('hidden'); } else { btt.classList.add('hidden'); }
+    })
+
+**Ordering a queryset in Django**:
++ After deploying my application to Heroku when editing supplies the order showed on "All Supplies" would default to the most recently edited being the last in the list.
+    + I realized I had to sort them by the primary key attached to the Supplies in the data store.
+    + After searching around I found [this post](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/asc_or_desc.html) which utilized the ```order_by``` function within Django objects and showed how to set parameters.
+    + Using this function ensured the Supplies were loaded in the correct order and were unaffected by being edited.
 
 ### Media
 

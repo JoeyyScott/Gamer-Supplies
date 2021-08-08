@@ -5,7 +5,7 @@ html {
 body {
     background-color: #eee6e6;
     /* height: 100vh; */
-    font-family: 'Saira Stencil One', cursive !important;
+    font-family: 'Saira Stencil One', cursive;
     word-wrap: break-word;
 }
 
@@ -36,7 +36,7 @@ a { text-decoration: none; color: #ffd700; }
 }
 
 /* Containers */
-.container-content { margin-top: 10vh; }
+.container-content { margin-top: 13vh; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-categories { border-top: 0; }
 .container-search, .container-toasts { background-color: #4169e1;}
@@ -67,7 +67,7 @@ footer i, .text-footer { font-size: 1.6rem; }
 .space-home { margin-top: 10rem; }
 
 .img-supply-add { height: 12vh; }
-
+/* .card-buttons { position: absolute; bottom: 1%; } */
 .card-title, .text-price { font-size: 1.5rem; }
 .line-break { color: #4169e1; }
 .card img {
@@ -166,12 +166,12 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     border: 1px solid #ffd700;
 }
 
-.review-input { height: 200px; }
+.review-input, .review-input:focus { height: 200px; }
 .form-input, .form-input:focus { height: 40px; }
 
-.review-input,
+.review-input, .review-input:focus,
 .form-input, .form-input:focus {
-    box-sizing: border-box; font-family: 'Salsa', cursive;
+    box-sizing: border-box; font-family: 'Salsa', cursive; color: #4169e1;
     padding: 10px 12px; margin-bottom: 10px; border-radius: 0px;
     background-color: #eee6e6; box-shadow: 0 1px 3px 0 #141414;
 }
@@ -213,9 +213,9 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     height: 30vh; justify-content: center;
 }
 
-  /* Hide scrollbar for IE, Edge and Firefox */
-.carousel-inner { overflow: scroll; -ms-overflow-style: none; scrollbar-width: none; }
-.carousel-inner::-webkit-scrollbar { display: none; }
+/* Hide scrollbar for IE, Edge and Firefox */
+.carousel-inner, .text-desc { overflow: scroll; -ms-overflow-style: none; scrollbar-width: none; }
+.carousel-inner::-webkit-scrollbar, .text-desc::-webkit-scrollbar { display: none; }
 
 /* -------------------------------- Media Queries */
 
@@ -237,4 +237,6 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     .container-content { margin-top: 13vh; }
     .text-order { font-size: 1rem; }
     .space { height: 10vh; }
+    .tagline-home { font-size: 1.75rem; }
+    /* p { font-size: 1.1rem; } */
 }
