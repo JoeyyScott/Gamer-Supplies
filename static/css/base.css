@@ -80,7 +80,7 @@ input[type=number] { -moz-appearance: textfield; }
 .carousel-inner::-webkit-scrollbar, .text-desc::-webkit-scrollbar { display: none; }
 
 /* Form inputs */
-.review-input, .review-input:focus,
+#id_review, #id_review:focus,
 .form-input, .form-input:focus {
     box-sizing: border-box; font-family: 'Salsa', cursive; color: #4169e1;
     padding: 10px 12px; margin-bottom: 10px; border-radius: 0px;
@@ -88,7 +88,7 @@ input[type=number] { -moz-appearance: textfield; }
 }
 
 /* Form inputs sizes */
-.review-input, .review-input:focus { height: 200px; }
+#id_review, #id_review:focus { height: 200px; }
 .form-input, .form-input:focus { height: 40px; }
 
 /* Form errors */
