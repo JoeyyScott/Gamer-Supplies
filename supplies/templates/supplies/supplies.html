@@ -48,24 +48,22 @@
                 <p class="altFont text-center ms-3 mb-1">Sorting by: {{ current_sorting|title }}</p>
             {% endif %}
             <div class="nav-item">
-                <a id="sort-trigger" class="highlight rounded-0 text-center nav-link pt-1 title-sort w-25 mx-auto {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Sort</a>
-                <div class="collapse" id="collapseExample">
-                    <ul>
-                        <span class="row pt-0">
-                            <span class="col-6 pb-1">
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=price&direction=asc">Price (low to high)</a></li>
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=price&direction=desc">Price (high to low)</a></li>
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=name&direction=asc">Name (A-Z)</a></li>
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=name&direction=desc">Name (Z-A)</a></li>
-                            </span>
-                            <span class="col-6 pb-1">
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=category&direction=asc">Category (A-Z)</a></li>
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=category&direction=desc">Category (Z-A)</a></li>
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=asc">Brand (A-Z)</a></li>
-                                <li><a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=desc">Brand (Z-A)</a></li>
-                            </span>
+                <a id="sort-trigger" class="highlight rounded-0 text-center nav-link pt-1 title-sort w-25 mx-auto {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#links-sort" role="button" aria-expanded="false" aria-controls="links-sort">Sort</a>
+                <div class="collapse" id="links-sort">
+                    <span class="row pt-0">
+                        <span class="col-6 pb-1">
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=price&direction=asc">Price (low to high)</a>
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=price&direction=desc">Price (high to low)</a>
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=name&direction=asc">Name (A-Z)</a>
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=name&direction=desc">Name (Z-A)</a>
                         </span>
-                    </ul>
+                        <span class="col-6 pb-1">
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=category&direction=asc">Category (A-Z)</a>
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=category&direction=desc">Category (Z-A)</a>
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=asc">Brand (A-Z)</a>
+                            <a class="link-sort text-center altFont p-1" href="{% url 'supplies' %}?sort=brand&direction=desc">Brand (Z-A)</a>
+                        </span>
+                    </span>
                 </div>
             </div>
         </div>
