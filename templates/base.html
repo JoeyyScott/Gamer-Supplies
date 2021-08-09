@@ -41,7 +41,8 @@
         {% block extra_js %}
         {% endblock %}
 
-        <title>{% block extra_title %}{% endblock %}Gamer Supplies</title></head>
+        <title>{% block extra_title %}{% endblock %}Gamer Supplies</title>
+    </head>
     <body>
         <header>
             <!-- Navbar -->
@@ -53,23 +54,22 @@
                     </a>
                     <!-- View Crate -->
                     {% if request.user.is_authenticated %}
-                        <a class="{% if grand_total %}font-weight-bold{% else %}font-weight-normal{% endif %} nav-link header-links p-0" href="{% url 'view_crate' %}">
+                        <a class="header-links p-0" href="{% url 'view_crate' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag"></i></div>
-                                <p class="my-0 text-bag">
-                                    {% if total %}
-                                        £{{ total|floatformat:2 }}
-                                    {% else %}
-                                        £0.00
-                                    {% endif %}
-                                </p>
+                                <i class="fas fa-shopping-bag"></i>
+                                <p class="my-0 text-bag">{% if total %}£{{ total|floatformat:2 }}{% else %}£0.00{% endif %}</p>
                             </div>
                         </a>
                     {% endif %}
-                    <!-- Mobile Toggle -->
                     <button class="navbar-toggler header-links p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-box-open fa-md"></i><span class="text-menu">Menu</span>
+                        <div class="text-center">
+                            <i class="fas fa-box-open fa-md"></i><br>
+                            <span class="text-menu">Menu</span>
+                        </div>
                     </button>
+                    <!-- Mobile Toggle -->
+                        
+                    
                     <!-- Navbar -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbar">
                         <div class="navbar-nav pe-1">

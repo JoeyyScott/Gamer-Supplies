@@ -36,7 +36,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-categories { border-top: 0; }
 .container-search, .container-toasts { background-color: #4169e1;}
-.container-buttons { position: fixed; bottom: 16vh; right: 10px; }
+.container-buttons { position: fixed; bottom: 16vh; right: 10px; z-index: 99999999999; }
 .container-messages { position: fixed; z-index: 99999999999; bottom: 14vh; left: -4px; width: 100%; }
 
 /* Nav */
@@ -122,6 +122,8 @@ input[type=number] { -moz-appearance: textfield; }
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.header-links { font-size: 1.5rem; }
+
 /* .card-buttons { position: absolute; bottom: 1%; } */
 
 /* -------------------------------- Media Queries */
@@ -148,4 +150,5 @@ input[type=number] { -moz-appearance: textfield; }
     .tagline-home { font-size: 1.75rem; }
     .container-categories p { font-size: 1.5rem; }
     .container-messages { width: 25%; }
+    .header-links { font-size: 1.5rem; }
 }
