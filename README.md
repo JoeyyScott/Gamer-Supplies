@@ -220,6 +220,7 @@ Order Model
 | county | CharField | max_length=50, null=True, blank=True |
 | postcode | CharField | max_length=20, null=True, blank=True |
 | country | CountryField | blank_label="Country *", null=False, blank=False |
+| coupon | ForeignKey | Coupon, on_delete=models.SET_NULL, null=True, blank=True |
 | date | DateTimeField | auto_now_add=True |
 | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0 |
 | original_crate | TextField | null=False, blank=False, default='' |
