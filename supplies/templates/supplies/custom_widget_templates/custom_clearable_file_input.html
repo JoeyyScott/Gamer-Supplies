@@ -21,7 +21,7 @@
     </div>
     {% endif %}
     <div class="col-6 mb-2{% if widget.is_initial %} mt-5{% endif %}">
-        <a class="btn btn-img rounded-0">Select Image <input id="img-new" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}></a>
-        <strong><p class="altFont" id="filename"></p></strong>
+        <a class="btn btn-img rounded-0">Select Image <input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}></a>
+        <p class="altFont" id="filename"></p>
     </div>
 </div>
