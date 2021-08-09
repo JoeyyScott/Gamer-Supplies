@@ -32,11 +32,11 @@ p { color: #eee6e6; margin-bottom: 0; }
 .img-btn-supplies { height: 12vh; }
 
 /* Containers */
-.container-content { margin-top: 13vh; }
+.container-content { margin-top: 16vh; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-categories { border-top: 0; }
 .container-search, .container-toasts { background-color: #4169e1;}
-.container-buttons { position: fixed; bottom: 16vh; right: 10px; z-index: 99999999999; }
+.container-buttons { position: fixed; bottom: 14vh; right: 10px; z-index: 99999999999; }
 .container-messages { position: fixed; z-index: 99999999999; bottom: 14vh; left: -4px; width: 100%; }
 
 /* Nav */

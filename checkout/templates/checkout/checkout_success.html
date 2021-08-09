@@ -45,62 +45,50 @@
                 </div>
                 <hr class="w-100 m-auto highlight mb-1">
                 {% endfor %}
-
                 <div class="row">
                     <div class="col-12"><p class="mb-0 altFont">Order Total: <span class="highlight">£{{ order.order_total }}</span></p></div>
                 </div>
-
                 <div class="row">
                     <div class="col"><h2 class="highlight">Delivery Details:</h2></div>
                 </div>
-
                 <div class="row">
                     <div class="col-5"><p class="mb-0 altFont">Full Name:</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.full_name }}</p></div>
+                    <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.full_name }}</p></div>
                 </div>
-
                 <div class="row">
                     <div class="col-5"><p class="mb-0 altFont">Address 1</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.address_line_1 }}</p></div>
+                    <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.address_line_1 }}</p></div>
                 </div>
-
                 <div class="row">
                     <div class="col-5"><p class="mb-0 altFont">Address 2</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.address_line_2 }}</p></div>
+                    <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.address_line_2 }}</p></div>
                 </div>
-
                 {% if order.county %}
-                <div class="row">
-                    <div class="col-5"><p class="mb-0 altFont">County:</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.county }}</p></div>
-                </div>
+                    <div class="row">
+                        <div class="col-5"><p class="mb-0 altFont">County:</p></div>
+                        <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.county }}</p></div>
+                    </div>
                 {% endif %}
-
                 <div class="row">
                     <div class="col-5"><p class="mb-0 altFont">Town or City:</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.town_or_city }}</p></div>
+                    <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.town_or_city }}</p></div>
                 </div>
-
                 {% if order.postcode %}
-                <div class="row">
-                    <div class="col-5"><p class="mb-0 altFont">Post Code:</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.postcode }}</p></div>
-                </div>
+                    <div class="row">
+                        <div class="col-5"><p class="mb-0 altFont">Post Code:</p></div>
+                        <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.postcode }}</p></div>
+                    </div>
                 {% endif %}
-
                 <div class="row">
                     <div class="col-5"><p class="mb-0 altFont">Country:</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.country }}</p></div>
+                    <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.country }}</p></div>
                 </div>
-
                 {% if order.contact_number %}
-                <div class="row">
-                    <div class="col-5"><p class="mb-0 altFont">Contact Number:</p></div>
-                    <div class="col-7 text-end"><p class="mb-0 altFont"><span class="highlight">{{ order.contact_number }}</p></div>
-                </div>
+                    <div class="row">
+                        <div class="col-5"><p class="mb-0 altFont">Contact Number:</p></div>
+                        <div class="col-7 text-end"><span class="highlight altFont mb-0">{{ order.contact_number }}</p></div>
+                    </div>
                 {% endif %}
-
-                <div class="row"><div class="col"><h2 class="highlight">Billing Details:</h2></div></div>
             </div>
         </div>
     </div>
