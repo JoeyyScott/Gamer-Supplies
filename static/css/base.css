@@ -37,7 +37,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 .container-categories { border-top: 0; }
 .container-search, .container-toasts { background-color: #4169e1;}
 .container-buttons { position: fixed; bottom: 16vh; right: 10px; }
-.container-messages { position: fixed; z-index: 99999999999; bottom: 14vh; left: 0; width: 100%; }
+.container-messages { position: fixed; z-index: 99999999999; bottom: 14vh; left: -4px; width: 100%; }
 
 /* Nav */
 .logo { height: 8vh; }
