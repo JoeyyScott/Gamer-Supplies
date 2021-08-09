@@ -491,24 +491,34 @@ This section includes areas/sections of code and properties I was unaware of. I 
 **Inner carousel scrollbar**:
 + I wanted my review carousel to be a fixed height and set ```overflow: scroll``` on the element.
     + This caused a scrollbar to appear and after searching around I found [this post](https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp) which provided me with the CSS rules to hide the scrollbar but keep the functionality.
-    + Hiding scrollbar for:
-        + Chrome, Safari and Opera
-        
-            ```.example::-webkit-scrollbar {```
-            
-            ```display: none;```
-            
-            ```}```
+    + I have included the snippet below
+        ```css
+         /* Hide scrollbar for Chrome, Safari and Opera */
+        .example::-webkit-scrollbar {
+            display: none;
+        }
 
-        + IE, Edge and Firefox
-        
-            ```.example {```
-            
-            ```-ms-overflow-style: none;``` IE and Edge
-            
-            ```scrollbar-width: none;``` Firefox
-            
-            ```}```
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .example {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+**Hiding +/- buttons on number input field**:
++ I wanted to use my own quantity input buttons and when viewing the site on small screens you were unable to fully view the number in the field. After searching around I found [this post](https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp) which provided me with the CSS rules to hide the up/down arrows on the input.
+    + I have included the snippet below
+        ```css
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
 
 **Redirecting after adding to crate**:
 + Originally I had this feature using:

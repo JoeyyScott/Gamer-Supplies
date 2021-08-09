@@ -19,6 +19,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 /* Additional Text */
 .card-title, .text-price { font-size: 1.5rem; }
 .link-sort { color: #eee6e6; font-size: 0.75rem; display: block; }
+.crate-info { color: #eee6e6; }
 
 /* Additional Buttons */
 .btn-crate { text-shadow: none; }
@@ -35,8 +36,8 @@ p { color: #eee6e6; margin-bottom: 0; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-categories { border-top: 0; }
 .container-search, .container-toasts { background-color: #4169e1;}
-.container-buttons { position: fixed; bottom: 15vh; right: 10px; }
-.container-messages { position: fixed; z-index: 99999999999; bottom: 14vh; right: 15px; }
+.container-buttons { position: fixed; bottom: 16vh; right: 10px; }
+.container-messages { position: fixed; z-index: 99999999999; bottom: 14vh; left: 0; width: 100%; }
 
 /* Nav */
 .logo { height: 8vh; }
@@ -63,15 +64,18 @@ footer i, .text-footer { font-size: 1.6rem; }
 .fa-thumbs-down { transform: scaleX(-1); }
 .crate-wrapper { height: 100px; overflow-x: hidden; overflow-y: auto; }
 
-/* Supply navigation */
+/* Supplies */
 .title-sort:hover, .title-sort:focus { color: #ffd700; border: none; }
 ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 .nav-tabs .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover { border: none; width: max-content; }
 .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover, .title-sort.active, .link-sort:hover { background-color: #ffd700; color: #4169e1; text-shadow: 2px 2px #eee6e6; border-bottom: 0; }
+/* Credit for w3schools: Remove arrows/spinners on Chrome, Safari, Opera, Edge and Firefox */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
 
 /* Reviews */
 .carousel { display: flex; flex-direction: column; height: 30vh; justify-content: center; }
-/* Credit for w3schools: Hide scrollbar for IE, Edge and Firefox */
+/* Credit for w3schools: Hide scrollbar for Chrome, Safari, Opera, IE, Edge and Firefox */
 .carousel-inner, .text-desc { overflow: scroll; -ms-overflow-style: none; scrollbar-width: none; }
 .carousel-inner::-webkit-scrollbar, .text-desc::-webkit-scrollbar { display: none; }
 
@@ -82,7 +86,6 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     padding: 10px 12px; margin-bottom: 10px; border-radius: 0px;
     background-color: #eee6e6; box-shadow: 0 1px 3px 0 #141414;
 }
-.deliv-checkbox:checked, .deliv-checkbox:active, .deliv-checkbox::before { background-color: #4169e1; border: 1px solid #ffd700; }
 
 /* Form inputs sizes */
 .review-input, .review-input:focus { height: 200px; }
@@ -91,6 +94,10 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 /* Form errors */
 .invalid-feedback { width: 80%; margin: 1rem auto; }
 .invalid-feedback strong { color: #eee6e6; font-weight: normal; word-wrap: break-word; }
+
+/* Checkbox */
+.info-check, .info-check:focus, .info-check:checked { border: 1px solid #ffd700; }
+.info-check:checked { background-color: #4169e1; }
 
 /* Allauth form formatting */
 .allauth-form-inner-content p { margin: 1rem; font-family: 'Salsa', cursive; }
@@ -127,6 +134,7 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     .img-supply { width: 25%; }
     .text-order { font-size: 1rem; }
     .container-categories p { font-size: 1.5rem; }
+    .container-messages { width: 50%; }
 }
 /* For large screens */
 @media (min-width: 992px) {
@@ -139,4 +147,5 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
     .space { height: 10vh; }
     .tagline-home { font-size: 1.75rem; }
     .container-categories p { font-size: 1.5rem; }
+    .container-messages { width: 25%; }
 }

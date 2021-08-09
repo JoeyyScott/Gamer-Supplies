@@ -68,7 +68,7 @@
                     {% endif %}
                     <!-- Mobile Toggle -->
                     <button class="navbar-toggler header-links p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-box-open fa-md"></i><div class="text-menu">Menu</div>
+                        <i class="fas fa-box-open fa-md"></i><span class="text-menu">Menu</span>
                     </button>
                     <!-- Navbar -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbar">
@@ -93,7 +93,7 @@
         </header>
 
         {% if messages %}
-            <div class="container-messages mx-auto w-100 p-2">
+            <div class="container-messages mx-auto">
                 {% for message in messages %}
                     {% with message.level as level %}
                         {% if level == 40 %}
@@ -126,7 +126,7 @@
         {% endblock %}
 
         {% block postloadjs %}
-        <script type="text/javascript">
+        <script>
             $('.toast').toast('show');
         </script>
         {% endblock %}
