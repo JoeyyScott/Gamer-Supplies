@@ -36,7 +36,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 .container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-categories { border-top: 0; }
 .container-search, .container-toasts { background-color: #4169e1;}
-.container-buttons { position: fixed; bottom: 14vh; right: 10px; z-index: 99999999999; }
+.container-buttons { position: fixed; bottom: 14vh; right: 10px; z-index: 999999999; }
 .container-messages { position: fixed; z-index: 99999999999; bottom: 14vh; left: -4px; width: 100%; }
 
 /* Nav */
@@ -59,7 +59,7 @@ footer i, .text-footer { font-size: 1.6rem; }
 /* Toasts */
 .header-toasts { color: #ffd700; background-color: #4169e1; }
 .toast-body { font-size: 1.2rem; }
-.toast-close { font-size: 1.5rem; }
+.toast-close { font-size: 1.5rem; cursor: pointer; }
 .toast-checkout { float: right; }
 .fa-thumbs-down { transform: scaleX(-1); }
 .crate-wrapper { height: 100px; overflow-x: hidden; overflow-y: auto; }
