@@ -2,7 +2,8 @@ from django import forms
 from .models import UserProfile
 
 
-class UserProfileForm(forms.ModelForm):
+# User profile form
+class FormUserProfile(forms.ModelForm):
     class Meta:
         model = UserProfile
         exclude = ('user',)

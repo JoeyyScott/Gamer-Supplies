@@ -11,7 +11,7 @@ from .forms import FormOrder
 from .models import Order, CrateItems
 from supplies.models import Supply
 from crate.models import Coupon
-from profiles.forms import UserProfileForm
+from profiles.forms import FormUserProfile
 from profiles.models import UserProfile
 from crate.contexts import crate_contents
 
@@ -172,7 +172,7 @@ def checkout_success(request, order_number):
                 'default_postcode': order.postcode,
                 'default_country': order.country,
             }
-            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            user_profile_form = FormUserProfile(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
 

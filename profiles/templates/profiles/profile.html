@@ -17,6 +17,7 @@
         </div>
         <div class="row col-lg-10 offset-lg-1 mb-2">
             <div class="col-12 col-lg-6">
+                <!-- Delivery information preloads on fields they have stored in the model -->
                 <p class="highlight text-center">Default Delivery Information</p>
                 <form class="mt-2" action="{% url 'profile' %}" method="POST" id="form-profile">
                     {% csrf_token %}
@@ -25,9 +26,11 @@
                 </form>
             </div>
             <div class="col-12 col-lg-6 order-lg-last my-2 text-center order-history">
+                <!-- For loop of orders with an inner loop to render the items on the order -->
                 <p class="highlight text-center mb-1">Order History</p>
                 <p class="altFont m-0 p-0">Click order number to view more details</p>
                 {% for order in orders %}
+                    <!-- Order headers -->
                     <div class="row">
                         <div class="col-4">
                             <p class="my-0 highlight small">Order No.</p>
@@ -39,7 +42,9 @@
                             <p class="my-0 highlight small">Order Total</p>
                         </div>
                     </div>
+                    <!-- Order information -->
                     <div class="row altFont">
+                        <!-- Order number, date and total -->
                         <div class="col-4">
                             <p class="my-0"><a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a></p>
                         </div>
@@ -49,6 +54,7 @@
                         <div class="col-4 text-right">
                             <p class="small text-order">£{{ order.order_total }}</p>
                         </div>
+                        <!-- Crate items headers -->
                         <div class="col-6 text-start soffset-2">
                             <p class="my-0 small">Supply</p>
                         </div>
@@ -58,7 +64,9 @@
                         <div class="col-3">
                             <p class="my-0 small text-end">Subtotal</p>
                         </div>
+                        <!-- Crate items -->
                         {% for item in order.crateitems.all %}
+                            <!-- Supply image and name -->
                             <div class="col-6">
                                 <div class="row">
                                     <div class="col-4 col-lg-3 img-supply">
