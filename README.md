@@ -396,13 +396,14 @@ Review Model (Custom model #2 for Distinction performance)
         + Activated by: Add To Crate button on each supply in ```supplies.html```, Update/Delete buttons for each crate item in ```crate.html```.
     + Reviews - ```review_add.html```, ```index.html``` with the delete functionality activating when the associated button is pressed on the homepage.
         + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
-        + Activated by: Add/Delete Review button on ```index.html```. 
+        + Activated by: Add/Delete Review buttons on ```index.html```. 
 
 **CRUD Functionality for admins**:
-+ Admins are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
++ In addition to the previous CRUD functionality, admins are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
     + Supplies - ```supply_add.html```, ```supplies.html``` and ```supply_edit.html``` with the delete functionality activating when the associated button is pressed.
     + Reviews - ```review_add.html```, ```index.html``` and ```review_manage.html``` with the delete functionality activating when the associated button is pressed.
         + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
+        + Activated by: Add/Manage/Delete review buttons on ```index.html```.
 
 ### Features to be added
 

@@ -26,6 +26,10 @@
                                 <p class="altFont ratings">{{ review.rating }}</p>
                                 <p class="altFont">{{ review.review }}</p>
                                 <p class="altFont"><span class="highlight">Added By:</span> {{ review.added_by|title }}</p>
+                                <!-- Displaying a button if the user viewing matches the user who added the review -->
+                                {% if request.user == review.added_by or request.user.is_superuser %}
+                                    <a class="btn btn-sm my-2" href="{% url 'review_delete' review.id %}"><i class="fas fa-trash"></i> Delete</a>
+                                {% endif %}
                             </div>
                             {% endfor %}
                         </div>
@@ -43,13 +47,13 @@
                 <div class="row">
                     <!-- Review buttons -->
                     {% if request.user.is_authenticated %}
-                        <div class="col-{% if request.user.is_superuser %}6 text-start{% else %}12{% endif %}">
-                            <a href="{% url 'review_add' %}" class="btn btn-sm my-2">Add Review</a>
+                        <div class="col-{% if request.user.is_superuser %}7 text-start{% else %}12{% endif %}">
+                            <a href="{% url 'review_add' %}" class="btn my-2">Add Review</a>
                         </div>
                     {% endif %}
                     {% if request.user.is_superuser %}
-                    <div class="col-6 text-end">
-                        <a href="{% url 'reviews_manage' %}" class="btn btn-sm my-2">Manage <span class="d-none d-sm-inline">Reviews</span></a>
+                    <div class="col-5 text-end">
+                        <a href="{% url 'reviews_manage' %}" class="btn my-2">Manage <span class="d-none d-sm-inline">Reviews</span></a>
                     </div>
                     {% endif %}
                 </div>

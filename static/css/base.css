@@ -112,7 +112,7 @@ input[type=number] { -moz-appearance: textfield; }
 .allauth-form-inner-content label:not([for='id_remember']) { display: none; }
 .allauth-form-inner-content form label, .allauth-form-inner-content a { color: #ffd700; text-shadow: 2px 2px #141414; }
 .allauth-form-inner-content form .form-group #div_id_remember { width: -webkit-max-content; width: -moz-max-content; width: max-content; margin: auto; }
-.allauth-form-inner-content input:not(#id_remember) { border-radius: 0; -webkit-box-shadow: 0 1px 3px 0 #141414; box-shadow: 0 1px 3px 0 #141414; width: 75%; margin: 0 auto 1rem auto; }
+.allauth-form-inner-content input:not(#id_remember) { border-radius: 0; -webkit-box-shadow: 0 1px 3px 0 #141414; box-shadow: 0 1px 3px 0 #141414; width: 75%; margin: 0 auto 1rem auto; font-family: 'Salsa', cursive; }
 
 /* Allauth buttons and hover events */
 .allauth-form-inner-content button:hover,
@@ -147,6 +147,7 @@ input[type=number] { -moz-appearance: textfield; }
     .text-order,  .checkout-crate-header  { font-size: 1rem; }
     .container-categories p { font-size: 1.5rem; }
     .container-messages { width: 50%; }
+    .carousel-item { font-size: 1.25rem; }
 }
 /* For large screens */
 @media (min-width: 992px) {
@@ -160,6 +161,7 @@ input[type=number] { -moz-appearance: textfield; }
     .tagline-home { font-size: 1.75rem; }
     .container-categories p { font-size: 1.5rem; }
     .container-messages { width: 25%; }
+    .carousel-item { font-size: 1.5rem; }
     .header-links { font-size: 1.5rem; }
     .nav-link.active, .nav-link:hover, .nav-tabs .nav-link,
     .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
