@@ -1,3 +1,4 @@
+# Imports
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -12,7 +13,7 @@ import time
 
 
 class Stripe_Controller:
-    """Functions for stripe webhooks"""
+    # Functions for stripe webhooks
 
     def __init__(self, request):
         self.request = request
@@ -35,17 +36,13 @@ class Stripe_Controller:
         )
 
     def handle_event(self, event):
-        """
-        Base handler for webhook events
-        """
+        # Base handler for webhook events
         return HttpResponse(
             content=f'Base webhook handler received: {event["type"]}',
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
-        """
-        Handler for the stripe payment_intent.succeeded event
-        """
+        # Handler for the stripe payment_intent.succeeded event
         intent = event.data.object
         pid = intent.id
         crate = intent.metadata.crate
@@ -62,7 +59,7 @@ class Stripe_Controller:
         # If save_info is checked update user's profile information
         profile = None
         username = intent.metadata.username
-        if username != 'AnonymousUser':
+        if username:
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
                 profile.default_contact_number = shipping_details.phone
@@ -97,10 +94,12 @@ class Stripe_Controller:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
+
         if order_exists:
             self._email_send_confirmation(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                content=f'Webhook received: {event["type"]} \
+                    | SUCCESS: Verified order already exists in database',
                 status=200)
         else:
             order = None
@@ -135,13 +134,12 @@ class Stripe_Controller:
                     status=500)
         self._email_send_confirmation(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]} \
+                | SUCCESS: Created order in webhook',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):
-        """
-        Handler for the stripe payment_intent.payment_failed event
-        """
+        # Handler for the stripe payment_intent.payment_failed event
         return HttpResponse(
             content=f'Payment failed webhook received: {event["type"]}',
             status=200)

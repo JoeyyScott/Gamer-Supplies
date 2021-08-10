@@ -4,15 +4,13 @@ from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
 from checkout.webhook_handler import Stripe_Controller
-
 import stripe
 
 
 @require_POST
 @csrf_exempt
 def webhook(request):
-    """Listen for Stripe webhooks"""
-    # Setup
+    # Listen for Stripe webhooks and setup
     wh_secret_gs = settings.STRIPE_WH_SECRET_GS
     stripe.api_key = settings.STRIPE_SECRET_KEY_GS
 
@@ -23,7 +21,7 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-        payload, sig_header, wh_secret_gs
+            payload, sig_header, wh_secret_gs
         )
     except ValueError as e:
         # Payload error
@@ -41,7 +39,8 @@ def webhook(request):
     # Variable to hold handler functions that are relevant
     events = {
         'payment_intent.succeeded': wh_handler.handle_payment_intent_succeeded,
-        'payment_intent.payment_failed': wh_handler.handle_payment_intent_payment_failed,
+        'payment_intent.\
+            payment_failed': wh_handler.handle_payment_intent_payment_failed,
     }
 
     # Variable to hold event type from Stripe

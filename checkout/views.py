@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+# Imports
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib import messages
@@ -37,6 +39,7 @@ def cache_checkout_data(request):
 
 @login_required
 def checkout(request):
+    # Handle requests to the checkout page
     stripe_public_key_gs = settings.STRIPE_PUBLIC_KEY_GS
     stripe_secret_key_gs = settings.STRIPE_SECRET_KEY_GS
 
@@ -79,16 +82,18 @@ def checkout(request):
                     )
                     crate_item.save()
                 except Supply.DoesNotExist:
-                    messages.error(request, (
-                        "One of the supplies in your crate wasn't found in our database. Please contact us.")
-                    )
+                    messages.error(request, ("One of the supplies in your \
+                        crate was not found in our database. Please contact \
+                        us."))
                     order.delete()
                     return redirect(reverse('view_crate'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'Oh no, error! Please check your information.')
+            messages.error(request, 'Oh no, error has occured! Please check \
+                your information.')
     else:
         crate = request.session.get('crate', {})
         if not crate:
@@ -140,16 +145,13 @@ def checkout(request):
 
 @login_required
 def checkout_success(request, order_number):
-    """
-    Handle successful checkouts
-    """
+    # Handle successful checkouts
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, mark_safe(f'Checkout successful!<br> \
-                            We will send a confirmation \
-                            email to <span class="highlight">{order.email}</span>.<br> \
-                            Your order number is: \
-                            <span class="highlight">{order_number}</span>.'))
+    messages.success(request, mark_safe(f'Checkout successful!<br> We will \
+        send a confirmation email to <span class="highlight">{order.email}\
+        </span>.<br> Your order number is: <span class="highlight">\
+        {order_number}</span>.'))
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
@@ -172,7 +174,7 @@ def checkout_success(request, order_number):
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
-                user_profile_form.save()    
+                user_profile_form.save()
 
     if 'crate' in request.session:
         del request.session['crate']

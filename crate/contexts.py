@@ -25,7 +25,7 @@ def crate_contents(request):
         supply = get_object_or_404(Supply, pk=item_id)
         crate_total += quantity * supply.price
 
-        if coupon != None:
+        if coupon is not None:
             coupon_amount = coupon.amount
             savings = crate_total*(coupon_amount/Decimal('100'))
             total = crate_total - savings

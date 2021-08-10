@@ -20,6 +20,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 .card-title, .text-price { font-size: 1.5rem; }
 .link-sort { color: #eee6e6; font-size: 0.75rem; display: block; }
 .crate-info { color: #eee6e6; }
+.checkout-crate-header { font-size: .8rem; }
 
 /* Additional Buttons */
 .btn-crate { text-shadow: none; }
@@ -143,7 +144,7 @@ input[type=number] { -moz-appearance: textfield; }
     a.nav-link, .link-sort { font-size: 1.5rem; }
     .logo { height: 7vh; }
     .img-supply { width: 25%; }
-    .text-order { font-size: 1rem; }
+    .text-order,  .checkout-crate-header  { font-size: 1rem; }
     .container-categories p { font-size: 1.5rem; }
     .container-messages { width: 50%; }
 }
