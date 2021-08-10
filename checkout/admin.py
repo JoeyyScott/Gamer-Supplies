@@ -2,12 +2,14 @@ from django.contrib import admin
 from .models import Order, CrateItems
 
 
+# Populating crate items model for OrderAdmin
 class CrateItemsAdminInline(admin.TabularInline):
     model = CrateItems
     readonly_fields = ('crateitem_total',)
     list_display = ('supply', )
 
 
+# Order model in admin
 class OrderAdmin(admin.ModelAdmin):
     inlines = (CrateItemsAdminInline,)
     readonly_fields = ('date', 'order_number', 'coupon',

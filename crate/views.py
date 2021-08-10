@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+# Imports
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.views.decorators.http import require_http_methods
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -6,19 +8,16 @@ from django.contrib import messages
 from supplies.models import Supply
 from .models import Coupon
 
-# Create your views here.
-
 
 @login_required
 def view_crate(request):
-    """ Crate page view """
-
+    # Crate contents page view
     return render(request, 'crate/crate.html')
 
 
 @login_required
 def add_to_crate(request, item_id):
-    """ Add a quantity of the specified supply to the shopping crate """
+    # Add a specific supply and quantity to the crate
 
     supply = get_object_or_404(Supply, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -26,9 +25,11 @@ def add_to_crate(request, item_id):
     redirect_url = request.META.get('HTTP_REFERER')
     crate = request.session.get('crate', {})
 
+    # Checking if item exists in crate and displaying the appropriate message
     if item_id in list(crate.keys()):
         crate[item_id] += quantity
-        messages.success(request, f'Updated quantity of {supply.name} to {crate[item_id]}.')
+        messages.success(request, f'Updated quantity of {supply.name} to \
+            {crate[item_id]}.')
     else:
         crate[item_id] = quantity
         messages.success(request, f'Added {supply.name} to your crate.')
@@ -40,15 +41,17 @@ def add_to_crate(request, item_id):
 
 @login_required
 def modify_crate(request, item_id):
-    """ Add a quantity of the specified supply to the shopping crate """
+    # View to adjust the quantity of a specific supply
 
     supply = get_object_or_404(Supply, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     crate = request.session.get('crate', {})
 
+    # If specific supply exists in crate and displaying approrpiate message
     if quantity > 0:
         crate[item_id] = quantity
-        messages.success(request, f'Updated quantity of {supply.name} to {crate[item_id]}.')
+        messages.success(request, f'Updated quantity of {supply.name} to \
+            {crate[item_id]}.')
     else:
         crate.pop(item_id)
         messages.success(request, f'Removed {supply.name} from your crate.')
@@ -60,12 +63,13 @@ def modify_crate(request, item_id):
 
 @login_required
 def remove_from_crate(request, item_id):
-    """Remove the item from the shopping crate"""
+    # View to remove a specific supplie
 
     try:
         supply = get_object_or_404(Supply, pk=item_id)
         crate = request.session.get('crate', {})
 
+        # Checks to see if the item is in the crate
         if item_id in crate:
             crate.pop(item_id)
             messages.success(request, f'Removed {supply.name} from your crate')
@@ -73,6 +77,7 @@ def remove_from_crate(request, item_id):
         request.session['crate'] = crate
         return HttpResponse(status=200)
 
+    # Handle errors
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
@@ -81,6 +86,7 @@ def remove_from_crate(request, item_id):
 @login_required
 @require_http_methods(["GET", "POST"])
 def coupon_apply(request):
+    # View to check code entered against codes in the coupon model
     code = request.POST.get('coupon-code')
     try:
         coupon = Coupon.objects.get(code=code)
