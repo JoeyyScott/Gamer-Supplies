@@ -71,7 +71,7 @@
                                 <!-- Quantity -->
                                 <div class="col-12">
                                     <div class="py-3 w-100 mx-auto">
-                                        <form class="form form-update" method="POST" action="{% url 'modify_crate' item.item_id %}">
+                                        <form class="form form-update" method="POST" action="{% url 'modify_crate' item.item_id %}" required>
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -83,7 +83,7 @@
                                                     </div>
                                                     <!-- Quantity input -->
                                                     <input class="form-control form-control-sm qty-input" type="number" name="quantity" min="1" max="99"
-                                                    value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                    value="{{ item.quantity }}" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}" required>
                                                     <!-- Quantity increment -->
                                                     <div class="input-group-append h-100">
                                                         <button class="qty-inc btn btn-sm rounded-0" data-item_id="{{ item.item_id }}" id="qty-inc_{{ item.item_id }}">
@@ -92,15 +92,15 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                    <!-- <span class="row mt-1"> -->
+                                        <!-- <span class="text-start col-7">                     -->
+                                            <button type="submit" class="btn link-update mt-1"><small>Update</small></button>
+                                        <!-- </span> -->
+                                        <!-- <span class="text-end col-5"> -->
+                                            <a class="btn link-delete mt-1" id="remove_{{ item.item_id }}"><small>Delete</small></a>
+                                        <!-- </span> -->
+                                    <!-- </span> -->
                                         </form>            
-                                <!-- <span class="row mt-1"> -->
-                                    <!-- <span class="text-start col-7">                     -->
-                                        <a class="btn link-update mt-1"><small>Update</small></a>
-                                    <!-- </span> -->
-                                    <!-- <span class="text-end col-5"> -->
-                                        <a class="btn link-delete mt-1" id="remove_{{ item.item_id }}"><small>Delete</small></a>
-                                    <!-- </span> -->
-                                <!-- </span> -->
                                     </div>
                                 </div>
                             </div>

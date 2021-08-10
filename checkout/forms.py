@@ -18,7 +18,7 @@ class FormOrder(forms.ModelForm):
         placeholders = {
             'full_name': 'Full Name',
             'email': 'Email Address',
-            'contact_number': 'Contact Number (optional)',
+            'contact_number': 'Contact Number',
             'address_line_1': 'Address Line 1',
             'address_line_2': 'Address Line 2',
             'town_or_city': 'Town/City',
@@ -29,6 +29,11 @@ class FormOrder(forms.ModelForm):
         # Setting form up for the user
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
+            if field == 'full_name':
+                self.fields[field].widget.attrs['pattern'] = '^[a-zA-Z_]+( [a-zA-Z_]+)*$'
+            if field == 'contact_number':
+                self.fields[field].widget.attrs['pattern'] = '^[0-9]{5,}$'
+                self.fields[field].widget.attrs['required'] = ''
             if field != 'country':
                 # Append * to required fields
                 if self.fields[field].required:

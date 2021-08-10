@@ -17,7 +17,7 @@ Your order will be shipped to:
 {{ order.country }}
 {% if order.county %}{{ order.county }}{% endif %}
 {% if order.postcode %}{{ order.postcode }}{% endif %}
-{% if order.contact_number %}{{ order.contact_number }}{% endif %}
+We have your number on record for this order as: {{ order.contact_number }}
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
 

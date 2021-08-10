@@ -23,7 +23,7 @@
                             {% for review in reviews %}
                             <!-- Credit for inner carousel for loop -->
                             <div class="carousel-item h-100 p-4 {% if forloop.counter == 1 %}active{% endif %}">
-                                <p class="altFont">{{ review.rating }}/5</p>
+                                <p class="altFont ratings">{{ review.rating }}</p>
                                 <p class="altFont">{{ review.review }}</p>
                                 <p class="altFont"><span class="highlight">Added By:</span> {{ review.added_by|title }}</p>
                             </div>
@@ -57,3 +57,15 @@
         </div>
     </div>
 {% endblock %}
+
+<script>
+    const stars = document.querySelectorAll('.ratings');
+    stars.forEach(rating => {
+        i = 0
+        while (i < rating.innerText) {
+            rating.append(`star`);
+            console.log(i)
+            i++
+        }  
+    });
+</script>
