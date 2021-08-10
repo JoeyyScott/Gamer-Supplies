@@ -4,6 +4,7 @@ from django import forms
 from django.utils.safestring import mark_safe
 
 
+# Review form
 class FormReview(forms.ModelForm):
     # Credit for adapted choices on TypedChoiceField
     # See README.md for more details
@@ -23,7 +24,7 @@ class FormReview(forms.ModelForm):
         fields = ['review', 'rating']
         exclude = ['added_by']
         widgets = {
-            'review': forms.Textarea(attrs={'placeholder': 'Tell us what you think...', 'class':'altFont'})
+            'review': forms.Textarea(attrs={'placeholder': 'Tell us what you think...', 'class': 'altFont'})
         }
 
     def __init__(self, *args, **kwargs):

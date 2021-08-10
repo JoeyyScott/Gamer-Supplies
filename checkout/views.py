@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.conf import settings
 from django.utils.safestring import mark_safe
 
-from .forms import OrderForm
+from .forms import FormOrder
 from .models import Order, CrateItems
 from supplies.models import Supply
 from crate.models import Coupon
@@ -57,7 +57,7 @@ def checkout(request):
             'postcode': request.POST['postcode'],
             'country': request.POST['country'],
         }
-        order_form = OrderForm(form_data)
+        order_form = FormOrder(form_data)
 
         if order_form.is_valid():
             order = order_form.save(commit=False)

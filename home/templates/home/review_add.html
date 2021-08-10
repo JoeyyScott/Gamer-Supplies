@@ -15,12 +15,14 @@
                     <fieldset>
                         <h2 class="highlight text-center">Add a review</h2>
                         <div class="col-10 mx-auto">
+                            <!-- Review form -->
                             {{ review_form.review | as_crispy_field }}
                             {{ review_form.rating | as_crispy_field }}
                             {{ review_form.added_by }}
                         </div>
                     </fieldset>
                     <div class="row mt-2">
+                        <!-- Review add/cancel buttons -->
                         <div class="text-start col-7">                    
                             <button class="btn rounded-0 mb-2" type="submit">
                                 <i class="far fa-plus-square fa-lg"></i> <span class="font-weight-bold">Add review</span>
@@ -33,9 +35,9 @@
                         </div>
                     </div>
                 </form>
-        {% else %}
-            <p>You must be logged in to leave a review. Click <a href="{% url 'account_signup' %}">here</a> to login!</p>
-        {% endif %}
+            {% else %}
+                <p>You must be logged in to leave a review. Click <a href="{% url 'account_signup' %}">here</a> to login!</p>
+            {% endif %}
         </div>
     </div>
 </div>

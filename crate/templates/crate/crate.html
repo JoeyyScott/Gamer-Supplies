@@ -27,7 +27,7 @@
                             {% if not coupon == None %}
                                 <div class="altFont mb-2">
                                     <p>Current code: <span class="highlight">{{ coupon }}</span></p>
-                                    <p>Savings: £{{ savings|floatformat:2 }} - {{ coupon_amount }}% off!</p>
+                                    <p>Savings: <span class="highlight">£{{ savings|floatformat:2 }} - {{ coupon_amount }}%</span> off!</p>
                                 </div>
                             {% endif %}
                         </div>

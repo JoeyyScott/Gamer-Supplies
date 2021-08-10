@@ -7,12 +7,14 @@
     <div class="container container-content h-100">
         <div class="row h-100 d-flex justify-content-center {% if reviews|length < 1 %}space-home{% endif %}">
             <div class="col-10 col-md-8 my-auto pt-2 text-center gamerStyle">
+                <!-- Introduction section -->
                 <h1>Snacks so good you'll keep coming back..</h1>
                 <p class="altFont tagline-home my-0">Create an account to start adding snacks!</p>
                 <div class="my-2">
                     <a href="{% url 'supplies' %}" class="btn btn-lg text-uppercase">Snack Now</a>
                 </div>
                 {% if reviews %}
+                    <!-- Reviews -->
                     <h2 class="highlight mt-4">Why believe us?</h2>
                     <p class="altFont my-0">Read some of our reviews below</p>
                     <!-- Credit for adapted Bootstrap 5 carousel: https://getbootstrap.com/docs/5.0/components/carousel/ -->
@@ -27,6 +29,7 @@
                             </div>
                             {% endfor %}
                         </div>
+                        <!-- Carousel controls -->
                         <button class="carousel-control-prev my-auto" type="button" data-bs-target="#review-carousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -38,6 +41,7 @@
                     </div>
                 {% endif %}
                 <div class="row">
+                    <!-- Review buttons -->
                     {% if request.user.is_authenticated %}
                         <div class="col-{% if request.user.is_superuser %}6 text-start{% else %}12{% endif %}">
                             <a href="{% url 'review_add' %}" class="btn btn-sm my-2">Add Review</a>

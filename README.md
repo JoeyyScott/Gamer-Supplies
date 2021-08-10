@@ -196,7 +196,7 @@ Supply Model
 | size | CharField | max_length=25, null=True, blank=True |
 | image | ImageField | null=True, blank=True |
 
-Coupon model
+Coupon model (Custom model #1 for Distinction performance)
 
 | Field | Field Type | Field Options |
 | --- | --- | --- |
@@ -237,7 +237,7 @@ Crate Items Model
 
 **Reviews App:**
 
-Review Model
+Review Model (Custom model #2 for Distinction performance)
 
 | Field | Field Type | Field Options |
 | --- | --- | --- |
