@@ -1,5 +1,126 @@
 ## Testing
 
+I used [w3.org's validator](https://validator.w3.org) for my HTML validation checks.
+
++ No errors were found within any page:
+
+    | _HTML5 Validation_ |
+    |:------------------:|
+    | ![HTML5 Validation](docs/images/testing/userstories/testing/html-test.png) |
+
+I used [w3.org's validator](https://jigsaw.w3.org/css-validator/) for my CSS validation checks.
+
++ No errors were found within "base.css", "checkout.css" and  the only css file.
+
+    | _CSS Validation_ |
+    |:----------------:|
+    | ![CSS Validation](docs/images/testing/userstories/testing/css-test.png) |
+
+I used [JSHint](https://jshint.com) to check the javascript file in my project to make certain it complies with coding standards and that were no syntax errors detected.
+
++ Javascript file (main.js)
+
+I used [PEP8 online](http://pep8online.com/) to test all custom Python code against PEP8 standards.
+
++ No errors were found within the document.
+
+    | _PEP8 Validation_ |
+    |:-----------------:|
+    |![PEP8 Validation](docs/images/testing/userstories/testing/pep8-test.png)|
+
++ The only files with lines over 79 characters are settings.py and migration files as when attempting to achieve this it would break the associated sections of my project so I opted to leave them and put a disclaimer here as I'm aiming for a distinction performance.
+
+### Responsiveness
+
+Responsiveness (website layout)
+
+|              All Pages               | Samsung 9+ | Galaxy S5  | iPhone 6/7/8 | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
+|:------------------------------------:|------------|------------|--------------|----------|------|----------|----------------|-----------------|
+|     Website is  responsive >800px    |     N/A    |    N/A     |      N/A     |    N/A   | Good |   Good   |      Good      |       Good      |
+|     Website is  responsive <799px    |    Good    |    Good    |     Good     |   Good   |  N/A |    N/A   |       N/A      |       N/A       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **index.html**                       |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **supplies.html**                    |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **crate.html**                       |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **checkout.html**                    |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **checkout_success.html**            |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **profile.html**                     |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **supply_add.html**                  |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **supply_edit.html**                 |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **review_add.html**                  |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **reviews_manage.html**              |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **All Auth Templates**               |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **404.html**                         |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **500.html**                         |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **toast_success.html**               |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **toast_error.html**                 |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **toast_info.html**                  |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **custom_clearable_file_input.html** |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+
+Notes:
+
++ Through the use of Bootstrap and my own design input the site is responsive on all screen sizes that I have tested personally. There may be slight issues on certain abstract displays that might need additional media queries in future releases.
 
 ### Browser Compatibility
 
@@ -9,6 +130,144 @@ I tested the appearance and responsiveness of the website across 6 different bro
 |:--------------:|:-------:|:------:|:----:|:----:|:-----:|:------:|
 | Appearance     |   Good  |  Good  | Good | Good |  Good |  Good  |
 | Responsiveness |   Good  |  Good  | Good | Good |  Good |  Good  |
+
+### Testing User Stories
+
+### First Time User
+
++ As a **First Time User**, I want to easily understand the site upon loading it.
+    + I have included an appropriate header and tagline in the home page that tells users what the site is for and how they can
+
+        | _Home Page_ |
+        |:-----------:|
+        | ![Intro section](docs/images/testing/userstories/homepage-intro.png) |
+
++ As a **First Time User**, I want to be able to intuitively navigate the entire site with ease.
+    + The site features a main navigation bar at the top of the page which contains links to the other site pages.
+    + I have inclduded 3 external links to social media pages in the footer that will open the base website for that social media page in a new tab/window.
+    + I have also included buttons throughout the site that link to other pages and features within the site.
+
+        | _Navigation Bar_ |
+        |:----------------:|
+        | ![Site navigation](docs/images/testing/userstories/navigation.png) |
+
++ As a **First Time User**, I want to be able to receive full site functionality on my mobile and tablet.
+    + I have used [Bootstrap 5](https://getbootstrap.com/)'s support for responsive design to make the site responsive across multiple devices including mobile and tablets.
+    + I have tested the site across multiple devices to ensure content displays as intended, proof can be found [here](#responsiveness).
+
++ As a **First Time User**, I want to be able to see what supplies are available for purchase on the site.
+    + On the home page and navigation bar there is a button "Snack Now" which redirects users to the supplies page.
+        + This allows first time users to see what supplies are available to add to a crate before they register for an account to make a crate/purchase.
+        + The navigation link can be see in New user story 2 and I have included a picture of the button below.
+
+            | _Supplies Page_ |
+            |:---------------:|
+            | ![Navigation Bar Screenshot](docs/images/testing/userstories/snacknow-button.png) |
+
++ As a **First Time User**, I want to know the prices.
+    + On the Supply page, for every card that is rendered I have included the price of the Supply. This price is reflected across all parts of the site.
+    
+        | _Supply Prices_ |
+        |:---------------:|
+        | ![Navigation Bar Screenshot](docs/images/testing/userstories/supply-prices.png) |
+
++ As a **First Time User**, I want to be able to seamlessly sign up for an account and receive a confirmation email.
+    + The navigation bar contains a link to the register page which allows new users to easily initiate the registration process.
+    + After submitting the registration form with valid information the user will be signed up for an account, pending email confirmation which they will receive a notification and site content informing them.
+    + The user will receive a verification email which will contain an email confirm link allowing them to complete the registration process once clicked.
+
+        |   _Register_    |
+        |:---------------:|
+        | ![Register](docs/images/testing/userstories/register.png) |
+        | _Register Verify_ |
+        | ![Register Verify](docs/images/testing/userstories/register-verify.png) |
+        | _Register Confirm_ |
+        | ![Register confirm](docs/images/testing/userstories/register-confirm.png) |
+
++ As a **First Time User**, I want to read reviews from other users.
+    + On the home page I have included a reviews section where users can read reviews left by others displayed in a Bootstrap carousel.
+
+        | _Reviews_ |
+        |:---------------:|
+        | ![Reviews]() |
+
++ As a **First Time User**, I want to be able to access the company's associated social media profiles.
+    + Inluded in the footer are links to social media platforms in which will open in a new tab/window when clicked.
+        + These links currently point the homepage for the associated social media platforms as the brand's social do not exist at this point in time.
+
+        | _Footer_ |
+        |:---------------:|
+        | ![Footer Screenshot](docs/images/testing/userstories/footer.png) |
+
++ As a **First Time User**, I want to be able to contact the company with any relevant questions.
+    + I've included an email link denoted by an envelope icon in the footer to allow users to contact the site owner with any queries they may have.
+    + Proof of this icon can be found in the footer picture on the previous user story.
+
+
+### Additional Testing
+
+**General Testing**:
++ All navigation buttons (including navbar and mobile links) redirect the user to the correct page in the site
++ All buttons produce the desired effect when clicked
++ External links open in a new tab/window and link to the correct site
++ Images load properly
+
+**Site content Testing**:
++ **Users who are not logged in**:
+    + Are able to:
+        + Register an account provided the username is not already taken.
+        + View the Home, Supplies, Register and Login pages.
+    + Are not able to:
+        + Add, Edit or Delete items from their crate.
+        + Visit checkout, checkout success/order history or profile page.
+
++ **Regular Users who are logged in**:
+    + Are able to:
+        + View Home, Supplies, Crate, Checkout, Checkout Success/Order history and profile pages.
+        + View the home page with option to add a review.
+        + View the supplies page with options to add/update quantity items in their crate.
+        + View the crate page with options to add/update/delete items in their crate.
+        + View the checkout page to purchase their crate.
+        + View the checkout success/order history page based on whether they have come from a successful checkout or their profile.
+        + View their order history and defulat delivery address in their profile page.
+        + Logout of their account.
+    + Are not able to:
+        + Access edit or delete supply buttons on supplies page.
+        + Access Login, Register, Add/Edit Supply, Manage Reviews or Admin pages.
+
++ **Admin users who are logged in**:
+    + Admin users will receive identical functionality to the regular users with a few small changes.
+    + Admins are able to:
+        + Access the django admin panel
+        + View and use the Manage Reviews button on the homepage.
+        + Access manage reviews page and able to delete reviews.
+        + Access add, edit or delete supply buttons on supplies page.
+        + Access Add Supply page from main navigation bar.
+
++ **Toasts display when**:
+    + A user registers, confirms their email and logs in/out of their account.
+    + A user adds a supply to their crate.
+    + A user successfully orders their crate.
+    + A user successfully adds a review.
+    + A user applies a coupon (success and error).
+    + A user deletes a review they have posted.
+    + A user tries to access or use an admin only feature.
+    + An admin adds/edits/deletes a supply.
+    + An admin adds or deletes a review.
+
++ **Stripe testing**:
+    + Stripe payments were tested by sending test webhooks from the Stripe dashboard through the development of this project.
+
+        | _Stripe Test Webhook_ |
+        |:---------------------:|
+        | ![Test Stripe Webhook Screenshot](docs/images/testing/stripe-testing.png) |
+
++ **Validation**:
+    + Form validation works throughout the site to prevent junk input from being entered.
+        + Add/Edit Supply
+        + Add Review
+        + Order
+        + Coupon Apply
 
 ### Bugs
 + **Review Carousel**:
@@ -37,7 +296,6 @@ I tested the appearance and responsiveness of the website across 6 different bro
             
             ```request.session['manage_crate'] = False```
         + The session variable is then set to ```False``` by default so that the crate summary only shows up in the intended notifications.
-
 
 + **Save Info checkbox**:
     + This feature was implemented on the checkout page to allow users to have their delivery information saved to their profile.

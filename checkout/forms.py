@@ -30,7 +30,9 @@ class FormOrder(forms.ModelForm):
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field == 'full_name':
-                self.fields[field].widget.attrs['pattern'] = '^[a-zA-Z_]+( [a-zA-Z_]+)*$'
+                self.fields[field].widget.attrs[
+                    "pattern"
+                ] = '^[a-zA-Z_]+( [a-zA-Z_]+)*$'
             if field == 'contact_number':
                 self.fields[field].widget.attrs['pattern'] = '^[0-9]{5,}$'
                 self.fields[field].widget.attrs['required'] = ''

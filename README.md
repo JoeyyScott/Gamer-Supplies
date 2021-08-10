@@ -71,6 +71,7 @@ E. Users can search for snacks | 4 | 4
 + As a **User**, I want to be able to see what supplies are available for purchase on the site.
 + As a **User**, I want to know the prices.
 + As a **User**, I want to be able to seamlessly sign up for an account and receive a confirmation email.
++ As a **User**, I want to read reviews from other users
 + As a **User**, I want to be able to access the company's associated social media profiles.
 + As a **User**, I want to be able to contact the company with any relevant questions.
 
