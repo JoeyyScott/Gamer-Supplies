@@ -1,3 +1,5 @@
+{% load crate_tools %}
+
 Hello {{ order.full_name }}!
 
 This is a confirmation of your order at Gamer Supplies. Your order information is below:
@@ -5,14 +7,24 @@ This is a confirmation of your order at Gamer Supplies. Your order information i
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
-Order Total: £{{ order.order_total }}
+Order Total: £{{ order.order_total|floatformat:2 }}
 
+Order Items:
+{% for item in order.crateitems.all %}
+Supply: {{ item.supply.name }}
+Price: {{ item.supply.price }}
+Quantity: {{ item.quantity }}
+Subtotal: £{{ item.supply.price | subtotal:item.quantity }}
+{% endfor %}
 Your order will be shipped to:
 
 {{ order.address_line_1 }}
 {{ order.address_line_2 }}
 {{ order.town_or_city }}
 {{ order.country }}
+{% if order.county %}{{ order.county }}
+{% if order.postcode %}{{ order.postcode }}
+{% if order.contact_number %}{{ order.contact_number }}
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
 
