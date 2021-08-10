@@ -69,7 +69,7 @@
                         </span>
                     </button>
                     <!-- Navbar -->
-                    <div class="collapse navbar-collapse justify-content-end" id="navbar">
+                    <div class="collapse navbar-collapse justify-content-end me-lg-3" id="navbar">
                         <div class="navbar-nav pe-1">
                             {% with request.resolver_match.url_name as url_name %}
                                 <a class="nav-link pe-1 {% if url_name in 'supplies' %}active text-end{% endif %}" href="{% url 'supplies' %}">Supplies</a>

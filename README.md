@@ -1,6 +1,6 @@
 <h1 align="center">Gamer Supplies</h1>
 
-[View a live version of the site here.]()
+[View a live version of the site here.](https://gamer-supplies.herokuapp.com)
 
 I have created this project (Milestone project 4) as part of my Full Stack Web Development course with [Code Institute](https://codeinstitute.net/).
 
@@ -95,8 +95,7 @@ E. Users can search for snacks | 4 | 4
 
 The structure of the site is very simple to provide an easy-to-use experience. The header/footer/nav links will remain in the same places across the site but will differ from mobile to other devices as the screen real estate is limited. The header will always contain a link to the supplies page and different links based on whether a user is logged in or a super-user.
 
-| Other links shown |
-|:-----------------:|
+#### Other links shown:
 + Not logged in: 
     + Register
     + Login
@@ -128,9 +127,15 @@ I tested my colour contrasts against the AA guidelines using [this tool](https:/
 
 #### Images
 
-**Logo image** - This is a modified version of a cartoon crate clipart which is licensed for personal use ([source](http://clipart-library.com/clipart/22001.htm)).
+**Back to top/Supply Add button and logo image** - All three of these images are modified versions of a cartoon crate clipart which is licensed for personal use ([source](http://clipart-library.com/clipart/22001.htm)).
 
-![Logo](docs/images/logodesign.png)
+| Image | Link |
+| :---: | :--: |
+| **Logo** | [image](static/images/logo.png) |
+| **Add Supply** | [image](static/images/add-supply.png) |
+| **Back to Top** | [image](static/images/back-to-top.png) |
+
+**Supply images** - The supply images used for items on the website were taken primarily from [Tesco's website](https://www.tesco.com/). This project is for educational purposes only so the associated credit have been included in the [credits](#credits) section. Supply images used are popular food/drinks that myself, family and friends buy regularly.
 
 #### Typography
 
@@ -385,6 +390,14 @@ Review Model (Custom model #2 for Distinction performance)
 + I used [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) to create my account system within the project as it provided prebuilt templates I could style as desired.
     + Users can register with email confirmation, login and logout.
 
+**CRUD Functionality for Registered Users**:
++ Users are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
+    + Supplies - ```add_to_crate```, ```modify_crate``` and ```remove_from_crate``` views providing the associated functionality when the user initates such actions.
+        + Activated by: Add To Crate button on each supply in ```supplies.html```, Update/Delete buttons for each crate item in ```crate.html```.
+    + Reviews - ```review_add.html```, ```index.html``` with the delete functionality activating when the associated button is pressed on the homepage.
+        + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
+        + Activated by: Add/Delete Review button on ```index.html```. 
+
 **CRUD Functionality for admins**:
 + Admins are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
     + Supplies - ```supply_add.html```, ```supplies.html``` and ```supply_edit.html``` with the delete functionality activating when the associated button is pressed.
@@ -577,7 +590,7 @@ To setup static and media files in an Amazon S3 Bucket follow these steps:
 
 ### Creating a local clone
 
-**Disclaimer**: This project will not run locally with database connections unless you create an env.py file to hold the variables for IP, PORT, MONGO_DBNAME, MONGO_URI and SECRET_KEY. The information used to run this project are private and have not been pushed to the GitHub repository for this reason.
+**Disclaimer**: This project will not run locally with database connections unless you set the Heroku config variables in your IDE. The information used to run this project is private and has not been pushed to the GitHub repository for this reason.
 
 Once you have done the above you can follow these steps to create a local copy on your computer:
 1. Navigate to the GitHub Repository for the project [here](https://github.com/JoeyyScott/gamer-supplies/).
@@ -700,6 +713,86 @@ This section includes areas/sections of code and properties I was unaware of. I 
 ### Media
 
 #### Images
+
+**Disclaimer**: This project is for educational purposes **only** and as such images for the supplies in the store have been sourced from various locations as finding royalty free images of these items proved fruitless.
+
+I have included links to all the supply images below:
+
+**Drinks**
+|     Name      | Image |
+| :-----------: | :---: |
+| **Yazoos 1L** |
+| Banana | [image](https://www.tesco.com/groceries/en-GB/products/251328672) |
+| Strawberry | [image](https://www.tesco.com/groceries/en-GB/products/258836704) |
+| Chocolate orange | [image](https://www.tesco.com/groceries/en-GB/products/309470465) |
+| **Soft Drinks** |
+| Diet Coke 1.25L | [image](https://www.tesco.com/groceries/en-GB/products/252047858) |
+| Fanta Fruit Twist 2L | [image](https://www.tesco.com/groceries/en-GB/products/253127100) |
+| Dr Pepper 2L | [image](https://www.tesco.com/groceries/en-GB/products/259059292) |
+| **Volvic 1.5L** |
+| Strawberry | [image](https://www.tesco.com/groceries/en-GB/products/256917071) |
+| Mango | [image](https://www.tesco.com/groceries/en-GB/products/304791679) |
+| Watermelon | [image](https://www.tesco.com/groceries/en-GB/products/298161813) |
+| **Tropicana** |
+| Pineapple 850ml | [image](https://www.tesco.com/groceries/en-GB/products/287294534) |
+| Apple 950ml | [image](https://www.tesco.com/groceries/en-GB/products/296050585) |
+| Tropical 850ml | [image](https://www.tesco.com/groceries/en-GB/products/287295032) |
+
+**Sweet**
+|    Name    | Image |
+| :--------: | :---: |
+| Wispa 4 pack | [image](https://www.tesco.com/groceries/en-GB/products/283787257) |
+| Dairy Milk Caramel 4 pack | [image](https://www.tesco.com/groceries/en-GB/products/292215265) |
+| Snickers 4 pack | [image](https://www.tesco.com/groceries/en-GB/products/287853000) |
+| **Haribo** |
+| Tangfastics 175g | [image](https://www.tesco.com/groceries/en-GB/products/308487211) |
+| Giant strawbs 175g | [image](https://www.tesco.com/groceries/en-GB/products/307747545) |
+| **Misc Sweet** |
+| Squashies Drumsticks 175g | [image](https://www.tesco.com/groceries/en-GB/products/297319492) |
+| Maryland Minis 6 pack | [image](https://www.tesco.com/groceries/en-GB/products/304391537) |
+| Maryland Minis Double Chocolate 6 pack | [image](https://www.tesco.com/groceries/en-GB/products/304397295) |
+| Mini Fingers Snack 6 pack | [image](https://www.tesco.com/groceries/en-GB/products/304403652) |
+| Caramel Wafer 8 pack | [image](https://www.tesco.com/groceries/en-GB/products/255526609) |
+| Caramel Rice Krispie Squares 4 pack | [image](https://www.tesco.com/groceries/en-GB/products/250202816) |
+| Iced Gems 6 pack | [image](https://www.tesco.com/groceries/en-GB/products/302295234) |
+
+**Savoury**
+|       Name       | Image |
+| :--------------: | :---: |
+| **Misc Savoury** |
+| Mini Cheddars Red Leicester 6 Pack | [image](https://www.tesco.com/groceries/en-GB/products/301063891) |
+| Bacon Frazzles 8 Pack | [image](https://www.tesco.com/groceries/en-GB/products/292250078) |
+| Wotsits 6 Pack | [image](https://www.tesco.com/groceries/en-GB/products/254423859) |
+| Ritz Breaks 6 Pack | [image](https://www.tesco.com/groceries/en-GB/products/283249434) |
+| Peperami 5 Pack | [image](https://www.tesco.com/groceries/en-GB/products/296526864) |
+| Butterkist Microwave Salted Popcorn | [image](https://www.tesco.com/groceries/en-GB/products/303543090) |
+| Hearty Sausage Roll 4 pack | [image](https://www.tesco.com/groceries/en-GB/products/305956208) |
+| Snack Melton Mowbray Pork Pies 6 pack | [image](https://www.tesco.com/groceries/en-GB/products/254387918) |
+| 35 Mini Scotch Eggs | [image](https://www.tesco.com/groceries/en-GB/products/273466094) |
+| **Pot noodles 114g** |
+| Sticky Rib | [image](https://www.tesco.com/groceries/en-GB/products/293396917) |
+| Bombay Bad Boy | [image](https://www.tesco.com/groceries/en-GB/products/260188598) |
+| Chicken & Mushroom | [image](https://www.tesco.com/groceries/en-GB/products/260135097) |
+
+**Healthy**
+|    Name    | Image |
+| :--------: | :---: |
+| **Fruit Bowl Peelers 4 pack** |
+| Strawberry | [image](https://www.tesco.com/groceries/en-GB/products/292311312) |
+| Blackcurrant | [image](https://www.tesco.com/groceries/en-GB/products/292311479) |
+| Raspberry | [image](https://www.tesco.com/groceries/en-GB/products/292311652) |
+| **Winders** |
+| Double Apple and Strawberry 5 pack | [image](https://www.tesco.com/groceries/en-GB/products/309163190) |
+| Strawberry 5 pack | [image](https://www.tesco.com/groceries/en-GB/products/309188051) |
+| Double Strawberry and Blackcurrant 6 pack | [image](https://www.amazon.co.uk/Kelloggs-Winders-Doubles-Strawberry-Blackcurrant/dp/B00XTX3FD4) |
+| **Misc healthy** |
+| Chewy Banana | [image](https://www.tesco.com/groceries/en-GB/products/262346986) |
+| Peanuts and Raisins | [image](https://www.tesco.com/groceries/en-GB/products/276377586) |
+| Apple Slices | [image](https://www.tesco.com/groceries/en-GB/products/262290526) |
+| **GoAhead 5 pack** |
+| Apple & Sultana | [image](https://www.tesco.com/groceries/en-GB/products/283420093) |
+| Forest Fruit | [image](https://www.tesco.com/groceries/en-GB/products/283419585) |
+| Raspberry | [image](https://www.tesco.com/groceries/en-GB/products/283419441) |
 
 ### Acknowledgements
 
