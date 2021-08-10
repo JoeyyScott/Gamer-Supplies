@@ -7,15 +7,8 @@ This is a confirmation of your order at Gamer Supplies. Your order information i
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
-Order Total: £{{ order.order_total|floatformat:2 }}
+View your order on our site: https://gamer-supplies.herokuapp.com/profile/order_history/{{ order.order_number }}
 
-Order Items:
-{% for item in order.crateitems.all %}
-Supply: {{ item.supply.name }}
-Price: {{ item.supply.price }}
-Quantity: {{ item.quantity }}
-Subtotal: £{{ item.supply.price | subtotal:item.quantity }}
-{% endfor %}
 Your order will be shipped to:
 
 {{ order.address_line_1 }}

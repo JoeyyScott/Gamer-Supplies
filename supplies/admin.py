@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Category, Supply
 
 
+# Supply model in admin
 class SupplyAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -15,6 +16,7 @@ class SupplyAdmin(admin.ModelAdmin):
         'category__name',)
 
 
+# Category model in admin
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
 

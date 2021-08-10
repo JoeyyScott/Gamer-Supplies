@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Category model
 class Category(models.Model):
 
     class Meta:
@@ -15,6 +16,7 @@ class Category(models.Model):
         return self.name
 
 
+# Supply model
 class Supply(models.Model):
 
     class Meta:

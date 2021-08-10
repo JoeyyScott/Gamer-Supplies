@@ -17,6 +17,7 @@
             <div class="col-12">
                 <form method="POST" action="{% url 'supply_edit' supply.id %}" class="form highlight" enctype="multipart/form-data">
                     {% csrf_token %}
+                    <!-- Edit supply form -->
                     {% for field in form %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
@@ -25,6 +26,7 @@
                         {% endif %}
                     {% endfor %}
                     <div class="row">
+                        <!-- Edit Supply/Cancel buttons -->
                         <div class="text-start col-7">                    
                             <button class="btn rounded-0 mb-2" type="submit">
                                 <i class="far fa-plus-square fa-lg"></i> <span class="font-weight-bold">Edit Supply</span>
