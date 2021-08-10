@@ -455,10 +455,18 @@ I created a separate file for the testing process which can be located [here](TE
 #### [Back to top](#contents)
 
 ---
-
 ## Deployment
 
 ### Project Inception
+
+1. This project was created using [GitHub](https://github.com) and Code Institute's project template [here](https://github.com/Code-Institute-Org/gitpod-full-template) by clicking "Use this template".
+2. I named this project "gamer-supplies" as it is the name of company the website is for.
+3. Once the repository had been created I clicked the "Gitpod" button which is a Firefox extension ([here](https://addons.mozilla.org/en-GB/firefox/addon/gitpod/)) that creates a workspace within GitPod which is where I developed the project.
+4. Following [Code Institute's](https://codeinstitute.net/) lessons the 4 main commands I used were:
+    + ```git status``` (which allows me to check which files have been modified and if any are ready to be committed)
+    + ```git add .``` (which adds all changed files within my project's directory to be committed)
+    + ```git commit -m "[TYPE] Reason"``` (which commits all changes to my project using a category prefix and a specific reason for that commit)
+    + ```git push``` (this command pushes all committed changes to the Github repository)
 
 ### Deployment to Heroku
 
@@ -466,7 +474,128 @@ Before creating a Heroku app make sure your project has these two files:
 + **requirements.txt** - You can create one by using ```pip3 freeze --local > requirements.txt```
 + **Procfile** - You can create one by using ```echo web: python run.py > Procfile```
 
+**Create application:**
+1. Navigate to Heroku's site [here](https://www.heroku.com/).
+2. Register and/or Login as applicable.
+3. Click on the new button in the top right and select "Create new app".
+4. Enter the app name and region closest to you.
+5. Click the create app button.
+
+**Set environment variables:**
+1. Click on the settings tab and then click reveal config variables.
+2. Config variables added throughout project:
+
+    | Key | Value |
+    | :-: | :---: |
+    | AWS_ACCESS_KEY_ID | Your AWS_ACCESS_KEY_ID |
+    | AWS_SECRET_ACCESS_KEY | Your AWS_SECRET_ACCESS_KEY |
+    | DATABASE_URL | Your DATABASE_URL |
+    | EMAIL_HOST_PASS | Your EMAIL_HOST_PASS |
+    | EMAIL_HOST_USER | Your EMAIL_HOST_USER |
+    | SECRET_KEY | Your SECRET_KEY |
+    | STRIPE_PUBLIC_KEY_GS | Your STRIPE_PUBLIC_KEY |
+    | STRIPE_SECRET_KEY_GS | Your STRIPE_SECRET_KEY |
+    | STRIPE_WH_SECRET_GS | Your STRIPE_WH_SECRET |
+    | USE_AWS | True |
+
+**Setting up database in deployment**
+1. Temporarily add the ```DATABASE_URL``` to ```settings.py```:
+
+    ```bash
+    DATABASES = {
+    'default': dj_database_url.parse('your_postgres_database_url')
+    }
+    ```
+2. Migrate the data from development to production version.
+    + To migrate the database models in the project to the Postgres database you can use the following command:
+
+        ```python3 manage.py migrate```
+
+    + To load the data within fixtures use the following command:
+
+        ```python3 manage.py loaddata <fixture_name>```
+        
+        **IMPORTANT**: Load categories fixtures then supplies (supplies are dependent on categories)
+
+    + To create a fixture from your current data store you can use the following command:
+
+        ```python3 manage.py dumpdata --app_name.model_name --indent yourindentlength > fixtures_name.json```
+
+3. You will then need a superuser for the Postgres database too. To create one you can use the following command:
+    
+    ```python3 manage.py createsuperuser```
+
+4. Remove the Postgres database URL from settings.py as this should not in any case be deployed to GitHub for security reasons
+5. To connect your Heroku app to be deployed from a Github repository, you can follow these steps:
+    1. Open the heroku app page on the deploy tab and select GitHub - Connect to GitHub.
+    2. Sign into GitHub if not already.
+    3. A prompt to find a Github repository to connect to will then be displayed.
+    4. Enter the repository name for the project and click search.
+    5. Once the repository has been found, click the connect button.
+6. Once you have your GitHub repository connected, without leaving deploy tab.
+    1. Under Automatic deploys section, choose the branch you want to deploy from and then click the "**Enable Automatic Deploys**" button.
+    2. To deploy your app to Heroku click the **"Deploy Branch"** button.
+
+### Setting up AWS Amazon S3 Bucket
+
+To setup static and media files in an Amazon S3 Bucket follow these steps:
+1. If you do not own one already create or login to your [AWS](https://aws.amazon.com/) account.
+2. Click on My Account (top right) and open the AWS Management Console page.
+3. Search for S3 in the Services section (top left) and create a new bucket with the following settings:
+    1. An appropriate name (your project name)
+    2. Region (closest to you)
+    3. **Uncheck Block all Public Access**
+    4. Open the new bucket and **Enable Static Website Hosting** (bottom of page)
+    5. In the permissions tab, edit the **CORS configuration** (near bottom) and use the following code to set up the required connection between the Heroku app and the bucket:
+
+        ```bash
+        [
+            {
+                "AllowedHeaders": [
+                    "Authorization"
+                ],
+                "AllowedMethods": [
+                    "GET"
+                ],
+                "AllowedOrigins": [
+                    "*"
+                ],
+                "ExposeHeaders": []
+            }
+        ]
+        ```
+    6. In the permissions tab, click Edit on the Bucket Policy and open the policy generator.
+    7. Use the following settings to setup the policy correctly:
+        + Type of Policy: **"S3 Bucket Policy"**
+        + Principal: **"*"**
+        + Action: **"GetObject"**
+        + ARN: This can be found on the Edit Bucket Policy page.
+        + **Add the statement**
+        + **Generate the policy**
+    8. Copy the generated policy into the Policy section on the Edit Bucket Policy page
+        + **IMPORTANT**: Add **"/*"** to the end of the resource key to ensure all files are loaded
+
 ### Creating a local clone
+
+**Disclaimer**: This project will not run locally with database connections unless you create an env.py file to hold the variables for IP, PORT, MONGO_DBNAME, MONGO_URI and SECRET_KEY. The information used to run this project are private and have not been pushed to the GitHub repository for this reason.
+
+Once you have done the above you can follow these steps to create a local copy on your computer:
+1. Navigate to the GitHub Repository for the project [here](https://github.com/JoeyyScott/gamer-supplies/).
+2. Click the Code drop down button.
+3. From here there are two options:
+    + Either unpackage locally/download as a ZIP file then open with your preferred IDE.
+    + Copy the Git URL from the HTTPS field.
+
+4. If you chose to copy the Git URL then follow these additional steps:
+    1. Open a terminal window on your computer (or in your preferred IDE) in a directory of your choice.
+    2. In the terminal window type  ```git clone https://github.com/JoeyyScott/gamer-supplies.git``` and press enter to confirm.
+    3. This will create a local clone of the project in your chosen directory.
+    
+5. For the project to function fully you must install the required dependencies from "requirements.txt" using the following command:
+    
+    ```pip3 install requirements.txt```
+
+6. To run the app in your local IDE type ```python3 manage.py runserver```
 
 #### [Back to top](#contents)
 
