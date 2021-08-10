@@ -21,7 +21,7 @@
                             <h4 class="highlight">Apply coupon</h4>
                             <form action="{% url 'coupon_apply' %}" method='POST' class="mb-2">
                                 {% csrf_token %}
-                                <input type="text" name="coupon-code" class="w-50">
+                                <input type="text" name="coupon-code" class="w-50" maxlength="10">
                                 <button type='submit' class='btn btn-sm'>Apply</button>
                             </form>
                             {% if not coupon == None %}

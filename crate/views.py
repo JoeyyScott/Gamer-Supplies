@@ -88,6 +88,12 @@ def remove_from_crate(request, item_id):
 def coupon_apply(request):
     # View to check code entered against codes in the coupon model
     code = request.POST.get('coupon-code')
+
+    # Checking for blank coupon submissions
+    if not code:
+        messages.error(request, "You didn't enter a coupon code!")
+        return redirect(reverse('view_crate'))
+
     try:
         coupon = Coupon.objects.get(code=code)
         request.session['coupon_id'] = coupon.id
