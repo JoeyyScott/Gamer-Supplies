@@ -50,7 +50,7 @@
             {% endif %}
             <div class="nav-item">
                 <!-- Sort navigation trigger with links -->
-                <a id="sort-trigger" class="highlight rounded-0 text-center nav-link pt-1 title-sort w-25 mx-auto {% if 'sort' in url_name %}active{% endif %}" data-toggle="collapse" href="#links-sort" role="button" aria-expanded="false" aria-controls="links-sort">Sort</a>
+                <a id="sort-trigger" class="highlight rounded-0 text-center nav-link pt-1 title-sort w-25 mx-auto {% if 'sort' in url_name %}active{% endif %}" data-bs-toggle="collapse" href="#links-sort" role="button" aria-expanded="false" aria-controls="links-sort">Sort</a>
                 <div class="collapse" id="links-sort">
                     <span class="row pt-0">
                         <span class="col-6 pb-1">
@@ -171,13 +171,5 @@
 {% block postloadjs %}
     {{ block.super }}
     {% include 'supplies/includes/quantity_input.html' %}
-    <script>
-        // Credit for adapted scroll to top button - see README.md for details
-        var page = document.documentElement
-        document.addEventListener("scroll", function () { 
-            var btt = document.getElementById('trigger-btt')
-            if (page.scrollTop > 290) { btt.classList.remove('hidden'); } else { btt.classList.add('hidden'); }
-        })
-		$('#trigger-btt').click(function(e) { window.scrollTo(0,0) })
-	</script>
+    <script src="{% static 'js/buttons.js' %}"></script>
 {% endblock %}

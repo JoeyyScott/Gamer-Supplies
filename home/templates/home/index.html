@@ -26,10 +26,6 @@
                                 <p class="ratings">{{ review.rating }}</p>
                                 <p class="altFont">{{ review.review }}</p>
                                 <p class="altFont"><span class="highlight">Added By:</span> {{ review.added_by|title }}</p>
-                                <!-- Displaying a button if the user viewing matches the user who added the review -->
-                                {% if request.user == review.added_by or request.user.is_superuser %}
-                                    <a class="btn btn-sm my-2" href="{% url 'review_delete' review.id %}"><i class="fas fa-trash"></i> Delete</a>
-                                {% endif %}
                             </div>
                             {% endfor %}
                         </div>

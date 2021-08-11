@@ -715,6 +715,20 @@ This section includes areas/sections of code and properties I was unaware of. I 
     + After searching around I found [this post](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/asc_or_desc.html) which utilized the ```order_by``` function within Django objects and showed how to set parameters.
     + Using this function ensured the Supplies were loaded in the correct order and were unaffected by being edited.
 
+**Initializing Toasts**:
++ I ended up upgrading my Bootstrap version to 5 and this caused my toasts to not be initialized.
+    + After a quick google search I was able to find [this post](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5) which utilized the following code:
+
+        ```javascript
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+        // Creates an array of toasts (it only initializes them)
+          return new bootstrap.Toast(toastEl) // No need for options; use the default options
+        });
+       toastList.forEach(toast => toast.show()); // This show them
+       ```
+    + Upon using this my toasts again showed as intended.
+
 ### Media
 
 #### Images

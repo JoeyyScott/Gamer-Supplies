@@ -20,9 +20,16 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
 
 + Ratings (ratings.js):
 
-    | _Ratings.js Validation_ |
+    | _ratings.js Validation_ |
     |:------------------:|
     | ![HTML5 Validation](docs/images/testing/ratings-testing.png) |
+
++ Toasts (toasts.js):
+
+    | _toasts.js Validation_ |
+    |:------------------:|
+    | ![HTML5 Validation](docs/images/testing/toasts-testing.png) |
+
 
 I used [PEP8 online](http://pep8online.com/) to test all custom Python code against PEP8 standards.
 
