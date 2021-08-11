@@ -83,12 +83,14 @@ E. Users can search for snacks | 4 | 4
 + As a **Registered User**, I want to receive a purchase confirmation email.
 + As a **Registered User**, I want to be able to easily update my contact and delivery information.
 + As a **Registered User**, I want to be able to view my previous orders.
++ As a **Registered User**, I want to be able to add a review about my experience on the site.
 
 #### Site Owner/Superuser goals
 
 + As a **Site Owner/Superuser**, I want to be able to add new supplies.
 + As a **Site Owner/Superuser**, I want to be able to edit and delete supplies.
 + As a **Site Owner/Superuser**, I want to be able to delete reviews.
++ As a **Site Owner/Superuser**, I want to be able to view and manage all the coupon codes.
 + As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
 
 ### Website Structure
@@ -393,7 +395,7 @@ Review Model (Custom model #2 for Distinction performance)
 **CRUD Functionality for Registered Users**:
 + Users are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
     + Supplies - ```add_to_crate```, ```modify_crate``` and ```remove_from_crate``` views providing the associated functionality when the user initates such actions.
-        + Activated by: Add To Crate button on each supply in ```supplies.html```, Update/Delete buttons for each crate item in ```crate.html```.
+        + Activated by: Add To Crate button with quantity inputs on each supply in ```supplies.html```, Update/Delete buttons for each crate item in ```crate.html```.
     + Reviews - ```review_add.html```, ```index.html``` with the delete functionality activating when the associated button is pressed on the homepage.
         + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
         + Activated by: Add/Delete Review buttons on ```index.html```. 
@@ -410,7 +412,9 @@ Review Model (Custom model #2 for Distinction performance)
 **Subscription**:
 + I would like the user to be able to order the same crate at a user defined interval (within reason) which would allow for more user options and incentives.
     + Example: If a user orders the same crate 10 times over a certain value they get a 50% discount on their next crate of those items.
-+ This would also allow users to receive their favourite snacks whenever they wanted with only having to checkout once.
+    + This would also allow users to receive their favourite snacks whenever they wanted with only having to checkout once.
+
++ **Pagination** - This would take control if the amount of supplies in the shop went over a threshold; which required too much work for the time available for the project.
 
 #### [Back to top](#contents)
 

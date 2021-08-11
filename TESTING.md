@@ -188,20 +188,88 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + On the home page I have included a reviews section where users can read reviews left by others displayed in a Bootstrap carousel.
 
         | _Reviews_ |
-        |:---------------:|
+        |:---------:|
         | ![Reviews]() |
 
 + As a **First Time User**, I want to be able to access the company's associated social media profiles.
     + Inluded in the footer are links to social media platforms in which will open in a new tab/window when clicked.
         + These links currently point the homepage for the associated social media platforms as the brand's social do not exist at this point in time.
 
-        | _Footer_ |
-        |:---------------:|
-        | ![Footer Screenshot](docs/images/testing/userstories/footer.png) |
+            | _Footer_ |
+            |:--------:|
+            | ![Footer Screenshot](docs/images/testing/userstories/footer.png) |
 
 + As a **First Time User**, I want to be able to contact the company with any relevant questions.
     + I've included an email link denoted by an envelope icon in the footer to allow users to contact the site owner with any queries they may have.
     + Proof of this icon can be found in the footer picture on the previous user story.
+
+### Registered User
+
++ As a **Registered User**, I want to be able to easily login and logout of my account.
+    + I have included a link in the navigation bar to the login page and when logged in this will see a logout link.
+
+        | _Login/Logout_ |
+        |:--------------:|
+        | ![Login Screenshot](docs/images/testing/userstories/login.png) |
+        | ![Logout Screenshot](docs/images/testing/userstories/logout.png) |
+
++ As a **Registered User**, I want to be able to easily add and remove items from my supply crate.
+    + I have added an Add To Crate button on each supply in ```supplies.html``` which allows the user to easily add a selected quantity of the supply to their crate.
+    + I have added Update/Delete buttons for each crate item in ```crate.html``` which allows the user to easily update/delete supplies in their crate.
+     On the view box page, I've add a remove button to each product to allow the user to easily remove a product from their box
+
+        | _Add To Crate_ |
+        |:--------------:|
+        | ![Add To Crate Screenshot](docs/images/testing/userstories/addtocrate.png) |
+
+        | _Update/delete_ |
+        |:---------------:|
+        | ![Update/Delete Screenshot](docs/images/testing/userstories/updatedelete.png) |
+
++ As a **Registered User**, I want to be able to easily purchase my crate.
+    + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
+    + On ```crate.html``` there is a "Secure Checkout" button which which clicked redirects the user to the checkout page.
+    + On ```checkout.html``` the user can see a preview of their crate with a form to fill out their delivery and payment information.
+
+        | _Checkout Button_ |
+        |:-----------------:|
+        | ![Checkout Button Screenshot](docs/images/testing/userstories/checkout-button.png) |
+
+        | _Checkout Page_ |
+        |:---------------:|
+        | ![Checkout Page Screenshot](docs/images/testing/userstories/checkout.png) |
+
++ As a **Registered User**, I want to receive a purchase confirmation email.
+    + After a successful checkout, the user will receive an email to confirm their order with a link to view the full order details.
+    + After a successful checkout, the user will be directed to ```checkout_success.html``` which will display all their order details
+
+        | _Email Confirmation_ |
+        |:--------------------:|
+        | ![Email Confirmation Screenshot](docs/images/testing/userstories/confirmation-email.png) |
+
+        | _Checkout Success_ |
+        |:------------------:|
+        | ![Checkout Success Screenshot](docs/images/testing/userstories/checkout-success.png) |
+
++ As a **Registered User**, I want to be able to easily update my contact and delivery information.
+    + Included in the checkout form is a checkbox which allows users to save the checkout delivery information to their profile for quicker future checkouts.
+    + If the option is chosen, their delivery address will be saved to their profile which can be updated on ```profile.html``` at anytime.
+
+        | _Update Delivery Details_ |
+        |:-------------------------:|
+        | ![Update Delivery Details Screenshot](docs/images/testing/userstories/profile-delivery.png) |
+
++ As a **Registered User**, I want to be able to view my previous orders.
+    + Included in ```profile.html``` is a section which displays the user's previous orders and the items in them.
+    + The user is able to click order numbers in the list to be brought to a modified version of ```checkout_success.html``` which displays a rundown of all information associated with the order.
+
+        | _Order History_ |
+        |:---------------:|
+        |![Order History Screenshot](docs/images/testing/userstories/order-history.png)
+
++ As a **Registered User**, I want to be able to add a review about my experience on the site.
+    + Included in the homepage is an "Add Review" button that displays underneath the carousel of current reviews.
+    + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user, upon entering valid information to add a review to the site.
 
 
 ### Additional Testing
