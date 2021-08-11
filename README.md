@@ -758,6 +758,15 @@ I have included links to all the supply images below:
 | Tropical 850ml | [image](https://www.tesco.com/groceries/en-GB/products/287295032) |
 
 **Sweet**
+
++ Note: The link for Wispa 4 pack points to a product that is no longer on the Tesco's website.
+    + I have opted to leave the link in and include pictures of my google searches as proof the website existed at the time I saved the image.
+        | File | Image |
+        | :--: | :---: |
+        | Google images | [image](docs/images/wispacredit1) |
+        | Google search | [image](docs/images/wispacredit2) |
+
+
 |    Name    | Image |
 | :--------: | :---: |
 | Wispa 4 pack | [image](https://www.tesco.com/groceries/en-GB/products/283787257) |

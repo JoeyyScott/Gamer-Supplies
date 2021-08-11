@@ -96,7 +96,7 @@
                         </div>
                         <!-- Supply Info -->
                         <div class="card-title w-100 highlight">{{ supply.name }}</div>
-                        <p class="card-text text-desc overflow-scroll">{{ supply.description }}</p>
+                        <p class="card-text text-desc">{{ supply.description }}</p>
                         <div class="card-buttons">
                             <p class="card-text"> <span class="highlight">Size:</span> {{ supply.size }}</p>
                             <p class="card-text"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
@@ -171,5 +171,5 @@
 {% block postloadjs %}
     {{ block.super }}
     {% include 'supplies/includes/quantity_input.html' %}
-    <script src="{% static 'js/buttons.js' %}"></script>
+    <script src="{% static 'supplies/js/buttons.js' %}"></script>
 {% endblock %}

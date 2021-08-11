@@ -130,9 +130,7 @@
         {% endblock %}
 
         {% block postloadjs %}
-        <script>
-            $('.toast').toast('show');
-        </script>
+        <script src="{% static 'js/toasts.js' %}"></script>
         {% endblock %}
         
     </body>

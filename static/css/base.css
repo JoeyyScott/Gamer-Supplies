@@ -17,6 +17,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 .hidden { display: none; }
 
 /* Additional Text */
+.header-links { font-size: 1.5rem; }
 .card-title, .text-price { font-size: 1.5rem; }
 .link-sort { color: #eee6e6; font-size: 0.75rem; display: block; }
 .crate-info { color: #eee6e6; }
@@ -29,12 +30,12 @@ p { color: #eee6e6; margin-bottom: 0; }
 .btn-img input[type="file"] { cursor: pointer;  position: absolute; top: 0; right: 0; min-width: 100%; min-height: 100%; opacity: 0;}
 
 /* Images */
-.supply-img, .manage-img { border: 5px solid #ffd700; width: 100%; -o-object-fit:cover; object-fit:cover; -webkit-box-shadow: 2px 2px #141414; box-shadow: 2px 2px #141414; }
+.supply-img, .manage-img { border: 5px solid #ffd700; width: 100%; object-fit:cover; box-shadow: 2px 2px #141414; }
 .img-btn-supplies { height: 10vh; }
 
 /* Containers */
 .container-content { margin-top: 16vh; }
-.container-sort .navbar-toggler { padding: 0.5rem 1rem; -webkit-box-shadow: none; box-shadow: none; font-size: 1rem; }
+.container-sort .navbar-toggler { padding: 0.5rem 1rem; box-shadow: none; font-size: 1rem; }
 .container-categories { border-top: 0; }
 .container-search, .container-toasts { background-color: #4169e1;}
 .container-buttons { position: fixed; bottom: 14vh; right: 50px; z-index: 999999999; width: 10%; }
@@ -43,16 +44,16 @@ p { color: #eee6e6; margin-bottom: 0; }
 /* Nav */
 .logo { height: 8vh; }
 .text-menu, .text-bag { color: #ffd700; }
-.navbar { background-color: #4169e1; -webkit-box-shadow: 0 5px 10px #141414; box-shadow: 0 5px 10px #141414; }
+.navbar { background-color: #4169e1; box-shadow: 0 5px 10px #141414; }
 .navbar-nav { text-align: right; padding-right: 5vw; }
 .navbar-toggler { padding: 0; font-size: 1rem; }
-.navbar-toggler:focus { outline: none; -webkit-box-shadow: none; box-shadow: none; }
+.navbar-toggler:focus { outline: none; box-shadow: none; }
 .navbar-toggler i, .nav-link, .text-bag { color: #ffd700; }
 .navbar-brand { padding: 0; }
 .nav-link:hover, .nav-link:active, .nav-link:focus, .btn:hover, .btn:active, .btn:focus { color: #141414; }
 
 /* Footer */
-.container-footer { background-color: #4169e1; -webkit-box-shadow: 0 -5px 10px #141414; box-shadow: 0 -5px 10px #141414; }
+.container-footer { background-color: #4169e1; box-shadow: 0 -5px 10px #141414; }
 footer i, .text-footer { font-size: 1.6rem; }
 .space { height: 15vh; }
 .space-home { margin-top: 10rem; }
@@ -62,7 +63,7 @@ footer i, .text-footer { font-size: 1.6rem; }
 .toast-body { font-size: 1.2rem; }
 .toast-close { font-size: 1.5rem; cursor: pointer; }
 .toast-checkout { float: right; }
-.fa-thumbs-down { -webkit-transform: scaleX(-1); -ms-transform: scaleX(-1); transform: scaleX(-1); }
+.fa-thumbs-down { transform: scaleX(-1); }
 .crate-wrapper { height: 100px; overflow-x: hidden; overflow-y: auto; }
 
 /* Supplies */
@@ -70,27 +71,20 @@ footer i, .text-footer { font-size: 1.6rem; }
 ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 .nav-link.active, .nav-link:hover, .nav-tabs .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover { border: none; width: 100%; }
 .nav-link.active, .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover, .title-sort.active, .link-sort:hover { background-color: #ffd700; color: #4169e1; text-shadow: 2px 2px #eee6e6; border-bottom: 0; }
-/* Credit for w3schools: Remove arrows/spinners on Chrome, Safari, Opera, Edge and Firefox */
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-input[type=number] { -moz-appearance: textfield; }
 
 /* Modal */
 .modal-header { border-bottom: 1px solid #ffd700; }
 .modal-footer { border-top: 1px solid #ffd700;}
 
 /* Reviews */
-.carousel { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: 30vh; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-/* Credit for w3schools: Hide scrollbar for Chrome, Safari, Opera, IE, Edge and Firefox */
-.carousel-inner, .text-desc { overflow: scroll; -ms-overflow-style: none; scrollbar-width: none; }
-.carousel-inner::-webkit-scrollbar, .text-desc::-webkit-scrollbar { display: none; }
+.carousel { display: flex; flex-direction: column; height: 30vh; justify-content: center; }
 
 /* Form inputs */
 #id_review, #id_review:focus,
 .form-input, .form-input:focus {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box; font-family: 'Salsa', cursive; color: #4169e1;
+    box-sizing: border-box; font-family: 'Salsa', cursive; color: #4169e1;
     padding: 10px 12px; margin-bottom: 10px; border-radius: 0px;
-    background-color: #eee6e6; -webkit-box-shadow: 0 1px 3px 0 #141414; box-shadow: 0 1px 3px 0 #141414;
+    background-color: #eee6e6; box-shadow: 0 1px 3px 0 #141414;
 }
 
 /* Form inputs sizes */
@@ -108,15 +102,11 @@ input[type=number] { -moz-appearance: textfield; }
 /* Allauth form formatting */
 .allauth-form-inner-content p { margin: 1rem; font-family: 'Salsa', cursive; }
 .allauth-form-inner-content .form-control { color: #4169e1; }
-.allauth-form-inner-content input::-webkit-input-placeholder { color: #6c757d; font-family: 'Salsa', cursive; }
-.allauth-form-inner-content input::-moz-placeholder { color: #6c757d; font-family: 'Salsa', cursive; }
-.allauth-form-inner-content input:-ms-input-placeholder { color: #6c757d; font-family: 'Salsa', cursive; }
-.allauth-form-inner-content input::-ms-input-placeholder { color: #6c757d; font-family: 'Salsa', cursive; }
 .allauth-form-inner-content input::placeholder { color: #6c757d; font-family: 'Salsa', cursive; }
 .allauth-form-inner-content label:not([for='id_remember']) { display: none; }
 .allauth-form-inner-content form label, .allauth-form-inner-content a { color: #ffd700; text-shadow: 2px 2px #141414; }
-.allauth-form-inner-content form .form-group #div_id_remember { width: -webkit-max-content; width: -moz-max-content; width: max-content; margin: auto; }
-.allauth-form-inner-content input:not(#id_remember) { border-radius: 0; -webkit-box-shadow: 0 1px 3px 0 #141414; box-shadow: 0 1px 3px 0 #141414; width: 75%; margin: 0 auto 1rem auto; font-family: 'Salsa', cursive; }
+.allauth-form-inner-content form .form-group #div_id_remember { width: max-content; margin: auto; }
+.allauth-form-inner-content input:not(#id_remember) { border-radius: 0; box-shadow: 0 1px 3px 0 #141414; width: 75%; margin: 0 auto 1rem auto; font-family: 'Salsa', cursive; }
 
 /* Allauth buttons and hover events */
 .allauth-form-inner-content button:hover,
@@ -127,16 +117,18 @@ input[type=number] { -moz-appearance: textfield; }
     color: #4169e1; background-color: #ffd700; border: 2px solid #eee6e6; padding: .25rem .5rem;
 	/* btn base properties from bootstrap */
 	display: inline-block; font-weight: 400; font-size: 1rem; line-height: 1.5; border-radius: 0; text-align: center; 
-    vertical-align: middle; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+    vertical-align: middle; user-select: none;
     /* standard bootstrap btn transitions */
-    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 }
 
-.header-links { font-size: 1.5rem; }
+/* See TESTING.MD for more details on this section */
+/* Credit for w3schools: Hide scrollbar for Chrome, Safari, Opera, IE, Edge and Firefox */
+.carousel-inner::-webkit-scrollbar { display: none; }
+.carousel-inner { -ms-overflow-style: none; }
+/* Credit for w3schools: Remove arrows/spinners on Chrome, Safari, Opera, Edge and Firefox */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
 
 /* .card-buttons { position: absolute; bottom: 1%; } */
 
@@ -171,6 +163,6 @@ input[type=number] { -moz-appearance: textfield; }
     .manage-img { width: 25%; }
     .nav-link.active, .nav-link:hover, .nav-tabs .nav-link,
     .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
-        width: -webkit-max-content; width: -moz-max-content; width: max-content;
+        width: max-content;
     }
 }
