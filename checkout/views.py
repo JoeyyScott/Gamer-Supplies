@@ -66,8 +66,7 @@ def checkout(request):
                 code = Coupon.objects.get(pk=coupon)
                 order.coupon = code
                 request.session['coupon_id'] = None
-            else:
-                print('no coupon')
+
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_crate = json.dumps(crate)

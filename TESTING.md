@@ -298,12 +298,12 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:----------------------------:|
         | ![Edit/Delete Supply Button Screenshot](docs/images/testing/userstories/edit-delete.png) |
 
-    + Upon clicking this button the superuser will be redirected to the Edit Supply form shown below.
+    + Upon clicking the edit button the superuser will be redirected to the Edit Supply form shown below.
         + This can be submitted (with valid information) to edit an existing Supply on the store.
 
         | _Edit Supply Form_ |
         |:------------------:|
-        | ![Edit Supply Form Screenshot](docs/images/testing/userstories/add-supply-form.png) |
+        | ![Edit Supply Form Screenshot](docs/images/testing/userstories/edit-supply-form.png) |
 
 + As a **Site Owner/Superuser**, I want to be able to manage and delete reviews.
     + I have included ```reviews_manage.html``` which allows a superuser to view all current reviews posted to the site and delete as necessary.

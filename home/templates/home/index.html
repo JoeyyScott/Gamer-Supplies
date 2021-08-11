@@ -23,7 +23,7 @@
                             {% for review in reviews %}
                             <!-- Credit for inner carousel for loop -->
                             <div class="carousel-item h-100 p-4 {% if forloop.counter == 1 %}active{% endif %}">
-                                <p class="altFont ratings">{{ review.rating }}</p>
+                                <p class="ratings">{{ review.rating }}</p>
                                 <p class="altFont">{{ review.review }}</p>
                                 <p class="altFont"><span class="highlight">Added By:</span> {{ review.added_by|title }}</p>
                                 <!-- Displaying a button if the user viewing matches the user who added the review -->
@@ -62,14 +62,8 @@
     </div>
 {% endblock %}
 
-<script>
-    const stars = document.querySelectorAll('.ratings');
-    stars.forEach(rating => {
-        i = 0
-        while (i < rating.innerText) {
-            rating.append(`star`);
-            console.log(i)
-            i++
-        }  
-    });
-</script>
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- Display stars for each rating in Reviews -->
+    <script src="{% static 'home/js/ratings.js' %}"></script>
+{% endblock %}

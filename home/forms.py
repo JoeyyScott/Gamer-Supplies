@@ -10,11 +10,34 @@ class FormReview(forms.ModelForm):
     # See README.md for more details
     rating = forms.TypedChoiceField(
         choices=(
-            (1, mark_safe('<span class="highlight text-center altFont"> Rubbish!</span>')),
-            (2, mark_safe('<span class="highlight text-center altFont"> Ok I guess</span>')),
-            (3, mark_safe('<span class="highlight text-center altFont"> Averagely average</span>')),
-            (4, mark_safe('<span class="highlight text-center altFont"> Pleasantly impressed</span>')),
-            (5, mark_safe('<span class="highlight text-center altFont"> Outstanding</span>'))
+            (1, mark_safe('<p><i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>\
+                <i class="fa fa-star"></i><i class="fa fa-star"></i> \
+                <span class="text-center altFont">Extremely Unsatisfied\
+                </span></p>')),
+            (2, mark_safe('<p><i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i><i class="fa fa-star">\
+                </i><i class="fa fa-star"></i><i class="fa fa-star"></i> \
+                <span class="text-center altFont"> Unsatisfied\
+                </span></p>')),
+            (3, mark_safe('<p><i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i><i class="fa fa-star">\
+                </i><i class="fa fa-star"></i> \
+                <span class="text-center altFont"> Neutral</span></p>')),
+            (4, mark_safe('<p><i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i><i class="fa fa-star">\
+                </i> <span class="text-center altFont"> Satisfied\
+                </span></p>')),
+            (5, mark_safe('<p><i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i> \
+                <span class="text-center altFont"> Extremely satisfied!\
+                </span></p>'))
             ),
         widget=forms.RadioSelect,
     )
@@ -24,7 +47,8 @@ class FormReview(forms.ModelForm):
         fields = ['review', 'rating']
         exclude = ['added_by']
         widgets = {
-            'review': forms.Textarea(attrs={'placeholder': 'Tell us what you think...', 'class': 'altFont'})
+            'review': forms.Textarea(attrs={'\
+            placeholder': 'Tell us what you think...', 'class': 'altFont'})
         }
 
     def __init__(self, *args, **kwargs):
