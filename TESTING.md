@@ -16,9 +16,13 @@ I used [w3.org's validator](https://jigsaw.w3.org/css-validator/) for my CSS val
     |:----------------:|
     | ![CSS Validation](docs/images/testing/css-test.png) |
 
-I used [JSHint](https://jshint.com) to check the javascript file in my project to make certain it complies with coding standards and that were no syntax errors detected.
+I used [JSHint](https://jshint.com) to check the javascript files in my project to make certain it complies with coding standards and that were no syntax errors detected.
 
-+ Javascript file (main.js)
++ Ratings (ratings.js):
+
+    | _Ratings.js Validation_ |
+    |:------------------:|
+    | ![HTML5 Validation](docs/images/testing/ratings-testing.png) |
 
 I used [PEP8 online](http://pep8online.com/) to test all custom Python code against PEP8 standards.
 

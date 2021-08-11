@@ -14,7 +14,7 @@
                     {% if reviews %}
                         {% for review in reviews %}
                             <p><span class="highlight mb-2 me-1">Rating:</span> <span class="altFont">{{ review.review }}</span></p>
-                            <p><span class="highlight mb-2 me-1">Review:</span> <span class="altFont">{{ review.rating }}</span></p>
+                            <p><span class="highlight mb-2 me-1">Review:</span> <span class="ratings">{{ review.rating }}</span></p>
                             <p><span class="highlight mb-2 me-1">Added by:</span> <span class="altFont">{{ review.added_by|title }}</span></p>
                             <a class="btn my-2" href="{% url 'review_delete' review.id %}"><i class="fas fa-trash"></i> Delete</a>
                             <hr class="w-100 m-auto highlight mb-1">
@@ -31,4 +31,10 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- Display stars for each rating in Reviews -->
+    <script src="{% static 'home/js/ratings.js' %}"></script>
 {% endblock %}
