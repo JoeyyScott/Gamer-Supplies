@@ -220,11 +220,11 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
         | _Add To Crate_ |
         |:--------------:|
-        | ![Add To Crate Screenshot](docs/images/testing/userstories/addtocrate.png) |
+        | ![Add To Crate Screenshot](docs/images/testing/userstories/add-to-crate.png) |
 
         | _Update/delete_ |
         |:---------------:|
-        | ![Update/Delete Screenshot](docs/images/testing/userstories/updatedelete.png) |
+        | ![Update/Delete Screenshot](docs/images/testing/userstories/update-delete.png) |
 
 + As a **Registered User**, I want to be able to easily purchase my crate.
     + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
@@ -265,12 +265,39 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
         | _Order History_ |
         |:---------------:|
-        |![Order History Screenshot](docs/images/testing/userstories/order-history.png)
+        | ![Order History Screenshot](docs/images/testing/userstories/order-history.png) |
 
 + As a **Registered User**, I want to be able to add a review about my experience on the site.
     + Included in the homepage is an "Add Review" button that displays underneath the carousel of current reviews.
     + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user, upon entering valid information to add a review to the site.
 
+### Site Owner/Superuser User
+
++ As a **Site Owner/Superuser**, I want to be able to add new supplies.
+    + I have included an 'Add Supply' button on ```supplies.html``` and in the navigation bar which is only accessible by a superuser.
+
+        | _Add Supply Button_ |
+        |:-------------------:|
+        | ![Add Supply Button Screenshot](docs/images/testing/userstories/add-supply.png) |
+
++ As a **Site Owner/Superuser**, I want to be able to edit and delete supplies.
+    + Included in ```supplies.html``` within each supply card I have added an edit and delete buttons (denoted by relevant icons) under the 'Add to Crate' button which is only accessible by a superuser.
+
+        | _Edit/Delete Supply Buttons_ |
+        |:----------------------------:|
+        | ![Edit/Delete Supply Button Screenshot](docs/images/testing/userstories/edit-delete.png) |
+
++ As a **Site Owner/Superuser**, I want to be able to manage and delete reviews.
+    + I have included ```reviews_manage.html``` which allows a superuser to view all current reviews posted to the site and delete as necessary.
+
+        | _Manage Reviews Page_ |
+        |:---------------------:|
+        | ![Manage Reviews Page Screenshot](docs/images/testing/userstories/reviews-manage.png) |
+
++ As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
+    + TBC - Admin being added to main nav
++ As a **Site Owner/Superuser**, I want to be able to view and manage all the coupon codes.
+    + TBC - Potentially an manage coupon page
 
 ### Additional Testing
 
