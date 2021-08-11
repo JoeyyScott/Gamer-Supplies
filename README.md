@@ -56,7 +56,7 @@ The goal of this project is to create an MVP (mininum viable product) of an E-Co
 Opportunity/Problem | Importance | Viability/Feasibility
 :-------- |:--------:|:--------:
 A. Users able to register an account and login  | 5 | 5
-B. Users can add/edit and remove items from their crate | 5 | 5
+B. Users can add, edit and remove items from their crate | 5 | 5
 C. Users are notified of their actions | 5 | 4
 D. Users can re-purchase a past order | 3 | 3
 E. Users can search for snacks | 4 | 4
@@ -67,11 +67,11 @@ E. Users can search for snacks | 4 | 4
 
 + As a **User**, I want to easily understand the site upon loading it.
 + As a **User**, I want to be able to intuitively navigate the entire site with ease.
-+ As a **User**, I want to be able to receive full site functionality on my mobile and tablet.
++ As a **User**, I want to be able to receive full site functionality on my mobile, tablet and PC.
 + As a **User**, I want to be able to see what supplies are available for purchase on the site.
 + As a **User**, I want to know the prices.
 + As a **User**, I want to be able to seamlessly sign up for an account and receive a confirmation email.
-+ As a **User**, I want to read reviews from other users
++ As a **User**, I want to read reviews from other users.
 + As a **User**, I want to be able to access the company's associated social media profiles.
 + As a **User**, I want to be able to contact the company with any relevant questions.
 
@@ -137,7 +137,7 @@ I tested my colour contrasts against the AA guidelines using [this tool](https:/
 | **Add Supply** | [image](static/images/add-supply.png) |
 | **Back to Top** | [image](static/images/back-to-top.png) |
 
-**Supply images** - The supply images used for items on the website were taken primarily from [Tesco's website](https://www.tesco.com/). This project is for educational purposes only so the associated credit have been included in the [credits](#credits) section. Supply images used are popular food/drinks that myself, family and friends buy regularly.
+**Supply images** - The supply images used for items on the website were taken primarily from [Tesco's website](https://www.tesco.com/). This project is for educational purposes only so the associated credit has been included in the [credits](#credits) section. Supply images used are popular food/drinks that myself, family and friends buy regularly.
 
 #### Typography
 
@@ -163,17 +163,17 @@ The Saira Stencil One font was chosen as it resembles stencil lettering such as 
 ### Design Changes
 
 **Coupon missing from wireframes**
-+ I have added a coupon feature on ```supplies.html``` which is not reflected in the wireframes as this was added into the project later.
++ I have added a coupon feature on ```supplies.html``` which is not reflected in the wireframes as this was added to the project later.
     + The reason being I was unsure what to include for my second custom model to satisfy the project requirement. I am aiming for a distinction and as such have included a disclaimer here.
 
 **Sort missing from wireframes**
-+ I have added a sort feature on ```supplies.html``` which is not reflected in the wireframes as this was added into the project later.
++ I have added a sort feature on ```supplies.html``` which is not reflected in the wireframes as this was added to the project later.
     + It appears below the category links and expands to a dropdown sorting by Price, Name, Category and Brand (with options for ascending/descending).
 
 
 **Reviews page without a wireframe**
 + When creating the wireframes I was unsure where I wanted to include reviews that had been posted.
-    + I have opted to display them on the homepage and have used templating logic in both the homepage and manage reviews to handle there being no current reviews.
+    + I have opted to display them on the homepage and have used templating logic in both the homepage and manage reviews to handle when there are no current reviews displayed.
 
 
 ## Database Schema 
@@ -276,14 +276,14 @@ Review Model (Custom model #2 for Distinction performance)
 
 ## Included in **index.html** is:
 
-**Website intro**:
-+ Intro section loads at the top of the page.
+**Website introduction**:
++ Introductory section loads at the top of the page.
     + Contains a tagline with a button to view the snacks in the store.
     + Contains an incentive to create an account as non logged in users do not have access to a crate.
 
 **Reviews**:
 + I used an adapted Bootstrap 5 carousel to display reviews posted to the data store.
-    + Carousel will not autoplay and displays reviews using a for loop.
+    + Carousel will not autoplay and display reviews using a for loop.
     + If the user is logged in they will see an add review button.
     + If the user is logged in as an Admin they will have a manage reviews button below the add review button.
 
@@ -295,13 +295,13 @@ Review Model (Custom model #2 for Distinction performance)
 
 **Supply buttons**
 + Within each card there are multiple buttons based on who is accessing the site.
-    + If the user is not logged in they will see Register and Login buttons.
-    + If the user is logged in they will see an Add to Crate and quantity adjust buttons.
-    + If the user is logged in as a superuser they will see an Add to Crate, quantity adjust and Edit/Delete buttons (denoted by relevant icons).
+    + If the user is not logged in they will see Register and Login links below the Supply information.
+    + If the user is logged in they will see an Add to Crate and Quantity Adjust buttons.
+    + If the user is logged in as a superuser they will see an Add to Crate, Quantity Adjust and Edit/Delete buttons (denoted by relevant icons).
 
 **Supply navigation**
 + A navigation bar which filters the list of supplies based on category filters and sort options which are contained in a dropdown.
-+ A search box which allows users to search which can match the supply name, description and brand.
++ A search box which allows users to search and match the supply name, description and brand.
 
 
 ## Included in both **crate.html** and **checkout.html** is:
@@ -318,7 +318,7 @@ Review Model (Custom model #2 for Distinction performance)
 ## Included in **crate.html** is:
 
 **Crate total with Coupon field**:
-+ A price summary of their crate that updates when a valid coupon is entered.
++ A price summary of their crate which updates when a valid coupon is entered.
     + Apply coupon form input where users can enter a 10 character max string.
         + This will then be checked against coupons in the data store when the apply coupon button is clicked and provide the correct result.
             + If the coupon exists, a section containing information of the current coupon and the savings/discount it provides to the user.
@@ -393,7 +393,7 @@ Review Model (Custom model #2 for Distinction performance)
     + Users can register with email confirmation, login and logout.
 
 **CRUD Functionality for Registered Users**:
-+ Users are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
++ Users are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this are:
     + Supplies - ```add_to_crate```, ```modify_crate``` and ```remove_from_crate``` views providing the associated functionality when the user initates such actions.
         + Activated by: Add To Crate button with quantity inputs on each supply in ```supplies.html```, Update/Delete buttons for each crate item in ```crate.html```.
     + Reviews - ```review_add.html```, ```index.html``` with the delete functionality activating when the associated button is pressed on the homepage.
@@ -401,7 +401,7 @@ Review Model (Custom model #2 for Distinction performance)
         + Activated by: Add/Delete Review buttons on ```index.html```. 
 
 **CRUD Functionality for admins**:
-+ In addition to the previous CRUD functionality, admins are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this is:
++ In addition to the previous CRUD functionality, admins are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this are:
     + Supplies - ```supply_add.html```, ```supplies.html``` and ```supply_edit.html``` with the delete functionality activating when the associated button is pressed.
     + Reviews - ```review_add.html```, ```index.html``` and ```review_manage.html``` with the delete functionality activating when the associated button is pressed.
         + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
@@ -414,7 +414,7 @@ Review Model (Custom model #2 for Distinction performance)
     + Example: If a user orders the same crate 10 times over a certain value they get a 50% discount on their next crate of those items.
     + This would also allow users to receive their favourite snacks whenever they wanted with only having to checkout once.
 
-+ **Pagination** - This would take control if the amount of supplies in the shop went over a threshold; which required too much work for the time available for the project.
++ **Pagination** - This would take control if the amount of supplies in the shop went over a threshold. Implementing this fully would require too much work for the time available for this project.
 
 #### [Back to top](#contents)
 
@@ -443,18 +443,18 @@ Review Model (Custom model #2 for Distinction performance)
 + [jQuery](https://jquery.com/) - I used the jQuery library to provide access to a multitude of functions/methods throughout the site.
 + [Stripe](https://stripe.com/docs) - Stripe was used to integrate an online payment authentication and processing system.
 
-### Docs
+### Documents
 + [Accessible Color Generator](https://learnui.design/tools/accessible-color-generator.html) - I used this tool in conjunction with coolors.co to provide a better colour contrast for accessibility.
 + [Am I Responsive?](http://ami.responsivedesign.is/) - I used this tool to easily display the responsiveness of my site for my README.md introduction.
 + [coolors.co](https://coolors.co) - I used this tool to generate a colour scheme based on the Gamer Supplies logo.
 + [GIMP](https://www.gimp.org) - I used this program to design the logo/favicon image and wireframes.
-+ [Placeholder](https://placeholder.com) was used to generate colour boxes to display in the colour scheme section of my README.md file.
++ [Placeholder](https://placeholder.com) - I used this tool to generate colour boxes to display the colour scheme section of my README.md file.
 
 ### Dependencies
 + [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - Create, configure, and manage AWS services, such as Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3) using the AWS SDK for Python (Boto3).
 + [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)  - Prebuilt Django applications that handle registration, user authentication, account management as well as support for third party accounts.
 + [Django Countries](https://pypi.org/project/django-countries/) - Provides country choices for use with forms and a prebuilt country field for models.
-+ [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Django tool to program customizable reusable layouts out of components used within forms.
++ [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Django tool to programme customizable reusable layouts out of components used within forms.
 + [django-storages](https://django-storages.readthedocs.io/en/latest/) - A collection of Django custom storage backends. 
 + [dj_database_url](https://pypi.org/project/dj-database-url/) - Django utility allows you to configure your Django application to simply utilize the 12factor inspired ```DATABASE_URL``` environment variable.
 + [gunicorn](https://pypi.org/project/gunicorn/) - Python WSGI HTTP Server for UNIX.
@@ -478,7 +478,7 @@ I created a separate file for the testing process which can be located [here](TE
 ### Project Inception
 
 1. This project was created using [GitHub](https://github.com) and Code Institute's project template [here](https://github.com/Code-Institute-Org/gitpod-full-template) by clicking "Use this template".
-2. I named this project "gamer-supplies" as it is the name of company the website is for.
+2. I named this project "**gamer-supplies**" as it is the name of company the website is for.
 3. Once the repository had been created I clicked the "Gitpod" button which is a Firefox extension ([here](https://addons.mozilla.org/en-GB/firefox/addon/gitpod/)) that creates a workspace within GitPod which is where I developed the project.
 4. Following [Code Institute's](https://codeinstitute.net/) lessons the 4 main commands I used were:
     + ```git status``` (which allows me to check which files have been modified and if any are ready to be committed)
@@ -543,7 +543,7 @@ Before creating a Heroku app make sure your project has these two files:
     
     ```python3 manage.py createsuperuser```
 
-4. Remove the Postgres database URL from settings.py as this should not in any case be deployed to GitHub for security reasons
+4. Remove the Postgres database URL from settings.py as this should not in any case be deployed to GitHub for security reasons.
 5. To connect your Heroku app to be deployed from a Github repository, you can follow these steps:
     1. Open the heroku app page on the deploy tab and select GitHub - Connect to GitHub.
     2. Sign into GitHub if not already.
@@ -560,10 +560,10 @@ To setup static and media files in an Amazon S3 Bucket follow these steps:
 1. If you do not own one already create or login to your [AWS](https://aws.amazon.com/) account.
 2. Click on My Account (top right) and open the AWS Management Console page.
 3. Search for S3 in the Services section (top left) and create a new bucket with the following settings:
-    1. An appropriate name (your project name)
-    2. Region (closest to you)
-    3. **Uncheck Block all Public Access**
-    4. Open the new bucket and **Enable Static Website Hosting** (bottom of page)
+    1. An appropriate name (your project name).
+    2. Region (closest to you).
+    3. **Uncheck Block all Public Access**.
+    4. Open the new bucket and **Enable Static Website Hosting** (bottom of page).
     5. In the permissions tab, edit the **CORS configuration** (near bottom) and use the following code to set up the required connection between the Heroku app and the bucket:
 
         ```bash
@@ -587,10 +587,10 @@ To setup static and media files in an Amazon S3 Bucket follow these steps:
         + Type of Policy: **"S3 Bucket Policy"**
         + Principal: **"*"**
         + Action: **"GetObject"**
-        + ARN: This can be found on the Edit Bucket Policy page.
+        + ARN: This can be found on the Edit Bucket Policy page
         + **Add the statement**
         + **Generate the policy**
-    8. Copy the generated policy into the Policy section on the Edit Bucket Policy page
+    8. Copy the generated policy into the Policy section on the Edit Bucket Policy page.
         + **IMPORTANT**: Add **"/*"** to the end of the resource key to ensure all files are loaded
 
 ### Creating a local clone
@@ -613,7 +613,7 @@ Once you have done the above you can follow these steps to create a local copy o
     
     ```pip3 install requirements.txt```
 
-6. To run the app in your local IDE type ```python3 manage.py runserver```
+6. To run the app in your local IDE type ```python3 manage.py runserver```.
 
 #### [Back to top](#contents)
 
@@ -626,7 +626,7 @@ Once you have done the above you can follow these steps to create a local copy o
 This section includes areas/sections of code and properties I was unaware of. I have also included sources from where I have adapted/changed code used in the projects throughout my course as I figured it was better practice to state as such to avoid any penalizations or copyright violations.
 
 **Sending HTML through django messages and templates**:
-+ I wanted to customize my Django messages and tried various solutions from searching myself.
++ I wanted to customize my Django messages and tried various solutions I found from researching the issue.
     + The one that worked for me was [this post](https://stackoverflow.com/questions/58415186/how-to-make-a-new-line-in-django-messages-error) which uses "mark safe" from Django's built in utilities.
 
 **TypedChoiceField**:

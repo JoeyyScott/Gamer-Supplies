@@ -148,6 +148,7 @@ input[type=number] { -moz-appearance: textfield; }
     .container-categories p { font-size: 1.5rem; }
     .container-messages { width: 50%; }
     .carousel-item { font-size: 1.25rem; }
+    .manage-img { width: 50%; }
 }
 /* For large screens */
 @media (min-width: 992px) {
@@ -163,6 +164,7 @@ input[type=number] { -moz-appearance: textfield; }
     .container-messages { width: 25%; }
     .carousel-item { font-size: 1.5rem; }
     .header-links { font-size: 1.5rem; }
+    .manage-img { width: 25%; }
     .nav-link.active, .nav-link:hover, .nav-tabs .nav-link,
     .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
         width: -webkit-max-content; width: -moz-max-content; width: max-content;

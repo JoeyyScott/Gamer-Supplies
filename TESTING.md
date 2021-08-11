@@ -6,7 +6,7 @@ I used [w3.org's validator](https://validator.w3.org) for my HTML validation che
 
     | _HTML5 Validation_ |
     |:------------------:|
-    | ![HTML5 Validation](docs/images/testing/userstories/testing/html-test.png) |
+    | ![HTML5 Validation](docs/images/testing/html-test.png) |
 
 I used [w3.org's validator](https://jigsaw.w3.org/css-validator/) for my CSS validation checks.
 
@@ -14,7 +14,7 @@ I used [w3.org's validator](https://jigsaw.w3.org/css-validator/) for my CSS val
 
     | _CSS Validation_ |
     |:----------------:|
-    | ![CSS Validation](docs/images/testing/userstories/testing/css-test.png) |
+    | ![CSS Validation](docs/images/testing/css-test.png) |
 
 I used [JSHint](https://jshint.com) to check the javascript file in my project to make certain it complies with coding standards and that were no syntax errors detected.
 
@@ -26,9 +26,9 @@ I used [PEP8 online](http://pep8online.com/) to test all custom Python code agai
 
     | _PEP8 Validation_ |
     |:-----------------:|
-    |![PEP8 Validation](docs/images/testing/userstories/testing/pep8-test.png)|
+    |![PEP8 Validation](docs/images/testing/pep8-test.png)|
 
-+ The only files with lines over 79 characters are settings.py and migration files as when attempting to achieve this it would break the associated sections of my project so I opted to leave them and put a disclaimer here as I'm aiming for a distinction performance.
++ The only files with lines over 79 characters are settings.py and migration files as when attempting to achieve this it would break the associated sections of my project so I opted to leave them and put a disclaimer here as I am aiming for a distinction performance.
 
 ### Responsiveness
 
@@ -136,7 +136,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 ### First Time User
 
 + As a **First Time User**, I want to easily understand the site upon loading it.
-    + I have included an appropriate header and tagline in the home page that tells users what the site is for and how they can
+    + I have included an appropriate header and tagline in the home page that tells users what the site is for and how they can use it.
 
         | _Home Page_ |
         |:-----------:|
@@ -144,21 +144,21 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **First Time User**, I want to be able to intuitively navigate the entire site with ease.
     + The site features a main navigation bar at the top of the page which contains links to the other site pages.
-    + I have inclduded 3 external links to social media pages in the footer that will open the base website for that social media page in a new tab/window.
+    + I have included 3 external links to social media pages in the footer that will open the base website for that social media page in a new tab/window.
     + I have also included buttons throughout the site that link to other pages and features within the site.
 
         | _Navigation Bar_ |
         |:----------------:|
         | ![Site navigation](docs/images/testing/userstories/navigation.png) |
 
-+ As a **First Time User**, I want to be able to receive full site functionality on my mobile and tablet.
++ As a **First Time User**, I want to be able to receive full site functionality on my mobile, tablet and PC.
     + I have used [Bootstrap 5](https://getbootstrap.com/)'s support for responsive design to make the site responsive across multiple devices including mobile and tablets.
     + I have tested the site across multiple devices to ensure content displays as intended, proof can be found [here](#responsiveness).
 
 + As a **First Time User**, I want to be able to see what supplies are available for purchase on the site.
     + On the home page and navigation bar there is a button "Snack Now" which redirects users to the supplies page.
         + This allows first time users to see what supplies are available to add to a crate before they register for an account to make a crate/purchase.
-        + The navigation link can be see in New user story 2 and I have included a picture of the button below.
+        + The navigation link can be see in First Time User story 2 and I have included a picture of the button below.
 
             | _Supplies Page_ |
             |:---------------:|
@@ -173,7 +173,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **First Time User**, I want to be able to seamlessly sign up for an account and receive a confirmation email.
     + The navigation bar contains a link to the register page which allows new users to easily initiate the registration process.
-    + After submitting the registration form with valid information the user will be signed up for an account, pending email confirmation which they will receive a notification and site content informing them.
+    + After submitting the registration form with valid information the user will be signed up for an account, pending email confirmation which they will receive a notification about and site content informing them.
     + The user will receive a verification email which will contain an email confirm link allowing them to complete the registration process once clicked.
 
         |   _Register_    |
@@ -192,15 +192,15 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Reviews]() |
 
 + As a **First Time User**, I want to be able to access the company's associated social media profiles.
-    + Inluded in the footer are links to social media platforms in which will open in a new tab/window when clicked.
-        + These links currently point the homepage for the associated social media platforms as the brand's social do not exist at this point in time.
+    + Inluded in the footer are links to social media platforms which will open in a new tab/window when clicked.
+        + These links currently point to the homepage for the associated social media platforms as the brand's socials do not exist at this point in time.
 
             | _Footer_ |
             |:--------:|
             | ![Footer Screenshot](docs/images/testing/userstories/footer.png) |
 
 + As a **First Time User**, I want to be able to contact the company with any relevant questions.
-    + I've included an email link denoted by an envelope icon in the footer to allow users to contact the site owner with any queries they may have.
+    + I have included an email link denoted by an envelope icon in the footer to allow users to contact the site owner with any queries they may have.
     + Proof of this icon can be found in the footer picture on the previous user story.
 
 ### Registered User
@@ -216,7 +216,6 @@ I tested the appearance and responsiveness of the website across 6 different bro
 + As a **Registered User**, I want to be able to easily add and remove items from my supply crate.
     + I have added an Add To Crate button on each supply in ```supplies.html``` which allows the user to easily add a selected quantity of the supply to their crate.
     + I have added Update/Delete buttons for each crate item in ```crate.html``` which allows the user to easily update/delete supplies in their crate.
-     On the view box page, I've add a remove button to each product to allow the user to easily remove a product from their box
 
         | _Add To Crate_ |
         |:--------------:|
@@ -240,8 +239,8 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Checkout Page Screenshot](docs/images/testing/userstories/checkout.png) |
 
 + As a **Registered User**, I want to receive a purchase confirmation email.
-    + After a successful checkout, the user will receive an email to confirm their order with a link to view the full order details.
-    + After a successful checkout, the user will be directed to ```checkout_success.html``` which will display all their order details
+    + After a successful checkout, the user will receive an email confirming their order with a link to view the full order details.
+    + After a successful checkout, the user will be directed to ```checkout_success.html``` which will display all their order details.
 
         | _Email Confirmation_ |
         |:--------------------:|
@@ -269,7 +268,12 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **Registered User**, I want to be able to add a review about my experience on the site.
     + Included in the homepage is an "Add Review" button that displays underneath the carousel of current reviews.
-    + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user, upon entering valid information to add a review to the site.
+    + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user, upon entering valid information, to add a review to the site.
+
+        | _Add Review Page_ |
+        |:-----------------:|
+        | ![Manage Reviews Page Screenshot](docs/images/testing/userstories/review-add.png) |
+
 
 ### Site Owner/Superuser User
 
@@ -280,12 +284,26 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:-------------------:|
         | ![Add Supply Button Screenshot](docs/images/testing/userstories/add-supply.png) |
 
+    + Upon clicking this button the superuser will be redirected to the Add Supply form shown below.
+        + This can be submitted (with valid information) to add a Supply to the store.
+
+        | _Add Supply Form_ |
+        |:-----------------:|
+        | ![Add Supply Form Screenshot](docs/images/testing/userstories/add-supply-form.png) |
+
 + As a **Site Owner/Superuser**, I want to be able to edit and delete supplies.
-    + Included in ```supplies.html``` within each supply card I have added an edit and delete buttons (denoted by relevant icons) under the 'Add to Crate' button which is only accessible by a superuser.
+    + Included in ```supplies.html``` within each supply card I have added edit and delete buttons (denoted by relevant icons) under the 'Add to Crate' button which is only accessible by a superuser.
 
         | _Edit/Delete Supply Buttons_ |
         |:----------------------------:|
         | ![Edit/Delete Supply Button Screenshot](docs/images/testing/userstories/edit-delete.png) |
+
+    + Upon clicking this button the superuser will be redirected to the Edit Supply form shown below.
+        + This can be submitted (with valid information) to edit an existing Supply on the store.
+
+        | _Edit Supply Form_ |
+        |:------------------:|
+        | ![Edit Supply Form Screenshot](docs/images/testing/userstories/add-supply-form.png) |
 
 + As a **Site Owner/Superuser**, I want to be able to manage and delete reviews.
     + I have included ```reviews_manage.html``` which allows a superuser to view all current reviews posted to the site and delete as necessary.
@@ -297,15 +315,15 @@ I tested the appearance and responsiveness of the website across 6 different bro
 + As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
     + TBC - Admin being added to main nav
 + As a **Site Owner/Superuser**, I want to be able to view and manage all the coupon codes.
-    + TBC - Potentially an manage coupon page
+    + TBC - Potentially a manage coupon page
 
 ### Additional Testing
 
 **General Testing**:
-+ All navigation buttons (including navbar and mobile links) redirect the user to the correct page in the site
-+ All buttons produce the desired effect when clicked
-+ External links open in a new tab/window and link to the correct site
-+ Images load properly
++ All navigation buttons (including navbar and mobile links) redirect the user to the correct page in the site.
++ All buttons produce the desired effect when clicked.
++ External links open in a new tab/window and link to the correct site.
++ Images load properly.
 
 **Site content Testing**:
 + **Users who are not logged in**:
@@ -319,7 +337,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 + **Regular Users who are logged in**:
     + Are able to:
         + View Home, Supplies, Crate, Checkout, Checkout Success/Order history and profile pages.
-        + View the home page with option to add a review.
+        + View the home page with an option to add a review or delete a previously added review.
         + View the supplies page with options to add/update quantity items in their crate.
         + View the crate page with options to add/update/delete items in their crate.
         + View the checkout page to purchase their crate.
@@ -327,16 +345,16 @@ I tested the appearance and responsiveness of the website across 6 different bro
         + View their order history and defulat delivery address in their profile page.
         + Logout of their account.
     + Are not able to:
-        + Access edit or delete supply buttons on supplies page.
+        + Access edit or delete supply buttons on the supplies page.
         + Access Login, Register, Add/Edit Supply, Manage Reviews or Admin pages.
 
 + **Admin users who are logged in**:
     + Admin users will receive identical functionality to the regular users with a few small changes.
     + Admins are able to:
-        + Access the django admin panel
+        + Access the django admin panel.
         + View and use the Manage Reviews button on the homepage.
         + Access manage reviews page and able to delete reviews.
-        + Access add, edit or delete supply buttons on supplies page.
+        + Access add, edit or delete supply buttons on the supplies page.
         + Access Add Supply page from main navigation bar.
 
 + **Toasts display when**:
@@ -358,7 +376,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Test Stripe Webhook Screenshot](docs/images/testing/stripe-testing.png) |
 
 + **Validation**:
-    + Form validation works throughout the site to prevent junk input from being entered.
+    + Validation works throughout the site to prevent junk input from being entered in the following forms:
         + Add/Edit Supply
         + Add Review
         + Order
@@ -372,20 +390,22 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + **Carousel auto scrolling**:
     + When adding in the carousel it was auto scrolling which I wanted to remove according to the assessment handbook about aggressive autoplaying of content.
-        + I consulted the Bootstrap docs and when reading about interval I noticed in the below article [here](https://getbootstrap.com/docs/5.0/components/carousel/#disable-touch-swiping) that you can set ```data-bs-interval="false"``` to prevent the carousel from autoplaying.
+        + I consulted the Bootstrap docs and when reading about the interval feature I noticed in the below article [here](https://getbootstrap.com/docs/5.0/components/carousel/#disable-touch-swiping) that you can set ```data-bs-interval="false"``` to prevent the carousel from autoplaying.
 
 + **manage_crate**:
-    + I implemented use of a session variable ```manage_crate``` which only sets to True when a user add or edits their crate contents on the supplies page and displays a summary of their crate in the notification.
+    + I implemented use of a session variable ```manage_crate``` which only sets to True when a user adds or edits their crate contents on the supplies page and displays a summary of their crate in the notification.
         + This was working as intended but when being a user who had not initated the variable it was throwing a variety of errors trying to load ```supplies.html```.
-        + My original troubleshooting was at the start of the ```all_supplies``` view; setting a variable ```manage_crate``` the None. This did not solve the problem.
-    + I began searching around for how to check for the existence of a session variable and found [this post](https://stackoverflow.com/questions/10492819/checking-if-session-variable-is-set-or-not-in-django/10492856) which utilized the get method to make the code cleaner as no if/else statement was used.
+        + My original troubleshooting was at the start of the ```all_supplies``` view; setting a variable ```manage_crate``` to ```None```. This did not solve the problem.
+    + I began researching for how to check for the existence of a session variable and found [this post](https://stackoverflow.com/questions/10492819/checking-if-session-variable-is-set-or-not-in-django/10492856) which utilized the get method to make the code cleaner as no ```if/else``` statement was used.
         + The code displayed was:
 
             ```orderId = request.session.get('orderId',ts)```
 
             ```request.session['orderId']=ts```
 
-        + I adapted this to check if ```manage_crate``` existed in the session variable and store the data in the view else set it to its current value (which is currently ```None```)
+        + I adapted this to check if ```manage_crate``` existed in the session variables.
+            + If it does exist, store the data in the view.
+            + If it does not exist, set it to its current value (which is currently ```None```).
 
             ```manage_crate = request.session.get('manage_crate', manage_crate)```
             
@@ -394,8 +414,9 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + **Save Info checkbox**:
     + This feature was implemented on the checkout page to allow users to have their delivery information saved to their profile.
-    + It functioned as intended when trying to save the info, but if you unchecked the box the information would still save.
-        + I investigated around for a potential fix and found a thread in the Code Institute slack community of someone who experienced a similar issue and managed to resolve with tutor support posted this message about this line of code.
+    + It functioned as intended when trying to save the information; yet if the box is unchecked the information would still save.
+        + I investigated around for a potential fix and found a thread in the Code Institute Slack community of someone who experienced a similar issue.
+        + They managed to resolve it with tutor support and posted this message regarding this line of code.
 
             ```<script defer src="{% static 'checkout/js/stripe_elements.js' %}"></script>```
 
