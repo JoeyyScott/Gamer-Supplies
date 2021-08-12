@@ -9,4 +9,6 @@ urlpatterns = [
         remove_from_crate'),
     path('coupon_apply/', views.coupon_apply, name='coupon_apply'),
     path('coupons_manage/', views.coupons_manage, name='coupons_manage'),
+    path('coupon_delete/<int:coupon_id>/\
+        ', views.coupon_delete, name='coupon_delete'),
 ]

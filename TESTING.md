@@ -336,9 +336,18 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Manage Reviews Page Screenshot](docs/images/testing/userstories/reviews-manage.png) |
 
 + As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
-    + TBC - Admin being added to main nav
+    + Included in the main navigation bar is a link to the django admin panel which is only viewable by superusers.
+
+        | _Admin Nav Link_ |
+        |:---------------------:|
+        | ![Admin Nav Link Screenshot](docs/images/testing/userstories/admin-link.png) |
+
 + As a **Site Owner/Superuser**, I want to be able to view and manage all the coupon codes.
-    + TBC - Potentially a manage coupon page
+    + I have included a page (```coupons_manage.html```) for superusers to manage all the existing coupon codes and add new ones.
+
+        | _Manage Coupons Page_ |
+        |:---------------------:|
+        | ![Manage Coupons Page Screenshot](docs/images/testing/userstories/coupons-manage.png) |
 
 ### Additional Testing
 
@@ -402,6 +411,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + Validation works throughout the site to prevent junk input from being entered in the following forms:
         + Add/Edit Supply
         + Add Review
+        + Add Coupon
         + Order
         + Coupon Apply
 

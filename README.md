@@ -243,6 +243,23 @@ Crate Items Model
 | quantity | IntegerField | null=False, blank=False, default=0
 | crateitem_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
 
+**Profiles App:**
+
+UserProfile Model
+
+| Field | Field Type | Field Options |
+| --- | :--- | ---|
+| user | OneToOneField | User, on_delete=models.CASCADE |
+| default_full_name | CharField | max_length=80, null=True, blank=True |
+| default_email | EmailField | max_length=254, null=True, blank=True |
+| default_contact_number | CharField | max_length=20, null=True, blank=True |
+| default_address_line_1 | CharField | max_length=50, null=True, blank=True |
+| default_address_line_2 | CharField | max_length=50, null=True, blank=True |
+| default_town_or_city | CharField | max_length=50, null=True, blank=True |
+| default_county | CharField | max_length=50, null=True, blank=True |
+| default_postcode | CharField | max_length=20, null=True, blank=True |
+| default_country = | CountryField | blank_label="Country", null=True, blank=True |
+
 **Reviews App:**
 
 Review Model (Custom model #2 for Distinction performance)
@@ -406,6 +423,10 @@ Review Model (Custom model #2 for Distinction performance)
     + Reviews - ```review_add.html```, ```index.html``` and ```review_manage.html``` with the delete functionality activating when the associated button is pressed.
         + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
         + Activated by: Add/Manage/Delete review buttons on ```index.html```.
+    + Coupons - ```coupons_manage.html```
+        + Contains a list of all the current Coupons.
+        + Contains a form where admins can add coupons, upon entering successful form information.
+        + Contains a delete button on each coupon that activates the delete coupon functionality when pressed.
 
 ### Features to be added
 

@@ -140,3 +140,16 @@ def coupons_manage(request):
     }
 
     return render(request, 'crate/coupons_manage.html', context)
+
+
+def coupon_delete(request, coupon_id):
+    # View to allow admins to delete coupons
+    if not request.user.is_superuser:
+        messages.error(request, 'Only admins have permission to delete\
+            coupons.')
+        return redirect(reverse('home'))
+
+    coupon = get_object_or_404(Coupon, pk=coupon_id)
+    coupon.delete()
+    messages.success(request, 'Coupon deleted successfully!')
+    return redirect(reverse('coupons_manage'))

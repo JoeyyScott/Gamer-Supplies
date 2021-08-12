@@ -37,7 +37,7 @@
                                 <p><span class="highlight me-1">Code:</span> <span class="altFont">{{ coupon.code }}</span></p>
                                 <p><span class="highlight me-1">Amount:</span> <span class="altFont">{{ coupon.amount }}</span></p>
                             </div>
-                            <div class="col-6"><a class="btn my-1" href=""><i class="fas fa-trash"></i> Delete</a></div>
+                            <div class="col-6"><a class="btn my-1" href="{% url 'coupon_delete' coupon.id %}"><i class="fas fa-trash"></i> Delete</a></div>
                             <hr class="w-100 m-auto highlight mb-1">
                         {% endfor %}
                     {% else %}
