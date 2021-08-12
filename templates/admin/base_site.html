@@ -1,0 +1,11 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}Gamer Supplies | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+    <link rel="icon" href={% static "images/logo.png"%} sizes="48x48"/>
+{% endblock %}
+{% block branding %}
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">Gamer Supplies | {{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}

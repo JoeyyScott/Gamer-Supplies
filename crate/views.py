@@ -7,6 +7,7 @@ from django.contrib import messages
 
 from supplies.models import Supply
 from .models import Coupon
+from .forms import FormCoupon
 
 
 @login_required
@@ -104,3 +105,38 @@ def coupon_apply(request):
         return redirect('view_crate')
     else:
         return redirect('view_crate')
+
+
+@login_required
+def coupons_manage(request):
+    # View to allow admins to see the manage coupons page
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins have permission to manage\
+            coupons.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        coupon_form = FormCoupon(request.POST)
+
+        # Check if the coupon form is valid and display appropriate message
+        if coupon_form.is_valid():
+            form_data = coupon_form.save(commit=False)
+            form_data.code = form_data.code.upper()
+            form_data.save()
+            messages.success(request, 'Coupon added successfully!')
+            return redirect('coupons_manage')
+        else:
+            messages.error(request, 'Unable to add coupon, please check your \
+                form information is correct.')
+            return redirect('coupons_manage')
+    else:
+        coupon_form = FormCoupon()
+
+    coupon_form = FormCoupon()
+    coupons = Coupon.objects.all()
+    context = {
+        'coupons': coupons,
+        'coupon_form': coupon_form,
+    }
+
+    return render(request, 'crate/coupons_manage.html', context)

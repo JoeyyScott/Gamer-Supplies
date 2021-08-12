@@ -8,4 +8,5 @@ urlpatterns = [
     path('remove/<item_id>/', views.remove_from_crate, name='\
         remove_from_crate'),
     path('coupon_apply/', views.coupon_apply, name='coupon_apply'),
+    path('coupons_manage/', views.coupons_manage, name='coupons_manage'),
 ]

@@ -729,6 +729,24 @@ This section includes areas/sections of code and properties I was unaware of. I 
        ```
     + Upon using this my toasts again showed as intended.
 
+**Setting FavIcon in Django admin**:
++ Throughout the development of the project I kept noticing that the icon was not loading whenever in the admin.
++ After a quick google search on how to set it I found [this post](https://stackoverflow.com/questions/34959897/set-favicon-in-django-admin) which utilized the following code and overriding the template it uses:
+
+    ```
+    {% extends "admin/base.html" %}
+
+    {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+    {% block extrahead %}
+        <link rel="icon" href="{{STATIC_URL}}img/favicon.ico" sizes="48x48" />
+    {% endblock %}
+    {% block branding %}
+        <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+    {% endblock %}
+    ```
++ I adapted this template to create ```base_site.html``` and set the FavIcon correctly.
+
 ### Media
 
 #### Images
