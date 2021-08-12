@@ -815,6 +815,22 @@ This section includes areas/sections of code and properties I was unaware of. I 
             raise forms.ValidationError("Amount cannot be less than 1")
         return amount
 
+**Adding slide effect to Bootstrap dropdown**:
++ I implemented the admin nav links to sit in a dropdown menu within the main navigation.
+    + This functioned as intended but the animation looked choppy. After a quick google search I found [this post]() which utilized the following code:
+
+        ```javascript
+        // Add slideDown animation to Bootstrap dropdown when expanding.
+        $('.dropdown').on('show.bs.dropdown', function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        });
+
+        // Add slideUp animation to Bootstrap dropdown when collapsing.
+        $('.dropdown').on('hide.bs.dropdown', function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+        });
+
+    + After adding this code to an external file ```dropdown.js``` the desired effect was achieved.
 
 ### Media
 

@@ -53,6 +53,38 @@
                     </div>
                     {% endif %}
                 </div>
+                <div class="col-12 mb-1">
+                    <!-- Trigger FAQ modal -->
+                    <p class="altFont">Stuck? <a href="#faq" data-bs-toggle="modal">Read our FAQ</a></p>
+                    <!-- Credit for adapted Bootstrap 5 Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
+                    <div class="modal fade" id="faq" data-bs-keyboard="false" tabindex="-1" aria-labelledby="faqLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content gamerStyle">
+                                <div class="modal-header">
+                                    <h2 class="modal-title w-100 text-center" id="faqLabel">Frequently Asked Questions</h2>
+                                </div>
+                                <p class="modal-body">
+                                    <div class="col-12">
+                                        <span class="faq-question highlight">"How much is delivery?"</span>
+                                        <span class="altFont"><p>We offer free worldwide delivery!</p></span>
+                                        <span class="faq-question highlight">"I've not received my items. What do I do?"</span>
+                                        <span class="altFont"><p>If you do not receive your items please contact us <a href="mailto:officialgamersupplies@gmail.com?subject=Gamer%20Supplies%20-%20Query">here</a>.</p></span>
+                                        <span class="faq-question highlight">"How do I update my delivery information?"</span>
+                                        <span class="altFont"><p>You can update your information by visiting your profile <a href="{% url 'profile' %}">here</a>.</p></span>
+                                        <span class="faq-question highlight">"How do I make an account?"</span>
+                                        <span class="altFont"><p>You can create an account by registering <a href="{% url 'account_signup' %}">here</a> and confirming your email address.</p></span>
+                                    </div>
+                                </p>
+                                <div class="modal-footer">
+                                    <div class="row w-100">
+                                        <!-- Modal dismiss -->
+                                        <div class="col-12 mx-auto"><a data-bs-dismiss="modal" class="btn my-2">Close</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

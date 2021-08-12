@@ -26,19 +26,25 @@ I used [w3.org's validator](https://jigsaw.w3.org/css-validator/) for my CSS val
 
 I used [JSHint](https://jshint.com) to check the javascript files in my project to make certain it complies with coding standards and that were no syntax errors detected.
 
-+ Found no errors in Ratings (ratings.js):
++ Found no errors in Ratings (```ratings.js```):
 
     | _ratings.js Validation_ |
     |:------------------:|
     | ![Ratings Validation](docs/images/testing/ratings-testing.png) |
 
-+ Found no errors in Btt Button (btt-button.js):
++ Found no errors in Dropdown (```dropdown.js```):
 
     | _btt-button.js Validation_ |
     |:------------------:|
     | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
 
-+ Found no errors in Quantity Input (quantity-input.js):
++ Found no errors in Btt Button (```btt-button.js```):
+
+    | _btt-button.js Validation_ |
+    |:------------------:|
+    | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
+
++ Found no errors in Quantity Input (```quantity-input.js```):
     + When validating this code I wanted to know why portions of my code were red despite reporting no errors.
         + I consulted with the Slack community and was told it was a problem with JSHint not understanding the template literal syntax when ES6 is mixed with jQuery.
         + I attempted to find other solutions but due to time constraints and as it throws no errors I have opted to leave it as it is.
@@ -47,23 +53,23 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
             |:------------------:|
             | ![Quantity Input Validation](docs/images/testing/quantity-input-testing.png) |
 
-+ Found no errors in Update/Delete (crate.html inline JS - see README.md for more details on this):
++ Found no errors in Update/Delete (```crate.html``` inline JS - see README.md for more details on this):
 
     | _Update/Delete Validation_ |
     |:------------------:|
     | ![Update/Delete Validation](docs/images/testing/update-delete-testing.png) |
 
-+ Toasts (toasts.js):
++ Toasts (```toasts.js```):
 
-    + Found one undefined variable "bootstrap" in initialise_toasts.js:
+    + Found one undefined variable "bootstrap" in ```toasts.js```:
 
         | _toasts.js Validation_ |
         |:------------------:|
         | ![Toasts Validation](docs/images/testing/toasts-testing.png) |
 
-+ Stripe (stripeelements.js):
++ Stripe (```stripeelements.js```):
 
-    + Found one undefined variable "bootstrap" in initialise_toasts.js:
+    + Found one undefined variable "Stripe" in ```stripeelements.js```:
 
         | _stripeelements.js Validation_ |
         |:------------------:|
