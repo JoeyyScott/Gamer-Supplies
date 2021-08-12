@@ -395,7 +395,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Edit/Delete Supply Button Screenshot](docs/images/testing/userstories/edit-delete.png) |
 
     + Upon clicking the edit button the superuser will be redirected to the Edit Supply form shown below.
-        + Upon submitting valid information in the Edit Supply form (provided in the placeholder for each field if the user removes the prefilled info) the supply will be edited in the data store and displayed in the list accordingly.
+        + Upon submitting valid information in the Edit Supply form (provided in the placeholder for each field if the user removes the prefilled information) the supply will be edited in the data store and displayed in the list accordingly.
             + In addition to altering the information, I have added an image to display how it handles adding images.
 
                 | _Edit a Supply_ | Screenshot |
@@ -419,7 +419,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
             |:--------------:|
             | ![Delete Supply Success Screenshot](docs/images/testing/userstories/delete-supply-success.png) |
 
-        + Upon clicking the cancel button the data will be untouched and the modal will close
+        + Upon clicking the cancel button the data will be untouched and the modal will close.
 
 + As a **Site Owner/Superuser**, I want to be able to manage and delete reviews.
     + I have included ```reviews_manage.html``` which allows a superuser to view all current reviews posted to the site and an option to delete them as necessary.

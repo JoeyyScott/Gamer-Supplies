@@ -56,13 +56,22 @@ def reviews_manage(request):
 
 @login_required
 def review_delete(request, review_id):
-    # View to allow admins to delete reviews
-    if not request.user.is_superuser:
-        messages.error(request, 'Only admins have permission to delete\
-            reviews.')
+    # View to allow reviews to be deleted by their owners and admins
+    redirect_url = request.META.get('HTTP_REFERER')
+    review = get_object_or_404(Review, pk=review_id)
+    # Check if the user is not the user who added the review
+    if not request.user == review.added_by:
+        # If they are an admin, delete the review else fallback to below code
+        if request.user.is_superuser:
+            review.delete()
+            messages.success(request, 'Review deleted successfully!')
+            return redirect(redirect_url)
+
+        # Security incase a user is not an admin and manages to call this function
+        messages.error(request, 'Only the review posters have \
+            permission to delete reviews.')
         return redirect(reverse('home'))
 
-    review = get_object_or_404(Review, pk=review_id)
     review.delete()
     messages.success(request, 'Review deleted successfully!')
-    return redirect(reverse('reviews_manage'))
+    return redirect(redirect_url)
