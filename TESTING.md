@@ -269,15 +269,19 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + The navigation bar contains a link to the register page which allows new users to easily initiate the registration process.
     + After submitting the registration form with valid information the user will receive a notification and site content informing them about an email confirmation.
     + The verification email the user receives will contain an email confirm link allowing them to complete the registration process once clicked.
-    + Once the email for the account has been confirmed successfully, the user will be signed up for an account. 
+    + Once the email for the account has been confirmed successfully, the user will be signed up for an account.
 
-        |   _Register_    |
-        |:---------------:|
-        | ![Register](docs/images/testing/userstories/register.png) |
-        | _Register Verify_ |
-        | ![Register Verify](docs/images/testing/userstories/register-verify.png) |
-        | _Register Confirm_ |
-        | ![Register confirm](docs/images/testing/userstories/register-confirm.png) |
+    + I completed a test registration using an email from [Temp Mail](https://temp-mail.org/en/) to provide relevant screenshots throughout the process.
+
+        | _Register_ | _Image_ |
+        |:----------:|:-------:|
+        | Register Empty | ![Register Empty](docs/images/testing/userstories/register-empty.png) |
+        | Register Filled | ![Register Filled](docs/images/testing/userstories/register-filled.png) |
+        | Register Verify | ![Register Verify](docs/images/testing/userstories/register-verify.png) |
+        | Register Verify Notification | ![Register Verify Notification](docs/images/testing/userstories/register-verify2.png) |
+        | Register Email | ![Register Email](docs/images/testing/userstories/register-email.png) |
+        | Register Confirm | ![Register Confirm](docs/images/testing/userstories/register-confirm.png) |
+        | Register Success | ![Register success](docs/images/testing/userstories/register-success.png) |
 
 + As a **First Time User**, I want to read reviews from other users.
     + On the home page I have included a reviews section where users can read reviews left by others displayed in a Bootstrap carousel.
@@ -468,7 +472,6 @@ I tested the appearance and responsiveness of the website across 6 different bro
                         return redirect(reverse('home'))
 
                 + When testing the above method again I received the error message above and the review remained intact.
-
 
 + As a **Site Owner/Superuser**, I want to be able to view and manage all coupon codes.
     + I have included a page (```coupons_manage.html```) for superusers to manage all the existing coupon codes and the option to add new ones.

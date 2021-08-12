@@ -124,7 +124,7 @@
     {{ block.super }}
     <script src="{% static 'supplies/js/quantity-input.js' %}"></script>
     <script>
-        // Check README.md credits for details on this section why it has been included here and not a static JS file
+        // Check README.md credits for details on why this section has been included here and not a static JS file
         // Click event for updating quantity
         $('.link-update').click(function(e) { var form = $(this).prev('.form-update'); form.submit(); });
         // Remove item and reload on click
