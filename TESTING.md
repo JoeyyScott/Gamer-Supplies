@@ -84,7 +84,7 @@ I used [PEP8 online](http://pep8online.com/) to test all custom Python code agai
     |:-----------------:|
     |![PEP8 Validation](docs/images/testing/pep8-test.png)|
 
-**Extra Notes** - I've added these as I am aiming for a distinction and want to cover all the angles.
+**Extra Notes** - I have added these as I am aiming for a distinction and want to cover all the angles.
 
 + The only files with lines over 79 characters are ```settings.py``` and migration files as when attempting to achieve this it would break the associated sections of my project. As such I have opted to leave them and put a disclaimer here as I am aiming for a distinction performance.
 
@@ -196,7 +196,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 ### First Time User
 
 + As a **First Time User**, I want to easily understand the site upon loading it.
-    + I have included an appropriate header and tagline in the home page that tells users what the site is for and how they can use it.
+    + I have included an appropriate header and tagline in the home page which informs users what the site is for and how they can use it.
 
         | _Home Page_ |
         |:-----------:|
@@ -212,7 +212,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Site navigation](docs/images/testing/userstories/navigation.png) |
 
 + As a **First Time User**, I want to be able to receive full site functionality on my mobile, tablet and PC.
-    + I have used [Bootstrap 5](https://getbootstrap.com/)'s support for responsive design to make the site responsive across multiple devices including mobile and tablets.
+    + I have used [Bootstrap 5](https://getbootstrap.com/)'s support for responsive design to make the site responsive across multiple devices including mobile, tablet and PC.
     + I have tested the site across multiple devices to ensure content displays as intended, proof can be found [here](#responsiveness).
 
 + As a **First Time User**, I want to be able to see what supplies are available for purchase on the site.
@@ -233,8 +233,9 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **First Time User**, I want to be able to seamlessly sign up for an account and receive a confirmation email.
     + The navigation bar contains a link to the register page which allows new users to easily initiate the registration process.
-    + After submitting the registration form with valid information the user will be signed up for an account, pending email confirmation which they will receive a notification about and site content informing them.
-    + The user will receive a verification email which will contain an email confirm link allowing them to complete the registration process once clicked.
+    + After submitting the registration form with valid information the user will receive a notification and site content informing them about an email confirmation.
+    + The verification email the user receives will contain an email confirm link allowing them to complete the registration process once clicked.
+    + Once the email for the account has been confirmed successfully, the user will be signed up for an account. 
 
         |   _Register_    |
         |:---------------:|
@@ -287,7 +288,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **Registered User**, I want to be able to easily purchase my crate.
     + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
-    + On ```crate.html``` there is a "Secure Checkout" button which which clicked redirects the user to the checkout page.
+    + On ```crate.html``` there is a "Secure Checkout" button which when clicked redirects the user to the checkout page.
     + On ```checkout.html``` the user can see a preview of their crate with a form to fill out their delivery and payment information.
 
         | _Checkout Button_ |
@@ -411,7 +412,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         + View the crate page with options to add/update/delete items in their crate.
         + View the checkout page to purchase their crate.
         + View the checkout success/order history page based on whether they have come from a successful checkout or their profile.
-        + View their order history and defulat delivery address in their profile page.
+        + View their order history and default delivery address in their profile page.
         + Logout of their account.
     + Are not able to:
         + Access edit or delete supply buttons on the supplies page.
@@ -464,7 +465,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + **manage_crate**:
     + I implemented use of a session variable ```manage_crate``` which only sets to True when a user adds or edits their crate contents on the supplies page and displays a summary of their crate in the notification.
-        + This was working as intended but when being a user who had not initated the variable it was throwing a variety of errors trying to load ```supplies.html```.
+        + This was working as intended but when being a user who had not initiated the variable it was throwing a variety of errors trying to load ```supplies.html```.
         + My original troubleshooting was at the start of the ```all_supplies``` view; setting a variable ```manage_crate``` to ```None```. This did not solve the problem.
     + I began researching for how to check for the existence of a session variable and found [this post](https://stackoverflow.com/questions/10492819/checking-if-session-variable-is-set-or-not-in-django/10492856) which utilized the get method to make the code cleaner as no ```if/else``` statement was used.
         + The code displayed was:
@@ -489,7 +490,7 @@ UNRESOLVED
     + This feature was implemented on the checkout page to allow users to have their delivery information saved to their profile.
     + It functioned as intended when trying to save the information; yet if the box is unchecked the information would still save.
         + I investigated around for a potential fix and found a thread in the Code Institute Slack community of someone who experienced a similar issue.
-        + They managed to resolve it with tutor support and posted this message regarding this line of code.
+        + They managed to resolve it with tutor support and posted this message regarding this line of code:
 
             ```<script defer src="{% static 'checkout/js/stripe_elements.js' %}"></script>```
 

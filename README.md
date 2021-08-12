@@ -390,7 +390,7 @@ Review Model (Custom model #2 for Distinction performance)
 + A button which allows the user to update their delivery information which will be preloaded on both the checkout and profile pages thereafter.
 
 **Order history**:
-+ A rendered list from orders linked to the users profile in the data store which contains a summary of each order. Included in this summary is:
++ A rendered list from orders linked to the user's profile in the data store which contains a summary of each order. Included in this summary is:
     + Order Number and Date - Auto generated when the order is completed.
     + Order Items - Contains supply name and quantity pertaining to each item on the order.
     + Order Total - Contains the total price of the order.
@@ -472,7 +472,7 @@ Review Model (Custom model #2 for Distinction performance)
 + [Accessible Color Generator](https://learnui.design/tools/accessible-color-generator.html) - I used this tool in conjunction with coolors.co to provide a better colour contrast for accessibility.
 + [Am I Responsive?](http://ami.responsivedesign.is/) - I used this tool to easily display the responsiveness of my site for my README.md introduction.
 + [coolors.co](https://coolors.co) - I used this tool to generate a colour scheme based on the Gamer Supplies logo.
-+ [GIMP](https://www.gimp.org) - I used this program to design the logo/favicon image and wireframes.
++ [GIMP](https://www.gimp.org) - I used this programme to design the logo/favicon image and wireframes.
 + [Placeholder](https://placeholder.com) - I used this tool to generate colour boxes to display the colour scheme section of my README.md file.
 
 ### Dependencies
@@ -525,7 +525,7 @@ Before creating a Heroku app make sure your project has these two files:
 5. Click the create app button.
 
 **Set environment variables:**
-1. Click on the settings tab and then click reveal config variables.
+1. Click on the settings tab and then click "Reveal config vars".
 2. Config variables added throughout project:
 
     | Key | Value |
@@ -558,7 +558,7 @@ Before creating a Heroku app make sure your project has these two files:
 
         ```python3 manage.py loaddata <fixture_name>```
         
-        **IMPORTANT**: Load categories fixtures then supplies (supplies are dependent on categories)
+        **IMPORTANT**: Load categories fixtures then supplies (supplies are dependent on categories).
 
     + To create a fixture from your current data store you can use the following command:
 
@@ -575,7 +575,7 @@ Before creating a Heroku app make sure your project has these two files:
     3. A prompt to find a Github repository to connect to will then be displayed.
     4. Enter the repository name for the project and click search.
     5. Once the repository has been found, click the connect button.
-6. Once you have your GitHub repository connected, without leaving deploy tab.
+6. Once you have your GitHub repository connected, without leaving deploy tab:
     1. Under Automatic deploys section, choose the branch you want to deploy from and then click the "**Enable Automatic Deploys**" button.
     2. To deploy your app to Heroku click the **"Deploy Branch"** button.
 
@@ -616,7 +616,7 @@ To setup static and media files in an Amazon S3 Bucket follow these steps:
         + **Add the statement**
         + **Generate the policy**
     8. Copy the generated policy into the Policy section on the Edit Bucket Policy page.
-        + **IMPORTANT**: Add **"/*"** to the end of the resource key to ensure all files are loaded
+        + **IMPORTANT**: Add **"/*"** to the end of the resource key to ensure all files are loaded.
 
 ### Creating a local clone
 
@@ -650,12 +650,12 @@ Once you have done the above you can follow these steps to create a local copy o
 
 This section includes areas/sections of code and properties I was unaware of. I have also included sources from where I have adapted/changed code used in the projects throughout my course as I figured it was better practice to state as such to avoid any penalizations or copyright violations.
 
-**Bootstrap Documentation**: [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-+ I used the Bootstrap Documentation was used to add different components to the project most notably a Navbar, Nav Tabs, Toasts, Modal, Carousel, Collapse and Cards
+**Bootstrap Documentation**: [Source](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
++ I used the Bootstrap Documentation to add different components to the project most notably a Navbar, Nav Tabs, Toasts, Modal, Carousel, Collapse and Cards.
 + I used various built in Bootstrap classes to style different elements to the needs of the project most notably margins, padding and text positioning.
 
 **Full Stack Frameworks Boutique Ado Project with [Code Institute](https://codeinstitute.net/)**
-+ The Boutique Ado walkthrough project created during the course was used as a guide to build the structure of this application. You can view the source code for that project [here](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
++ The Boutique Ado walkthrough project created during the course was used as a guide to build the structure of this application. You can view the source code for that project [here](https://github.com/Code-Institute-Solutions/boutique_ado_v1).
     + Most notably the section on creating fully functioning Stripe Webhooks as this was something I had not heard of until undertaking the walkthrough project.
 + Through the development of this project I have tried to create a website that was entirely different to Boutique Ado despite it providing the basis of my understanding of Django as well as working with Stripe.
 
@@ -690,7 +690,8 @@ This section includes areas/sections of code and properties I was unaware of. I 
 **Inner carousel scrollbar**:
 + I wanted my review carousel to be a fixed height and set ```overflow: scroll``` on the element.
     + This caused a scrollbar to appear and after searching around I found [this post](https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp) which provided me with the CSS rules to hide the scrollbar but keep the functionality.
-    + I have included the snippet below
+    + I have included the snippet below:
+
         ```css
          /* Hide scrollbar for Chrome, Safari and Opera */
         .example::-webkit-scrollbar {
@@ -705,7 +706,8 @@ This section includes areas/sections of code and properties I was unaware of. I 
 
 **Hiding +/- buttons on number input field**:
 + I wanted to use my own quantity input buttons and when viewing the site on small screens you were unable to fully view the number in the field. After searching around I found [this post](https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp) which provided me with the CSS rules to hide the up/down arrows on the input.
-    + I have included the snippet below
+    + I have included the snippet below:
+
         ```css
         /* Chrome, Safari, Edge, Opera */
         input::-webkit-outer-spin-button,
@@ -732,7 +734,7 @@ This section includes areas/sections of code and properties I was unaware of. I 
     + I set ```redirect_url``` to this value and the view functioned as intended.
 
 **Scroll to top button**:
-+ In searching how to find out detect if a user was scrolling and returning the amount I found [this post](https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/) which utilized the following code.
++ In searching how to detect if a user was scrolling and returning the amount I found [this post](https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/) which utilized the following code:
 
     ```javascript
     var rootElement = document.documentElement
@@ -751,7 +753,7 @@ This section includes areas/sections of code and properties I was unaware of. I 
 
     document.addEventListener("scroll", handleScroll)
     ```
-+ I was able to utilize, ```document.documentElement```, ```scrollTop``` and the event listener and created a script to detect if the user had scrolled past a point (found using console logs) to take the relevant action with the back to top button.
++ I was able to utilize, ```document.documentElement```, ```scrollTop``` and the event listener to create a script to detect if the user had scrolled past a point (found using console logs) to take the relevant action with the back to top button:
 
     ```javascript
     document.addEventListener("scroll", function () { 
@@ -870,9 +872,8 @@ I have included links to all the supply images below:
     + I have opted to leave the link in and include pictures of my google searches as proof the website existed at the time I saved the image.
         | File | Image |
         | :--: | :---: |
-        | Google images | [image](docs/images/wispacredit1) |
-        | Google search | [image](docs/images/wispacredit2) |
-
+        | Google images | [image](docs/images/wispacredit.png) |
+        | Google search | [image](docs/images/wispacredit2.png) |
 
 |    Name    | Image |
 | :--------: | :---: |
