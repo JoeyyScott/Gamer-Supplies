@@ -398,10 +398,15 @@ Review Model (Custom model #2 for Distinction performance)
 ## Included in **404/500.html** is:
 
 **Error Content**:
-+ Contains a section explaining to the user that the page they tried to access does not exist.
++ A section explaining to the user that the page they tried to access does not exist.
 + A button which allows the user to return to the homepage.
 
 ## These features are included throughout the site and thus do not fall into a specific page
+
+**Fully Responsive Design**:
++ In the development of this project I have utilized a mobile first design approach to ensure all content is displayed on the smallest screen sizes.
++ This is scaled up to medium and large screens through the use of Bootstrap custom classes (namely the grid system).
++ This has allowed me to customize the whole site to be responsive across all screen sizes that I have tested (see [TESTING.md](TESTING.md)).
 
 **Bootstrap Toasts**:
 + Bootstrap toasts are prebuilt notifications that are customized to suit the theme of the site, the action that has occured and display relevant messages based on this.
@@ -435,10 +440,10 @@ Review Model (Custom model #2 for Distinction performance)
         + Contains a delete button on each coupon that activates the delete coupon functionality when pressed.
 
 **Delete conformation modals**
-+ When attempting to delete data in the datastore it will initiate a delete confirmation modal.
++ When attempting to delete data in the data store it initiates a delete confirmation modal.
     + This provides the user with important information about the selected item (Supply, Review and Coupon) to prevent accidental deletions.
-    + This functionality is tied to the delete buttons (denoted by relevant icon) in the associated pages (Supplies, Home/Manage Reviews and Manage Coupons)
-    + Pictures of these modals can be found within superuser story testing [here](TESTING.MD).
+    + This functionality is tied to the delete buttons (denoted by relevant icon) in the associated pages (Supplies, Home/Manage Reviews and Manage Coupons).
+    + Pictures of these modals can be found within superuser story testing [here](TESTING.md).
 
 ### Features to be added
 

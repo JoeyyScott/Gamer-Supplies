@@ -145,7 +145,7 @@
                                                 <div class="modal-body">
                                                         <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>
                                                         <p class="altFont">The contents of the supply are as follows:</p>
-                                                        <p class="altFont"><span class="highlight">Name:</span>{{ supply.name }}</p>
+                                                        <p class="altFont"><span class="highlight">Name: </span>{{ supply.name }}</p>
                                                         <div class="w-50 mx-auto">
                                                             {% if supply.image %}
                                                             <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
@@ -153,10 +153,10 @@
                                                             <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
                                                             {% endif %}
                                                         </div>
-                                                        <p class="altFont"><span class="highlight">Description:</span>{{ supply.description }}</p>
-                                                        <p class="altFont"><span class="highlight">Size:</span> {{ supply.size }}</p>
-                                                        <p class="altFont"><span class="highlight">Brand:</span> {{ supply.brand }}</p>
-                                                        <p class="altFont"><span class="highlight">Price:</span> £{{ supply.price }}</p>
+                                                        <p class="altFont"><span class="highlight">Description: </span>{{ supply.description }}</p>
+                                                        <p class="altFont"><span class="highlight">Size: </span>{{ supply.size }}</p>
+                                                        <p class="altFont"><span class="highlight">Brand: </span>{{ supply.brand }}</p>
+                                                        <p class="altFont"><span class="highlight">Price: </span>£{{ supply.price }}</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <div class="row w-100">

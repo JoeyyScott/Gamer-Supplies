@@ -352,7 +352,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Order History Screenshot](docs/images/testing/userstories/order-history.png) |
 
 + As a **Registered User**, I want to be able to add a review about my experience on the site.
-    + Included in the homepage is an "Add Review" button that displays underneath the carousel of current reviews.
+    + Included in the homepage is an "Add Review" button which is displayed underneath the current reviews carousel.
     + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user to add a review to the site.
     + Upon submitting valid information in the Add Review form (provided in the placeholder and choosing a rating) the review will be added to the data store and displayed in the list.
 
@@ -362,7 +362,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | Add Review | ![Add Review Screenshot](docs/images/testing/userstories/add-review.png) |
         | Add Review Success | ![Add Review Success Screenshot](docs/images/testing/userstories/add-review-success.png) |
 
-    + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the page they were on.
+    + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the home page.
 
 [Contents](#contents)
 
@@ -377,7 +377,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
     + Upon clicking this button the superuser will be redirected to the Add Supply form shown below.
     + Upon submitting valid information in the Add Supply form (provided in the placeholder for each field) the supply will be added to the data store and displayed in the list.
-        + A supply's image is not required and for testing purposes I have included this to display how it handles having no image.
+        + A supply image is not required and for testing purposes. I have included this to display how it handles having no image.
 
             | _Adding a Supply_ | Screenshot |
             |:-----------------:|:----------:|
@@ -385,7 +385,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
             | Add Supply | ![Add Supply Screenshot](docs/images/testing/userstories/add-supply.png) |
             | Add Supply Success | ![Add Supply Success Screenshot](docs/images/testing/userstories/add-supply-success.png) |
 
-    + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the page they were on.
+    + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the supplies page.
 
 + As a **Site Owner/Superuser**, I want to be able to edit and delete supplies.
     + Included in ```supplies.html``` within each supply card I have added edit and delete buttons (denoted by relevant icons) under the 'Add to Crate' button which is only accessible by a superuser.
@@ -395,7 +395,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Edit/Delete Supply Button Screenshot](docs/images/testing/userstories/edit-delete.png) |
 
     + Upon clicking the edit button the superuser will be redirected to the Edit Supply form shown below.
-        + Upon submitting valid information in the Edit Supply form (provided in the placeholder for each field if the user removes the prefilled info) the supply will be edit in the data store and displayed in the list accordingly.
+        + Upon submitting valid information in the Edit Supply form (provided in the placeholder for each field if the user removes the prefilled info) the supply will be edited in the data store and displayed in the list accordingly.
             + In addition to altering the information, I have added an image to display how it handles adding images.
 
                 | _Edit a Supply_ | Screenshot |
@@ -404,7 +404,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
                 | Edit Supply | ![Edit Supply Screenshot](docs/images/testing/userstories/edit-supply.png) |
                 | Edit Supply Success | ![Edit Supply Success Screenshot](docs/images/testing/userstories/edit-supply-success.png) |
 
-        + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the page they were on.
+        + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the supplies page.
 
 
     + Upon clicking the delete button the user will see a delete confirmation modal as shown below.
@@ -419,10 +419,10 @@ I tested the appearance and responsiveness of the website across 6 different bro
             |:--------------:|
             | ![Delete Supply Success Screenshot](docs/images/testing/userstories/delete-supply-success.png) |
 
-        + Upon clicking the cancel button the data will be untouched, the modal will close and the user returned to the page they were on.
+        + Upon clicking the cancel button the data will be untouched and the modal will close
 
 + As a **Site Owner/Superuser**, I want to be able to manage and delete reviews.
-    + I have included ```reviews_manage.html``` which allows a superuser to view all current reviews posted to the site and delete as necessary.
+    + I have included ```reviews_manage.html``` which allows a superuser to view all current reviews posted to the site and an option to delete them as necessary.
 
         | _Manage Reviews Page_ |
         |:---------------------:|
@@ -441,10 +441,10 @@ I tested the appearance and responsiveness of the website across 6 different bro
             |:--------------:|
             | ![Delete Review Success Screenshot](docs/images/testing/userstories/delete-review-success.png) |
 
-        + Upon clicking the cancel button the data will be untouched, the modal will close and the user returned to the page they were on.
+        + Upon clicking the cancel button the data will be untouched and the modal will close.
 
-+ As a **Site Owner/Superuser**, I want to be able to view and manage all the coupon codes.
-    + I have included a page (```coupons_manage.html```) for superusers to manage all the existing coupon codes and add new ones.
++ As a **Site Owner/Superuser**, I want to be able to view and manage all coupon codes.
+    + I have included a page (```coupons_manage.html```) for superusers to manage all the existing coupon codes and the option to add new ones.
 
         | _Manage Coupons Page_ |
         |:---------------------:|
@@ -470,7 +470,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
             |:--------------:|
             | ![Delete Coupon Success Screenshot](docs/images/testing/userstories/delete-coupon-success.png) |
 
-        + Upon clicking the cancel button the data will be untouched, the modal will close and the user returned to the page they were on.
+        + Upon clicking the cancel button the data will be untouched and the modal will close.
 
 + As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
     + Included in the main navigation bar is a dropdown that contains the admin features of the site.
