@@ -329,12 +329,16 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **Registered User**, I want to be able to add a review about my experience on the site.
     + Included in the homepage is an "Add Review" button that displays underneath the carousel of current reviews.
-    + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user, upon entering valid information, to add a review to the site.
+    + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user to add a review to the site.
+    + Upon submitting valid information in the Add Review form (provided in the placeholder and choosing a rating) the review will be added to the data store and displayed in the list.
 
-        | _Add Review Page_ |
-        |:-----------------:|
-        | ![Manage Reviews Page Screenshot](docs/images/testing/userstories/review-add.png) |
+        | _Adding a Review_ | Screenshot |
+        |:-----------------:|:----------:|
+        | Empty Review Form | ![Empty Review Form Screenshot](docs/images/testing/userstories/add-review-empty.png) |
+        | Add Review | ![Add Review Screenshot](docs/images/testing/userstories/add-review.png) |
+        | Add Review Success | ![Add Review Success Screenshot](docs/images/testing/userstories/add-review-success.png) |
 
+    + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the page they were on.
 
 ### Site Owner/Superuser User
 
@@ -343,14 +347,19 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
         | _Add Supply Button_ |
         |:-------------------:|
-        | ![Add Supply Button Screenshot](docs/images/testing/userstories/add-supply.png) |
+        | ![Add Supply Button Screenshot](docs/images/testing/userstories/add-supply-button.png) |
 
     + Upon clicking this button the superuser will be redirected to the Add Supply form shown below.
-        + This can be submitted (with valid information) to add a Supply to the store.
+    + Upon submitting valid information in the Add Supply form (provided in the placeholder for each field) the supply will be added to the data store and displayed in the list.
+        + A supply's image is not required and for testing purposes I have included this to display how it handles having no image.
 
-        | _Add Supply Form_ |
-        |:-----------------:|
-        | ![Add Supply Form Screenshot](docs/images/testing/userstories/add-supply-form.png) |
+            | _Adding a Supply_ | Screenshot |
+            |:-----------------:|:----------:|
+            | Empty Supply form | ![Empty Supply Form Screenshot](docs/images/testing/userstories/add-supply-empty.png) |
+            | Add Supply | ![Add Supply Screenshot](docs/images/testing/userstories/add-supply.png) |
+            | Add Supply Success | ![Add Supply Success Screenshot](docs/images/testing/userstories/add-supply-success.png) |
+
+    + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the page they were on.
 
 + As a **Site Owner/Superuser**, I want to be able to edit and delete supplies.
     + Included in ```supplies.html``` within each supply card I have added edit and delete buttons (denoted by relevant icons) under the 'Add to Crate' button which is only accessible by a superuser.
@@ -360,11 +369,31 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Edit/Delete Supply Button Screenshot](docs/images/testing/userstories/edit-delete.png) |
 
     + Upon clicking the edit button the superuser will be redirected to the Edit Supply form shown below.
-        + This can be submitted (with valid information) to edit an existing Supply on the store.
+        + Upon submitting valid information in the Edit Supply form (provided in the placeholder for each field if the user removes the prefilled info) the supply will be edit in the data store and displayed in the list accordingly.
+            + In addition to altering the information, I have added an image to display how it handles adding images.
 
-        | _Edit Supply Form_ |
-        |:------------------:|
-        | ![Edit Supply Form Screenshot](docs/images/testing/userstories/edit-supply-form.png) |
+                | _Edit a Supply_ | Screenshot |
+                |:-----------------:|:----------:|
+                | Prefilled Supply form | ![Prefilled Supply Form Screenshot](docs/images/testing/userstories/edit-supply-prefilled.png) |
+                | Edit Supply | ![Edit Supply Screenshot](docs/images/testing/userstories/edit-supply.png) |
+                | Edit Supply Success | ![Edit Supply Success Screenshot](docs/images/testing/userstories/edit-supply-success.png) |
+
+        + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the page they were on.
+
+
+    + Upon clicking the delete button the user will see a delete confirmation modal as shown below.
+
+        | _Delete Supply_ |
+        |:--------------:|
+        | ![Delete Supply Screenshot](docs/images/testing/userstories/delete-supply.png) |
+
+        + Upon clicking the delete button in the modal the supply will be deleted from the data store and is now not shown in the list.
+
+            | _Delete Supply Success_ |
+            |:--------------:|
+            | ![Delete Supply Success Screenshot](docs/images/testing/userstories/delete-supply-success.png) |
+
+        + Upon clicking the cancel button the data will be untouched, the modal will close and the user returned to the page they were on.
 
 + As a **Site Owner/Superuser**, I want to be able to manage and delete reviews.
     + I have included ```reviews_manage.html``` which allows a superuser to view all current reviews posted to the site and delete as necessary.
@@ -373,12 +402,20 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:---------------------:|
         | ![Manage Reviews Page Screenshot](docs/images/testing/userstories/reviews-manage.png) |
 
-+ As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
-    + Included in the main navigation bar is a link to the django admin panel which is only viewable by superusers.
+    + This delete button also appears under each review in ```index.html``` for superusers and the person who added the review.
+    + Upon clicking the delete button the user will see a delete confirmation modal as shown below.
 
-        | _Admin Nav Link_ |
-        |:---------------------:|
-        | ![Admin Nav Link Screenshot](docs/images/testing/userstories/admin-link.png) |
+        | _Delete Review_ |
+        |:--------------:|
+        | ![Delete Review Screenshot](docs/images/testing/userstories/delete-review.png) |
+
+        + Upon clicking the delete button in the modal the review will be deleted from the data store and is now not shown in the list.
+
+            | _Delete Review Success_ |
+            |:--------------:|
+            | ![Delete Review Success Screenshot](docs/images/testing/userstories/delete-review-success.png) |
+
+        + Upon clicking the cancel button the data will be untouched, the modal will close and the user returned to the page they were on.
 
 + As a **Site Owner/Superuser**, I want to be able to view and manage all the coupon codes.
     + I have included a page (```coupons_manage.html```) for superusers to manage all the existing coupon codes and add new ones.
@@ -386,6 +423,36 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | _Manage Coupons Page_ |
         |:---------------------:|
         | ![Manage Coupons Page Screenshot](docs/images/testing/userstories/coupons-manage.png) |
+
+    + Upon submitting valid information in the Add Coupon form (provided in the placeholder for each field) the coupon will be added to the data store and displayed in the list.
+
+        | _Adding a Coupon_ | Screenshot |
+        |:-----------------:|:----------:|
+        | Empty Coupon form | ![Empty Coupon Form Screenshot](docs/images/testing/userstories/add-coupon-empty.png) |
+        | Add Coupon | ![Add Coupon Screenshot](docs/images/testing/userstories/add-coupon.png) |
+        | Add Coupon Success | ![Add Coupon Success Screenshot](docs/images/testing/userstories/add-coupon-success.png) |
+
+    + Upon clicking the delete button the user will see a delete confirmation modal as shown below.
+
+        | _Delete Coupon_ |
+        |:--------------:|
+        | ![Delete Coupon Screenshot](docs/images/testing/userstories/delete-coupon.png) |
+
+        + Upon clicking the delete button in the modal the coupon will be deleted from the data store and is now not shown in the list.
+
+            | _Delete Coupon Success_ |
+            |:--------------:|
+            | ![Delete Coupon Success Screenshot](docs/images/testing/userstories/delete-coupon-success.png) |
+
+        + Upon clicking the cancel button the data will be untouched, the modal will close and the user returned to the page they were on.
+
++ As a **Site Owner/Superuser**, I want to be able to access the admin section of the site to view orders made, the items they contain and the delivery information.
+    + Included in the main navigation bar is a dropdown that contains the admin features of the site.
+    + This includes a link to Add Supply, Manage Reviews, Manage Coupons and the Django admin panel which is only viewable by superusers.
+
+        | _Admin Nav Link_ |
+        |:---------------------:|
+        | ![Admin Nav Link Screenshot](docs/images/testing/userstories/admin-link.png) |
 
 ### Additional Testing
 
@@ -437,6 +504,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + A user tries to access or use an admin only feature.
     + An admin adds/edits/deletes a supply.
     + An admin adds or deletes a review.
+    + An admin adds or deletes a coupon.
 
 + **Stripe testing**:
     + Stripe payments were tested by sending test webhooks from the Stripe dashboard through the development of this project.

@@ -18,7 +18,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 
 /* Additional Text */
 .header-links { font-size: 1.5rem; }
-.card-title, .text-price { font-size: 1.5rem; }
+.card-title, .text-price { font-size: 1.5rem; font-family: 'Saira Stencil One', cursive; }
 .link-sort { color: #eee6e6; font-size: 0.75rem; display: block; }
 .crate-info { color: #eee6e6; }
 .checkout-crate-header { font-size: .8rem; }
@@ -72,6 +72,7 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 .nav-link.active, .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover, .title-sort.active, .link-sort:hover { background-color: #ffd700; color: #4169e1; text-shadow: 2px 2px #eee6e6; border-bottom: 0; }
 
 /* Modal */
+.modal { z-index: 99999999999; }
 .modal-header { border-bottom: 1px solid #ffd700; }
 .modal-footer { border-top: 1px solid #ffd700;}
 

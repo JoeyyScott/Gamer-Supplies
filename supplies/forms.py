@@ -10,6 +10,18 @@ class FormSupply(forms.ModelForm):
     class Meta:
         model = Supply
         fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={'\
+            placeholder': 'Supply Name', 'class': 'altFont'}),
+            'price': forms.TextInput(attrs={'\
+            placeholder': 'Amount (GBP)', 'class': 'altFont'}),
+            'description': forms.TextInput(attrs={'\
+            placeholder': 'Supply description', 'class': 'altFont'}),
+            'brand': forms.TextInput(attrs={'\
+            placeholder': 'Supply brand', 'class': 'altFont'}),
+            'size': forms.TextInput(attrs={'\
+            placeholder': 'Supply size', 'class': 'altFont'}),
+        }
 
     # Credit for overriding image field with custom input
     image = forms.ImageField(

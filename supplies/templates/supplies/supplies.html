@@ -85,7 +85,7 @@
             {% for supply in supplies %}
                 <div class="col-md-6 col-lg-4 mb-3 p-1">
                     <!-- Supply Cards -->
-                    <div class="card h-100 text-center p-2 gamerStyle me-md-2 me-lg-5">
+                    <div class="card h-100 text-center p-2 gamerStyle altFont me-md-2 me-lg-5">
                         <!-- Supply Image -->
                         <div class="w-50 mx-auto">
                             {% if supply.image %}
@@ -96,7 +96,7 @@
                         </div>
                         <!-- Supply Info -->
                         <div class="card-title w-100 highlight">{{ supply.name }}</div>
-                        <p class="card-text text-desc">{{ supply.description }}</p>
+                        <p class="card-text altFont">{{ supply.description }}</p>
                         <div class="card-buttons">
                             <p class="card-text"> <span class="highlight">Size:</span> {{ supply.size }}</p>
                             <p class="card-text"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
@@ -146,6 +146,13 @@
                                                         <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>
                                                         <p class="altFont">The contents of the supply are as follows:</p>
                                                         <p class="altFont"><span class="highlight">Name:</span>{{ supply.name }}</p>
+                                                        <div class="w-50 mx-auto">
+                                                            {% if supply.image %}
+                                                            <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
+                                                            {% else %}
+                                                            <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
+                                                            {% endif %}
+                                                        </div>
                                                         <p class="altFont"><span class="highlight">Description:</span>{{ supply.description }}</p>
                                                         <p class="altFont"><span class="highlight">Size:</span> {{ supply.size }}</p>
                                                         <p class="altFont"><span class="highlight">Brand:</span> {{ supply.brand }}</p>

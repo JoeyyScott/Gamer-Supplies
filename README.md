@@ -431,6 +431,8 @@ Review Model (Custom model #2 for Distinction performance)
 **Delete conformation modals**
 + When attempting to delete data in the datastore it will initiate a delete confirmation modal.
     + This provides the user with important information about the selected item (Supply, Review and Coupon) to prevent accidental deletions.
+    + This functionality is tied to the delete buttons (denoted by relevant icon) in the associated pages (Supplies, Home/Manage Reviews and Manage Coupons)
+    + Pictures of these modals can be found within superuser story testing [here](TESTING.MD).
 
 ### Features to be added
 
