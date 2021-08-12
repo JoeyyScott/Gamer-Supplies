@@ -428,6 +428,10 @@ Review Model (Custom model #2 for Distinction performance)
         + Contains a form where admins can add coupons, upon entering successful form information.
         + Contains a delete button on each coupon that activates the delete coupon functionality when pressed.
 
+**Delete conformation modals**
++ When attempting to delete data in the datastore it will initiate a delete confirmation modal.
+    + This provides the user with important information about the selected item (Supply, Review and Coupon) to prevent accidental deletions.
+
 ### Features to be added
 
 **Subscription**:
