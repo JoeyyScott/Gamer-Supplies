@@ -395,6 +395,12 @@ Review Model (Custom model #2 for Distinction performance)
     + Order Items - Contains supply name and quantity pertaining to each item on the order.
     + Order Total - Contains the total price of the order.
 
+## Included in **404/500.html** is:
+
+**Error Content**:
++ Contains a section explaining to the user that the page they tried to access does not exist.
++ A button which allows the user to return to the homepage.
+
 ## These features are included throughout the site and thus do not fall into a specific page
 
 **Bootstrap Toasts**:
