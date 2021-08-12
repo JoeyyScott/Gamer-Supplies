@@ -675,18 +675,68 @@ This section includes areas/sections of code and properties I was unaware of. I 
 **Quantity Input Script (```quantity-input.js```)**:
 + The code primarily used was from ```quantity_input_script.html``` in the Boutique Ado project and I have adapted it to suit my needs for this project.
     + I put this code into a static JS file in the Supplies app as per the distinction performance for splitting code into relevant files and received no functionality issues.
-    + [Quantity Input Script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/products/templates/products/includes/quantity_input_script.html)
+    + [Quantity Input script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/products/templates/products/includes/quantity_input_script.html)
         + To provide appropriate credit for this code I have included the current link to the file in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
 
 **Quantity update/delete inline JS in ```crate.html```**:
-+ The code primarily used was from ```bag.html``` in the Boutique Ado project and I have adapted it to suit my needs for this project.
++ The code primarily used was from ```bag.html``` from the Boutique Ado project and I have adapted it to suit my needs for this project.
 + The code that handles the quantity update/delete features I have since included in a block (```{% block postloadjs %}{% endblock %}```) after the content block in ```crate.html```.
     + I wanted to include this in a JS file in the static directory for the crate app as per the distinction performance for splitting code into relevant files.
     + When attempting to do this the delete functionality would not work.
         + I consulted with the [Code Institute](https://codeinstitute.net/) Slack community and was told to leave it in ```crate.html``` and state it in the README which is what I have done here.
         + This reason it breaks is due to the ```csrf_token``` not being recognised when this code exists outside of ```crate.html``` and as such I have opted to leave it in the HTML file due to time constraints as I have been told the latter would require a lot more time to implement. I felt breaking the delete functionality entirely was not worth having a static JS file in this one case.
-        + [Quantity Update/Delete Script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/bag/templates/bag/bag.html)
-            + To provide appropriate credit for this code I have included the current link to the file in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
+        + [Quantity Update/Delete script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/bag/templates/bag/bag.html) - To provide appropriate credit for this code I have included the current link to the file in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
+
+**Displaying the new image filename**:
++ The code primarily used was from ```add_product.html``` and ```edit_product.html``` from the Boutique Ado project as it is the same code. This snippet of code overrides the default text to display the new filename image in a clean way when adding or editing products.
+    + I put this code into a static JS file in the supplies app as per the distinction performance for splitting code into relevant files and received no functionality issues.
+    + I have included the code snippet below:
+        
+        ```javascript
+        <script type="text/javascript">
+            $('#new-image').change(function() {
+                var file = $('#new-image')[0].files[0];
+                $('#filename').text(`Image will be set to: ${file.name}`);
+            });
+        </script>
+
+    + I have adapted this code to suit my needs and have included it below:
+
+        ```javascript
+        $('#id_image').change(function() { var file = $('#id_image')[0].files[0]; $('#filename').text(`Image will be set to: ${file.name}`); });
+        
+    + [Display new image filename script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/products/templates/products/add_product.html) - To provide appropriate credit for this code I have included the current link to the file in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
+
+
+**Displaying the Country Colour**:
++ The code primarily used was from ```countryfield.js``` from the Boutique ado project. This snippet of code that controls the colours of the country field within the profiles app in a clean way when interacting with the form.
+    + I put this code into a static JS file in the profiles app as per the distinction performance for splitting code into relevant files and received no functionality issues.
+    + I have included the code snippet below:
+        
+        ```javascript
+        let countrySelected = $('#id_default_country').val();
+        if(!countrySelected) {
+            $('#id_default_country').css('color', '#aab7c4');
+        };
+        $('#id_default_country').change(function() {
+            countrySelected = $(this).val();
+            if(!countrySelected) {
+                $(this).css('color', '#aab7c4');
+            } else {
+                $(this).css('color', '#000');
+            }
+        });
+
+    + I have adapted this code to suit my needs and have included it below:
+
+        ```javascript
+        let countrySelected = $('#id_default_country').val();
+        if(!countrySelected) { $('#id_default_country').css('color', '#6c757d'); }
+        $('#id_default_country').change(function() { countrySelected = $(this).val();
+            if(!countrySelected) { $(this).css('color', '#6c757d'); } else { $(this).css('color', '#4169e1'); }
+        });
+        
+    + [Display Country Colour - ```countryfield.js```](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/profiles/static/profiles/js/countryfield.js) - To provide appropriate credit for this code I have included the current link to the file in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
 
 **Sending HTML through django messages and templates**:
 + I wanted to customize my Django messages and tried various solutions I found from researching the issue.

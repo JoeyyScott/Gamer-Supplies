@@ -48,6 +48,12 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
     |:------------------:|
     | ![Ratings Validation](docs/images/testing/ratings-testing.png) |
 
++ Found no errors in Country Colour (```countrycolour.js```):
+
+    | _countrycolour.js Validation_ |
+    |:------------------:|
+    | ![Country Colour Validation](docs/images/testing/countrycolour-testing.png) |
+
 + Found no errors in Dropdown (```dropdown.js```):
 
     | _dropdown.js Validation_ |
@@ -59,6 +65,12 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
     | _btt-button.js Validation_ |
     |:------------------:|
     | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
+
++ Found no errors in New Image Filename (```newimg-filename.js```):
+
+    | _newimg-filename.js Validation_ |
+    |:------------------:|
+    | ![New Image Filename Validation](docs/images/testing/newimg-filename-testing.png) |
 
 + Found no errors in Quantity Input (```quantity-input.js```):
     + When validating this code I wanted to know why portions of my code were red despite reporting no errors.
@@ -442,6 +454,21 @@ I tested the appearance and responsiveness of the website across 6 different bro
             | ![Delete Review Success Screenshot](docs/images/testing/userstories/delete-review-success.png) |
 
         + Upon clicking the cancel button the data will be untouched and the modal will close.
+
+        + **Security**: Throughout the implementation of allowing regular users to delete their reviews I identified a security risk.
+            + I have outlined my process of discovering this issue:
+                + Regular user adds a review so the delete review button appears as this is the only way to call the function.
+                + Regular user inspects the button and changes the value to a different review ID.
+                + It was allowing the user to delete the review and to fix this issue I have included a fallback after checking if the user is not a superuser.
+                    + I have implemented the following code:
+
+                        ```python
+                        messages.error(request, 'Only the review posters have \
+                        permission to delete reviews.')
+                        return redirect(reverse('home'))
+
+                + When testing the above method again I received the error message above and the review remained intact.
+
 
 + As a **Site Owner/Superuser**, I want to be able to view and manage all coupon codes.
     + I have included a page (```coupons_manage.html```) for superusers to manage all the existing coupon codes and the option to add new ones.

@@ -67,7 +67,8 @@ def review_delete(request, review_id):
             messages.success(request, 'Review deleted successfully!')
             return redirect(redirect_url)
 
-        # Security incase a user is not an admin and manages to call this function
+        # Security incase a user is not an admin and manages to call this
+        # function, see superuser user storires in TESTING.md for more details
         messages.error(request, 'Only the review posters have \
             permission to delete reviews.')
         return redirect(reverse('home'))
