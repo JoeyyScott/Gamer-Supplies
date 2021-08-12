@@ -6,16 +6,11 @@ from .models import CrateItems
 
 @receiver(post_save, sender=CrateItems)
 def update_on_save(sender, instance, created, **kwargs):
-    """
-    Update order total when items are added to or updated in the crate
-    """
+    # Update order total when items are added to or updated in the crate
     instance.order.update_total()
 
 
 @receiver(post_delete, sender=CrateItems)
 def update_on_delete(sender, instance, **kwargs):
-    """
-    Update order total when items are deleted from the crate
-    """
-    print('deleted')
+    # Update order total when items are deleted from the crate
     instance.order.update_total()
