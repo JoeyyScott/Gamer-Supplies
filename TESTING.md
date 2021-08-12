@@ -34,9 +34,9 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
 
 + Found no errors in Dropdown (```dropdown.js```):
 
-    | _btt-button.js Validation_ |
+    | _dropdown.js Validation_ |
     |:------------------:|
-    | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
+    | ![Dropdown Validation](docs/images/testing/dropdown-testing.png) |
 
 + Found no errors in Btt Button (```btt-button.js```):
 
@@ -482,6 +482,9 @@ I tested the appearance and responsiveness of the website across 6 different bro
             ```request.session['manage_crate'] = False```
         + The session variable is then set to ```False``` by default so that the crate summary only shows up in the intended notifications.
 
+UNRESOLVED
+=
+
 + **Save Info checkbox**:
     + This feature was implemented on the checkout page to allow users to have their delivery information saved to their profile.
     + It functioned as intended when trying to save the information; yet if the box is unchecked the information would still save.
@@ -495,3 +498,5 @@ I tested the appearance and responsiveness of the website across 6 different bro
             into the head (extra_js block rather than postload_js) and adding the defer tag fixed the bug for me.  Default delivery information only gets saved/updated if the checkbox is ticked now in both my GitPod and Heroku environments.
             
             I thought I would share here in case it is useful to anyone in future since the posts above definitely helped me!
+    + I have tried applying this fix and numerous others that I have found through searching around.
+        + Everything I have found leads me to believe it is caused somewhere in my webhook and due to insufficient experience with Stripe I opted to leave this bug as unresolved and to state it here in my testing.

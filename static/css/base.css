@@ -50,8 +50,7 @@ p { color: #eee6e6; margin-bottom: 0; }
 .navbar-toggler:focus { outline: none; box-shadow: none; }
 .navbar-toggler i, .nav-link, .text-bag { color: #ffd700; }
 .navbar-brand { padding: 0; }
-.nav-link:hover, .nav-link:active, .nav-link:focus, .btn:hover, .btn:active, .btn:focus, .dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus { color: #141414; }
-.dropdown-item:link { background-color: #4169e1;}
+.nav-link:hover, .nav-link:active, .nav-link:focus, .btn:hover, .btn:active, .btn:focus { color: #141414; }
 /* Footer */
 .container-footer { background-color: #4169e1; box-shadow: 0 -5px 10px #141414; }
 footer i, .text-footer { font-size: 1.6rem; }

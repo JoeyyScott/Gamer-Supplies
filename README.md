@@ -817,7 +817,7 @@ This section includes areas/sections of code and properties I was unaware of. I 
 
 **Adding slide effect to Bootstrap dropdown**:
 + I implemented the admin nav links to sit in a dropdown menu within the main navigation.
-    + This functioned as intended but the animation looked choppy. After a quick google search I found [this post]() which utilized the following code:
+    + This functioned as intended but the animation looked choppy. After a quick google search I found [this post](https://stackoverflow.com/questions/12115833/adding-a-slide-effect-to-bootstrap-dropdown) which utilized the following code:
 
         ```javascript
         // Add slideDown animation to Bootstrap dropdown when expanding.
