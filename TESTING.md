@@ -38,6 +38,21 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
     |:------------------:|
     | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
 
++ Found no errors in Quantity Input (quantity-input.js):
+    + When validating this code I wanted to know why portions of my code were red despite reporting no errors.
+        + I consulted with the Slack community and was told it was a problem with JSHint not understanding the template literal syntax when ES6 is mixed with jQuery.
+        + I attempted to find other solutions but due to time constraints and as it throws no errors I have opted to leave it as it is.
+
+            | _quantity-input.js Validation_ |
+            |:------------------:|
+            | ![Quantity Input Validation](docs/images/testing/quantity-input-testing.png) |
+
++ Found no errors in Update/Delete (crate.html inline JS - see README.md for more details on this):
+
+    | _Update/Delete Validation_ |
+    |:------------------:|
+    | ![Update/Delete Validation](docs/images/testing/update-delete-testing.png) |
+
 + Toasts (toasts.js):
 
     + Found one undefined variable "bootstrap" in initialise_toasts.js:

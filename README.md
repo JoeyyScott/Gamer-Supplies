@@ -651,19 +651,25 @@ This section includes areas/sections of code and properties I was unaware of. I 
 + I used various built in Bootstrap classes to style different elements to the needs of the project most notably margins, padding and text positioning.
 
 **Full Stack Frameworks Boutique Ado Project with [Code Institute](https://codeinstitute.net/)**
-+ The Boutique Ado project walkthrough from the Code Institute Full Stack Development course was used as a guide to help build this project, particularly the section on creating Stripe webhooks. 
 + The Boutique Ado walkthrough project created during the course was used as a guide to build the structure of this application. You can view the source code for that project [here](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
-    + Most notably the section on creating fully functioning Stripe Webhooks as this was something I had not heard of until Boutique Ado.
+    + Most notably the section on creating fully functioning Stripe Webhooks as this was something I had not heard of until undertaking the walkthrough project.
++ Through the development of this project I have tried to create a website that was entirely different to Boutique Ado despite it providing the basis of my understanding of Django as well as working with Stripe.
 
-**Quantity Input Script**:
+**Quantity Input Script (```quantity-input.js```)**:
 + The code primarily used was from ```quantity_input_script.html``` in the Boutique Ado project and I have adapted it to suit my needs for this project.
+    + I put this code into a static JS file in the Supplies app as per the distinction performance for splitting code into relevant files and received no functionality issues.
     + [Quantity Input Script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/products/templates/products/includes/quantity_input_script.html)
-+ There was also a section on ```bag.html``` for quantity update/delete features which I have since included in ```crate.html```.
-+ I wanted to include this in a JS file in the static directory for the crate app as per the distinction performance for splitting code into relevant files.
-+ When attempting to do this the delete functionality would not work.
-    + This is due to the ```csrf_token``` not being recognised when this code exists outside of ```crate.html``` and as such I have opted to leave it in the HTML file due to time constraints as the latter would require a lot more time to implement.
-    + [Quantity Update/Delete Script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/bag/templates/bag/bag.html)
-        + To provide appropriate credit for this code I have included the current links to the files in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
+        + To provide appropriate credit for this code I have included the current link to the file in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
+
+**Quantity update/delete inline JS in ```crate.html```**:
++ The code primarily used was from ```bag.html``` in the Boutique Ado project and I have adapted it to suit my needs for this project.
++ The code that handles the quantity update/delete features I have since included in a block (```{% block postloadjs %}{% endblock %}```) after the content block in ```crate.html```.
+    + I wanted to include this in a JS file in the static directory for the crate app as per the distinction performance for splitting code into relevant files.
+    + When attempting to do this the delete functionality would not work.
+        + I consulted with the [Code Institute](https://codeinstitute.net/) Slack community and was told to leave it in ```crate.html``` and state it in the README which is what I have done here.
+        + This reason it breaks is due to the ```csrf_token``` not being recognised when this code exists outside of ```crate.html``` and as such I have opted to leave it in the HTML file due to time constraints as I have been told the latter would require a lot more time to implement. I felt breaking the delete functionality entirely was not worth having a static JS file in this one case.
+        + [Quantity Update/Delete Script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/bag/templates/bag/bag.html)
+            + To provide appropriate credit for this code I have included the current link to the file in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
 
 **Sending HTML through django messages and templates**:
 + I wanted to customize my Django messages and tried various solutions I found from researching the issue.
