@@ -154,7 +154,7 @@ input[type=number] { -moz-appearance: textfield; }
     .container-content { margin-top: 13vh; }
     .text-order { font-size: 1rem; }
     .space { height: 10vh; }
-    .tagline-home { font-size: 1.75rem; }
+    .tagline { font-size: 1.75rem; }
     .container-categories p { font-size: 1.5rem; }
     .container-messages { width: 25%; }
     .carousel-item { font-size: 1.5rem; }
