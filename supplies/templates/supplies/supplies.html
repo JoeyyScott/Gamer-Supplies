@@ -133,7 +133,38 @@
                                 <!-- Admin buttons -->
                                 <div>
                                     <a class="btn solid small mx-1 my-1" href="{% url 'supply_edit' supply.id %}"><i class="fas fa-edit p-1"></i></a>
-                                    <a class="btn solid small mx-1 my-1" href="{% url 'supply_delete' supply.id %}"><i class="fas fa-trash p-1"></i></a>
+                                    <!-- Trigger delete modal -->
+                                    <a class="btn solid small mx-1 my-1" data-bs-toggle="modal" data-bs-target="#delete-{{ supply.id }}"><i class="fas fa-trash p-1"></i></a>
+                                    <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
+                                    <div class="modal fade" id="delete-{{ supply.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="supplyDeleteLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content gamerStyle">
+                                                <div class="modal-header">
+                                                    <h2 class="modal-title w-100 text-center" id="supplyDeleteLabel">Delete Supply</h2>
+                                                </div>
+                                                <div class="modal-body">
+                                                        <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>
+                                                        <p class="altFont">The contents of the supply are as follows:</p>
+                                                        <p class="altFont"><span class="highlight">Name:</span>{{ supply.name }}</p>
+                                                        <p class="altFont"><span class="highlight">Description:</span>{{ supply.description }}</p>
+                                                        <p class="altFont"><span class="highlight">Size:</span> {{ supply.size }}</p>
+                                                        <p class="altFont"><span class="highlight">Brand:</span> {{ supply.brand }}</p>
+                                                        <p class="altFont"><span class="highlight">Price:</span> £{{ supply.price }}</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="row w-100">
+                                                        <!-- Modal buttons -->
+                                                            <div class="col-7 text-start">
+                                                                <a href="{% url 'supply_delete' supply.id %}" class="btn my-2">Delete <span class="d-none d-sm-inline">Supply</span></a>
+                                                            </div>
+                                                        <div class="col-5 text-end">
+                                                            <a data-bs-dismiss="modal" class="btn my-2">Cancel</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             {% endif %}
                             {% else %}
