@@ -1,3 +1,4 @@
+/*  The Stripe docs provided the basis of this: https://stripe.com/docs/js */
 // Setting variables
 var stripePublicKeyGS = $('#id_stripe_public_key_gs').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);

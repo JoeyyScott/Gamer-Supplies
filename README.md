@@ -646,6 +646,25 @@ Once you have done the above you can follow these steps to create a local copy o
 
 This section includes areas/sections of code and properties I was unaware of. I have also included sources from where I have adapted/changed code used in the projects throughout my course as I figured it was better practice to state as such to avoid any penalizations or copyright violations.
 
+**Bootstrap Documentation**: [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
++ I used the Bootstrap Documentation was used to add different components to the project most notably a Navbar, Nav Tabs, Toasts, Modal, Carousel, Collapse and Cards
++ I used various built in Bootstrap classes to style different elements to the needs of the project most notably margins, padding and text positioning.
+
+**Full Stack Frameworks Boutique Ado Project with [Code Institute](https://codeinstitute.net/)**
++ The Boutique Ado project walkthrough from the Code Institute Full Stack Development course was used as a guide to help build this project, particularly the section on creating Stripe webhooks. 
++ The Boutique Ado walkthrough project created during the course was used as a guide to build the structure of this application. You can view the source code for that project [here](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+    + Most notably the section on creating fully functioning Stripe Webhooks as this was something I had not heard of until Boutique Ado.
+
+**Quantity Input Script**:
++ The code primarily used was from ```quantity_input_script.html``` in the Boutique Ado project and I have adapted it to suit my needs for this project.
+    + [Quantity Input Script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/products/templates/products/includes/quantity_input_script.html)
++ There was also a section on ```bag.html``` for quantity update/delete features which I have since included in ```crate.html```.
++ I wanted to include this in a JS file in the static directory for the crate app as per the distinction performance for splitting code into relevant files.
++ When attempting to do this the delete functionality would not work.
+    + This is due to the ```csrf_token``` not being recognised when this code exists outside of ```crate.html``` and as such I have opted to leave it in the HTML file due to time constraints as the latter would require a lot more time to implement.
+    + [Quantity Update/Delete Script](https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/master/bag/templates/bag/bag.html)
+        + To provide appropriate credit for this code I have included the current links to the files in question from [Code Institute Solutions Github](https://github.com/Code-Institute-Solutions).
+
 **Sending HTML through django messages and templates**:
 + I wanted to customize my Django messages and tried various solutions I found from researching the issue.
     + The one that worked for me was [this post](https://stackoverflow.com/questions/58415186/how-to-make-a-new-line-in-django-messages-error) which uses "mark safe" from Django's built in utilities.
@@ -767,6 +786,29 @@ This section includes areas/sections of code and properties I was unaware of. I 
     {% endblock %}
     ```
 + I adapted this template to create ```base_site.html``` and set the FavIcon correctly.
+
+**Setting minimum value for value in forms.py**:
++ When implementing the Add Coupon functionality I was able to add coupons with an amount of 0.
++ I began searching around and found [this post](https://stackoverflow.com/questions/41701222/django-modelform-setting-minimum-value-on-floatfield) which utilized the following code:
+
+    ```python
+    def clean_price(self):
+        price = self.cleaned_data['price']
+        if price < 0.01:
+            raise forms.ValidationError("Price cannot be less than 0.01")
+        return price
+    ```
+
++ I was able to modify this to suit my needs of checking if the amount entered was under 1.
+    + If an amount under 1 is entered the user receives an error toast and returned to ```coupon_manage.html```.
+
+    ```python
+    def clean_amount(self):
+        amount = self.cleaned_data['amount']
+        if amount < 1:
+            raise forms.ValidationError("Amount cannot be less than 1")
+        return amount
+
 
 ### Media
 

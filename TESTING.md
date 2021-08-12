@@ -26,17 +26,33 @@ I used [w3.org's validator](https://jigsaw.w3.org/css-validator/) for my CSS val
 
 I used [JSHint](https://jshint.com) to check the javascript files in my project to make certain it complies with coding standards and that were no syntax errors detected.
 
-+ Ratings (ratings.js):
++ Found no errors in Ratings (ratings.js):
 
     | _ratings.js Validation_ |
     |:------------------:|
-    | ![HTML5 Validation](docs/images/testing/ratings-testing.png) |
+    | ![Ratings Validation](docs/images/testing/ratings-testing.png) |
+
++ Found no errors in Btt Button (btt-button.js):
+
+    | _btt-button.js Validation_ |
+    |:------------------:|
+    | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
 
 + Toasts (toasts.js):
 
-    | _toasts.js Validation_ |
-    |:------------------:|
-    | ![HTML5 Validation](docs/images/testing/toasts-testing.png) |
+    + Found one undefined variable "bootstrap" in initialise_toasts.js:
+
+        | _toasts.js Validation_ |
+        |:------------------:|
+        | ![Toasts Validation](docs/images/testing/toasts-testing.png) |
+
++ Stripe (stripeelements.js):
+
+    + Found one undefined variable "bootstrap" in initialise_toasts.js:
+
+        | _stripeelements.js Validation_ |
+        |:------------------:|
+        | ![Stripe Elements Validation](docs/images/testing/stripe-elements.png) |
 
 
 I used [PEP8 online](http://pep8online.com/) to test all custom Python code against PEP8 standards.

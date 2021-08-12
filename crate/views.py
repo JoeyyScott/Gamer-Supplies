@@ -142,6 +142,7 @@ def coupons_manage(request):
     return render(request, 'crate/coupons_manage.html', context)
 
 
+@login_required
 def coupon_delete(request, coupon_id):
     # View to allow admins to delete coupons
     if not request.user.is_superuser:
