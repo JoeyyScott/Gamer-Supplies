@@ -611,6 +611,35 @@ I tested the appearance and responsiveness of the website across 6 different bro
             ```request.session['manage_crate'] = False```
         + The session variable is then set to ```False``` by default so that the crate summary only shows up in the intended notifications.
 
++ **Updating totals on orderd with coupons applied**:
+    + I implemented a custom model for Coupons in the site and when calculating the order total I was using the following code:
+
+        ```python
+            def update_total(self):
+        # Update total each time a crate item is added
+        self.order_total = (
+            self.crateitems.aggregate(
+                Sum("crateitem_total"))["crateitem_total__sum"] or 0
+        )
+        # Checking whether a coupon was applied to the order
+        if self.coupon is not None:
+            savings = self.crateitems.aggregate(Sum("crateitem_total"))[
+                "crateitem_total__sum"
+            ] * (self.coupon.amount / Decimal("100"))
+            self.order_total = self.order_total - savings
+
+        self.save()
+
+    + After some troubleshooting and receiving errors about decimals I figured the problem had to lie within the ```if self.coupon is not None``` block and aggregating the crate items to 0 worked without issue on orders not including a coupon.
+
+    + After some testing I realized I did not need to call the aggregate function again as ```self.order_total``` had already been calculated to account for this issue.
+        + Updating my function removed the bug and now produces the desired effect and as such I have included my updated code here:
+
+        ```python
+        if self.coupon is not None:
+            savings = self.order_total * (self.coupon.amount / Decimal("100"))
+            self.order_total = self.order_total - savings
+
 [Contents](#contents)
 
 ### UNRESOLVED

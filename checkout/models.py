@@ -45,9 +45,7 @@ class Order(models.Model):
         )
         # Checking whether a coupon was applied to the order
         if self.coupon is not None:
-            savings = self.crateitems.aggregate(Sum("crateitem_total"))[
-                "crateitem_total__sum"
-            ] * (self.coupon.amount / Decimal("100"))
+            savings = self.order_total * (self.coupon.amount / Decimal("100"))
             self.order_total = self.order_total - savings
 
         self.save()
