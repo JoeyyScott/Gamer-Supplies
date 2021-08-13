@@ -10,34 +10,41 @@ class FormReview(forms.ModelForm):
     # See README.md for more details
     rating = forms.TypedChoiceField(
         choices=(
-            (1, mark_safe('<p><i class="fa fa-star highlight"></i>\
-                <i class="fa fa-star"></i><i class="fa fa-star"></i>\
-                <i class="fa fa-star"></i><i class="fa fa-star"></i> \
-                <span class="text-center altFont">Extremely Unsatisfied\
-                </span></p>')),
-            (2, mark_safe('<p><i class="fa fa-star highlight"></i>\
-                <i class="fa fa-star highlight"></i><i class="fa fa-star">\
-                </i><i class="fa fa-star"></i><i class="fa fa-star"></i> \
-                <span class="text-center altFont"> Unsatisfied\
-                </span></p>')),
-            (3, mark_safe('<p><i class="fa fa-star highlight"></i>\
+            (1, mark_safe('<span class="text-center altFont star">\
                 <i class="fa fa-star highlight"></i>\
-                <i class="fa fa-star highlight"></i><i class="fa fa-star">\
-                </i><i class="fa fa-star"></i> \
-                <span class="text-center altFont"> Neutral</span></p>')),
-            (4, mark_safe('<p><i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star"></i>\
+                <i class="fa fa-star"></i>\
+                <i class="fa fa-star"></i>\
+                <i class="fa fa-star"></i>\
+                Extremely Unsatisfied </span>')),
+            (2, mark_safe('<span class="text-center altFont star">\
                 <i class="fa fa-star highlight"></i>\
                 <i class="fa fa-star highlight"></i>\
-                <i class="fa fa-star highlight"></i><i class="fa fa-star">\
-                </i> <span class="text-center altFont"> Satisfied\
-                </span></p>')),
-            (5, mark_safe('<p><i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star"></i>\
+                <i class="fa fa-star"></i>\
+                <i class="fa fa-star"></i>\
+                Unsatisfied </span>')),
+            (3, mark_safe('<span class="text-center altFont star">\
                 <i class="fa fa-star highlight"></i>\
                 <i class="fa fa-star highlight"></i>\
                 <i class="fa fa-star highlight"></i>\
-                <i class="fa fa-star highlight"></i> \
-                <span class="text-center altFont"> Extremely satisfied!\
-                </span></p>'))
+                <i class="fa fa-star"></i>\
+                <i class="fa fa-star"></i>\
+                Neutral </span>')),
+            (4, mark_safe('<span class="text-center altFont star">\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star"></i>\
+                Satisfied </span>')),
+            (5, mark_safe('<span class="text-center altFont star">\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                <i class="fa fa-star highlight"></i>\
+                Extremely Satisfied </span>'))
             ),
         widget=forms.RadioSelect,
     )

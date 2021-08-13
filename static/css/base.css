@@ -79,6 +79,7 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 /* Reviews */
 .carousel { display: flex; flex-direction: column; height: 30vh; justify-content: center; }
 .carousel-inner { overflow: scroll; }
+.star { color: #eee6e6; }
 
 /* Form inputs */
 #id_review, #id_review:focus,
