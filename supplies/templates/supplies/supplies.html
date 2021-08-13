@@ -135,11 +135,11 @@
                                 <!-- Trigger delete modal -->
                                 <a class="btn solid small mx-1 my-1" data-bs-toggle="modal" data-bs-target="#delete-{{ supply.id }}"><i class="fas fa-trash p-1"></i></a>
                                 <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
-                                <div class="modal fade" id="delete-{{ supply.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="supply-delete-label-{{ review.id }}" aria-hidden="true">
+                                <div class="modal fade" id="delete-{{ supply.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="supply-delete-label-{{ supply.id }}" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content gamerStyle">
                                             <div class="modal-header">
-                                                <h2 class="modal-title w-100 text-center" id="supply-delete-label-{{ review.id }}">Delete Supply</h2>
+                                                <h2 class="modal-title w-100 text-center" id="supply-delete-label-{{ supply.id }}">Delete Supply</h2>
                                             </div>
                                             <div class="modal-body">
                                                     <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>

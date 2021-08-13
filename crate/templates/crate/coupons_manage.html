@@ -40,11 +40,11 @@
                             <div class="col-6">
                                 <a class="btn my-2" data-bs-toggle="modal" data-bs-target="#delete-{{ coupon.id }}"><i class="fas fa-trash"></i> Delete Coupon</a>
                                 <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
-                                <div class="modal fade" id="delete-{{ coupon.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="coupon-delete-label-{{ review.id }}" aria-hidden="true">
+                                <div class="modal fade" id="delete-{{ coupon.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="coupon-delete-label-{{ coupon.code }}" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content gamerStyle">
                                             <div class="modal-header">
-                                                <h2 class="modal-title w-100 text-center" id="coupon-delete-label-{{ review.id }}">Delete Coupon</h2>
+                                                <h2 class="modal-title w-100 text-center" id="coupon-delete-label-{{ coupon.code }}">Delete Coupon</h2>
                                             </div>
                                             <div class="modal-body altFont">
                                                 <p>Are you sure you want to delete coupon <span class="highlight">{{ coupon.id }}</span>?</p>

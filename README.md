@@ -343,6 +343,9 @@ Review Model (Custom model #2 for Distinction performance)
         + This will then be checked against coupons in the data store when the apply coupon button is clicked and provide the correct result.
             + If the coupon exists, a section containing information of the current coupon and the savings/discount it provides to the user.
             + If the coupon does not exist, the user is returned to the crate without any changes.
++ Currently only admins have the list of active coupon codes
+    + See **Extra Coupon Features** in [features to be added](#features-to-be-added) for information on future implementation of the coupon feature.
+    + Due to admins only having access to codes I have included a temporary section on the homepage which contains the code "```GSLAUNCH2021```" which would be used when the website launched for a set period of time (Currently a superuser would remove/expire this code themselves but in future releases it would be automated).
 
 **Navigation buttons**:
 + There are two buttons which provide relevant links to the user at the top of the page below the coupon field. These links point to:
@@ -400,7 +403,6 @@ Review Model (Custom model #2 for Distinction performance)
     + Order Total - Contains the total price of the order.
 + The user is able to click order numbers in the list to be brought to a modified version of ```checkout_success.html``` which displays a rundown of all information associated with the order.
     + If a coupon has been applied this is displayed also.
-
 ## Included in **404/500.html** is:
 
 **Error Content**:
@@ -421,7 +423,6 @@ Review Model (Custom model #2 for Distinction performance)
     + For all unsuccessful actions ```toast_error.html``` will be used.
     + For all actions that do not fall into either of the previous categories ```toast_info.html``` will be used.
 
-
 **Account system**:
 + I used [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) to create my account system within the project as it provided prebuilt templates I could style as desired.
     + Users can register with email confirmation, login and logout.
@@ -432,7 +433,8 @@ Review Model (Custom model #2 for Distinction performance)
         + Activated by: Add To Crate button with quantity inputs on each supply in ```supplies.html```, Update/Delete buttons for each crate item in ```crate.html```.
     + Reviews - ```review_add.html```, ```index.html``` with the delete functionality activating when the associated button is pressed on the homepage.
         + I did not include an edit feature as I felt it would devalue the integrity of the reviews and opted to only include create, read and delete for this feature.
-        + Activated by: Add/Delete Review buttons on ```index.html```. 
+        + Activated by: Add/Delete Review buttons on ```index.html```.
++ Further details of this functionality can be found in [TESTING.md](TESTING.md).
 
 **CRUD Functionality for admins**:
 + In addition to the previous CRUD functionality, admins are able to create, read, update and delete records in the database for the project through various pages and functionality. Included in this are:
@@ -444,23 +446,45 @@ Review Model (Custom model #2 for Distinction performance)
         + Contains a list of all the current Coupons.
         + Contains a form where admins can add coupons, upon entering successful form information.
         + Contains a delete button on each coupon that activates the delete coupon functionality when pressed.
++ Further details of this functionality can be found in [TESTING.md](TESTING.md).
 
-**Delete conformation modals**
+**Delete Functionality**
 + When attempting to delete data in the data store it initiates a delete confirmation modal.
     + This provides the user with important information about the selected item (Supply, Review and Coupon) to prevent accidental deletions.
     + This functionality is tied to the delete buttons (denoted by relevant icon) in the associated pages (Supplies, Home/Manage Reviews and Manage Coupons).
     + Pictures of these modals can be found within superuser story testing [here](TESTING.md).
 
+Included in the **Security Features** are: 
++ The following views are protected so only admins have permission.
+    + Add, Edit and Delete Supply
+    + Add/Delete Coupon
+    + Deleting any review
++ The following views are protected so only logged in users have permission:
+    + Add to, Modify and Remove from crate.
+    + Add Review
+    + Profile
+    + Checkout and Checkout Success (also requires you to have a crate)
+    + Checkout Success (also requires you to successfully checkout)
+    + Logout (Register and Login also hidden)
+
++ Currently the only security risk I can find is when checking out without "Save Info" checked the information still saves (more details on this in [TESTING.md](TESTING.md)).
+
+
 ### Features to be added
 
 **Subscription**:
 + I would like the user to be able to order the same crate at a user defined interval (within reason) which would allow for more user options and incentives.
-    + Example: If a user orders the same crate 10 times over a certain value they get a 50% discount on their next crate of those items.
+    + Example: If a user orders the same crate 10 times over a certain value they get a 50% discount code on their next crate of those items.
     + This would also allow users to receive their favourite snacks whenever they wanted with only having to checkout once.
 
-+ **Pagination** - This would take control if the amount of supplies in the shop went over a threshold. Implementing this fully would require too much work for the time available for this project.
+**Pagination**
++ This would take control if the amount of supplies in the shop went over a threshold. Implementing this fully would require too much work for the time available for this project.
+    + Example: If there are 500 supplies on ```supplies.html``` the current site would not be an efficient way to load or display this information.
 
-+ **Extra Coupon Features**:
+**Extra Coupon Features**:
++ With more experience with Django and time on the project I would have liked to experiment with a multitude of coupon features:
+    + Allowing coupons to only be used through a set period of time or on specific orders.
+    + Generate and email a discount coupon code for the proposed subscription feature above.
 
 #### [Back to top](#contents)
 
@@ -641,7 +665,19 @@ To setup static and media files in an Amazon S3 Bucket follow these steps:
 
 ### Creating a local clone
 
-**Disclaimer**: This project will not run locally with database connections unless you set the Heroku config variables in your IDE. The information used to run this project is private and has not been pushed to the GitHub repository for this reason.
+**Disclaimer**: This project will not run locally with database connections unless you set these variables in your IDE. The information used to run this project is private and has not been pushed to the GitHub repository for this reason.
+
+**Set environment variables:**
+1. From [GitPod home](https://gitpod.io) click your profile picture in the top right and access "Settings" from the dropdown menu.
+2. On the left hand side select variables and add the following variables to ensure the project functions fully in a local clone:
+
+    | Key | Value |
+    | :-: | :---: |
+    | DEVELOPMENT | True |
+    | SECRET_KEY | Your SECRET_KEY |
+    | STRIPE_PUBLIC_KEY_GS | Your STRIPE_PUBLIC_KEY |
+    | STRIPE_SECRET_KEY_GS | Your STRIPE_SECRET_KEY |
+    | STRIPE_WH_SECRET_GS | Your STRIPE_WH_SECRET |
 
 Once you have done the above you can follow these steps to create a local copy on your computer:
 1. Navigate to the GitHub Repository for the project [here](https://github.com/JoeyyScott/gamer-supplies/).

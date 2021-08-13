@@ -18,6 +18,32 @@
 
 I used [w3.org's validator](https://validator.w3.org) for my HTML validation checks.
 
++ Pages tested were:
+    + **index.html**
+    + **supplies.html**
+    + **crate.html**
+    + **checkout.html** 
+    + **checkout_success.html**
+    + **profile.html**
+    + **supply_add.html**
+    + **supply_edit.html**
+    + **review_add.html**
+    + **review_manage.html**
+    + **coupons_manage.html**
+    + **404.html**
+    + **500.html**
+    + **toast success.html**
+    + **toast-error.html**
+    + **toast-info.html**
+
+    + Note: I used allauth to provide my account system and this came with a variety of templates of which most I have only changed the inner content block so they use my base style. I have been unable to access them templates outside of ones used in the registration process which I feel is due to the functionality not being implemented in my project.
+
+    + As such I have tested all the ```.html``` files used through the account registration process and included a list of this below
+        + **login.html**
+        + **register.html**
+        + **verification_sent.html**
+        + **email_confirm.html**
+
 + No errors were found within any page:
 
     | _HTML5 Validation_ |
@@ -42,35 +68,15 @@ I used [w3.org's validator](https://jigsaw.w3.org/css-validator/) for my CSS val
 
 I used [JSHint](https://jshint.com) to check the javascript files in my project to make certain it complies with coding standards and that were no syntax errors detected.
 
-+ Found no errors in Ratings (```ratings.js```):
++ Found no errors in the following files:
 
-    | _ratings.js Validation_ |
-    |:------------------:|
-    | ![Ratings Validation](docs/images/testing/ratings-testing.png) |
-
-+ Found no errors in Country Colour (```countrycolour.js```):
-
-    | _countrycolour.js Validation_ |
-    |:------------------:|
-    | ![Country Colour Validation](docs/images/testing/countrycolour-testing.png) |
-
-+ Found no errors in Dropdown (```dropdown.js```):
-
-    | _dropdown.js Validation_ |
-    |:------------------:|
-    | ![Dropdown Validation](docs/images/testing/dropdown-testing.png) |
-
-+ Found no errors in Btt Button (```btt-button.js```):
-
-    | _btt-button.js Validation_ |
-    |:------------------:|
-    | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
-
-+ Found no errors in New Image Filename (```newimg-filename.js```):
-
-    | _newimg-filename.js Validation_ |
-    |:------------------:|
-    | ![New Image Filename Validation](docs/images/testing/newimg-filename-testing.png) |
+    | _.js File Validation_ | _Screenshot_ |
+    |:---------------------:|:------------:|
+    | Ratings (```ratings.js```) | ![Ratings Validation](docs/images/testing/ratings-testing.png) |
+    | Country Colour (```countrycolour.js```) | ![Country Colour Validation](docs/images/testing/countrycolour-testing.png) |
+    | Dropdown (```dropdown.js```) | ![Dropdown Validation](docs/images/testing/dropdown-testing.png) |
+    | Btt Button (```btt-button.js```) | ![Btt Button Validation](docs/images/testing/btt-button-testing.png) |
+    | New Image Filename (```newimg-filename.js```) | ![New Image Filename Validation](docs/images/testing/newimg-filename-testing.png) |
 
 + Found no errors in Quantity Input (```quantity-input.js```):
     + When validating this code I wanted to know why portions of my code were red despite reporting no errors.
@@ -126,6 +132,8 @@ I used [PEP8 online](http://pep8online.com/) to test all custom Python code agai
 
 Responsiveness (website layout)
 
++ AllAuth templates has been included as a directory as there are many files in here and it would make the table too big.
+
 |              All Pages               | Samsung 9+ | Galaxy S5  | iPhone 6/7/8 | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
 |:------------------------------------:|------------|------------|--------------|----------|------|----------|----------------|-----------------|
 |     Website is  responsive >800px    |     N/A    |    N/A     |      N/A     |    N/A   | Good |   Good   |      Good      |       Good      |
@@ -177,6 +185,11 @@ Responsiveness (website layout)
 | Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
 |                                      |            |            |              |          |      |          |                |                 |
 | **reviews_manage.html**              |            |            |              |          |      |          |                |                 |
+| Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+| Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
+|                                      |            |            |              |          |      |          |                |                 |
+| **coupons_manage.html**              |            |            |              |          |      |          |                |                 |
 | Links/URLs                           |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
 | Images                               |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
 | Renders as expected                  |    Good    |    Good    |     Good     |   Good   | Good |   Good   |      Good      |      Good       |
