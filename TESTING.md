@@ -275,7 +275,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
     + I completed a test registration using an email from [Temp Mail](https://temp-mail.org/en/) to provide relevant screenshots throughout the process.
 
-        | _Register_ | _Image_ |
+        | _Register_ | _Screenshot_ |
         |:----------:|:-------:|
         | Register Empty | ![Register Empty Screenshot](docs/images/testing/userstories/register-empty.png) |
         | Register Filled | ![Register Filled Screenshot](docs/images/testing/userstories/register-filled.png) |
@@ -330,66 +330,64 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **Registered User**, I want to be able to easily purchase my crate.
     + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
-    + On ```crate.html``` there is a "Secure Checkout" button which when clicked redirects the user to the checkout page.
-    + On ```checkout.html``` the user can see a preview of their crate with a form to fill out their delivery and payment information.
-    + I completed a test checkout using the account made with the temp email from [Temp Mail](https://temp-mail.org/en/).
+    + I have created a crate in the previous stories which I will use to display ```crate.html``` and the checkout process.
+    + I completed a test checkout using the account made during the registration testing using the temp email from [Temp Mail](https://temp-mail.org/en/).
     + This was done to provide relevant screenshots throughout the process simulating a first time user becoming a registered user and checking out.
-
-        | _Checkout_ | _Image_ |
-        |:----------:|:-------:|
-        | Viewing Crate | ![Viewing Crate Screenshot](docs/images/testing/userstories/checkout-view-crate.png) |
-        | Applying Coupon | ![Applying Coupon Screenshot](docs/images/testing/userstories/checkout-coupon.png) |
-        | Checkout Button | ![Checkout Button Screenshot](docs/images/testing/userstories/checkout-button.png) |
-        | Checkout Empty | ![Checkout Empty Screenshot](docs/images/testing/userstories/checkout-empty.png) |
-        | Intent Created | ![Intent Created Screenshot](docs/images/testing/userstories/checkout-intent-create.png) |
-        | Checkout Filled | ![Checkout Filled Screenshot](docs/images/testing/userstories/checkout-filled.png) |
-        | Payment Processing | ![Payment Processing Screenshot](docs/images/testing/userstories/checkout-processing.png) |
-        | Payment Authentication | ![Payment Authentication Screenshot](docs/images/testing/userstories/checkout-auth.png) |
-        | Payment Failed | ![Payment Failed Screenshot](docs/images/testing/userstories/checkout-failed.png) |
-        | Checkout Success | ![Checkout success Screenshot](docs/images/testing/userstories/checkout-success.png) |
-        | Intent/Charge Succeeded | ![Intent/Charge Succeeded Screenshot](docs/images/testing/userstories/checkout-stripe-succeeded.png) |
-        | Checkout Admin | ![Checkout Admin Screenshot](docs/images/testing/userstories/checkout-admin.png) |
-        | Checkout Admin Items | ![Checkout Admin Items](docs/images/testing/userstories/checkout-admin-items.png) |
-        | Checkout Email | ![Checkout Email Screenshot](docs/images/testing/userstories/checkout-email.png) |
-        | Profile Order | ![Profile Order Screenshot](docs/images/testing/userstories/checkout-profile.png) |
-        | Past Order Notification | ![Past Order Notification Screenshot](docs/images/testing/userstories/checkout-past-order.png) |
-        | Order History | ![Past Order Notification Screenshot](docs/images/testing/userstories/checkout-history.png) |
-
+    
+        | _Checkout_ | _Info_ | _Screenshot_ |
+        |:----------:|:------:|:-------:|
+        | Viewing Crate | Crate displays as intended on ```crate.html```. | ![Viewing Crate Screenshot](docs/images/testing/userstories/checkout-view-crate.png) |
+        | Applying Coupon | Entering a invalid coupon displays an error to the user. | ![Coupon Failed Screenshot](docs/images/testing/userstories/checkout-coupon-failed.png) |
+        | Applying Coupon | Entering a valid coupon applies the discount and is displayed to the user. | ![Applying Coupon Screenshot](docs/images/testing/userstories/checkout-coupon.png) |
+        | Checkout Button | ```crate.html``` contains a "Secure Checkout" button which redirects users to ```checkout.html```. | ![Checkout Button Screenshot](docs/images/testing/userstories/checkout-button.png) |
+        | Checkout Empty | On ```checkout.html``` the user can see a preview of their crate with a form containing placeholders to fill out their delivery and payment information. | ![Checkout Empty Screenshot](docs/images/testing/userstories/checkout-empty.png) |
+        | Intent Created | Stripe payment intent created successfully. | ![Intent Created Screenshot](docs/images/testing/userstories/checkout-intent-create.png) |
+        | Checkout Filled | Filled checkout form with save info checked. | ![Checkout Filled Screenshot](docs/images/testing/userstories/checkout-filled.png) |
+        | Payment Processing | Upon clicking "Complete Order" the form and buttons are disabled and a loading overlay shown to inform the user of what is happening. | ![Payment Processing Screenshot](docs/images/testing/userstories/checkout-processing.png) |
+        | Payment Authentication | ADMIN: I included this to test errors when checking out | ![Payment Authentication Screenshot](docs/images/testing/userstories/checkout-auth.png) |
+        | Payment Failed | When a payment fails the user is informed gracefully with their form intact. | ![Payment Failed Screenshot](docs/images/testing/userstories/checkout-failed.png) |
+        | Checkout Success | When a payment succeeds the user is redirected to ```checkout_success.html``` with details of their purchase and a noficiation informing them of a checkout confirmation email. | ![Checkout success Screenshot](docs/images/testing/userstories/checkout-success.png) |
+        | Intent/Charge Succeeded | Stripe ```payment_intent.succeeded``` and ```charge.succeeded``` have both succeeded as shown here. I have included all the events sent to the webhook for authentication to provide real-time proof of this process functioning as intended. | ![Intent/Charge Succeeded Screenshot](docs/images/testing/userstories/checkout-stripe-succeeded.png) |
+        | Charge Amount | Stripe ```charge.succeeded``` displays the correct amount. | ![Charge Amount Screenshot](docs/images/testing/userstories/checkout-stripe-charge-amount.png) |
+        | Payment Intent Succeeded Amount | Stripe ```payment_intent.succeeded``` displays the correct amount. | ![Intent Amount Screenshot](docs/images/testing/userstories/checkout-stripe-intent-amount.png) |
+        | Checkout Admin | The completed order is created successfully in the admin panel under "Orders". | ![Checkout Admin Screenshot](docs/images/testing/userstories/checkout-admin.png) |
+        | Checkout Admin Items | The order contains the correct items purchased. | ![Checkout Admin Items](docs/images/testing/userstories/checkout-admin-items.png) |
 
 + As a **Registered User**, I want to receive a purchase confirmation email.
-    + After a successful checkout, the user will receive an email confirming their order with a link to view the full order details.
-    + After a successful checkout, the user will be directed to ```checkout_success.html``` which will display all their order details.
+    + This testing is using the same information for real time proof through my testing.
+    + After a successful checkout, the user will be directed to ```checkout_success.html``` which will display all their order details and receive an email confirming it with a link to view the full order details.
 
         | _Email Confirmation_ |
         |:--------------------:|
-        | ![Email Confirmation Screenshot](docs/images/testing/userstories/confirmation-email.png) |
+        | ![Checkout Email Confirmation Screenshot](docs/images/testing/userstories/checkout-email.png) |
 
-        | _Checkout Success_ |
-        |:------------------:|
-        | ![Checkout Success Screenshot](docs/images/testing/userstories/checkout-success.png) |
++ As a **Registered User**, I want to be able to view my previous orders.
+    + I have used the same account to provide proof the user's new order displays on their profile with their updated delivery information. 
+
+        | _Order History_ | _Info_ | _Screenshot_ |
+        |:---------------:|:------:|:-------:|
+        | Profile Order | Included in ```profile.html``` is a section which displays the user's previous orders and the items in them. | ![Profile Order History Screenshot](docs/images/testing/userstories/checkout-profile.png) |
+        | Order History | When clicking an order number in ```profile.html``` they are redirected to a modified version of ```checkout_success.html``` which displays a rundown of all information associated with the order including if a coupon was applied. | ![Order History Screenshot](docs/images/testing/userstories/checkout-history.png) |
+        | Past Order Notification | The user is informed that is simply a record of their previous purchase and not a new purchase. | ![Past Order Notification Screenshot](docs/images/testing/userstories/checkout-past-order.png) |
 
 + As a **Registered User**, I want to be able to easily update my contact and delivery information.
     + Included in the checkout form is a checkbox which allows users to save the checkout delivery information to their profile for quicker future checkouts.
     + If the option is chosen, their delivery address will be saved to their profile which can be updated on ```profile.html``` at anytime.
+    + I have used the same account to provide proof the user's new order displays on their profile with their updated delivery information. 
 
-        | _Update Delivery Details_ |
-        |:-------------------------:|
-        | ![Update Delivery Details Screenshot](docs/images/testing/userstories/profile-delivery.png) |
-
-+ As a **Registered User**, I want to be able to view my previous orders.
-    + Included in ```profile.html``` is a section which displays the user's previous orders and the items in them.
-    + The user is able to click order numbers in the list to be brought to a modified version of ```checkout_success.html``` which displays a rundown of all information associated with the order.
-
-        | _Order History_ |
-        |:---------------:|
-        | ![Order History Screenshot](docs/images/testing/userstories/order-history.png) |
+        | _Order History_ | _Info_ | _Screenshot_ |
+        |:---------------:|:------:|:-------:|
+        | Information Prefilled | The form on ```profile.html``` is prefilled from the previous checkout. | ![Information Prefilled Screenshot](docs/images/testing/userstories/information-prefilled.png) |
+        | Information Filled | The form filled out with updated information. | ![Information Filled Screenshot](docs/images/testing/userstories/information-filled.png) |
+        | Information Success | Upon submitting the form the user will be notified of their information being updated successfully and kept on ```profile.html``` | ![Information Success Screenshot](docs/images/testing/userstories/information-success.png) |
+        | Information New | When creating a crate and navigating to ```checkout.html``` again the new information is displayed. | ![Information New Screenshot](docs/images/testing/userstories/information-new.png) |
 
 + As a **Registered User**, I want to be able to add a review about my experience on the site.
     + Included in the homepage is an "Add Review" button which is displayed underneath the current reviews carousel.
     + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user to add a review to the site.
     + Upon submitting valid information in the Add Review form (provided in the placeholder and choosing a rating) the review will be added to the data store and displayed in the list.
 
-        | _Adding a Review_ | Screenshot |
+        | _Adding a Review_ |_Screenshot_|
         |:-----------------:|:----------:|
         | Empty Review Form | ![Empty Review Form Screenshot](docs/images/testing/userstories/add-review-empty.png) |
         | Add Review | ![Add Review Screenshot](docs/images/testing/userstories/add-review.png) |
@@ -408,15 +406,13 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:-------------------:|
         | ![Add Supply Button Screenshot](docs/images/testing/userstories/add-supply-button.png) |
 
-    + Upon clicking this button the superuser will be redirected to the Add Supply form shown below.
-    + Upon submitting valid information in the Add Supply form (provided in the placeholder for each field) the supply will be added to the data store and displayed in the list.
         + A supply image is not required and for testing purposes. I have included this to display how it handles having no image.
 
-            | _Adding a Supply_ | Screenshot |
-            |:-----------------:|:----------:|
-            | Empty Supply form | ![Empty Supply Form Screenshot](docs/images/testing/userstories/add-supply-empty.png) |
-            | Add Supply | ![Add Supply Screenshot](docs/images/testing/userstories/add-supply.png) |
-            | Add Supply Success | ![Add Supply Success Screenshot](docs/images/testing/userstories/add-supply-success.png) |
+            | _Adding a Supply_ | _Info_ | _Screenshot_ |
+            |:-----------------:|:------:|:------------:|
+            | Empty Add Supply form | Upon clicking this button the superuser will be redirected to ```supply_add.html``` containing an empty Add Supply form. | ![Empty Add Supply Form Screenshot](docs/images/testing/userstories/add-supply-empty.png) |
+            | Add Supply | Add Supply form contains placeholders in each field to provide context. I have filled out test information in this screenshot. | ![Add Supply Screenshot](docs/images/testing/userstories/add-supply.png) |
+            | Add Supply Success | Upon submitting valid information in the Add Supply form (provided in the placeholder for each field) the supply will be added to the data store and displayed in the list on ```supplies.html``` | ![Add Supply Success Screenshot](docs/images/testing/userstories/add-supply-success.png) |
 
     + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the supplies page.
 
@@ -427,15 +423,14 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:----------------------------:|
         | ![Edit/Delete Supply Button Screenshot](docs/images/testing/userstories/edit-delete.png) |
 
+    + I have the used the Supply created in the previous test to provide real time proof of my testing.
     + Upon clicking the edit button the superuser will be redirected to the Edit Supply form shown below.
-        + Upon submitting valid information in the Edit Supply form (provided in the placeholder for each field if the user removes the prefilled information) the supply will be edited in the data store and displayed in the list accordingly.
-            + In addition to altering the information, I have added an image to display how it handles adding images.
 
-                | _Edit a Supply_ | Screenshot |
-                |:-----------------:|:----------:|
-                | Prefilled Supply form | ![Prefilled Supply Form Screenshot](docs/images/testing/userstories/edit-supply-prefilled.png) |
-                | Edit Supply | ![Edit Supply Screenshot](docs/images/testing/userstories/edit-supply.png) |
-                | Edit Supply Success | ![Edit Supply Success Screenshot](docs/images/testing/userstories/edit-supply-success.png) |
+        | _Edit a Supply_ | _Info_ | _Screenshot_ |
+        |:---------------:|:------:|:------------:|
+        | Prefilled Edit Supply form | Once on the ```supply_edit.html``` the information of the associated supply is prefilled in the form. | ![Prefilled Edit Supply Form Screenshot](docs/images/testing/userstories/edit-supply-prefilled.png) |
+        | Edit Supply | In addition to altering the information, I have added an image to display how it handles adding images (each field also contains a placeholder if the user removes the prefilled information). | ![Edit Supply Screenshot](docs/images/testing/userstories/edit-supply.png) |
+        | Edit Supply Success | Upon submitting valid information in the Edit Supply form the supply will be edited in the data store and displayed in the list accordingly. | ![Edit Supply Success Screenshot](docs/images/testing/userstories/edit-supply-success.png) |
 
         + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the supplies page.
 
@@ -499,7 +494,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
     + Upon submitting valid information in the Add Coupon form (provided in the placeholder for each field) the coupon will be added to the data store and displayed in the list.
 
-        | _Adding a Coupon_ | Screenshot |
+        | _Adding a Coupon_ |_Screenshot_|
         |:-----------------:|:----------:|
         | Empty Coupon form | ![Empty Coupon Form Screenshot](docs/images/testing/userstories/add-coupon-empty.png) |
         | Add Coupon | ![Add Coupon Screenshot](docs/images/testing/userstories/add-coupon.png) |

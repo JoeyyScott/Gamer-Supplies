@@ -104,8 +104,11 @@ The structure of the site is very simple to provide an easy-to-use experience. T
 
 + Logged in:
     + **Only as superuser** 
-        + Add Supply
-        + Manage Reviews
+        + Admin (dropdown)
+            + Admin Panel
+            + Add Supply
+            + Manage Reviews
+            + Manage Coupons
     + My Profile
     + My Crate
     + Logout
@@ -362,6 +365,7 @@ Review Model (Custom model #2 for Distinction performance)
 + On each item within the crate they will see:
     + A summary of the item with an image, name, individual price and a subtotal based on the item quantity.
 + The order total is displayed after the list.
+    + If a coupon has been applied this is displayed also.
 
 **Delivery Information**:
 + A form which allows the user to fill out the relevant fields:
@@ -394,6 +398,8 @@ Review Model (Custom model #2 for Distinction performance)
     + Order Number and Date - Auto generated when the order is completed.
     + Order Items - Contains supply name and quantity pertaining to each item on the order.
     + Order Total - Contains the total price of the order.
++ The user is able to click order numbers in the list to be brought to a modified version of ```checkout_success.html``` which displays a rundown of all information associated with the order.
+    + If a coupon has been applied this is displayed also.
 
 ## Included in **404/500.html** is:
 
@@ -453,6 +459,8 @@ Review Model (Custom model #2 for Distinction performance)
     + This would also allow users to receive their favourite snacks whenever they wanted with only having to checkout once.
 
 + **Pagination** - This would take control if the amount of supplies in the shop went over a threshold. Implementing this fully would require too much work for the time available for this project.
+
++ **Extra Coupon Features**:
 
 #### [Back to top](#contents)
 
