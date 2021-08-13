@@ -85,7 +85,7 @@
             {% for supply in supplies %}
                 <div class="col-md-6 col-lg-4 mb-3 p-1">
                     <!-- Supply Cards -->
-                    <div class="card h-100 text-center p-2 gamerStyle altFont me-md-2 me-lg-5">
+                    <div class="card h-100 text-center p-2 gamerStyle me-md-2 me-lg-5">
                         <!-- Supply Image -->
                         <div class="w-50 mx-auto">
                             {% if supply.image %}
@@ -98,8 +98,8 @@
                         <div class="card-title w-100 highlight">{{ supply.name }}</div>
                         <p class="card-text altFont">{{ supply.description }}</p>
                         <div class="card-buttons">
-                            <p class="card-text"> <span class="highlight">Size:</span> {{ supply.size }}</p>
-                            <p class="card-text"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
+                            <p class="card-text altFont"> <span class="highlight">Size:</span> {{ supply.size }}</p>
+                            <p class="card-text altFont"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
                             <p class="card-text text-price highlight">Price: £{{ supply.price }}</p>
                             <!-- Buttons -->
                             {% if request.user.is_authenticated %}

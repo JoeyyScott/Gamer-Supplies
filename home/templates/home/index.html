@@ -33,7 +33,7 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content gamerStyle">
                                                 <div class="modal-header">
-                                                    <h2 class="modal-title w-100 text-center" id="supplyDeleteLabel">Delete Review</h2>
+                                                    <h2 class="modal-title w-100 text-center" id="review-home-delete-label-{{ review.id }}">Delete Review</h2>
                                                 </div>
                                                 <div class="modal-body altFont">
                                                     <p>Are you sure you want to delete review <span class="highlight">{{ review.id }}</span>?</p>
@@ -94,18 +94,18 @@
                                 <div class="modal-header">
                                     <h2 class="modal-title w-100 text-center" id="faqLabel">Frequently Asked Questions</h2>
                                 </div>
-                                <p class="modal-body">
+                                <div class="modal-body">
                                     <div class="col-12">
-                                        <span class="faq-question highlight">"How much is delivery?"</span>
-                                        <span class="altFont"><p>We offer free worldwide delivery!</p></span>
-                                        <span class="faq-question highlight">"I've not received my items. What do I do?"</span>
-                                        <span class="altFont"><p>If you do not receive your items please contact us <a href="mailto:officialgamersupplies@gmail.com?subject=Gamer%20Supplies%20-%20Query">here</a>.</p></span>
-                                        <span class="faq-question highlight">"How do I update my delivery information?"</span>
-                                        <span class="altFont"><p>You can update your information by visiting your profile <a href="{% url 'profile' %}">here</a>.</p></span>
-                                        <span class="faq-question highlight">"How do I make an account?"</span>
-                                        <span class="altFont"><p>You can create an account by registering <a href="{% url 'account_signup' %}">here</a> and confirming your email address.</p></span>
+                                        <span class="highlight">"How much is delivery?"</span>
+                                        <p class="altFont">We offer free worldwide delivery!</p>
+                                        <span class="highlight">"I've not received my items. What do I do?"</span>
+                                        <p class="altFont">If you do not receive your items please contact us <a href="mailto:officialgamersupplies@gmail.com?subject=Gamer%20Supplies%20-%20Query">here</a>.</p>
+                                        <span class="highlight">"How do I update my delivery information?"</span>
+                                        <p class="altFont">You can update your information by visiting your profile <a href="{% url 'profile' %}">here</a>.</p>
+                                        <span class="highlight">"How do I make an account?"</span>
+                                        <p class="altFont">You can create an account by registering <a href="{% url 'account_signup' %}">here</a> and confirming your email address.</p>
                                     </div>
-                                </p>
+                                </div>
                                 <div class="modal-footer">
                                     <div class="row w-100">
                                         <!-- Modal dismiss -->
