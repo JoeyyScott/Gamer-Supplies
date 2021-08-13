@@ -1,6 +1,6 @@
 .StripeElement,
 .form-input {
-    -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-box-shadow: 0 1px 3px 0 #141414; box-shadow: 0 1px 3px 0 #141414;
+    box-sizing: border-box; box-shadow: 0 1px 3px 0 #141414;
     padding: 10px 12px; margin-bottom: 10px; border-radius: 0px; color: #4169e1; background-color: #eee6e6; font-family: 'Salsa', cursive;
 } 
 

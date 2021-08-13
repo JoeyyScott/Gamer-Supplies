@@ -87,21 +87,23 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
     |:------------------:|
     | ![Update/Delete Validation](docs/images/testing/update-delete-testing.png) |
 
-+ Toasts (```toasts.js```):
++ The following two validations found a single error about undefined variables but after consulting with the Slack community I was told this is because it is defined outside the context of these files and thus these two javascript files passed with no errors.
 
-    + Found one undefined variable "bootstrap" in ```toasts.js```:
+    + Toasts (```toasts.js```):
 
-        | _toasts.js Validation_ |
-        |:------------------:|
-        | ![Toasts Validation](docs/images/testing/toasts-testing.png) |
+        + Found one undefined variable "bootstrap" in ```toasts.js```:
 
-+ Stripe (```stripeelements.js```):
+            | _toasts.js Validation_ |
+            |:------------------:|
+            | ![Toasts Validation](docs/images/testing/toasts-testing.png) |
 
-    + Found one undefined variable "Stripe" in ```stripeelements.js```:
+    + Stripe (```stripeelements.js```):
 
-        | _stripeelements.js Validation_ |
-        |:------------------:|
-        | ![Stripe Elements Validation](docs/images/testing/stripe-elements.png) |
+        + Found one undefined variable "Stripe" in ```stripeelements.js```:
+
+            | _stripeelements.js Validation_ |
+            |:------------------:|
+            | ![Stripe Elements Validation](docs/images/testing/stripe-elements.png) |
 
 
 I used [PEP8 online](http://pep8online.com/) to test all custom Python code against PEP8 standards.
@@ -275,13 +277,13 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
         | _Register_ | _Image_ |
         |:----------:|:-------:|
-        | Register Empty | ![Register Empty](docs/images/testing/userstories/register-empty.png) |
-        | Register Filled | ![Register Filled](docs/images/testing/userstories/register-filled.png) |
-        | Register Verify | ![Register Verify](docs/images/testing/userstories/register-verify.png) |
-        | Register Verify Notification | ![Register Verify Notification](docs/images/testing/userstories/register-verify2.png) |
-        | Register Email | ![Register Email](docs/images/testing/userstories/register-email.png) |
-        | Register Confirm | ![Register Confirm](docs/images/testing/userstories/register-confirm.png) |
-        | Register Success | ![Register success](docs/images/testing/userstories/register-success.png) |
+        | Register Empty | ![Register Empty Screenshot](docs/images/testing/userstories/register-empty.png) |
+        | Register Filled | ![Register Filled Screenshot](docs/images/testing/userstories/register-filled.png) |
+        | Register Verify | ![Register Verify Screenshot](docs/images/testing/userstories/register-verify.png) |
+        | Register Verify Notification | ![Register Verify Notification Screenshot](docs/images/testing/userstories/register-verify2.png) |
+        | Register Email | ![Register Email Screenshot](docs/images/testing/userstories/register-email.png) |
+        | Register Confirm | ![Register Confirm Screenshot](docs/images/testing/userstories/register-confirm.png) |
+        | Register Success | ![Register success Screenshot](docs/images/testing/userstories/register-success.png) |
 
 + As a **First Time User**, I want to read reviews from other users.
     + On the home page I have included a reviews section where users can read reviews left by others displayed in a Bootstrap carousel.
@@ -330,14 +332,29 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
     + On ```crate.html``` there is a "Secure Checkout" button which when clicked redirects the user to the checkout page.
     + On ```checkout.html``` the user can see a preview of their crate with a form to fill out their delivery and payment information.
+    + I completed a test checkout using the account made with the temp email from [Temp Mail](https://temp-mail.org/en/).
+    + This was done to provide relevant screenshots throughout the process simulating a first time user becoming a registered user and checking out.
 
-        | _Checkout Button_ |
-        |:-----------------:|
-        | ![Checkout Button Screenshot](docs/images/testing/userstories/checkout-button.png) |
+        | _Checkout_ | _Image_ |
+        |:----------:|:-------:|
+        | Viewing Crate | ![Viewing Crate Screenshot](docs/images/testing/userstories/checkout-view-crate.png) |
+        | Applying Coupon | ![Applying Coupon Screenshot](docs/images/testing/userstories/checkout-coupon.png) |
+        | Checkout Button | ![Checkout Button Screenshot](docs/images/testing/userstories/checkout-button.png) |
+        | Checkout Empty | ![Checkout Empty Screenshot](docs/images/testing/userstories/checkout-empty.png) |
+        | Intent Created | ![Intent Created Screenshot](docs/images/testing/userstories/checkout-intent-create.png) |
+        | Checkout Filled | ![Checkout Filled Screenshot](docs/images/testing/userstories/checkout-filled.png) |
+        | Payment Processing | ![Payment Processing Screenshot](docs/images/testing/userstories/checkout-processing.png) |
+        | Payment Authentication | ![Payment Authentication Screenshot](docs/images/testing/userstories/checkout-auth.png) |
+        | Payment Failed | ![Payment Failed Screenshot](docs/images/testing/userstories/checkout-failed.png) |
+        | Checkout Success | ![Checkout success Screenshot](docs/images/testing/userstories/checkout-success.png) |
+        | Intent/Charge Succeeded | ![Intent/Charge Succeeded Screenshot](docs/images/testing/userstories/checkout-stripe-succeeded.png) |
+        | Checkout Admin | ![Checkout Admin Screenshot](docs/images/testing/userstories/checkout-admin.png) |
+        | Checkout Admin Items | ![Checkout Admin Items](docs/images/testing/userstories/checkout-admin-items.png) |
+        | Checkout Email | ![Checkout Email Screenshot](docs/images/testing/userstories/checkout-email.png) |
+        | Profile Order | ![Profile Order Screenshot](docs/images/testing/userstories/checkout-profile.png) |
+        | Past Order Notification | ![Past Order Notification Screenshot](docs/images/testing/userstories/checkout-past-order.png) |
+        | Order History | ![Past Order Notification Screenshot](docs/images/testing/userstories/checkout-history.png) |
 
-        | _Checkout Page_ |
-        |:---------------:|
-        | ![Checkout Page Screenshot](docs/images/testing/userstories/checkout.png) |
 
 + As a **Registered User**, I want to receive a purchase confirmation email.
     + After a successful checkout, the user will receive an email confirming their order with a link to view the full order details.
@@ -643,7 +660,8 @@ I tested the appearance and responsiveness of the website across 6 different bro
 [Contents](#contents)
 
 ### UNRESOLVED
-=
+
++ **Checking out without a contact number**
 
 + **Save Info checkbox**:
     + This feature was implemented on the checkout page to allow users to have their delivery information saved to their profile.
