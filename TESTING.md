@@ -316,17 +316,27 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | ![Login Screenshot](docs/images/testing/userstories/login.png) |
         | ![Logout Screenshot](docs/images/testing/userstories/logout.png) |
 
-+ As a **Registered User**, I want to be able to easily add and remove items from my supply crate.
++ As a **Registered User**, I want to be able to easily add, update and delete items from my supply crate.
     + I have added an Add To Crate button on each supply in ```supplies.html``` which allows the user to easily add a selected quantity of the supply to their crate.
     + I have added Update/Delete buttons for each crate item in ```crate.html``` which allows the user to easily update/delete supplies in their crate.
 
-        | _Add To Crate_ |
-        |:--------------:|
-        | ![Add To Crate Screenshot](docs/images/testing/userstories/add-to-crate.png) |
+        | _Add To Crate_ | _Update/Delete_ |
+        |:--------------:|:---------------:|
+        | ![Add To Crate button Screenshot](docs/images/testing/userstories/add-to-crate.png) | ![Update/Delete button Screenshot](docs/images/testing/userstories/update-delete.png) |
 
-        | _Update/delete_ |
-        |:---------------:|
-        | ![Update/Delete Screenshot](docs/images/testing/userstories/update-delete.png) |
+    + I have simulated creating a crate for use through testing.
+
+        | _Adding to Crate_ | _Info_ | _Image_ |
+        |:--:|:------:|:-------:|
+        | Adding Item 1 | Adding 5 Banana Yazoo to crate. | ![Adding Item 1 Screenshot](docs/images/testing/userstories/add-to-crate-1.png) |
+        | Adding Item 2 | Adding 3 McVities Iced Gems 6 pack to crate. | ![Adding Item 2 Screenshot](docs/images/testing/userstories/add-to-crate-2.png) |
+        | Adding Item 3 | Added Apple Slices to crate. | ![Adding Item 3 Screenshot](docs/images/testing/userstories/add-to-crate-3.png) |
+        | Add Success Notification | Notification displayed with a preview of their current crate. | ![Add Success Notification Screenshot](docs/images/testing/userstories/add-to-crate-success-notification.png) |
+        | Update Filled | Filling out update quantity form with 5. | ![Update Filled Screenshot](docs/images/testing/userstories/update-filled.png) |
+        | Update Success | Upon clicking update the quantity updates. | ![Update Success Screenshot](docs/images/testing/userstories/update-success.png) |
+        | Update Success Notification | Notification displayed that the quantity of that supply has been updated. | ![Update Success Notification Screenshot](docs/images/testing/userstories/update-success-notification.png) |
+        | Delete Success Notification | When clicking the delete button the selected supply is removed from the crate. | ![Delete Success Notification Screenshot](docs/images/testing/userstories/delete-success-notification.png) |
+        | Delete Success | When viewing ```crate.html``` you can see Apple Slices have been removed from the crate. | ![Delete Sucess Screenshot](docs/images/testing/userstories/delete-success.png) |
 
 + As a **Registered User**, I want to be able to easily purchase my crate.
     + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
@@ -336,7 +346,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
     
         | _Checkout_ | _Info_ | _Screenshot_ |
         |:----------:|:------:|:-------:|
-        | Viewing Crate | Crate displays as intended on ```crate.html```. | ![Viewing Crate Screenshot](docs/images/testing/userstories/checkout-view-crate.png) |
+        | Viewing Crate | Crate displays as intended on ```crate.html``` (same picture from previous user story to remove redunant files). | ![Viewing Crate Screenshot](docs/images/testing/userstories/delete-success.png) |
         | Applying Coupon | Entering a invalid coupon displays an error to the user. | ![Coupon Failed Screenshot](docs/images/testing/userstories/checkout-coupon-failed.png) |
         | Applying Coupon | Entering a valid coupon applies the discount and is displayed to the user. | ![Applying Coupon Screenshot](docs/images/testing/userstories/checkout-coupon.png) |
         | Checkout Button | ```crate.html``` contains a "Secure Checkout" button which redirects users to ```checkout.html```. | ![Checkout Button Screenshot](docs/images/testing/userstories/checkout-button.png) |
@@ -384,14 +394,12 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **Registered User**, I want to be able to add a review about my experience on the site.
     + Included in the homepage is an "Add Review" button which is displayed underneath the current reviews carousel.
-    + When clicked, the user will be directed to ```review_add.html``` which contains a form that allows the user to add a review to the site.
-    + Upon submitting valid information in the Add Review form (provided in the placeholder and choosing a rating) the review will be added to the data store and displayed in the list.
 
-        | _Adding a Review_ |_Screenshot_|
-        |:-----------------:|:----------:|
-        | Empty Review Form | ![Empty Review Form Screenshot](docs/images/testing/userstories/add-review-empty.png) |
-        | Add Review | ![Add Review Screenshot](docs/images/testing/userstories/add-review.png) |
-        | Add Review Success | ![Add Review Success Screenshot](docs/images/testing/userstories/add-review-success.png) |
+        | _Adding a Review_ | _Info_ | _Screenshot_ |
+        |:-----------------:|:------:|:------------:|
+        | Empty Review Form | Upon clicking the "Add Review" button, the user will be directed to ```review_add.html``` which contains a form that allows the user to add a review to the site. | ![Empty Review Form Screenshot](docs/images/testing/userstories/add-review-empty.png) |
+        | Add Review | Entering a review and choosing a rating. | ![Add Review Screenshot](docs/images/testing/userstories/add-review.png) |
+        | Add Review Success |  Upon submitting valid information in the Add Review form (provided in the placeholder and choosing a rating) the review will be added to the data store and displayed on ```index.html``` as well as the delete review button. (This functionality is covered in the admin section as admins have permission to delete any review) | ![Add Review Success Screenshot](docs/images/testing/userstories/add-review-success.png) |
 
     + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the home page.
 
