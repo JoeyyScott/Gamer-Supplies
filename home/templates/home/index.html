@@ -23,7 +23,7 @@
                     <!-- Credit for adapted Bootstrap 5 carousel: https://getbootstrap.com/docs/5.0/components/carousel/ -->
                     <div id="review-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-inner">
-                            {% for review in reviews %}
+                        {% for review in reviews %}
                             <!-- Credit for inner carousel for loop -->
                             <div class="carousel-item h-100 p-4 {% if forloop.counter == 1 %}active{% endif %}">
                                 <p class="ratings">{{ review.rating }}</p>
@@ -48,9 +48,9 @@
                                                 <div class="modal-footer">
                                                     <div class="row w-100">
                                                         <!-- Modal buttons -->
-                                                            <div class="col-7 text-start">
-                                                                <a href="{% url 'review_delete' review.id %}" class="btn my-2">Delete <span class="d-none d-sm-inline">Review</span></a>
-                                                            </div>
+                                                        <div class="col-7 text-start">
+                                                            <a href="{% url 'review_delete' review.id %}" class="btn my-2">Delete <span class="d-none d-sm-inline">Review</span></a>
+                                                        </div>
                                                         <div class="col-5 text-end">
                                                             <a data-bs-dismiss="modal" class="btn my-2">Cancel</a>
                                                         </div>
@@ -61,7 +61,7 @@
                                     </div>
                                 {% endif %}
                             </div>
-                            {% endfor %}
+                        {% endfor %}
                         </div>
                         <!-- Carousel controls -->
                         <button class="carousel-control-prev my-auto" type="button" data-bs-target="#review-carousel" data-bs-slide="prev">
@@ -75,17 +75,17 @@
                     </div>
                 {% endif %}
                 <div class="row">
-                    <!-- Review buttons -->
-                    {% if request.user.is_authenticated %}
-                        <div class="col-{% if request.user.is_superuser %}7 text-start{% else %}12{% endif %}">
-                            <a href="{% url 'review_add' %}" class="btn my-2">Add Review</a>
-                        </div>
-                    {% endif %}
-                    {% if request.user.is_superuser %}
+                <!-- Review buttons -->
+                {% if request.user.is_authenticated %}
+                    <div class="col-{% if request.user.is_superuser %}7 text-start{% else %}12{% endif %}">
+                        <a href="{% url 'review_add' %}" class="btn my-2">Add Review</a>
+                    </div>
+                {% endif %}
+                {% if request.user.is_superuser %}
                     <div class="col-5 text-end">
                         <a href="{% url 'reviews_manage' %}" class="btn my-2">Manage <span class="d-none d-sm-inline">Reviews</span></a>
                     </div>
-                    {% endif %}
+                {% endif %}
                 </div>
                 <div class="col-12 mb-1">
                     <!-- Trigger FAQ modal -->

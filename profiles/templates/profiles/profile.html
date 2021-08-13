@@ -32,15 +32,9 @@
                 {% for order in orders %}
                     <!-- Order headers -->
                     <div class="row">
-                        <div class="col-4">
-                            <p class="my-0 highlight small">Order No.</p>
-                        </div>
-                        <div class="col-4">
-                            <p class="my-0 highlight small">Order Date</p>
-                        </div>
-                        <div class="col-4">
-                            <p class="my-0 highlight small">Order Total</p>
-                        </div>
+                        <div class="col-4"><p class="my-0 highlight small">Order No.</p></div>
+                        <div class="col-4"><p class="my-0 highlight small">Order Date</p></div>
+                        <div class="col-4"><p class="my-0 highlight small">Order Total</p></div>
                     </div>
                     <!-- Order information -->
                     <div class="row altFont">
@@ -48,43 +42,29 @@
                         <div class="col-4">
                             <p class="my-0"><a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a></p>
                         </div>
-                        <div class="col-4">
-                            <p class="my-0 small text-order">{{ order.date }}</p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <p class="small text-order">£{{ order.order_total }}</p>
-                        </div>
+                        <div class="col-4"><p class="my-0 small text-order">{{ order.date }}</p></div>
+                        <div class="col-4 text-right"><p class="small text-order">£{{ order.order_total }}</p></div>
                         <!-- Crate items headers -->
-                        <div class="col-6 text-start soffset-2">
-                            <p class="my-0 small">Supply</p>
-                        </div>
-                        <div class="col-3">
-                            <p class="my-0 small">Quantity</p>
-                        </div>
-                        <div class="col-3">
-                            <p class="my-0 small text-end">Subtotal</p>
-                        </div>
+                        <div class="col-6 text-start soffset-2"><p class="my-0 small">Supply</p></div>
+                        <div class="col-3"><p class="my-0 small">Quantity</p></div>
+                        <div class="col-3"><p class="my-0 small text-end">Subtotal</p></div>
                         <!-- Crate items -->
                         {% for item in order.crateitems.all %}
-                            <!-- Supply image and name -->
+                            <!-- Supply info -->
                             <div class="col-6">
                                 <div class="row">
                                     <div class="col-4 col-lg-3 img-supply">
                                         {% if item.supply.image %}
-                                        <img src="{{ item.supply.image.url }}" class="img-fluid rounded my-2 my-lg-1" alt="{{ supply.name }}">
+                                            <img src="{{ item.supply.image.url }}" class="img-fluid rounded my-2 my-lg-1" alt="{{ supply.name }}">
                                         {% else %}
-                                        <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded my-sm-2" alt="{{ supply.name }}">
+                                            <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded my-sm-2" alt="{{ supply.name }}">
                                         {% endif %}
                                     </div>
                                     <div class="col-8 mt-md-2 col-lg-10"><p class="my-0 text-order text-start small mt-1">{{ item.supply.name }}</p></div>
                                 </div>
                             </div>
-                            <div class="col-3 mt-md-2">
-                                <p class="my-0 text-order">{{ item.quantity }}</p>
-                            </div>
-                            <div class="col-3 mt-md-2">
-                                <p class="my-0 text-order text-end pe-1">£{{ item.supply.price | subtotal:item.quantity }}</p>
-                            </div>
+                            <div class="col-3 mt-md-2"><p class="my-0 text-order">{{ item.quantity }}</p></div>
+                            <div class="col-3 mt-md-2"><p class="my-0 text-order text-end pe-1">£{{ item.supply.price | subtotal:item.quantity }}</p></div>
                             <hr class="w-100 m-auto highlight my-1">
                         {% endfor %}
                     </div>

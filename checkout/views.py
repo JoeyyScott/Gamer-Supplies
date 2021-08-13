@@ -19,6 +19,7 @@ import stripe
 import json
 
 
+# Caches the checkout data and adds it to the intent
 @login_required
 @require_POST
 def cache_checkout_data(request):
@@ -39,7 +40,7 @@ def cache_checkout_data(request):
 
 @login_required
 def checkout(request):
-    # Handle requests to the checkout page
+    # See README.md for more details to ensure fast load times
     stripe_public_key_gs = settings.STRIPE_PUBLIC_KEY_GS
     stripe_secret_key_gs = settings.STRIPE_SECRET_KEY_GS
 
@@ -108,7 +109,6 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # If the user is logged in, pull details from profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

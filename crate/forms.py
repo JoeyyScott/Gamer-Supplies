@@ -7,6 +7,7 @@ from django import forms
 class FormCoupon(forms.ModelForm):
 
     class Meta:
+        # Setup form structure
         model = Coupon
         fields = ['code', 'amount']
         widgets = {
@@ -19,6 +20,7 @@ class FormCoupon(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        # Apply Form Validation and style
         for field in self.fields:
             if field == 'code':
                 self.fields[field].widget.attrs[
@@ -32,7 +34,7 @@ class FormCoupon(forms.ModelForm):
         self.fields['code'].label = False
         self.fields['amount'].label = False
 
-    # Credit for adapted check of amount value
+    # Credit for adapted check amount value - see README.md for more details
     def clean_amount(self):
         amount = self.cleaned_data['amount']
         if amount < 1:

@@ -10,7 +10,7 @@
             <div class="col-12"><h1 class="text-center">Your crate</h1></div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 gamerStyle py-2">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 py-2 gamerStyle">
                 <div class="col-md-8 offset-md-2">
                     {% if crate_items %}
                         <!-- Crate summary information -->
@@ -58,9 +58,9 @@
                                     <div class="row">
                                         <div class="col-8 col-lg-4 img-supply">
                                             {% if item.supply.image %}
-                                            <img src="{{ item.supply.image.url }}" class="img-fluid rounded my-2" alt="{{ supply.name }}">
+                                                <img src="{{ item.supply.image.url }}" class="img-fluid rounded my-2" alt="{{ supply.name }}">
                                             {% else %}
-                                            <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded my-2" alt="{{ supply.name }}">
+                                                <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded my-2" alt="{{ supply.name }}">
                                             {% endif %}
                                         </div>
                                     </div>
@@ -92,14 +92,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                    <!-- <span class="row mt-1"> -->
-                                        <!-- <span class="text-start col-7">                     -->
                                             <button type="submit" class="btn link-update mt-1"><small>Update</small></button>
-                                        <!-- </span> -->
-                                        <!-- <span class="text-end col-5"> -->
                                             <a class="btn link-delete mt-1" id="remove_{{ item.item_id }}"><small>Delete</small></a>
-                                        <!-- </span> -->
-                                    <!-- </span> -->
                                         </form>            
                                     </div>
                                 </div>
@@ -120,6 +114,7 @@
         </div>
     </div>
 {% endblock %}
+
 {% block postloadjs %}
     {{ block.super }}
     <script src="{% static 'supplies/js/quantity-input.js' %}"></script>

@@ -32,6 +32,17 @@ class FormSupply(forms.ModelForm):
         categories = Category.objects.all()
         names = [(c.id, c.get_name()) for c in categories]
 
+        # Setting up form for the superuser
         self.fields['category'].choices = names
+        self.fields['name'].widget.attrs['autofocus'] = True
         for field_name, field in self.fields.items():
+            if field == 'price':
+                self.fields[field].widget.attrs['min'] = 0.0099
             field.widget.attrs['class'] = 'form-input'
+
+    # Credit for adapted check amount value - see README.md for more details
+    def clean_price(self):
+        price = self.cleaned_data['price']
+        if price < 0.0099:
+            raise forms.ValidationError("Amount cannot be less than 0.01")
+        return price

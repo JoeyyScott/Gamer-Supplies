@@ -362,6 +362,13 @@ Review Model (Custom model #2 for Distinction performance)
 
 ## Included in **checkout.html** is:
 
++ **Note from ```views.py``` in the checkout app**: I included a breakdown of this function here to explain this process as throughout development I experienced orders being created twice with too many comments/print statements in the checkout code.
+    + When the function is called the first check is whether or not data is being posted to the page in the case of a checkout attempt.
+        + If this is not the case it will:
+            + See if the user has information attached to their profile and prefill it in the form.
+            + Collect the list of supplies in the user's crate for the checkout summary section below.
+        + If this is the case it would mean the user has clicked the "Secure Checkout" button, the functionality of which is detailed below.
+
 **Checkout summary and contents**:
 + If the crate is empty they will be redirected to ```supplies.html``` with a message displaying that their crate is empty.
 + Included in the checkout summary is the amount of supplies in the crate and a list of each item within the crate.
@@ -381,7 +388,7 @@ Review Model (Custom model #2 for Distinction performance)
 **Form buttons**:
 + There are two buttons which submit the form and provide a relevant link to the user below payment information. These buttons function as follows:
     + Adjust Crate - ```crate.html```
-    + Secure checkout - Submits the form and verifies it through Stripe:
+    + Secure checkout - Submits the form, checks if it is valid and verifies through Stripe performing one of two actions:
         + If successful the user will be redirected to ```checkout_success.html```
             + This page is very similar to the checkout summary page except that there will be an order number and only a singular button is present.
             + If the user is coming from their profile they will see
@@ -485,6 +492,7 @@ Included in the **Security Features** are:
 + With more experience with Django and time on the project I would have liked to experiment with a multitude of coupon features:
     + Allowing coupons to only be used through a set period of time or on specific orders.
     + Generate and email a discount coupon code for the proposed subscription feature above.
+    + Allowing superusers to choose a coupon type (percentage, static or only for a specific price range/category/brand).
 
 #### [Back to top](#contents)
 

@@ -18,9 +18,7 @@
                     <div class="input-group">
                         <input class="form-control text-left altFont" type="text" name="q" placeholder="Find a Supply"
                             aria-label="Search Button" aria-describedby="search-button">
-                        <button class="btn" type="submit" id="search-button">
-                            <i class="fas fa-search"></i>
-                        </button>
+                        <button class="btn" type="submit" id="search-button"><i class="fas fa-search"></i></button>
                     </div>
                 </form>
             </div>
@@ -72,14 +70,11 @@
         {% endwith %}
         <!-- Search Results -->
         {% if search_term or current_categories == 'None_None' %}
-        <div class="p-4 text-center">
-            <p class="m-auto altFont gamerStyle">
-                Your search returned {{ supplies|length }} supplies for
-                "<span class="highlight">{{ search_term }}</span>".
-                <span class="small highlight2 altFont"><br>
-                <a href="{% url 'supplies' %}">Clear Search</a></span>
-            </p>
-        </div>
+            <div class="p-4 text-center">
+                <p class="m-auto altFont gamerStyle">Your search returned {{ supplies|length }} supplies for "<span class="highlight">{{ search_term }}</span>".
+                    <span class="small highlight2 altFont"><br><a href="{% url 'supplies' %}">Clear Search</a></span>
+                </p>
+            </div>
         {% endif %}
         <div class="row justify-content-center col-9 offset-1 col-md-10 offset-md-1">
             {% for supply in supplies %}
@@ -89,9 +84,9 @@
                         <!-- Supply Image -->
                         <div class="w-50 mx-auto">
                             {% if supply.image %}
-                            <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img" alt="{{ supply.name }}">
+                                <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img" alt="{{ supply.name }}">
                             {% else %}
-                            <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img" alt="{{ supply.name }}">
+                                <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img" alt="{{ supply.name }}">
                             {% endif %}
                         </div>
                         <!-- Supply Info -->
@@ -112,15 +107,11 @@
                                             <div class="form-group w-75 mx-auto mb-1">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <button class="qty-dec btn rounded-0" data-item_id="{{ supply.id }}" id="qty-dec_{{ supply.id }}">
-                                                            <i class="fas fa-minus"></i>
-                                                        </button>
+                                                        <button class="qty-dec btn rounded-0" data-item_id="{{ supply.id }}" id="qty-dec_{{ supply.id }}"><i class="fas fa-minus"></i></button>
                                                     </div>
                                                     <input class="form-control qty-input text-center" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ supply.id }}" id="id_qty_{{ supply.id }}" required>
                                                     <div class="input-group-append">
-                                                        <button class="qty-inc btn rounded-0" data-item_id="{{ supply.id }}" id="qty-inc_{{ supply.id }}">
-                                                            <i class="fas fa-plus"></i>
-                                                        </button>
+                                                        <button class="qty-inc btn rounded-0" data-item_id="{{ supply.id }}" id="qty-inc_{{ supply.id }}"><i class="fas fa-plus"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,20 +133,20 @@
                                                 <h2 class="modal-title w-100 text-center" id="supply-delete-label-{{ supply.id }}">Delete Supply</h2>
                                             </div>
                                             <div class="modal-body">
-                                                    <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>
-                                                    <p class="altFont">The contents of the supply are as follows:</p>
-                                                    <p class="altFont"><span class="highlight">Name: </span>{{ supply.name }}</p>
-                                                    <div class="w-50 mx-auto">
-                                                        {% if supply.image %}
+                                                <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>
+                                                <p class="altFont">The contents of the supply are as follows:</p>
+                                                <p class="altFont"><span class="highlight">Name: </span>{{ supply.name }}</p>
+                                                <div class="w-50 mx-auto">
+                                                    {% if supply.image %}
                                                         <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
-                                                        {% else %}
+                                                    {% else %}
                                                         <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
-                                                        {% endif %}
-                                                    </div>
-                                                    <p class="altFont"><span class="highlight">Description: </span>{{ supply.description }}</p>
-                                                    <p class="altFont"><span class="highlight">Size: </span>{{ supply.size }}</p>
-                                                    <p class="altFont"><span class="highlight">Brand: </span>{{ supply.brand }}</p>
-                                                    <p class="altFont"><span class="highlight">Price: </span>£{{ supply.price }}</p>
+                                                    {% endif %}
+                                                </div>
+                                                <p class="altFont"><span class="highlight">Description: </span>{{ supply.description }}</p>
+                                                <p class="altFont"><span class="highlight">Size: </span>{{ supply.size }}</p>
+                                                <p class="altFont"><span class="highlight">Brand: </span>{{ supply.brand }}</p>
+                                                <p class="altFont"><span class="highlight">Price: </span>£{{ supply.price }}</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <div class="row w-100">
@@ -189,16 +180,12 @@
     <!-- Add Supply (admin) and back to top buttons -->
     <div class="container-buttons row">
         <div id="trigger-btt" class="hidden col-12 text-end">
-            <a class="btn-btt h-100 mt-2">
-                <img src={% static "images/back-to-top.png" %} class="img-btn-supplies" alt="Back to Top">
-            </a>	
+            <a class="btn-btt h-100 mt-2"><img src={% static "images/back-to-top.png" %} class="img-btn-supplies" alt="Back to Top"></a>	
         </div>
         <br>
         {% if request.user.is_superuser %}
             <div class="col-12 text-end">
-                <a class="pb-1" href="{% url 'supply_add' %}">
-                    <img src={% static "images/add-supply.png" %} class="img-btn-supplies mt-3" alt="Add Supply">
-                </a>
+                <a class="pb-1" href="{% url 'supply_add' %}"><img src={% static "images/add-supply.png" %} class="img-btn-supplies mt-3" alt="Add Supply"></a>
             </div>
         {% endif %}
     </div>
