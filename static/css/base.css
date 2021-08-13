@@ -51,6 +51,11 @@ p { color: #eee6e6; margin-bottom: 0; }
 .navbar-toggler i, .nav-link, .text-bag { color: #ffd700; }
 .navbar-brand { padding: 0; }
 .nav-link:hover, .nav-link:active, .nav-link:focus, .btn:hover, .btn:active, .btn:focus { color: #141414; }
+.nav-link.active, .nav-link:hover, .nav-tabs .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover { border: none; width: 100%; }
+.dropdown-menu > a:hover, .dropdown > .dropdown-menu > a:focus,
+.nav-link.active, .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover, .title-sort.active, .link-sort:hover {
+    background-color: #ffd700; color: #4169e1; text-shadow: 2px 2px #eee6e6; border-bottom: 0;
+}
 /* Footer */
 .container-footer { background-color: #4169e1; box-shadow: 0 -5px 10px #141414; }
 footer i, .text-footer { font-size: 1.6rem; }
@@ -68,8 +73,7 @@ footer i, .text-footer { font-size: 1.6rem; }
 /* Supplies */
 .title-sort:hover, .title-sort:focus { color: #ffd700; border: none; }
 ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
-.nav-link.active, .nav-link:hover, .nav-tabs .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover { border: none; width: 100%; }
-.nav-link.active, .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover, .title-sort.active, .link-sort:hover { background-color: #ffd700; color: #4169e1; text-shadow: 2px 2px #eee6e6; border-bottom: 0; }
+.nav-item > .nav-link:hover { color: #4169e1; }
 
 /* Modal */
 .modal { z-index: 99999999999; }

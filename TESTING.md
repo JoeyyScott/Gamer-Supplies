@@ -36,9 +36,9 @@ I used [w3.org's validator](https://validator.w3.org) for my HTML validation che
     + **toast-error.html**
     + **toast-info.html**
 
-    + Note: I used allauth to provide my account system and this came with a variety of templates of which most I have only changed the inner content block so they use my base style. I have been unable to access them templates outside of ones used in the registration process which I feel is due to the functionality not being implemented in my project.
+    + Note: I used allauth to provide my account system and this came with a variety of templates most of which I have only changed the inner content block so they use my base style. I have been unable to access these templates outside of those used in the registration process which I feel is due to the functionality not being implemented in my project.
 
-    + As such I have tested all the ```.html``` files used through the account registration process and included a list of this below
+    + As such I have tested all the ```.html``` files used through the account registration process and included a list of these below:
         + **login.html**
         + **register.html**
         + **verification_sent.html**
@@ -132,7 +132,7 @@ I used [PEP8 online](http://pep8online.com/) to test all custom Python code agai
 
 Responsiveness (website layout)
 
-+ AllAuth templates has been included as a directory as there are many files in here and it would make the table too big.
++ AllAuth templates has been included as a directory as there are a considerable amount of files in it and it would make the table too big.
 
 |              All Pages               | Samsung 9+ | Galaxy S5  | iPhone 6/7/8 | iPhone X | iPad | iPad Pro | Desktop 1024px | Desktop >1200px |
 |:------------------------------------:|------------|------------|--------------|----------|------|----------|----------------|-----------------|
@@ -353,32 +353,33 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 + As a **Registered User**, I want to be able to easily purchase my crate.
     + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
-    + I have created a crate in the previous stories which I will use to display ```crate.html``` and the checkout process.
+    + I have created a crate in the previous story which I will use to display ```crate.html``` and the checkout process.
     + I completed a test checkout using the account made during the registration testing using the temp email from [Temp Mail](https://temp-mail.org/en/).
     + This was done to provide relevant screenshots throughout the process simulating a first time user becoming a registered user and checking out.
     
         | _Checkout_ | _Info_ | _Screenshot_ |
         |:----------:|:------:|:-------:|
-        | Viewing Crate | Crate displays as intended on ```crate.html``` (same picture from previous user story to remove redunant files). | ![Viewing Crate Screenshot](docs/images/testing/userstories/delete-success.png) |
+        | Viewing Crate | Crate displays as intended on ```crate.html``` (same picture from previous user story to remove redundant files). | ![Viewing Crate Screenshot](docs/images/testing/userstories/delete-success.png) |
         | Applying Coupon | Entering a invalid coupon displays an error to the user. | ![Coupon Failed Screenshot](docs/images/testing/userstories/checkout-coupon-failed.png) |
         | Applying Coupon | Entering a valid coupon applies the discount and is displayed to the user. | ![Applying Coupon Screenshot](docs/images/testing/userstories/checkout-coupon.png) |
         | Checkout Button | ```crate.html``` contains a "Secure Checkout" button which redirects users to ```checkout.html```. | ![Checkout Button Screenshot](docs/images/testing/userstories/checkout-button.png) |
         | Checkout Empty | On ```checkout.html``` the user can see a preview of their crate with a form containing placeholders to fill out their delivery and payment information. | ![Checkout Empty Screenshot](docs/images/testing/userstories/checkout-empty.png) |
         | Intent Created | Stripe payment intent created successfully. | ![Intent Created Screenshot](docs/images/testing/userstories/checkout-intent-create.png) |
-        | Checkout Filled | Filled checkout form with save info checked. | ![Checkout Filled Screenshot](docs/images/testing/userstories/checkout-filled.png) |
-        | Payment Processing | Upon clicking "Complete Order" the form and buttons are disabled and a loading overlay shown to inform the user of what is happening. | ![Payment Processing Screenshot](docs/images/testing/userstories/checkout-processing.png) |
+        | Checkout Filled | Filled checkout form with ```save-info``` checked. | ![Checkout Filled Screenshot](docs/images/testing/userstories/checkout-filled.png) |
+        | Payment Processing | Upon clicking "Complete Order" the form and buttons are disabled and a loading overlay is shown to inform the user of what is happening. | ![Payment Processing Screenshot](docs/images/testing/userstories/checkout-processing.png) |
         | Payment Authentication | ADMIN: I included this to test errors when checking out | ![Payment Authentication Screenshot](docs/images/testing/userstories/checkout-auth.png) |
         | Payment Failed | When a payment fails the user is informed gracefully with their form intact. | ![Payment Failed Screenshot](docs/images/testing/userstories/checkout-failed.png) |
-        | Checkout Success | When a payment succeeds the user is redirected to ```checkout_success.html``` with details of their purchase and a noficiation informing them of a checkout confirmation email. | ![Checkout success Screenshot](docs/images/testing/userstories/checkout-success.png) |
+        | Checkout Success | When a payment succeeds the user is redirected to ```checkout_success.html``` with details of their purchase and a notification informing them of a checkout confirmation email. | ![Checkout success Screenshot](docs/images/testing/userstories/checkout-success.png) |
         | Intent/Charge Succeeded | Stripe ```payment_intent.succeeded``` and ```charge.succeeded``` have both succeeded as shown here. I have included all the events sent to the webhook for authentication to provide real-time proof of this process functioning as intended. | ![Intent/Charge Succeeded Screenshot](docs/images/testing/userstories/checkout-stripe-succeeded.png) |
         | Charge Amount | Stripe ```charge.succeeded``` displays the correct amount. | ![Charge Amount Screenshot](docs/images/testing/userstories/checkout-stripe-charge-amount.png) |
         | Payment Intent Succeeded Amount | Stripe ```payment_intent.succeeded``` displays the correct amount. | ![Intent Amount Screenshot](docs/images/testing/userstories/checkout-stripe-intent-amount.png) |
         | Checkout Admin | The completed order is created successfully in the admin panel under "Orders". | ![Checkout Admin Screenshot](docs/images/testing/userstories/checkout-admin.png) |
+        | Checkout Admin Details | The order details are stored correctly. | ![Checkout Admin Details Screenshot](docs/images/testing/userstories/checkout-admin-details.png) |
         | Checkout Admin Items | The order contains the correct items purchased. | ![Checkout Admin Items](docs/images/testing/userstories/checkout-admin-items.png) |
 
 + As a **Registered User**, I want to receive a purchase confirmation email.
-    + This testing is using the same information for real time proof through my testing.
-    + After a successful checkout, the user will be directed to ```checkout_success.html``` which will display all their order details and receive an email confirming it with a link to view the full order details.
+    + This process is using the same information for real time proof through my testing.
+    + After a successful checkout, the user will be directed to ```checkout_success.html``` which will display all their order details and will receive an email confirming it with a link to view the full order details.
 
         | _Email Confirmation_ |
         |:--------------------:|
@@ -391,7 +392,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:---------------:|:------:|:-------:|
         | Profile Order | Included in ```profile.html``` is a section which displays the user's previous orders and the items in them. | ![Profile Order History Screenshot](docs/images/testing/userstories/checkout-profile.png) |
         | Order History | When clicking an order number in ```profile.html``` they are redirected to a modified version of ```checkout_success.html``` which displays a rundown of all information associated with the order including if a coupon was applied. | ![Order History Screenshot](docs/images/testing/userstories/checkout-history.png) |
-        | Past Order Notification | The user is informed that is simply a record of their previous purchase and not a new purchase. | ![Past Order Notification Screenshot](docs/images/testing/userstories/checkout-past-order.png) |
+        | Past Order Notification | The user is informed that it is simply a record of their previous purchase and not a new purchase. | ![Past Order Notification Screenshot](docs/images/testing/userstories/checkout-past-order.png) |
 
 + As a **Registered User**, I want to be able to easily update my contact and delivery information.
     + Included in the checkout form is a checkbox which allows users to save the checkout delivery information to their profile for quicker future checkouts.
@@ -403,7 +404,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | Information Prefilled | The form on ```profile.html``` is prefilled from the previous checkout. | ![Information Prefilled Screenshot](docs/images/testing/userstories/information-prefilled.png) |
         | Information Filled | The form filled out with updated information. | ![Information Filled Screenshot](docs/images/testing/userstories/information-filled.png) |
         | Information Success | Upon submitting the form the user will be notified of their information being updated successfully and kept on ```profile.html``` | ![Information Success Screenshot](docs/images/testing/userstories/information-success.png) |
-        | Information New | When creating a crate and navigating to ```checkout.html``` again the new information is displayed. | ![Information New Screenshot](docs/images/testing/userstories/information-new.png) |
+        | New Information | When creating a crate and navigating to ```checkout.html``` again the new information is displayed. | ![New Information Screenshot](docs/images/testing/userstories/information-new.png) |
 
 + As a **Registered User**, I want to be able to add a review about my experience on the site.
     + Included in the homepage is an "Add Review" button which is displayed underneath the current reviews carousel.
@@ -412,7 +413,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:-----------------:|:------:|:------------:|
         | Empty Review Form | Upon clicking the "Add Review" button, the user will be directed to ```review_add.html``` which contains a form that allows the user to add a review to the site. | ![Empty Review Form Screenshot](docs/images/testing/userstories/add-review-empty.png) |
         | Add Review | Entering a review and choosing a rating. | ![Add Review Screenshot](docs/images/testing/userstories/add-review.png) |
-        | Add Review Success |  Upon submitting valid information in the Add Review form (provided in the placeholder and choosing a rating) the review will be added to the data store and displayed on ```index.html``` as well as the delete review button. (This functionality is covered in the admin section as admins have permission to delete any review) | ![Add Review Success Screenshot](docs/images/testing/userstories/add-review-success.png) |
+        | Add Review Success |  Upon submitting valid information in the Add Review form (provided in the placeholder and choosing a rating) the review will be added to the data store and displayed on ```index.html``` as well as the delete review button (this functionality is covered in the admin section as admins have permission to delete any review). | ![Add Review Success Screenshot](docs/images/testing/userstories/add-review-success.png) |
 
     + Upon clicking the cancel button the data will be untouched, the form will close and the user returned to the home page.
 
@@ -582,6 +583,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         + Access the django admin panel.
         + View and use the Manage Reviews button on the homepage.
         + Access manage reviews page and able to delete reviews.
+        + Access manage coupons page and able to add and delete coupons.
         + Access add, edit or delete supply buttons on the supplies page.
         + Access Add Supply page from main navigation bar.
 
@@ -592,7 +594,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + A user successfully adds a review.
     + A user applies a coupon (success and error).
     + A user deletes a review they have posted.
-    + A user tries to access or use an admin only feature.
+    + A registered user tries to access or use an admin only feature.
     + An admin adds/edits/deletes a supply.
     + An admin adds or deletes a review.
     + An admin adds or deletes a coupon.
