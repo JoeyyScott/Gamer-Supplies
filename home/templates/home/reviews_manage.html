@@ -18,7 +18,7 @@
                             <p><span class="highlight mb-2 me-1">Added by:</span> <span class="altFont">{{ review.added_by|title }}</span></p>
                             <a class="btn my-2" data-bs-toggle="modal" data-bs-target="#delete-{{ review.id }}"><i class="fas fa-trash"></i> Delete Review</a>
                             <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
-                            <div class="modal fade" id="delete-{{ review.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="supplyDeleteLabel" aria-hidden="true">
+                            <div class="modal fade" id="delete-{{ review.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="review-manage-delete-label-{{ review.id }}" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content gamerStyle">
                                         <div class="modal-header">

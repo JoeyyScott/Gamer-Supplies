@@ -29,7 +29,7 @@
                                 {% if request.user == review.added_by or request.user.is_superuser %}
                                     <a class="btn my-2" data-bs-toggle="modal" data-bs-target="#delete-{{ review.id }}"><i class="fas fa-trash"></i> Delete Review</a>
                                     <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
-                                    <div class="modal fade" id="delete-{{ review.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="supplyDeleteLabel" aria-hidden="true">
+                                    <div class="modal fade" id="delete-{{ review.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="review-home-delete-label-{{ review.id }}" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content gamerStyle">
                                                 <div class="modal-header">
