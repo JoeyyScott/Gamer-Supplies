@@ -401,7 +401,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 #### Registered User
 
 + As a **Registered User**, I want to be able to easily login and logout of my account.
-    + I have included a link in the navigation bar to the login page and when logged in this will see a logout link.
+    + I have included a link in the navigation bar to the login page and when logged in this will become a logout link.
 
         | _Login/Logout_ |
         |:--------------:|
@@ -822,7 +822,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
         | _Payment Intent Bug_ |
         |:--------------------:|
-        | ![Payment Intent Bug Screenshot](docs/images/testing/bug-date-2.png) |
+        | ![Payment Intent Bug Screenshot](docs/images/testing/payment-intent-bug.png) |
 
     + I came up with a few ideas on how to solve this bug:
         + **Option 1**: Modify the Order model to require contact number.
