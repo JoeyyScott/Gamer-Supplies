@@ -58,8 +58,8 @@
                     {% if request.user.is_authenticated %}
                         <a class="header-links p-0" href="{% url 'view_crate' %}">
                             <div class="text-center">
-                                <i class="fas fa-shopping-bag"></i>
-                                <p class="my-0 text-bag">{% if total %}£{{ total|floatformat:2 }}{% else %}£0.00{% endif %}</p>
+                                <i class="fas fa-box"></i>
+                                <p class="my-0 text-crate">{% if total %}£{{ total|floatformat:2 }}{% else %}£0.00{% endif %}</p>
                             </div>
                         </a>
                     {% endif %}

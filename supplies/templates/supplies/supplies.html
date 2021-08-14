@@ -92,86 +92,84 @@
                         <!-- Supply Info -->
                         <div class="card-title w-100 highlight">{{ supply.name }}</div>
                         <p class="card-text altFont">{{ supply.description }}</p>
-                        <div class="card-buttons">
-                            <p class="card-text altFont"> <span class="highlight">Size:</span> {{ supply.size }}</p>
-                            <p class="card-text altFont"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
-                            <p class="card-text text-price highlight">Price: £{{ supply.price }}</p>
-                            <!-- Buttons -->
-                            {% if request.user.is_authenticated %}
-                                <!-- Add to Crate Button -->
-                                <form class="form" action="{% url 'add_to_crate' supply.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <div class="form-row">
-                                        <div class="col-12">
-                                            <p class="highlight">Quantity:</p>
-                                            <div class="form-group w-75 mx-auto mb-1">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="qty-dec btn rounded-0" data-item_id="{{ supply.id }}" id="qty-dec_{{ supply.id }}"><i class="fas fa-minus"></i></button>
-                                                    </div>
-                                                    <input class="form-control qty-input text-center" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ supply.id }}" id="id_qty_{{ supply.id }}" required>
-                                                    <div class="input-group-append">
-                                                        <button class="qty-inc btn rounded-0" data-item_id="{{ supply.id }}" id="qty-inc_{{ supply.id }}"><i class="fas fa-plus"></i></button>
-                                                    </div>
+                        <p class="card-text altFont"> <span class="highlight">Size:</span> {{ supply.size }}</p>
+                        <p class="card-text altFont"> <span class="highlight">Brand:</span> {{ supply.brand }}</p>
+                        <p class="card-text text-price highlight">Price: £{{ supply.price }}</p>
+                        <!-- Buttons -->
+                        {% if request.user.is_authenticated %}
+                            <!-- Add to Crate Button -->
+                            <form class="form" action="{% url 'add_to_crate' supply.id %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <p class="highlight">Quantity:</p>
+                                        <div class="form-group w-75 mx-auto mb-1">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="qty-dec btn rounded-0" data-item_id="{{ supply.id }}" id="qty-dec_{{ supply.id }}"><i class="fas fa-minus"></i></button>
+                                                </div>
+                                                <input class="form-control qty-input text-center" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ supply.id }}" id="id_qty_{{ supply.id }}" required>
+                                                <div class="input-group-append">
+                                                    <button class="qty-inc btn rounded-0" data-item_id="{{ supply.id }}" id="qty-inc_{{ supply.id }}"><i class="fas fa-plus"></i></button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12"><button type="submit" class="btn btn-lg p-1"><i class="fas fa-box-open"></i> Add to Crate</button></div>
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </div>
-                                </form>
-                            {% if request.user.is_superuser %}
-                                <!-- Admin buttons -->
-                                <a class="btn solid small mx-1 my-1" href="{% url 'supply_edit' supply.id %}"><i class="fas fa-edit p-1"></i></a>
-                                <!-- Trigger delete modal -->
-                                <a class="btn solid small mx-1 my-1" data-bs-toggle="modal" data-bs-target="#delete-{{ supply.id }}"><i class="fas fa-trash p-1"></i></a>
-                                <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
-                                <div class="modal fade" id="delete-{{ supply.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="supply-delete-label-{{ supply.id }}" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content gamerStyle">
-                                            <div class="modal-header">
-                                                <h2 class="modal-title w-100 text-center" id="supply-delete-label-{{ supply.id }}">Delete Supply</h2>
+                                    <div class="col-12"><button type="submit" class="btn btn-lg p-1"><i class="fas fa-box-open"></i> Add to Crate</button></div>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </div>
+                            </form>
+                        {% if request.user.is_superuser %}
+                            <!-- Admin buttons -->
+                            <a class="btn solid small mx-1 my-1" href="{% url 'supply_edit' supply.id %}"><i class="fas fa-edit p-1"></i></a>
+                            <!-- Trigger delete modal -->
+                            <a class="btn solid small mx-1 my-1" data-bs-toggle="modal" data-bs-target="#delete-{{ supply.id }}"><i class="fas fa-trash p-1"></i></a>
+                            <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
+                            <div class="modal fade" id="delete-{{ supply.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="supply-delete-label-{{ supply.id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content gamerStyle">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title w-100 text-center" id="supply-delete-label-{{ supply.id }}">Delete Supply</h2>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>
+                                            <p class="altFont">The contents of the supply are as follows:</p>
+                                            <p class="altFont"><span class="highlight">Name: </span>{{ supply.name }}</p>
+                                            <div class="w-50 mx-auto">
+                                                {% if supply.image %}
+                                                    <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
+                                                {% else %}
+                                                    <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
+                                                {% endif %}
                                             </div>
-                                            <div class="modal-body">
-                                                <p class="altFont">Are you sure you want to delete supply <span class="highlight">{{ supply.name }}</span>?</p>
-                                                <p class="altFont">The contents of the supply are as follows:</p>
-                                                <p class="altFont"><span class="highlight">Name: </span>{{ supply.name }}</p>
-                                                <div class="w-50 mx-auto">
-                                                    {% if supply.image %}
-                                                        <img src="{{ supply.image.url }}" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
-                                                    {% else %}
-                                                        <img src="{{ MEDIA_URL }}noimage.png" class="img-fluid rounded supply-img my-1" alt="{{ supply.name }}">
-                                                    {% endif %}
+                                            <p class="altFont"><span class="highlight">Description: </span>{{ supply.description }}</p>
+                                            <p class="altFont"><span class="highlight">Size: </span>{{ supply.size }}</p>
+                                            <p class="altFont"><span class="highlight">Brand: </span>{{ supply.brand }}</p>
+                                            <p class="altFont"><span class="highlight">Price: </span>£{{ supply.price }}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="row w-100">
+                                                <!-- Modal buttons -->
+                                                <div class="col-7 text-start">
+                                                    <a href="{% url 'supply_delete' supply.id %}" class="btn my-2">Delete <span class="d-none d-sm-inline">Supply</span></a>
                                                 </div>
-                                                <p class="altFont"><span class="highlight">Description: </span>{{ supply.description }}</p>
-                                                <p class="altFont"><span class="highlight">Size: </span>{{ supply.size }}</p>
-                                                <p class="altFont"><span class="highlight">Brand: </span>{{ supply.brand }}</p>
-                                                <p class="altFont"><span class="highlight">Price: </span>£{{ supply.price }}</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <div class="row w-100">
-                                                    <!-- Modal buttons -->
-                                                    <div class="col-7 text-start">
-                                                        <a href="{% url 'supply_delete' supply.id %}" class="btn my-2">Delete <span class="d-none d-sm-inline">Supply</span></a>
-                                                    </div>
-                                                    <div class="col-5 text-end">
-                                                        <a data-bs-dismiss="modal" class="btn my-2">Cancel</a>
-                                                    </div>
+                                                <div class="col-5 text-end">
+                                                    <a data-bs-dismiss="modal" class="btn my-2">Cancel</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            {% endif %}
-                            {% else %}
-                                <!-- Login/Sign Up Buttons -->
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="my-0 small altFont"><a class="highlight" href="{% url 'account_signup' %}">Register</a> or <a class="highlight" href="{% url 'account_login' %}">Login</a> to add your crate</p>          
-                                    </div>
+                            </div>
+                        {% endif %}
+                        {% else %}
+                            <!-- Login/Sign Up Buttons -->
+                            <div class="row">
+                                <div class="col">
+                                    <p class="my-0 small altFont"><a class="highlight" href="{% url 'account_signup' %}">Register</a> or <a class="highlight" href="{% url 'account_login' %}">Login</a> to add your crate</p>          
                                 </div>
-                            {% endif %}
-                        </div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

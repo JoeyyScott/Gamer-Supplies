@@ -120,6 +120,14 @@ I used [JSHint](https://jshint.com) to check the javascript files in my project 
             |:------------------:|
             | ![Stripe Elements Validation](docs/images/testing/stripe-elements.png) |
 
+I used [JSONLint](https://jsonlint.com/) to test the two fixture files used to generate the data store.
+
++ Found no errors in either ```categories.json``` or ```supplies.json```.
+
+    | _Category_ | _Supplies_ |
+    |:---------:|:------------:|
+    | (```categories.json```) | (```supplies.json```) |
+    | ![Categories Validation](docs/images/testing/testing-categories.png) | ![Supplies Validation](docs/images/testing/testing-supplies.png) |
 
 I used [PEP8 online](http://pep8online.com/) to test all custom Python code in my project against PEP8 standards.
 
@@ -871,6 +879,14 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + I have tried applying this fix and numerous others which I have found through my investigative process.
         + Everything I have found leads me to believe it is caused somewhere in the webhook handler.
         + As mentioned above and in the README.md credits the full stack frameworks [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project provided the base for this functionality as I am very inexperienced with it.
-        + Due to insufficient experience with Stripe I have opted to leave this bug as unresolved and to state it here in my testing.
+        + Due to insufficient experience with Stripe I have opted to leave this bug unresolved and state it here in my testing.
+
++ **Checkout Success**:
+    + There is a security issue which I felt needed to be stated in the testing.
+        + If a user obtains an order number that is not associated with their account and uses it to navigate to the checkout success link they will be presented with a checkout summary for the user who the order number belongs to.
+            + It also creates an instance of the order within the malicious user's profile but not within the admin as the webhook is untouched in this instance.
+            + This allows the malicious user to potentially gain another user's details.
+    + To fix this would require considerably more Django experience than I have to check who was the making the specific request as currently it only checks if a user is logged in.
+        + As such I have also opted to leave this bug unresolved and state it here in my testing.
 
 [Contents](#contents)

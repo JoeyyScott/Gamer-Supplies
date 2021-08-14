@@ -4,7 +4,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* Core Styling */
 .gamerStyle { background-color: #4169e1; border-bottom: 10px solid #ffd700; border-top: 10px solid #ffd700; }
-
 .form-supply-manage label,
 .highlight { color: #ffd700; text-shadow: 2px 2px #141414; }
 .altFont { font-family: 'Salsa', cursive; }
@@ -43,12 +42,12 @@ p { color: #eee6e6; margin-bottom: 0; }
 
 /* Nav */
 .logo { height: 8vh; }
-.text-menu, .text-bag { color: #ffd700; }
+.text-menu, .text-crate { color: #ffd700; }
 .navbar { background-color: #4169e1; box-shadow: 0 5px 10px #141414; }
 .navbar-nav { text-align: right; padding-right: 5vw; }
 .navbar-toggler { padding: 0; font-size: 1rem; }
 .navbar-toggler:focus { outline: none; box-shadow: none; }
-.navbar-toggler i, .nav-link, .text-bag { color: #ffd700; }
+.navbar-toggler i, .nav-link, .text-crate { color: #ffd700; }
 .navbar-brand { padding: 0; }
 .nav-link:hover, .nav-link:active, .nav-link:focus, .btn:hover, .btn:active, .btn:focus { color: #141414; }
 .nav-link.active, .nav-link:hover, .nav-tabs .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover { border: none; width: 100%; }
@@ -135,8 +134,6 @@ ul { padding: 0 1rem 0 0; list-style: none; text-align: right; }
 /* Credit for w3schools: Remove arrows/spinners on Chrome, Safari, Opera, Edge and Firefox */
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 input[type=number] { -moz-appearance: textfield; }
-
-/* .card-buttons { position: absolute; bottom: 1%; } */
 
 /* -------------------------------- Media Queries */
 /* For medium screens */

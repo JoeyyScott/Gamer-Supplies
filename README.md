@@ -126,7 +126,7 @@ Using a combination of [coolors.co](https://coolors.co/) and [Accessible Color G
 - ![#eee6e6](https://via.placeholder.com/15/eee6e6/000000?text=+) `#eee6e6`: Isabaline
 - ![#141414](https://via.placeholder.com/15/141414/000000?text=+) `#141414`: Eerie Black
 
-I tested my colour contrasts against the AA guidelines using [this tool](https://learnui.design/tools/accessible-color-generator.html) as mentioned in my technologies section. I have included a picture below as proof:
+I tested my colour contrasts against the AA guidelines using [this tool](https://learnui.design/tools/accessible-color-generator.html) as mentioned in my technologies section. This was done for the accessibility section of the distinction performance. I have included a picture below as proof:
 
 ![Accessible Colours](docs/images/aaproof.png)
 
@@ -261,7 +261,7 @@ UserProfile Model
 | default_town_or_city | CharField | max_length=50, null=True, blank=True |
 | default_county | CharField | max_length=50, null=True, blank=True |
 | default_postcode | CharField | max_length=20, null=True, blank=True |
-| default_country = | CountryField | blank_label="Country", null=True, blank=True |
+| default_country | CountryField | blank_label="Country", null=True, blank=True |
 
 **Reviews App:**
 
@@ -272,6 +272,14 @@ Review Model (Custom model #2 for Distinction performance)
 | review | TextField | null=True, blank=False |
 | added_by | ForeignKey | User, on_delete=models.CASCADE |
 | rating | IntegerField | default=0, validators=[MinValueValidator(1),MaxValueValidator(5)] |
+
++ **Extra Notes**: As per the assessment handbook 2020 and project requirements I have included two custom Django models outside of those created in the course.
+    + This includes:
+        + Review Model
+        + Coupon Model
+    + For both of these models I have aimed to include as much functionality as possible given my Django knowledge and time constraints.
+        + This includes CRUD functionality as well as internal logic.
+    + This was done as I am aiming for a distinction performance as I wished to showcase my knowledge and understanding of the MVC pattern in a full stack web application implementation.
 
 #### [Back to top](#contents)
 
@@ -474,8 +482,9 @@ Included in the **Security Features** are:
     + Checkout Success (also requires you to successfully checkout)
     + Logout (Register and Login also hidden)
 
-+ Currently the only security risk I can find is when checking out without "Save Info" checked the information still saves (more details on this in [TESTING.md](TESTING.md)).
-
++ Currently the security risks I have found are listed below (more details on these can be found in Unresolved in [TESTING.md](TESTING.md#unresolved)):
+    + When checking out without "Save Info" checked the information still saves.
+    + If a user obtains another user's order number access could be gained to their information.
 
 ### Features to be added
 
