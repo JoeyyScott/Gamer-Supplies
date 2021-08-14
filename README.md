@@ -1076,7 +1076,7 @@ My mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/
 
 My family and friends who have helped me test various different versions of the Gamer Supplies website throughout its development process and proof reading my README.md/TESTING.md files.
 
-As this is my final milestone project I wanted to leave a message thanking [Code Institute](https://codeinstitute.net/) for their course as it has helped me progress my website development skills a considerable amount. The support and guidance is unparalled to anything I have experienced before and would recommend them to anyone interested in website development.
+As this is my final milestone project I wanted to leave a message thanking [Code Institute](https://codeinstitute.net/) for their course as it has helped me progress my website development skills a considerable amount. I have learned many new areas of coding, problem solving as well as how to combine all the knowledge from my previous projects in this application. The support and guidance is unparalled to anything I have experienced before and would recommend them to anyone interested in website development.
 
 #### [Back to top](#contents)
 
