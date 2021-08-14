@@ -35,6 +35,10 @@ ___
 + [**Deployment**](#deployment)
 
 + [**Credits**](#credits)
+
++ [**Final Notes**](#final-notes)
+
++ [**Acknowledgements**](#acknowledgements)
   
 ___
 
@@ -1054,7 +1058,25 @@ I have included links to all the supply images below:
 | Forest Fruit | [image](https://www.tesco.com/groceries/en-GB/products/283419585) |
 | Raspberry | [image](https://www.tesco.com/groceries/en-GB/products/283419441) |
 
+### Final notes
+
++ I have included the following code to ensure DEBUG is ```True``` in development and ```False``` in production as per Learning Outcome 5.3:
+
+    ```bash
+    DEBUG = 'DEVELOPMENT' in os.environ
++ I have written this section as the final notes to cover my bases and ensure nothing in the entire assessment handbook has been overlooked.
+
 ### Acknowledgements
+
+The [Code Institute](https://codeinstitute.net/) Slack community most notably for their ongoing support, help and patience with any issues I had pertaining to all aspects of this project.
+
+Special mention to [Chris](https://github.com/ckz8780) who coded the Boutique Ado project and was available with help and assistance when asked.
+
+My mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for all of his help throughout our project calls and feedback on my work.
+
+My family and friends who have helped me test various different versions of the Gamer Supplies website throughout its development process and proof reading my README.md/TESTING.md files.
+
+As this is my final milestone project I wanted to leave a message thanking [Code Institute](https://codeinstitute.net/) for their course as it has helped me progress my website development skills a considerable amount. The support and guidance is unparalled to anything I have experienced before and would recommend them to anyone interested in website development.
 
 #### [Back to top](#contents)
 
