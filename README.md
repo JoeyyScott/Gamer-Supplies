@@ -343,9 +343,9 @@ Review Model (Custom model #2 for Distinction performance)
         + This will then be checked against coupons in the data store when the apply coupon button is clicked and provide the correct result.
             + If the coupon exists, a section containing information of the current coupon and the savings/discount it provides to the user.
             + If the coupon does not exist, the user is returned to the crate without any changes.
-+ Currently only admins have the list of active coupon codes
++ Currently only admins have the list of active coupon codes:
     + See **Extra Coupon Features** in [features to be added](#features-to-be-added) for information on future implementation of the coupon feature.
-    + Due to admins only having access to codes I have included a temporary section on the homepage which contains the code "```GSLAUNCH2021```" which would be used when the website launched for a set period of time (Currently a superuser would remove/expire this code themselves but in future releases it would be automated).
+    + Due to only admins having access to the coupon codes I have included a temporary section on the homepage which contains the code "```GSLAUNCH2021```" which would be used when the website is launched for a set period of time; currently a superuser would remove/expire this code themselves but in future releases it would be automated.
 
 **Navigation buttons**:
 + There are two buttons which provide relevant links to the user at the top of the page below the coupon field. These links point to:
@@ -362,7 +362,7 @@ Review Model (Custom model #2 for Distinction performance)
 
 ## Included in **checkout.html** is:
 
-+ **Note from ```views.py``` in the checkout app**: I included a breakdown of this function here to explain this process as throughout development I experienced orders being created twice with too many comments/print statements in the checkout code.
++ **Note from ```views.py``` in the checkout app**: I included a breakdown of this function here to explain this process as throughout development I experienced orders being created twice with too many comments/print statements present in the checkout code.
     + When the function is called the first check is whether or not data is being posted to the page in the case of a checkout attempt.
         + If this is not the case it will:
             + See if the user has information attached to their profile and prefill it in the form.
@@ -375,7 +375,7 @@ Review Model (Custom model #2 for Distinction performance)
 + On each item within the crate they will see:
     + A summary of the item with an image, name, individual price and a subtotal based on the item quantity.
 + The order total is displayed after the list.
-    + If a coupon has been applied this is displayed also.
+    + If a coupon has been applied this is also displayed.
 
 **Delivery Information**:
 + A form which allows the user to fill out the relevant fields:
@@ -409,7 +409,7 @@ Review Model (Custom model #2 for Distinction performance)
     + Order Items - Contains supply name and quantity pertaining to each item on the order.
     + Order Total - Contains the total price of the order.
 + The user is able to click order numbers in the list to be brought to a modified version of ```checkout_success.html``` which displays a rundown of all information associated with the order.
-    + If a coupon has been applied this is displayed also.
+    + If a coupon has been applied this is also displayed.
 ## Included in **404/500.html** is:
 
 **Error Content**:
@@ -451,7 +451,7 @@ Review Model (Custom model #2 for Distinction performance)
         + Activated by: Add/Manage/Delete review buttons on ```index.html```.
     + Coupons - ```coupons_manage.html```
         + Contains a list of all the current Coupons.
-        + Contains a form where admins can add coupons, upon entering successful form information.
+        + Contains a form where admins can add coupons upon entering successful form information.
         + Contains a delete button on each coupon that activates the delete coupon functionality when pressed.
 + Further details of this functionality can be found in [TESTING.md](TESTING.md).
 
@@ -462,7 +462,7 @@ Review Model (Custom model #2 for Distinction performance)
     + Pictures of these modals can be found within superuser story testing [here](TESTING.md).
 
 Included in the **Security Features** are: 
-+ The following views are protected so only admins have permission.
++ The following views are protected so only admins have permission:
     + Add, Edit and Delete Supply
     + Add/Delete Coupon
     + Deleting any review
@@ -481,7 +481,7 @@ Included in the **Security Features** are:
 
 **Subscription**:
 + I would like the user to be able to order the same crate at a user defined interval (within reason) which would allow for more user options and incentives.
-    + Example: If a user orders the same crate 10 times over a certain value they get a 50% discount code on their next crate of those items.
+    + Example: If a user orders the same crate 10 times over a certain value they receive a 50% discount code on their next crate of those items.
     + This would also allow users to receive their favourite snacks whenever they wanted with only having to checkout once.
 
 **Pagination**
@@ -489,10 +489,10 @@ Included in the **Security Features** are:
     + Example: If there are 500 supplies on ```supplies.html``` the current site would not be an efficient way to load or display this information.
 
 **Extra Coupon Features**:
-+ With more experience with Django and time on the project I would have liked to experiment with a multitude of coupon features:
-    + Allowing coupons to only be used through a set period of time or on specific orders.
++ With more experience with Django and time on the project I would have liked to experiment with a variety of coupon features:
+    + Allowing coupons to only be used within a set period of time or on specific orders.
     + Generate and email a discount coupon code for the proposed subscription feature above.
-    + Allowing superusers to choose a coupon type (percentage, static or only for a specific price range/category/brand).
+    + Enable superusers to choose a coupon type (percentage, static or only for a specific price range/category/brand).
 
 #### [Back to top](#contents)
 

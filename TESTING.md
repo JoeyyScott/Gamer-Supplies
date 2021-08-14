@@ -37,7 +37,7 @@ I used [w3.org's validator](https://validator.w3.org) for my HTML validation che
     + ```toast-error.html```
     + ```toast-info.html```
 
-    + ```base.html``` and ```base_site.html``` were unable to be tested due to other sites extending them.
+    + ```base.html``` and ```base_site.html``` were unable to be tested due to other pages extending them.
 
     + Note: I used allauth to provide my account system and this came with a variety of templates most of which I have only changed the inner content block so they use my base style. I have been unable to access these templates outside of those used in the registration process which I feel is due to the functionality not being implemented in my project.
 
@@ -426,7 +426,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
     + Whenever the crate is updated the user is given a message containing a link to ```crate.html```.
     + I have created a crate in the previous story which I will use to display ```crate.html``` and the checkout process.
     + I completed a test checkout using the account made during the registration testing using the temp email from [Temp Mail](https://temp-mail.org/en/).
-    + This was  to provide relevant screenshots throughout the process simulating a first time user becoming a registered user and checking out.
+    + This was to provide relevant screenshots throughout the process simulating a first time user becoming a registered user and checking out.
     
         | _Checkout_ | _Info_ | _Screenshot_ |
         |:----------:|:------:|:-------:|
@@ -712,7 +712,7 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | Empty Coupon Form with validation shown as placeholders | ![Empty Coupon Form Screenshot](docs/images/testing/validation-coupon-1.png) |
         | Coupon Code under 6 characters | ![Coupon Code under 6 characters Screenshot](docs/images/testing/validation-coupon-2.png) |
         | Coupon Amount not numerical | ![Coupon Amount not numerical Screenshot](docs/images/testing/validation-coupon-3.png) |
-        | Correct Info | ![Correct Info Screenshot](docs/images/testing/validation-coupon-4.png) |
+        | Correct Information | ![Correct Information Screenshot](docs/images/testing/validation-coupon-4.png) |
         | Coupon Displayed | ![Coupon Displayed Screenshot](docs/images/testing/validation-coupon-5.png) |
     
     + Apply Coupon (```crate.html```):
@@ -733,11 +733,11 @@ I tested the appearance and responsiveness of the website across 6 different bro
         | Blank Address Line 1 | ![Blank Address Line 1 Screenshot](docs/images/testing/validation-checkout-4.png) |
         | Blank Address Line 2 | ![Blank Address Line 2 Screenshot](docs/images/testing/validation-checkout-5.png) |
         | Blank Town | ![Blank Town Screenshot](docs/images/testing/validation-checkout-6.png) |
-        | Blank Card Info | ![Blank Card Info Screenshot](docs/images/testing/validation-checkout-7.png) |
+        | Blank Card Information | ![Blank Card Information Screenshot](docs/images/testing/validation-checkout-7.png) |
 
         + Notes: 
             + Contact Number is not required in the model (see [partially resolved](#partially-resolved) in the bugs section).
-            + The card input field validation outside of blank inputs is handled by Stripe and this not included in this testing section.
+            + The card input field validation outside of blank inputs is handled by Stripe and thus not included in this testing section.
 
 [Contents](#contents)
 
@@ -806,10 +806,10 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
 #### Partially Resolved
 
-+ **Checking out without a contact number**
++ **Checking out without a contact number**:
 
-    + When implementing the checkout process I followed along with Boutique Ado to set up my Stripe webhooks (as mentioned in [README.md](README.md).
-    + On my ```Order``` model I have contact number as not required (```null=True, blank=True```).
+    + When implementing the checkout process I followed with Boutique Ado to set up my Stripe webhooks (as mentioned in [README.md](README.md)).
+    + On my ```Order``` model I have the Contact Number field as not required (```null=True, blank=True```).
     + When attempting to checkout without using a contact number Stripe throws an error shown in the below screenshot.
 
         | _Payment Intent Bug_ |
@@ -818,10 +818,10 @@ I tested the appearance and responsiveness of the website across 6 different bro
 
     + I came up with a few ideas on how to solve this bug:
         + **Option 1**: Modify the Order model to require contact number.
-            + While this would solve the problem I feel if this was a real world application, the decision to make model changes would not be mine to make and thus have not chosen this option.
+            + While this would solve the problem I felt if this was a real world application, the decision to make model changes would not be mine to make and thus have not chosen this option.
         + **Option 2**: Modify the payment intent to check if a contact number has been entered and if not return an empty field for billing details.
-            + As mentioned previously here and in README.md credits the full stack frameworks [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project provided the base for this functionality as I am very inexperienced with it.
-            + Despite this I wanted to try and fix it so I investigated throughout the Stripe documentation [here](https://stripe.com/docs). I then tested in my sample project made throughout the course to see if I could fix this issue without affecting my milestone project.
+            + As mentioned previously in the README.md credits the full stack frameworks [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project provided the base for this functionality as I am very inexperienced with it.
+            + Despite this I wanted to try and fix it so I investigated throughout the Stripe documentation [here](https://stripe.com/docs). I then tested this in my sample project made throughout the course to see if I could fix this issue without affecting my milestone project.
             + I was unable to generate any successful payments and thus have not chosen this option.
         + **Option 3**: Add validation to ```forms.py``` in the checkout app to prevent a contact number being entered blank.
             + This option is a fallback to the other two as I did not want to leave my project in a state where the user could produce this error whilst checking out.
@@ -831,10 +831,10 @@ I tested the appearance and responsiveness of the website across 6 different bro
                 if field == 'contact_number':
                     self.fields[field].widget.attrs['pattern'] = '^[0-9]{5,}$'
                     self.fields[field].widget.attrs['required'] = ''
-            + This means that the input has to be numbers only and a minimum of 5 digits as per my research [here](https://stackoverflow.com/questions/14894899/what-is-the-minimum-length-of-a-valid-international-phone-number)
+            + This means that the input has to be numbers only and a minimum of 5 digits as per my research [here](https://stackoverflow.com/questions/14894899/what-is-the-minimum-length-of-a-valid-international-phone-number).
 
     + Out of the three options I have outlined above I felt option 3 was the safest but given more time and experience with Stripe functionality I would go for option 2.
-    + This leave this bug as partially resolved.
+    + This leaves this bug as partially resolved.
 
 #### Completely Unresolved
 
@@ -852,13 +852,13 @@ I tested the appearance and responsiveness of the website across 6 different bro
         |:--------------------:|
         | ![Previous Order Notification Date Screenshot](docs/images/testing/bug-date-2.png) |
 
-    + In trying to resolve this I found [this post](https://stackoverflow.com/questions/7737146/how-can-i-change-the-default-django-date-template-format) which involved changing the date format within ```settings.py``` and I opted to not do this due to inexperience with Django settings and time constraints.
+    + In trying to resolve this I found [this post](https://stackoverflow.com/questions/7737146/how-can-i-change-the-default-django-date-template-format) which involved changing the date format within ```settings.py``` and I opted not to do this due to inexperience with Django settings, time constraints and it being a minor bug.
 
 + **Save Info checkbox**:
-    + I would consider to be a major bug and I have outlined my process of attempting to fix it as well as providing a disclaimer for this as per the distinction performance.
+    + I would consider this to be a major bug and I have outlined my process of attempting to fix it as well as providing a disclaimer for this as per the distinction performance.
     + This feature was implemented on the checkout page to allow users to have their delivery information saved to their profile.
     + It functioned as intended when trying to save the information; yet if the box is unchecked the information would still save.
-        + I investigated around for a potential fix and found a thread in the Code Institute Slack community of someone who experienced a similar issue.
+        + I investigated for a potential fix and found a thread in the Code Institute Slack community of someone who experienced a similar issue.
         + They managed to resolve it with tutor support and posted this message regarding this line of code:
 
             ```<script defer src="{% static 'checkout/js/stripe_elements.js' %}"></script>```
@@ -868,9 +868,9 @@ I tested the appearance and responsiveness of the website across 6 different bro
             into the head (extra_js block rather than postload_js) and adding the defer tag fixed the bug for me.  Default delivery information only gets saved/updated if the checkbox is ticked now in both my GitPod and Heroku environments.
             
             I thought I would share here in case it is useful to anyone in future since the posts above definitely helped me!
-    + I have tried applying this fix and numerous others that I have found through searching around.
-        + Everything I have found leads me to believe it is caused somewhere in my webhook handler.
-        + As mentioned previously here and in README.md credits the full stack frameworks [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project provided the base for this functionality as I am very inexperienced with it.
+    + I have tried applying this fix and numerous others which I have found through my investigative process.
+        + Everything I have found leads me to believe it is caused somewhere in the webhook handler.
+        + As mentioned above and in the README.md credits the full stack frameworks [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) walkthrough project provided the base for this functionality as I am very inexperienced with it.
         + Due to insufficient experience with Stripe I have opted to leave this bug as unresolved and to state it here in my testing.
 
 [Contents](#contents)
